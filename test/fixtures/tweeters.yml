@@ -5,11 +5,11 @@ one:
   twitter_handle: MyString
   status: MyString
   priority: 1
-  sport_id: 
+  sport: one
 
 two:
   name: MyString
   twitter_handle: MyString
   status: MyString
   priority: 1
-  sport_id: 
+  sport: two

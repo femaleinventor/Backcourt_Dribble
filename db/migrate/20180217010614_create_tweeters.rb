@@ -5,7 +5,7 @@ class CreateTweeters < ActiveRecord::Migration[5.1]
       t.string :twitter_handle
       t.string :status
       t.integer :priority
-      t.primary_key :sport_id
+      t.references :sport, foreign_key: true
 
       t.timestamps
     end
