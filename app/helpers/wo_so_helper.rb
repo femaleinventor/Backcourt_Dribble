@@ -1,0 +1,2 @@
+module WoSoHelper
+end
