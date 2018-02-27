@@ -1,3 +1,39 @@
 // Place all the styles related to the WoSo controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  text-align: center;
+}
+
+.first_panel {
+  height: 1000px;
+  border: 10px solid red;
+}
+
+.second_panel {
+  padding-left: 20px;
+}
+
+.banner {
+  height: 200px;
+  border: 10px solid pink;
+}
+.panel-container {
+  margin-top: 20px;
+}
+
+.icon-container {
+  border: 10px solid yellow;
+}
+
+.ad-container {
+  margin-top: 50px;
+}
+
+.ad {
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+  border: 5px solid purple;
+}

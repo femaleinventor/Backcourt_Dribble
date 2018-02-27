@@ -1,3 +1,4 @@
 class Sport < ApplicationRecord
-  has_many :tweeters
+  has_many :leagues
+  has_many :teams, through: :leagues
 end
