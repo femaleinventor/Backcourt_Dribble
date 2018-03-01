@@ -2,23 +2,43 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Bootstrap Sandbox</title>
+  <title>Backcourt Dribble</title>
 </head>
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-3 icon-container"></div>
-      <div class="col-lg-9 banner">
-        <h1> Horizontal Banner containing nav and other goodies </h1>
+      <div class="col-sm-3 menu icon-container d-flex justify-content-center align-items-center">
+        <div>
+          <%= image_tag "small_sports/soccer_ball3.png", class: "img-fluid" %>
+        </div>
+      </div>
+      <div class="col-sm-8 banner menu">
+        <div class="row blue">
+          <div class="col-sm-4 orange d-flex align-items-center">
+              <%= image_tag "logos/BCD_updated_color_sm2.jpg" %>
+          </div>
+          <div class="col-sm-4 orange"></div>
+          <div class="col-sm-4 orange"></div>
+        </div>
+        <div class="row green">
+          <div class="col-sm-12 orange"></div>
+        </div>
       </div>
     </div> <!-- first row -->
     <div class="row">
-      <div class="col-lg-3 first_panel">
-        <h2> A list containing: </h2>
+      <div class="col-sm-3 first_panel menu">
+        <p> Check out the WoSo's Wall! </p>
         <ul>
-          <li>Links to lists for leagues</li>
-          <li>Links to lists for teams</li>
-          <li>Other important accounts</li>
+          <li><a class="league-link" href="#">League 1</a></li>
+          <li><a class="league-link" href="#">League 2</a></li>
+          <li><a class="league-link" href="#">League 3</a></li>
+          <li><a class="league-link" href="#">League 4</a></li>
+          <li><a class="league-link" href="#">League 5</a></li>
+          <li><a class="league-link" href="#">League 6</a></li>
+          <li><a class="league-link" href="#">League 7</a></li>
+          <li><a class="league-link" href="#">League 8</a></li>
+          <li><a class="league-link" href="#">League 9</a></li>
+          <li><a class="league-link" href="#">League 10</a></li>
         </ul>
         <div class="ad-container">
           <div class="ad"></div>
@@ -27,14 +47,14 @@
           <div class="ad"></div>
         </div>
       </div> <!-- first_panel -->
-      <div class="col-lg-6 second_panel">
+      <div class="col-sm-5 second_panel">
         <!-- Top WoSo Journalists -->
         <div class="panel-container d-flex justify-content-center">
           <a class="twitter-timeline" data-link-color="#16A7D5
           " data-border-color="#FF6600" lang="EN" data-theme="dark" height="3039" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/top-woso-journalists?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
       </div> <!-- second_panel -->
-      <div class="col-lg-3 third_panel">
+      <div class="col-sm-3 third_panel">
         <!--WoSo Journalists-->
         <div class="panel-container d-flex justify-content-center">
           <a class="twitter-timeline widget-panel" data-link-color="#16A7D5" data-border-color="#00d37f" lang="EN" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/woso-journalists?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
