@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Backcourt Dribble</title>
+</head>
+<body>
+  <!-- Begin Content -->
+  <div class="container-fluid">
+
+    <!-- Start Row 1 -->
+    <div class="row">
+      <!-- Container for Sports Icon -->
+      <div class="col-sm-3 menu icon-container d-flex justify-content-center align-items-center">
+        <div> <!-- Icon image for sport -->
+          <%= image_tag "small_sports/soccer_ball3.png", class: "img-fluid" %>
+        </div> <!-- End Icon for sport -->
+      </div> <!-- End Container for Sports Icon -->
+
+      <!-- Page header -->
+      <div class="col-sm-8 banner menu">
+        <div class="row">
+          <!-- Logo-->
+          <div class="col-sm-4 orange d-flex align-items-center">
+              <%= image_tag "logos/BCD_updated_color_sm2.jpg" %>
+          </div>
+          <!-- Links to internal site (sign up, dribble, etc.,)-->
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4"></div>
+        </div>
+        <!-- Sports Navigation -->
+        <div class="row">
+          <div class="col-sm-12"></div>
+        </div>
+      </div>
+    </div> <!-- End Row 1 -->
+
+    <!-- Start Row 2 -->
+    <div class="row">
+      <!-- League menu panel -->
+      <div class="col-sm-3 league_menu menu">
+        <p> Check out the WoSo's Wall! </p>
+
+        <!--FIFA Leagues-->
+        <%= render "shared/fifa_menu"%>
+
+        <!-- Ads within league menu panel-->
+        <div class="ad-container">
+          <div class="ad"></div>
+          <div class="ad"></div>
+          <div class="ad"></div>
+          <div class="ad"></div>
+        </div>
+      </div> <!-- league menu panel -->
+
+      <!-- Large twitter list panel -->
+      <div class="col-sm-5 large_twitter_list">
+        <!-- Sr. National -->
+        <div class="panel-container d-flex justify-content-center">
+          <a class="twitter-timeline" data-link-color="#FDC932" data-border-color="#D3262E" data-theme="dark" height="3039" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive"  href="https://twitter.com/backcourtdribbl/lists/germany-football?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div> <!-- End large twitter list panel -->
+
+      <!-- Start small twitter list panel-->
+      <div class="col-sm-3 small_twitter_lists">
+        <!-- Retired -->
+        <div class="panel-container d-flex justify-content-center">
+          <a class="twitter-timeline" data-link-color="#D3262E" data-border-color="#FDC932" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive"    href="https://twitter.com/backcourtdribbl/lists/germany-retired-players?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <!-- Recent Call-ups -->
+        <div class="panel-container d-flex justify-content-center">
+          <a class="twitter-timeline" data-link-color="#FDC932" data-border-color="#D3262E" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive"   href="https://twitter.com/backcourtdribbl/lists/germany-recent-call-ups?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <!-- U23 -->
+        <div class="panel-container d-flex justify-content-center">
+          <a class="twitter-timeline" data-link-color="#D3262E" data-border-color="#FDC932" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive"   href="https://twitter.com/backcourtdribbl/lists/germany-football-u-23?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <!-- U20 -->
+        <div class="panel-container d-flex justify-content-center">
+          <a class="twitter-timeline" data-link-color="#D3262E" data-border-color="#FDC932" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive"   href="https://twitter.com/backcourtdribbl/lists/germany-football-u-23?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <!-- U19 -->
+        <div class="panel-container d-flex justify-content-center">
+          <a class="twitter-timeline" data-link-color="#D3262E" data-border-color="#FDC932" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive"    href="https://twitter.com/backcourtdribbl/lists/germany-football-u-19?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div> <!-- End small twitter list panel -->
+
+    </div> <!-- End Row 2 -->
+  </div> <!-- End container-fluid  -->
+  <!-- End Content -->
+</body>
+</html>
