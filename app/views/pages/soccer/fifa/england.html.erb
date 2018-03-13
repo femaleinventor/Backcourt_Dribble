@@ -40,54 +40,8 @@
       <!-- League menu panel -->
       <div class="col-sm-3 league_menu menu">
         <p> Check out the WoSo's Wall! </p>
-        <!-- <ul data-turbolinks="false">
-          <li><a id="fifa" class="league-link" href="#">FIFA (National Teams)</a></li>
-          <li><a class="league-link" href="/pages/soccer/nwsl.html.erb">National Women's Soccer League (USA)</a></li>
-          <li><a class="league-link" href="/pages/soccer/frauen-bundesliga.html.erb">Allianz Frauen-Bundesliga (Germany)</a></li>
-          <li><a class="league-link" href="#">FA Women's Super League (England)</a></li>
-          <li><a class="league-link" href="#">National Women’s League (New Zealand)</a></li>
-          <li><a class="league-link" href="#">Westfield W-League (Australia)</a></li>
-          <li><a class="league-link" href="#">Liga MX Femenil (Mexico)</a></li>
-          <li><a class="league-link" href="#">Primera División Femenina (Spain)</a></li>
-          <li><a class="league-link" href="#">Serie A Women (Italy) </a></li>
-          <li><a class="league-link" href="#">FA Women's Championship (England)</a></li>
-          <li><a class="league-link" href="#">Damallsvenskan (Sweden)</a></li>
-        </ul> -->
 
-        <!--FIFA Leagues-->
-        <ul data-turbolinks="false">
-          <a class="back-link" href="/">Back to All Leagues</a>
-          <li><a class="active" href="/pages/soccer/fifa/usa.html.erb">USA</a></li>
-          <li><a href="/pages/soccer/fifa/germany.html.erb">Germany</a></li>
-          <li><a href="/pages/soccer/fifa/england.html.erb">England</a></li>
-          <li><a href="#">Australia</a></li>
-          <li><a href="#">Canada</a></li>
-          <li><a href="/pages/soccer/fifa/france.html.erb">France</a></li>
-          <li><a href="#">Netherlands</a></li>
-          <li><a href="#">Brazil</a></li>
-          <li><a href="#">Japan</a></li>
-          <li><a href="#">Sweden</a></li>
-          <li><a href="#">North Korea</a></li>
-          <li><a href="#">Denmark</a></li>
-          <li><a href="#">Spain</a></li>
-          <li><a href="#">Norway</a></li>
-          <li><a href="#">South Korea</a></li>
-          <li><a href="#">China</a></li>
-          <li><a href="#">Italy</a></li>
-          <li><a href="#">New Zealand</a></li>
-          <li><a href="#">Switzerland</a></li>
-          <li><a href="#">Iceland</a></li>
-          <li><a href="#">Austria</a></li>
-          <li><a href="#">Scotland</a></li>
-          <li><a href="#">Belgium</a></li>
-          <li><a href="#">Colombia</a></li>
-          <li><a href="#">Russia</a></li>
-          <li><a href="#">Mexico</a></li>
-          <li><a href="#">Ukraine</a></li>
-          <li><a href="#">Finland</a></li>
-          <li><a href="#">Republic of Ireland</a></li>
-          <!-- <li><a class="league-link" href="#">Poland</a></li> -->
-        </ul>
+        <%= render "shared/fifa_menu"%>
 
         <!-- Ads within league menu panel-->
         <div class="ad-container">
