@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Backcourt Dribble</title>
+</head>
+<body>
+  <!-- Begin Content -->
+  <div class="container-fluid">
+
+    <!-- Start Row 1 -->
+    <div class="row">
+      <!-- Container for Sports Icon -->
+      <div class="col-sm-3 menu icon-container d-flex justify-content-center align-items-center">
+        <div> <!-- Icon image for sport -->
+          <%= image_tag "small_sports/soccer_ball3.png", class: "img-fluid" %>
+        </div> <!-- End Icon for sport -->
+      </div> <!-- End Container for Sports Icon -->
+
+      <!-- Page header -->
+      <div class="col-sm-8 banner menu">
+        <div class="row">
+          <!-- Logo-->
+          <div class="col-sm-4 orange d-flex align-items-center">
+              <%= image_tag "logos/BCD_updated_color_sm2.jpg" %>
+          </div>
+          <!-- Links to internal site (sign up, dribble, etc.,)-->
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4"></div>
+        </div>
+        <!-- Sports Navigation -->
+        <div class="row">
+          <div class="col-sm-12"></div>
+        </div>
+      </div>
+    </div> <!-- End Row 1 -->
+
+    <!-- Start Row 2 -->
+    <div class="row">
+      <!-- League menu panel -->
+      <div class="col-sm-3 league_menu menu">
+        <p> Check out the WoSo's Wall! </p>
+        <!-- <ul data-turbolinks="false">
+          <li><a id="fifa" class="league-link" href="#">FIFA (National Teams)</a></li>
+          <li><a class="league-link" href="/pages/soccer/nwsl.html.erb">National Women's Soccer League (USA)</a></li>
+          <li><a class="league-link" href="/pages/soccer/frauen-bundesliga.html.erb">Allianz Frauen-Bundesliga (Germany)</a></li>
+          <li><a class="league-link" href="#">FA Women's Super League (England)</a></li>
+          <li><a class="league-link" href="#">National Women’s League (New Zealand)</a></li>
+          <li><a class="league-link" href="#">Westfield W-League (Australia)</a></li>
+          <li><a class="league-link" href="#">Liga MX Femenil (Mexico)</a></li>
+          <li><a class="league-link" href="#">Primera División Femenina (Spain)</a></li>
+          <li><a class="league-link" href="#">Serie A Women (Italy) </a></li>
+          <li><a class="league-link" href="#">FA Women's Championship (England)</a></li>
+          <li><a class="league-link" href="#">Damallsvenskan (Sweden)</a></li>
+        </ul> -->
+
+        <!--FIFA Leagues-->
+        <ul data-turbolinks="false">
+          <a class="back-link" href="/">Back to All Leagues</a>
+          <li><a href="/pages/soccer/fifa/usa.html.erb">USA</a></li>
+          <li><a href="/pages/soccer/fifa/germany.html.erb">Germany</a></li>
+          <li><a href="/pages/soccer/fifa/england.html.erb">England</a></li>
+          <li><a href="#">Australia</a></li>
+          <li><a href="#">Canada</a></li>
+          <li><a href="/pages/soccer/fifa/france.html.erb">France</a></li>
+          <li><a href="#">Netherlands</a></li>
+          <li><a href="#">Brazil</a></li>
+          <li><a href="#">Japan</a></li>
+          <li><a href="#">Sweden</a></li>
+          <li><a href="#">North Korea</a></li>
+          <li><a href="#">Denmark</a></li>
+          <li><a href="#">Spain</a></li>
+          <li><a href="#">Norway</a></li>
+          <li><a href="#">South Korea</a></li>
+          <li><a href="#">China</a></li>
+          <li><a href="#">Italy</a></li>
+          <li><a href="#">New Zealand</a></li>
+          <li><a href="#">Switzerland</a></li>
+          <li><a href="#">Iceland</a></li>
+          <li><a href="#">Austria</a></li>
+          <li><a href="#">Scotland</a></li>
+          <li><a href="#">Belgium</a></li>
+          <li><a href="#">Colombia</a></li>
+          <li><a href="#">Russia</a></li>
+          <li><a href="#">Mexico</a></li>
+          <li><a href="#">Ukraine</a></li>
+          <li><a href="#">Finland</a></li>
+          <li><a href="#">Republic of Ireland</a></li>
+          <!-- <li><a class="league-link" href="#">Poland</a></li> -->
+        </ul>
+
+        <!-- Ads within league menu panel-->
+        <div class="ad-container">
+          <div class="ad"></div>
+          <div class="ad"></div>
+          <div class="ad"></div>
+          <div class="ad"></div>
+        </div>
+      </div> <!-- league menu panel -->
+
+      <!-- Large twitter list panel -->
+      <div class="col-sm-5 large_twitter_list">
+        <!-- Sr. National -->
+        <div class="panel-container d-flex justify-content-center">
+          <a class="twitter-timeline" data-link-color="#064AFB" data-border-color="#FA141B" data-theme="dark" height="3039" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive"  href="https://twitter.com/backcourtdribbl/lists/france-national-football?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div> <!-- End large twitter list panel -->
+
+      <!-- Start small twitter list panel-->
+      <div class="col-sm-3 small_twitter_lists">
+        <!-- Retired -->
+        <div class="panel-container d-flex justify-content-center">
+          <a class="twitter-timeline" data-link-color="#FA141B" data-border-color="#064AFB" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/france-retired-players?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <!-- Recent Call-ups -->
+        <div class="panel-container d-flex justify-content-center">
+          <a class="twitter-timeline" data-link-color="#FA141B" data-border-color="#064AFB" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/france-recent-call-ups?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <!-- U23 -->
+        <div class="panel-container d-flex justify-content-center">
+          <a class="twitter-timeline" data-link-color="#FA141B" data-border-color="#064AFB" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/france-football-u-23?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <!-- U20 -->
+        <div class="panel-container d-flex justify-content-center">
+          <a class="twitter-timeline" data-link-color="#064AFB" data-border-color="#FA141B" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive"  href="https://twitter.com/backcourtdribbl/lists/france-football-u-20?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <!-- U19 -->
+        <div class="panel-container d-flex justify-content-center">
+          <a class="twitter-timeline" data-link-color="#FA141B" data-border-color="#064AFB"  data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive"  href="https://twitter.com/backcourtdribbl/lists/france-football-u-19?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div> <!-- End small twitter list panel -->
+
+    </div> <!-- End Row 2 -->
+  </div> <!-- End container-fluid  -->
+  <!-- End Content -->
+</body>
+</html>
