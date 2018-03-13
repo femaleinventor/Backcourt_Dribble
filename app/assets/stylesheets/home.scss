@@ -1,0 +1,68 @@
+// Place all the styles related to the WoSo controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  text-align: center;
+}
+
+p {
+  color: white;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  margin: 15px;
+}
+
+.league_menu {
+  height: 3000px;
+  margin-left: 20px;
+  border-radius: 0px 0px 6px 6px;
+}
+
+.large_twitter_list {
+  margin-left: 15px;
+}
+
+.banner {
+  height: 200px;
+  margin-left: 20px;
+  margin-top: 10px;
+  border-radius: 6px;
+  margin-bottom: 7px;
+}
+.panel-container {
+  margin-top: 20px;
+  // border: 3px solid red;
+}
+
+.icon-container {
+  margin-right: 5px;
+  margin-left: 20px;
+  margin-top: 10px;
+  border-radius: 6px 6px 0px 0px;
+}
+
+.ad-container {
+  margin-top: 50px;
+}
+
+.menu {
+  background: #292F33;
+}
+
+.ad {
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+}
+
+.nwsl-list-container {
+  margin-left: 20px;
+}
+
+// .fifa-league-link {
+//   display: "none";
+// }
