@@ -16,6 +16,10 @@ li {
   margin: 15px;
 }
 
+a.league-link {
+ color: #16A7D5;
+}
+
 .league_menu {
   height: 3000px;
   margin-left: 20px;
@@ -24,6 +28,20 @@ li {
 
 .large_twitter_list {
   margin-left: 15px;
+}
+
+.template_large_list {
+  height: 5080px;
+}
+
+.template_small_list {
+  height: 1000px;
+}
+
+.placeholder_text {
+  color: #16A7D5;
+  font-size: 1.5em;
+  margin-top: 1.5em;
 }
 
 .banner {
@@ -36,6 +54,11 @@ li {
 .panel-container {
   margin-top: 20px;
   // border: 3px solid red;
+}
+
+.template-panel-container {
+  border: 1px solid #16A7D5;
+  margin-top: 20px;
 }
 
 .icon-container {
@@ -64,8 +87,10 @@ li {
 }
 
 .active {
-  color: #FF6600;
+  color: #00d37F;
 }
+
+
 
 // .fifa-league-link {
 //   display: "none";
