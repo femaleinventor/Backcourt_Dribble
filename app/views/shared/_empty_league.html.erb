@@ -29,9 +29,7 @@
           <div class="col-md-4"></div>
         </div>
         <!-- Sports Navigation -->
-        <div class="row">
-          <div class="col-md-12"></div>
-        </div>
+        <%= render 'shared/nav' %>
       </div>
     </div> <!-- End Row 1 -->
 
@@ -57,60 +55,8 @@
         </ul>
 
         <!--FIFA Leagues-->
-        <ul data-turbolinks="false" class="fifa-league-link">
-          <a class="back-link" href="/">Back to All Leagues</a>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/usa.html.erb">USA</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/germany.html.erb">Germany</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/england.html.erb">England</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/australia.html.erb">Australia</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/canada.html.erb">Canada</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/france.html.erb">France</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/netherlands.html.erb">Netherlands</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/brazil.html.erb">Brazil</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/japan.html.erb">Japan</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/sweden.html.erb">Sweden</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/korea_dpr.html.erb">North Korea</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/denmark.html.erb">Denmark</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/spain.html.erb">Spain</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/norway.html.erb">Norway</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/south_korea.html.erb">South Korea</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/china.html.erb">China</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/italy.html.erb">Italy</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/new_zealand.html.erb">New Zealand</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/switzerland.html.erb">Switzerland</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/iceland.html.erb">Iceland</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/austria.html.erb">Austria</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/scotland.html.erb">Scotland</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/belgium.html.erb">Belgium</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/columbia.html.erb">Colombia</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/russia.html.erb">Russia</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/mexico.html.erb">Mexico</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/ukraine.html.erb">Ukraine</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/finland.html.erb">Finland</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/ireland.html.erb">Republic of Ireland</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/poland.html.erb">Poland</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/thailand.html.erb">Thailand</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/vietnam.html.erb">Vietnam</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/costa_rico.html.erb">Costa Rica</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/czech_republic.html.erb">Czech Republic</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/wales.html.erb">Wales</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/argentina.html.erb">Argentina</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/nigeria.html.erb">Nigeria</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/portugal.html.erb">Portugal</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/romania.html.erb">Romania</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/chile.html.erb">Chile</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/afganistan.html.erb">Afganistan</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/ghana.html.erb">Ghana</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/turkey.html.erb">Turkey</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/bulgaria.html.erb">Bulgaria</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/south_africa.html.erb">South Africa</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/iran.html.erb">Iran</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/bolivia.html.erb">Bolivia</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/israel.html.erb">Israel</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/jordan.html.erb">Jordan</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/india.html.erb">India</a></li>
-          <li><a class="fifa_team_link" href="/pages/soccer/fifa/palestine.html.erb">Palestine</a></li>
-        </ul>
+        <%= render 'shared/fifa_menu' %>
+      
 
         <!-- Ads within league menu panel-->
         <div class="ad-container">
