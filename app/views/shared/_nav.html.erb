@@ -1,21 +1,44 @@
-<div class="row">
-  <div class="col-md-12">
-    <div>
-      <nav class="navbar navbar-expand-lg navbar-trans bg-inverse">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav d-flex align-self-start">
-            <a class="sport nav-item nav-link active" href="#">Soccer <span class="sr-only">(current)</span></a>
-            <a class="sport nav-item nav-link" href="#">Basketball</a>
-            <a class="sport nav-item nav-link" href="#">Rugby</a>
-            <a class="sport nav-item nav-link" href="#">Hockey</a>
-            <a class="sport nav-item nav-link" href="#">Tennis</a>
-            <a class="sport nav-item nav-link" href="#">Volleyball</a>
-          </div>
+<nav class="navbar navbar-expand-lg menu-nav">
+  <a class="navbar-brand" href="/"><%= image_tag "logos/BCD_updated_color_sm2.jpg" %></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle menu-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sports
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Soccer</a>
+          <a class="dropdown-item" href="#">Basketball</a>
+          <a class="dropdown-item" href="#">Rugby</a>
+          <a class="dropdown-item" href="#">Tennis</a>
+          <a class="dropdown-item" href="#">Hockey</a>
+          <a class="dropdown-item" href="#">Volleyball</a>
         </div>
-      </nav>
-    </div>
+      </li>
+
+      <li class="nav-item active">
+        <form class="form-inline">
+          <button class="btn dribble btn-lg" type="button">Let's Dribble!</button>
+        </form>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link menu-link" href="#">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link menu-link" href="#">Signup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link menu-link" href="#">Store</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link menu-link" href="#">Leaderboard</a>
+      </li>
+      <li class="nav-item">
+          <%= image_tag "small_sports/soccer_ball_menu.png" %>
+      </li>
+    </ul>
   </div>
-</div>
+</nav>

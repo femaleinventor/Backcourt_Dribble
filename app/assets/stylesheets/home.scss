@@ -32,19 +32,29 @@ hr {
 }
 
 .btn.dribble {
-  background-color: #16A7D5;
-  border-color: #16A7D5;
-  margin: 1px;
+  background-color: #FF6600;
+  border-color: #FF6600;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: bold;
 }
 
 .btn.dribble:hover {
-  background-color: #FF6600;
-  border-color: #FF6600;
+  background-color: #16A7D5;
+  border-color: #16A7D5;
 }
 
 .thank_you {
   color: #16A7D5;
   text-align: center;
+}
+
+a.menu-link {
+  color: #16A7D5;
+}
+
+a.menu-link:hover {
+  color: #00D37f;
 }
 
 a.league-link {
@@ -79,7 +89,8 @@ a.league-link:hover {
 .league_menu {
   height: 900px;
   margin-left: 20px;
-  border-radius: 0px 0px 6px 6px;
+  margin-top: 20px;
+  border-radius: 6px 6px 6px 6px;
 }
 
 .large_twitter_list {
@@ -114,7 +125,6 @@ a.league-link:hover {
 
 .panel-container {
   margin-top: 20px;
-  // border: 3px solid red;
 }
 
 .template-panel-container {
@@ -134,6 +144,11 @@ a.league-link:hover {
 }
 
 .menu {
+  background: #292F33;
+}
+
+.menu-nav {
+  border-radius: 6px 6px 6px 6px;
   background: #292F33;
 }
 
