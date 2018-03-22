@@ -1,73 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Backcourt Dribble</title>
+  <!--google analytics code, copied and pasted -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116284763-1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116284763-1');
+  </script>
+
+<meta charset="utf-8">
+<title>Backcourt Dribble</title>
 </head>
 <body>
   <!-- Begin Content -->
   <div class="container-fluid">
     <%= render 'shared/nav'  %>
-<!-- Start Row 2 -->
-<div class="row">
-  <!-- League menu panel -->
-  <div class="col-md-3 league_menu menu">
-    <!-- <p> Check out the WoSo's Wall! </p> -->
-    <ul data-turbolinks="false">
-      <li><a id="fifa" class="league-link" href="#">FIFA (National Teams)</a></li>
-      <li><a class="league-link" href="/pages/soccer/nwsl.html.erb">National Women's Soccer League (USA)</a></li>
-      <li><a class="league-link" href="/pages/soccer/frauen-bundesliga.html.erb">Allianz Frauen-Bundesliga (Germany)</a></li>
-      <li><a class="league-link" href="/pages/soccer/fa_super_league.html.erb">FA Women's Super League (England)</a></li>
-      <li><a class="league-link" href="/pages/soccer/champions_league.html.erb">Champion's League</a></li>
-      <li><a class="league-link" href="/pages/soccer/nwl.html.erb">National Women’s League (New Zealand)</a></li>
-      <li><a class="league-link" href="/pages/soccer/w_league.html.erb">Westfield W-League (Australia)</a></li>
-      <li><a class="league-link" href="/pages/soccer/liga_mx.html.erb">Liga MX Femenil (Mexico)</a></li>
-      <li><a class="league-link" href="/pages/soccer/primera_division.html.erb">Primera División Femenina (Spain)</a></li>
-      <li><a class="league-link" href="/pages/soccer/series_a.html.erb">Serie A Women (Italy) </a></li>
-      <li><a class="league-link" href="/pages/soccer/fa_championship.html.erb">FA Women's Championship (England)</a></li>
-      <li><a class="league-link" href="/pages/soccer/damallsvenskan.html.erb">Damallsvenskan (Sweden)</a></li>
-      <li><a class="league-link" href="/pages/soccer/div1feminine.html.erb">Division 1 Féminine (France)</a></li>
-    </ul>
+    <!-- Start Row 2 -->
+    <div class="row">
+      <!-- League menu panel -->
+      <div class="col-md-3 league_menu menu">
+        <!-- <p> Check out the WoSo's Wall! </p> -->
+        <ul data-turbolinks="false">
+          <li><a id="fifa" class="league-link" href="#">FIFA (National Teams)</a></li>
+          <li><a class="league-link" href="/pages/soccer/nwsl.html.erb">National Women's Soccer League (USA)</a></li>
+          <li><a class="league-link" href="/pages/soccer/frauen-bundesliga.html.erb">Allianz Frauen-Bundesliga (Germany)</a></li>
+          <li><a class="league-link" href="/pages/soccer/fa_super_league.html.erb">FA Women's Super League (England)</a></li>
+          <li><a class="league-link" href="/pages/soccer/champions_league.html.erb">Champion's League</a></li>
+          <li><a class="league-link" href="/pages/soccer/nwl.html.erb">National Women’s League (New Zealand)</a></li>
+          <li><a class="league-link" href="/pages/soccer/w_league.html.erb">Westfield W-League (Australia)</a></li>
+          <li><a class="league-link" href="/pages/soccer/liga_mx.html.erb">Liga MX Femenil (Mexico)</a></li>
+          <li><a class="league-link" href="/pages/soccer/primera_division.html.erb">Primera División Femenina (Spain)</a></li>
+          <li><a class="league-link" href="/pages/soccer/series_a.html.erb">Serie A Women (Italy) </a></li>
+          <li><a class="league-link" href="/pages/soccer/fa_championship.html.erb">FA Women's Championship (England)</a></li>
+          <li><a class="league-link" href="/pages/soccer/damallsvenskan.html.erb">Damallsvenskan (Sweden)</a></li>
+          <li><a class="league-link" href="/pages/soccer/div1feminine.html.erb">Division 1 Féminine (France)</a></li>
+        </ul>
 
-    <!-- FIFA Leagues-->
-    <%= render 'shared/fifa_menu' %>
+        <!-- FIFA Leagues-->
+        <%= render 'shared/fifa_menu' %>
 
-    <!-- Ads within league menu panel-->
-    <div class="ad-container">
-      <div class="ad"></div>
-      <div class="ad"></div>
-      <div class="ad"></div>
-      <div class="ad"></div>
-    </div>
-  </div> <!-- league menu panel -->
+        <!-- Ads within league menu panel-->
+        <div class="ad-container">
+          <div class="ad"></div>
+          <div class="ad"></div>
+          <div class="ad"></div>
+          <div class="ad"></div>
+        </div>
+      </div> <!-- league menu panel -->
 
-  <!-- Large twitter list panel -->
-  <div class="col-md-5 large_twitter_list">
-    <!-- Top WoSo Journalists -->
-    <div class="panel-container d-flex justify-content-center">
-      <a class="twitter-timeline" data-link-color="#16A7D5" data-border-color="#FF6600" lang="EN" data-theme="dark" height="3039" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/top-woso-journalists?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
-  </div> <!-- End large twitter list panel -->
+      <!-- Large twitter list panel -->
+      <div class="col-md-5 large_twitter_list">
+        <!-- Top WoSo Journalists -->
+        <div class="panel-container d-flex justify-content-center">
+          <a class="twitter-timeline" data-link-color="#16A7D5" data-border-color="#FF6600" lang="EN" data-theme="dark" height="3039" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/top-woso-journalists?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div> <!-- End large twitter list panel -->
 
-  <!-- Start small twitter list panel-->
-  <div class="col-md-3 small_twitter_lists">
-    <!--WoSo Journalists-->
-    <div class="panel-container d-flex justify-content-center">
-      <a class="twitter-timeline widget-panel" data-link-color="#16A7D5" data-border-color="#00d37f" lang="EN" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/woso-journalists?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
-    <!-- Noteable WoSo Accounts -->
-    <div class="panel-container d-flex justify-content-center">
-      <a class="twitter-timeline widget-panel" data-link-color="#16A7D5" data-border-color="#17a6d4" lang="EN" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/notable-woso-accounts?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
-    <!-- Soccer Jouralists -->
-    <div class="panel-container d-flex justify-content-center">
-      <a class="twitter-timeline widget-panel" data-link-color="#16A7D5" data-border-color="#FF6600" lang="EN" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/soccer-journalists?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
-  </div> <!-- End small twitter list panel -->
+      <!-- Start small twitter list panel-->
+      <div class="col-md-3 small_twitter_lists">
+        <!--WoSo Journalists-->
+        <div class="panel-container d-flex justify-content-center">
+          <a class="twitter-timeline widget-panel" data-link-color="#16A7D5" data-border-color="#00d37f" lang="EN" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/woso-journalists?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <!-- Noteable WoSo Accounts -->
+        <div class="panel-container d-flex justify-content-center">
+          <a class="twitter-timeline widget-panel" data-link-color="#16A7D5" data-border-color="#17a6d4" lang="EN" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/notable-woso-accounts?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <!-- Soccer Jouralists -->
+        <div class="panel-container d-flex justify-content-center">
+          <a class="twitter-timeline widget-panel" data-link-color="#16A7D5" data-border-color="#FF6600" lang="EN" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/soccer-journalists?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div> <!-- End small twitter list panel -->
 
-</div> <!-- End Row 2 -->
-</div> <!-- End container-fluid  -->
-<!-- End Content -->
+    </div> <!-- End Row 2 -->
+  </div> <!-- End container-fluid  -->
+  <!-- End Content -->
 </body>
 
 </html>
