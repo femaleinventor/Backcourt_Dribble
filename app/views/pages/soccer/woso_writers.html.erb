@@ -11,100 +11,66 @@
     <!-- Start Row 1 -->
     <div class="row">
       <!-- Container for Sports Icon -->
-      <div class="col-sm-3 menu icon-container d-flex justify-content-center align-items-center">
+      <div class="col-md-3 menu icon-container d-flex justify-content-center align-items-center">
         <div> <!-- Icon image for sport -->
           <%= image_tag "small_sports/soccer_ball3.png", class: "img-fluid" %>
         </div> <!-- End Icon for sport -->
       </div> <!-- End Container for Sports Icon -->
 
       <!-- Page header -->
-      <div class="col-sm-8 banner menu">
+      <div class="col-md-8 banner menu">
         <div class="row">
           <!-- Logo-->
-          <div class="col-sm-4 orange d-flex align-items-center">
+          <div class="col-md-4 d-flex align-self-center justify-content-center">
+            <div class="align-items-center justify-content-center">
               <%= image_tag "logos/BCD_updated_color_sm2.jpg" %>
-          </div>
-          <!-- Links to internal site (sign up, dribble, etc.,)-->
-          <div class="col-sm-4"></div>
-          <div class="col-sm-4"></div>
-        </div>
-        <!-- Sports Navigation -->
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="d-flex align-items-end">
-              <nav class="navbar navbar-expand-lg navbar-trans bg-inverse">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#">Soccer <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="#">Basketball</a>
-                    <a class="nav-item nav-link" href="#">Rugby</a>
-                    <a class="nav-item nav-link" href="#">Tennis</a>
-                    <a class="nav-item nav-link" href="#">Volleyball</a>
-                  </div>
-                </div>
-              </nav>
             </div>
           </div>
+          <!-- Links to internal site (sign up, dribble, etc.,)-->
+          <!-- <div class="col-md-4 align-self-center">
+            <div class="d-flex justify-content-start">
+              <p class="banner-links">Play backcourt dribble and predict who will win upcoming matches</p>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button type="button" class="dribble btn btn-primary">Let's dribble!</button>
+            </div>
+            <div class="d-flex justify-content-end">
+              <p class="banner-links"> Just want to peek at the <a href="#">leaderboard</a>?</p>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex align-self-center justify-content-center">
+            <span class="banner-links"><a href="#">Login</a></span>
+            <span class="banner-links"><a href="#">Shop Our Store</a></span>
+          </div> -->
         </div>
-      </div>
-    </div> <!-- End Row 1 -->
+        <!-- Sports Navigation -->
+        <%= render 'shared/nav' %>
+      </div> <!-- End Row 1 -->
+    </div> <!-- End banner -->
 
     <!-- Start Row 2 -->
     <div class="row">
       <!-- League menu panel -->
-      <div class="col-sm-3 league_menu menu">
-        <p> Check out the WoSo's Wall! </p>
+      <div class="col-md-3 league_menu menu">
+        <!-- <p> Check out the WoSo's Wall! </p> -->
         <ul data-turbolinks="false">
           <li><a id="fifa" class="league-link" href="#">FIFA (National Teams)</a></li>
           <li><a class="league-link" href="/pages/soccer/nwsl.html.erb">National Women's Soccer League (USA)</a></li>
           <li><a class="league-link" href="/pages/soccer/frauen-bundesliga.html.erb">Allianz Frauen-Bundesliga (Germany)</a></li>
-          <li><a class="league-link" href="#">FA Women's Super League (England)</a></li>
-          <li><a class="league-link" href="#">National Women’s League (New Zealand)</a></li>
-          <li><a class="league-link" href="#">Westfield W-League (Australia)</a></li>
-          <li><a class="league-link" href="#">Liga MX Femenil (Mexico)</a></li>
-          <li><a class="league-link" href="#">Primera División Femenina (Spain)</a></li>
-          <li><a class="league-link" href="#">Serie A Women (Italy) </a></li>
-          <li><a class="league-link" href="#">FA Women's Championship (England)</a></li>
-          <li><a class="league-link" href="#">Damallsvenskan (Sweden)</a></li>
+          <li><a class="league-link" href="/pages/soccer/fa_super_league.html.erb">FA Women's Super League (England)</a></li>
+          <li><a class="league-link" href="/pages/soccer/champions_league.html.erb">Champion's League</a></li>
+          <li><a class="league-link" href="/pages/soccer/nwl.html.erb">National Women’s League (New Zealand)</a></li>
+          <li><a class="league-link" href="/pages/soccer/w_league.html.erb">Westfield W-League (Australia)</a></li>
+          <li><a class="league-link" href="/pages/soccer/liga_mx.html.erb">Liga MX Femenil (Mexico)</a></li>
+          <li><a class="league-link" href="/pages/soccer/primera_division.html.erb">Primera División Femenina (Spain)</a></li>
+          <li><a class="league-link" href="/pages/soccer/series_a.html.erb">Serie A Women (Italy) </a></li>
+          <li><a class="league-link" href="/pages/soccer/fa_championship.html.erb">FA Women's Championship (England)</a></li>
+          <li><a class="league-link" href="/pages/soccer/damallsvenskan.html.erb">Damallsvenskan (Sweden)</a></li>
+          <li><a class="league-link" href="/pages/soccer/div1feminine.html.erb">Division 1 Féminine (France)</a></li>
         </ul>
 
-        <!--FIFA Leagues-->
-        <ul data-turbolinks="false" class="fifa-league-link">
-          <a class="back-link" href="/">Back to All Leagues</a>
-          <li><a class="fifa-league-link" href="/pages/soccer/fifa/usa.html.erb">USA</a></li>
-          <li><a class="fifa-league-link" href="/pages/soccer/fifa/germany.html.erb">Germany</a></li>
-          <li><a class="fifa-league-link" href="/pages/soccer/fifa/england.html.erb">England</a></li>
-          <li><a class="fifa-league-link" href="#">Australia</a></li>
-          <li><a class="fifa-league-link" href="#">Canada</a></li>
-          <li><a class="fifa-league-link" href="/pages/soccer/fifa/france.html.erb">France</a></li>
-          <li><a class="fifa-league-link" href="#">Netherlands</a></li>
-          <li><a class="fifa-league-link" href="#">Brazil</a></li>
-          <li><a class="fifa-league-link" href="#">Japan</a></li>
-          <li><a class="fifa-league-link" href="#">Sweden</a></li>
-          <li><a class="fifa-league-link" href="#">North Korea</a></li>
-          <li><a class="fifa-league-link" href="#">Denmark</a></li>
-          <li><a class="fifa-league-link" href="#">Spain</a></li>
-          <li><a class="fifa-league-link" href="#">Norway</a></li>
-          <li><a class="fifa-league-link" href="#">South Korea</a></li>
-          <li><a class="fifa-league-link" href="#">China</a></li>
-          <li><a class="fifa-league-link" href="#">Italy</a></li>
-          <li><a class="fifa-league-link" href="#">New Zealand</a></li>
-          <li><a class="fifa-league-link" href="#">Switzerland</a></li>
-          <li><a class="fifa-league-link" href="#">Iceland</a></li>
-          <li><a class="fifa-league-link" href="#">Austria</a></li>
-          <li><a class="fifa-league-link" href="#">Scotland</a></li>
-          <li><a class="fifa-league-link" href="#">Belgium</a></li>
-          <li><a class="fifa-league-link" href="#">Colombia</a></li>
-          <li><a class="fifa-league-link" href="#">Russia</a></li>
-          <li><a class="fifa-league-link" href="#">Mexico</a></li>
-          <li><a class="fifa-league-link" href="#">Ukraine</a></li>
-          <li><a class="fifa-league-link" href="#">Finland</a></li>
-          <li><a class="fifa-league-link" href="#">Republic of Ireland</a></li>
-          <!-- <li><a class="league-link" href="#">Poland</a></li> -->
-        </ul>
+        <!-- FIFA Leagues-->
+        <%= render 'shared/fifa_menu' %>
 
         <!-- Ads within league menu panel-->
         <div class="ad-container">
@@ -116,16 +82,15 @@
       </div> <!-- league menu panel -->
 
       <!-- Large twitter list panel -->
-      <div class="col-sm-5 large_twitter_list">
+      <div class="col-md-5 large_twitter_list">
         <!-- Top WoSo Journalists -->
         <div class="panel-container d-flex justify-content-center">
-          <a class="twitter-timeline" data-link-color="#16A7D5
-          " data-border-color="#FF6600" lang="EN" data-theme="dark" height="3039" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/top-woso-journalists?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <a class="twitter-timeline" data-link-color="#16A7D5" data-border-color="#FF6600" lang="EN" data-theme="dark" height="3039" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/top-woso-journalists?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
       </div> <!-- End large twitter list panel -->
 
       <!-- Start small twitter list panel-->
-      <div class="col-sm-3 small_twitter_lists">
+      <div class="col-md-3 small_twitter_lists">
         <!--WoSo Journalists-->
         <div class="panel-container d-flex justify-content-center">
           <a class="twitter-timeline widget-panel" data-link-color="#16A7D5" data-border-color="#00d37f" lang="EN" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/woso-journalists?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -144,4 +109,5 @@
   </div> <!-- End container-fluid  -->
   <!-- End Content -->
 </body>
+
 </html>
