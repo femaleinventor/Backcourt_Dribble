@@ -27,9 +27,14 @@ hr {
    background-color: #16A7D5;
 }
 
+.test {
+  padding-top: 0px;
+}
+
 .btn.dribble {
   background-color: #16A7D5;
   border-color: #16A7D5;
+  margin: 1px;
 }
 
 .btn.dribble:hover {
@@ -46,6 +51,10 @@ a.league-link {
  color: #16A7D5;
 }
 
+a.league-link:hover {
+  color: #FF6600;
+}
+
 .back-link {
  color: #16A7D5;
 }
@@ -53,6 +62,18 @@ a.league-link {
 .fifa_team_link {
   color: #00D37f;
   text-align: center;
+}
+
+.fifa_team_link:hover {
+  color: #FF6600;
+}
+
+.sport {
+  color: #16A7D5;
+}
+
+.sport:hover {
+  color: #FF6600;
 }
 
 .league_menu {
@@ -80,12 +101,17 @@ a.league-link {
 }
 
 .banner {
-  height: 200px;
+  height: 225px;
   margin-left: 20px;
   margin-top: 10px;
   border-radius: 6px;
   margin-bottom: 7px;
 }
+
+.banner-links {
+  display: block;
+}
+
 .panel-container {
   margin-top: 20px;
   // border: 3px solid red;
@@ -125,6 +151,17 @@ a.league-link {
   color: #00d37F;
 }
 
+// .green {
+//   border: 2px solid green;
+// }
+//
+// .red {
+//   border: 2px solid red;
+// }
+//
+// .pink {
+//   border: 2px solid pink;
+// }
 
 
 // .fifa-league-link {

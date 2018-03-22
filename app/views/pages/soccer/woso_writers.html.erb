@@ -21,22 +21,32 @@
       <div class="col-md-8 banner menu">
         <div class="row">
           <!-- Logo-->
-          <div class="col-md-4 d-flex align-items-center">
+          <div class="col-md-4 d-flex align-self-center justify-content-center">
+            <div class="align-items-center justify-content-center">
               <%= image_tag "logos/BCD_updated_color_sm2.jpg" %>
+            </div>
           </div>
           <!-- Links to internal site (sign up, dribble, etc.,)-->
-          <div class="col-md-4">
-            <p>Play backcourt dribble and predict who will win upcoming matches</p>
-            <button type="button" class="dribble btn btn-primary btn-lg">Let's dribble!</button>
-            <p> Just want to peek at the <a href="#">leaderboard</a>?</p>
+          <div class="col-md-4 align-self-center">
+            <div class="d-flex justify-content-start">
+              <p class="banner-links">Play backcourt dribble and predict who will win upcoming matches</p>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button type="button" class="dribble btn btn-primary">Let's dribble!</button>
+            </div>
+            <div class="d-flex justify-content-end">
+              <p class="banner-links"> Just want to peek at the <a href="#">leaderboard</a>?</p>
+            </div>
           </div>
-          <div class="col-md-4"></div>
+          <div class="col-md-4 d-flex align-self-center justify-content-center">
+            <span class="banner-links"><a href="#">Login</a></span>
+            <span class="banner-links"><a href="#">Shop Our Store</a></span>
+          </div>
         </div>
         <!-- Sports Navigation -->
         <%= render 'shared/nav' %>
-
-      </div>
-    </div> <!-- End Row 1 -->
+      </div> <!-- End Row 1 -->
+    </div> <!-- End banner -->
 
     <!-- Start Row 2 -->
     <div class="row">
