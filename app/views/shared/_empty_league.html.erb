@@ -8,30 +8,7 @@
   <!-- Begin Content -->
   <div class="container-fluid">
 
-    <!-- Start Row 1 -->
-    <div class="row">
-      <!-- Container for Sports Icon -->
-      <div class="col-md-3 menu icon-container d-flex justify-content-center align-items-center">
-        <div> <!-- Icon image for sport -->
-          <%= image_tag "small_sports/soccer_ball3.png", class: "img-fluid" %>
-        </div> <!-- End Icon for sport -->
-      </div> <!-- End Container for Sports Icon -->
-
-      <!-- Page header -->
-      <div class="col-md-8 banner menu">
-        <div class="row">
-          <!-- Logo-->
-          <div class="col-md-4 orange d-flex align-items-center">
-            <%= image_tag "logos/BCD_updated_color_sm2.jpg" %>
-          </div>
-          <!-- Links to internal site (sign up, dribble, etc.,)-->
-          <div class="col-md-4"></div>
-          <div class="col-md-4"></div>
-        </div>
-        <!-- Sports Navigation -->
         <%= render 'shared/nav' %>
-      </div>
-    </div> <!-- End Row 1 -->
 
     <!-- Start Row 2 -->
     <div class="row">
@@ -56,7 +33,7 @@
 
         <!--FIFA Leagues-->
         <%= render 'shared/fifa_menu' %>
-      
+
 
         <!-- Ads within league menu panel-->
         <div class="ad-container">
