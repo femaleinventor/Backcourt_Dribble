@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--google analytics code, copied and pasted -->
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116284763-1"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- renders google ads to the site -->
+  <%= render 'shared/google_ads' %>
 
-  gtag('config', 'UA-116284763-1');
-  </script>
+  <!-- adds google analytics to the site -->
+  <%= render 'shared/google_analytics' %>
 
   <meta charset="utf-8">
   <title>Backcourt Dribble</title>
