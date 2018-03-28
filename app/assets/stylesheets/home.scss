@@ -17,14 +17,14 @@ li {
 }
 
 hr {
-   display: block;
-   margin-top: 0.5em;
-   margin-bottom: 0.5em;
-   margin-left: auto;
-   margin-right: auto;
-   border-style: inset;
-   border-width: 1px;
-   background-color: #16A7D5;
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  background-color: #16a7d5;
 }
 
 .test {
@@ -32,62 +32,62 @@ hr {
 }
 
 .btn.dribble {
-  background-color: #FF6600;
-  border-color: #FF6600;
+  background-color: #ff6600;
+  border-color: #ff6600;
   padding-left: 30px;
   padding-right: 30px;
   font-weight: bold;
 }
 
 .btn.dribble:hover {
-  background-color: #16A7D5;
-  border-color: #16A7D5;
+  background-color: #16a7d5;
+  border-color: #16a7d5;
 }
 
 .thank_you {
-  color: #16A7D5;
+  color: #16a7d5;
   text-align: center;
 }
 
 a.menu-link {
-  color: #16A7D5;
+  color: #16a7d5;
 }
 
 a.menu-link:hover {
-  color: #00D37f;
+  color: #00d37f;
 }
 
 a.league-link {
- color: #16A7D5;
+  color: #16a7d5;
 }
 
 a.league-link:hover {
-  color: #FF6600;
+  color: #ff6600;
 }
 
 .back-link {
- color: #16A7D5;
+  color: #16a7d5;
 }
 
 .fifa_team_link {
-  color: #00D37f;
+  color: #00d37f;
   text-align: left;
 }
 
 .fifa_team_link:hover {
-  color: #FF6600;
+  color: #ff6600;
 }
 
 .alert-text {
-  color: #FF6600;
+  color: #ff6600;
 }
 
 .sport {
-  color: #16A7D5;
+  color: #16a7d5;
 }
 
 .sport:hover {
-  color: #FF6600;
+  color: #ff6600;
 }
 
 .league_menu {
@@ -110,7 +110,7 @@ a.league-link:hover {
 }
 
 .placeholder_text {
-  color: #16A7D5;
+  color: #16a7d5;
   font-size: 1.2em;
   margin-top: 1.5em;
 }
@@ -132,7 +132,7 @@ a.league-link:hover {
 }
 
 .template-panel-container {
-  border: 1px solid #16A7D5;
+  border: 1px solid #16a7d5;
   margin-top: 20px;
 }
 
@@ -148,12 +148,12 @@ a.league-link:hover {
 }
 
 .menu {
-  background: #292F33;
+  background: #292f33;
 }
 
 .menu-nav {
   border-radius: 6px 6px 6px 6px;
-  background: #292F33;
+  background: #292f33;
 }
 
 .ad {
@@ -167,21 +167,23 @@ a.league-link:hover {
 }
 
 .active {
-  color: #00d37F;
+  color: #00d37f;
 }
 
-// .green {
-//   border: 2px solid green;
-// }
+.green {
+  border: 2px solid green;
+  color: blue;
+}
 //
-// .red {
-//   border: 2px solid red;
-// }
+.red {
+  border: 2px solid red;
+  color: blue;
+}
 //
-// .pink {
-//   border: 2px solid pink;
-// }
-
+.pink {
+  border: 2px solid pink;
+  color: blue;
+}
 
 // .fifa-league-link {
 //   display: "none";
