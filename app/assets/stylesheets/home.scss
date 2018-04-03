@@ -187,12 +187,14 @@ a.league-link:hover {
 .pink {
   border: 2px solid pink;
   color: blue;
+  height: 100vh;
 }
 
 .woso_words {
-  font-size: 5px;
+  font-size: 1.5em;
 }
-
+.woso_wall_container {
+}
 .woso_container {
   background-color: pink;
 }
