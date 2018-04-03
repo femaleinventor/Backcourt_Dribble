@@ -174,7 +174,6 @@ a.league-link:hover {
   color: #00d37f;
 }
 
-
 .green {
   border: 2px solid green;
   color: blue;
@@ -188,20 +187,20 @@ a.league-link:hover {
 .pink {
   border: 2px solid pink;
   color: blue;
+  height: 100vh;
 }
 
 .woso_words {
-
-  font-size: 2.5em;
+  font-size: 1.5em;
 }
-
+.woso_wall_container {
+}
 .woso_container {
   background-color: pink;
-  height: 3000px;
 }
 
 #bcd_blue {
- max-width: 100%;
+  max-width: 100%;
 }
 
 // .fifa-league-link {
