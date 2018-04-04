@@ -21,3 +21,28 @@ csv.each do |row|
   t.twitter_list = row['twitter_list']
   t.save
 end
+
+
+# country_list = [
+#   [ "Deutschland", 81831000 ],
+#   [ "Frankreich", 65447374 ],
+#   [ "Belgien", 10839905 ],
+#   [ "Niederlande", 16680000 ]
+# ]
+#
+# country_list.each do |country|
+#   Country.create( :name => country[0], :population => country[1] )
+# end
+
+sport_list = [
+  [ "Soccer", /../assets/images/small_sports/soccer_ball.png ],
+  [ "BasketBall", /../assets/images/small_sports/basket_ball.png],
+  [ "Rugby", /../assets/images/small_sports/rugby_ball.png],
+  [ "Ice Hockey", /../assets/images/small_sports/ice_hockey.png],
+  [ "Tennis", /../assets/images/small_sports/tennis_ball.png],
+  [ "Volleyball", /../assets/images/small_sports/tennis_ball.png]
+]
+
+sports_list.each do |sport|
+  Sport.create ( :name => country[0], :image_url => country[1] )
+end
