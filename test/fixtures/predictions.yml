@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guess: MyString
+  reason: MyText
+  correct: false
+  likes: 1
+  user: one
+  match: one
+
+two:
+  guess: MyString
+  reason: MyText
+  correct: false
+  likes: 1
+  user: two
+  match: two
