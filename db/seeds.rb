@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+# seed file has already been run
 require 'csv'
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'BCD_for_CSV_teams.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
@@ -22,25 +24,13 @@ csv.each do |row|
   t.save
 end
 
-
-# country_list = [
-#   [ "Deutschland", 81831000 ],
-#   [ "Frankreich", 65447374 ],
-#   [ "Belgien", 10839905 ],
-#   [ "Niederlande", 16680000 ]
-# ]
-#
-# country_list.each do |country|
-#   Country.create( :name => country[0], :population => country[1] )
-# end
-
 sport_list = [
-  [ "Soccer", /../assets/images/small_sports/soccer_ball.png ],
-  [ "BasketBall", /../assets/images/small_sports/basket_ball.png],
-  [ "Rugby", /../assets/images/small_sports/rugby_ball.png],
-  [ "Ice Hockey", /../assets/images/small_sports/ice_hockey.png],
-  [ "Tennis", /../assets/images/small_sports/tennis_ball.png],
-  [ "Volleyball", /../assets/images/small_sports/tennis_ball.png]
+  [ "Soccer", "/../assets/images/small_sports/soccer_ball.png" ],
+  [ "BasketBall", "/../assets/images/small_sports/basket_ball.png"],
+  [ "Rugby", "/../assets/images/small_sports/rugby_ball.png"],
+  [ "Ice Hockey", "/../assets/images/small_sports/ice_hockey.png"],
+  [ "Tennis", "/../assets/images/small_sports/tennis_ball.png"],
+  [ "Volleyball", "/../assets/images/small_sports/tennis_ball.png"]
 ]
 
 sports_list.each do |sport|
@@ -106,7 +96,108 @@ league_list = [
   [ "Australian Women's Rugby League (Australia)", "AWRL", 3],
   [ "Rugby Football League (England)", "RFL", 3],
   [ "National Women's Hockey League (USA)", "NWHL", 4],
-  [ "Canadian Women's Hockey League (USA)", "CWHL", 4],
   [ "Women's Tennis Association (USA)", "WTA", 5],
-  [ "Canadian Women's Hockey League (USA)", "CWHL", 6],
+  [ "Canadian Women's Hockey League (USA)", "CWHL", 6]
 ]
+
+league_list.each do |league|
+  League.create ( :name => league[0], :abbreviation => league[1], :sport_id => league[2], :twitter_list => league[3] )
+end
+
+venues_list = [
+  [ "Toyota Park", "Toyota Park", "7000 Harlem Ave, Bridgeview, IL 60455"],
+  [ "BBVA Compass Stadium", "BBVA_Compass.jpg", "2200 Texas St, Houston, TX 77003"],
+  [ "WakeMed Soccer Park", "Wake_Med.jpg", "201 Soccer Park Dr, Cary, NC 27511"],
+  [ "Orlando City Stadium", "Orlando.jpg", "655 W Church St, Orlando, FL 32805"],
+  [ "Providence Park", "Providence_Park.png", "1844 SW Morrison St, Portland, OR 97205"],
+  [ "Memorial Stadium", "Memorial_Stadium.jpg", "401 5th Ave N, Seattle, WA 98109"],
+  [ "Yurcak Field", "Yurcak_Field.jpg", "83 Fitch Rd, Piscataway Township, NJ 08854"],
+  [ "Rio Tinto Stadium", "Rio_Tinto_Stadium.jpeg", "9256 State St, Sandy, UT 84070"],
+  [ "Maryland SoccerPlex", "Maryland_Soccerplex.jpeg", "18031 Central Park Cir, Boyds, MD 20841"],
+  [ "Audi Field", "Audi_Field.jpg", "32-60 R St SW, Washington, DC 20024"],
+  [ "Avaya Stadium", "Avaya_Stadium.png", "1123 Coleman Ave, San Jose, CA 95110"],
+  [ "EverBank Field", "Everbank_Field.jpg", "1 Everbank Field Dr, Jacksonville, FL 32202"],
+  [ "Talen Energy Stadium", "Talen_Energy_Stadium.jpg", "1 Stadium Dr, Chester, PA 19013"],
+  [ "FirstEnergy Stadium", "FirstEnergy_Stadium.jpg", "100 Alfred Lerner Way, Cleveland, OH 44114"],
+  [ "Stade Guy-Piriou", "Stade_Guy-Pirious.jpg", "13 Rue de Keriolet, 29900 Concarneau"]
+]
+
+
+venues_list.each do |venue|
+  Venue.create ( :name => venue[0], :picture_url => venue[1], :address => venue[2] )
+end
+
+
+#need to add timezone to matches and to user
+# https://nandovieira.com/working-with-dates-on-ruby-on-rails
+# should home, away, or tie be numbers?
+matches_list = [
+  [ "home", "Lifetime", "MAR 24 2018", "12:00", "America/Sao_Paulo", 2, 7, 12, 1, 7 ],
+  [ "tie", "go90 App", "MAR 24 2018", "12:00", "America/Sao_Paulo", 2, "12", "8", "1", "3" ],
+  [ "away", "go90 App", "MAR 24 2018", "12:00", "America/Los_Angeles", "2", "13", "10", "1", "5" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+]
+
+matches_list.each do |match|
+  Match.create ( :result => match[0], :channel => match[1], :date => match[2], :time => match[3], :league_id => match[4], :away_team_id => match[5], :home_team_id => match[6], :sport_id => match[7], :venue_id => match[8] )
+end
+
+
+predictions_list = [
+  [ "home_team_id", "home field advantage", "yes/no", 3, ],
+  [ "away_team_id", "Sky blue is faster"],
+  [ "tie", "equally matched and a bunch of other things"],
+  [ "home_team_id", "more skilled"],
+  [ "home_team_id", "they are clicking on all levels"],
+]
+
+predictions_list.each do |prediction|
+  Prediction.create ( :guess => prediction[0], :reason => prediction[1], :correct => prediction[2], :likes => prediction[3], :user_id => prediction[4], :match_id => prediction[5])
+end
+
+
+
+users_list = [
+
+]
+
+# timezone
+# this is not turning the color i want
+users_list.each do |user|
+  User.create ( :name => user[0], :email => user[1], :username => user[2], :twitter_handle => user[3], :password_hash => user[4], :street_address => user[5], :city => user[6], :state => user[7], :zipcode => user[8], :country => user[9], :level => user[10], :stripeToken => user[11] )
+end
