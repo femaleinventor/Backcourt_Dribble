@@ -15,7 +15,6 @@ csv.each do |row|
   t = Team.new
   t.name = row['name']
   t.abbreviation = row['abbreviation']
-  t.home_field = row['home_field']
   t.nickname = row['nickname']
   t.bright_color = row['bright_color']
   t.light_color = row['light_color']
@@ -132,46 +131,16 @@ end
 # https://nandovieira.com/working-with-dates-on-ruby-on-rails
 # should home, away, or tie be numbers?
 matches_list = [
-  [ "home", "Lifetime", "MAR 24 2018", "12:00", "America/Sao_Paulo", 2, 7, 12, 1, 7 ],
-  [ "tie", "go90 App", "MAR 24 2018", "12:00", "America/Sao_Paulo", 2, "12", "8", "1", "3" ],
-  [ "away", "go90 App", "MAR 24 2018", "12:00", "America/Los_Angeles", "2", "13", "10", "1", "5" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  [ "home", "Lifetime", "MAR 24 2018", 12:00, "America/Sao_Paulo", 2, 7, 12, 1, 7 ],
+  [ "tie", "go90 App", "MAR 24 2018", 12:00, "America/Sao_Paulo", 2, 12, 8, 1, 3 ],
+  [ "away", "go90 App", "MAR 24 2018", 12:00, "America/Los_Angeles", 2, 13, 10, 1, 5 ],
+  [ "home_field", "Lifetime", "JUNE 24 2018", 14:00, "America/Los_Angeles", 2, 9, 11, 1, 3 ]
+  [ "away", "fox sports 1", "AUG 9 2018", 14:15, , "America/Los_Angeles", 2, 4, 6, 1, 2 ]
+  # [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  # [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+  # [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ]
 ]
+
 
 matches_list.each do |match|
   Match.create ( :result => match[0], :channel => match[1], :date => match[2], :time => match[3], :league_id => match[4], :away_team_id => match[5], :home_team_id => match[6], :sport_id => match[7], :venue_id => match[8] )
@@ -179,25 +148,29 @@ end
 
 
 predictions_list = [
-  [ "home_team_id", "home field advantage", "yes/no", 3, ],
-  [ "away_team_id", "Sky blue is faster"],
-  [ "tie", "equally matched and a bunch of other things"],
-  [ "home_team_id", "more skilled"],
-  [ "home_team_id", "they are clicking on all levels"],
+  [ "home_team_id", "home field advantage", "yes", 3, 2, 1],
+  [ "away_team_id", "Sky blue is faster", "no", 10, 3, 2],
+  [ "tie", "equally matched and a bunch of other things", "no", 6, 4, 2],
+  [ "home_team_id", "more skilled". "no", 5, 1, 3],
+  [ "home_team_id", "they are clicking on all levels", "yes", 8, 5, 4],
 ]
 
 predictions_list.each do |prediction|
-  Prediction.create ( :guess => prediction[0], :reason => prediction[1], :correct => prediction[2], :likes => prediction[3], :user_id => prediction[4], :match_id => prediction[5])
+  Prediction.create ( :guess => prediction[0], :reason => prediction[1], :correct => prediction[2], :likes => prediction[3], :user_id => prediction[4], :match_id => prediction[5] )
 end
 
 
 
 users_list = [
-
+  [ "name", "email", "username", "twitter_handle", "password_hash", "street_address", ],
+  [],
+  [],
+  [],
+  []
 ]
 
 # timezone
 # this is not turning the color i want
 users_list.each do |user|
-  User.create ( :name => user[0], :email => user[1], :username => user[2], :twitter_handle => user[3], :password_hash => user[4], :street_address => user[5], :city => user[6], :state => user[7], :zipcode => user[8], :country => user[9], :level => user[10], :stripeToken => user[11] )
+  User.create ( :name => user[0], :email => user[1], :username => user[2], :twitter_handle => user[3], :password_hash => user[4], :street_address => user[5], :city => user[6], :state => user[7], :zipcode => user[8], :country => user[9], :level => user[10], :stripeToken => user[11], :phone => user[12] )
 end
