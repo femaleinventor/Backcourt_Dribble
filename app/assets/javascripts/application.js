@@ -14,7 +14,8 @@
 // require jquery - was here before fullpage
 //= require jquery3
 //= require jquery_ujs
-//= require jquery.fullpage
+//= require fullpage.parallax.min
+//= require jquery.fullpage.extensions.min
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
