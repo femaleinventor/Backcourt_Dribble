@@ -162,7 +162,7 @@ end
 
 
 users_list = [
-  [ "name", "email", "username", "twitter_handle", "password_hash", "street_address", ],
+  [ "name", "email", "username", "twitter_handle", "street_address", "city", "state", "country", "level", "stripeToken", "encrypted_password", "sign_in_count" ],
   [],
   [],
   [],
