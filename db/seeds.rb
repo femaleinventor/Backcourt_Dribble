@@ -162,7 +162,7 @@ end
 
 
 users_list = [
-  [ "name", "email", "username", "twitter_handle", "street_address", "city", "state", "country", "level", "stripeToken", "encrypted_password", "sign_in_count" ],
+  [ "name", "email", "username", "twitter_handle", "street_address", "city", "state", "zipcode", "country", "level", "stripeToken", "encrypted_password", "sign_in_count" ],
   [],
   [],
   [],
@@ -172,5 +172,5 @@ users_list = [
 # timezone
 # this is not turning the color i want
 users_list.each do |user|
-  User.create ( :name => user[0], :email => user[1], :username => user[2], :twitter_handle => user[3], :password_hash => user[4], :street_address => user[5], :city => user[6], :state => user[7], :zipcode => user[8], :country => user[9], :level => user[10], :stripeToken => user[11], :phone => user[12] )
+  User.create ( :name => user[0], :email => user[1], :username => user[2], :twitter_handle => user[3], :encrypted_password => user[4], :street_address => user[5], :city => user[6], :state => user[7], :zipcode => user[8], :country => user[9], :level => user[10], :stripeToken => user[11], sign_in_count => user[12] )
 end
