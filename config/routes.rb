@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dribble/index'
+
   devise_for :users
   get 'match/index'
 
