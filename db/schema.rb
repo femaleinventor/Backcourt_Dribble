@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404012207) do
+ActiveRecord::Schema.define(version: 20180424233407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,17 @@ ActiveRecord::Schema.define(version: 20180404012207) do
     t.index ["venue_id"], name: "index_matches_on_venue_id"
   end
 
+  create_table "predictions", force: :cascade do |t|
+    t.string "guess"
+    t.text "reason"
+    t.boolean "correct?"
+    t.integer "likes"
+    t.bigint "user_id"
+    t.bigint "match_id"
+    t.index ["match_id"], name: "index_predictions_on_match_id"
+    t.index ["user_id"], name: "index_predictions_on_user_id"
+  end
+
   create_table "sports", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -69,10 +80,8 @@ ActiveRecord::Schema.define(version: 20180404012207) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "email"
     t.string "username"
     t.string "twitter_handle"
-    t.string "password_hash"
     t.string "street_address"
     t.string "city"
     t.string "state"
@@ -82,6 +91,18 @@ ActiveRecord::Schema.define(version: 20180404012207) do
     t.string "stripeToken"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "venues", force: :cascade do |t|
@@ -96,4 +117,6 @@ ActiveRecord::Schema.define(version: 20180404012207) do
   add_foreign_key "matches", "leagues"
   add_foreign_key "matches", "sports"
   add_foreign_key "matches", "venues"
+  add_foreign_key "predictions", "matches"
+  add_foreign_key "predictions", "users"
 end

@@ -1,6 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -61,6 +62,9 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "BCD_App_#{Rails.env}"
   config.action_mailer.perform_caching = false
+
+
+  config.action_mailer.default_url_options = { host: 'backcourtdribble.herokuapp.com'}
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
