@@ -136,9 +136,11 @@ matches_list = [
   [ "away", "go90 App", "MAR 24 2018", 12:00, "America/Los_Angeles", 2, 13, 10, 1, 5 ],
   [ "home_field", "Lifetime", "JUNE 24 2018", 14:00, "America/Los_Angeles", 2, 9, 11, 1, 3 ]
   [ "away", "fox sports 1", "AUG 9 2018", 14:15, , "America/Los_Angeles", 2, 4, 6, 1, 2 ]
+  # matches for games that haven't happened [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
   # [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  # [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  # [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ]
+  [ "nil", "go90 App", "SEP 8 2018", 19:00, , "America/New_York", 2, 8, 9, 1, 3 ]
+  [ "nil", "Lifetime", "SEP 8 2018", 19:00, , "America/New_York", 2, 8, 9, 1, 3 ]
+
 ]
 
 
