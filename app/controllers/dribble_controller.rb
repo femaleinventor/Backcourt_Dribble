@@ -9,4 +9,7 @@ class DribbleController < ApplicationController
       render :new_user_registration
     end
   end
+
+  
+
 end
