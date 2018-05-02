@@ -5,13 +5,11 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :trackable, :validatable
   has_many :predictions
 
-  # validate :restrict_username
-
   validates :username, exclusion: { in: %w(Tierna-Davidson Tierna_Davidson TiernaDavidson Tierna.Davidson Ashley-Hatch Ashley_Hatch AshleyHatch Ashley.Hatch Lynn-Williams Lynn_Williams LynnWilliams Lynn.Williams Sofia-Huerta Sofia_Huerta SofiaHuerta Sofia.Huerta Mallory-Pugh Mallory_Pugh MalloryPugh Mallory.Pugh Mal-Pugh Mal_Pugh MalPugh Mal.Pugh Julie-Johnston-Ertz Julie_Johnston_Ertz JulieJohnstonErtz Julie.Johnston.Ertz Julie-Johnston Julie_Johnston JulieJohnston Julie.Johnston Julie-Ertz Julie_Ertz JulieErtz Julie.Ertz Savannah-McCaskill Savannah_McCaskill SavannahMcCaskill Savannah.McCaskill Crystal-Dunn Crystal_Dunn CrystalDunn Crystal.Dunn Ashlyn-Harris Ashlyn_Harris AshlynHarris Ashlyn.Harris Ali-Krieger Ali_Krieger AliKrieger Ali.Krieger Abby-Wambach Abby_Wambach AbbyWambach Abby.Wambach Aly-Wagner Aly_Wagner AlyWagner Aly.Wagner Morgan-Brian Morgan_Brian MorganBrian Morgan.Brian Casey-Short Casey_Short CaseyShort Casey.Short),
-    message: "%{value} is reserved." }
+    message: "%{value} is a restricted username. Please choose another." }
 
 
-#NAMES TO
+#NAMES TO Add
 # Kelley-O'Hara
 # Kelley_O'Hara
 # KelleyO'Hara

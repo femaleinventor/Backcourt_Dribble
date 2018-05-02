@@ -23,6 +23,8 @@ csv.each do |row|
   t.save
 end
 
+#Initializing sports
+
 sport_list = [
   [ "Soccer", "/../assets/images/small_sports/soccer_ball.png" ],
   [ "BasketBall", "/../assets/images/small_sports/basket_ball.png"],
@@ -33,7 +35,7 @@ sport_list = [
 ]
 
 sports_list.each do |sport|
-  Sport.create ( :name => country[0], :image_url => country[1] )
+  Sport.create ( :name => sport[0], :image_url => sport[1] )
 end
 
 # how do i add foreign key information to seed data? #SPORT_ID
@@ -96,51 +98,48 @@ league_list = [
   [ "Rugby Football League (England)", "RFL", 3],
   [ "National Women's Hockey League (USA)", "NWHL", 4],
   [ "Women's Tennis Association (USA)", "WTA", 5],
-  [ "Canadian Women's Hockey League (USA)", "CWHL", 6]
+  [ "Canadian Women's Hockey League (USA)", "CWHL", 4]
 ]
 
 league_list.each do |league|
-  League.create ( :name => league[0], :abbreviation => league[1], :sport_id => league[2], :twitter_list => league[3] )
+  League.create ( :name => league[0], :abbreviation => league[1], :sport_id => league[2])
 end
 
 venues_list = [
-  [ "Toyota Park", "Toyota Park", "7000 Harlem Ave, Bridgeview, IL 60455"],
-  [ "BBVA Compass Stadium", "BBVA_Compass.jpg", "2200 Texas St, Houston, TX 77003"],
-  [ "WakeMed Soccer Park", "Wake_Med.jpg", "201 Soccer Park Dr, Cary, NC 27511"],
-  [ "Orlando City Stadium", "Orlando.jpg", "655 W Church St, Orlando, FL 32805"],
-  [ "Providence Park", "Providence_Park.png", "1844 SW Morrison St, Portland, OR 97205"],
-  [ "Memorial Stadium", "Memorial_Stadium.jpg", "401 5th Ave N, Seattle, WA 98109"],
-  [ "Yurcak Field", "Yurcak_Field.jpg", "83 Fitch Rd, Piscataway Township, NJ 08854"],
-  [ "Rio Tinto Stadium", "Rio_Tinto_Stadium.jpeg", "9256 State St, Sandy, UT 84070"],
-  [ "Maryland SoccerPlex", "Maryland_Soccerplex.jpeg", "18031 Central Park Cir, Boyds, MD 20841"],
-  [ "Audi Field", "Audi_Field.jpg", "32-60 R St SW, Washington, DC 20024"],
-  [ "Avaya Stadium", "Avaya_Stadium.png", "1123 Coleman Ave, San Jose, CA 95110"],
-  [ "EverBank Field", "Everbank_Field.jpg", "1 Everbank Field Dr, Jacksonville, FL 32202"],
-  [ "Talen Energy Stadium", "Talen_Energy_Stadium.jpg", "1 Stadium Dr, Chester, PA 19013"],
-  [ "FirstEnergy Stadium", "FirstEnergy_Stadium.jpg", "100 Alfred Lerner Way, Cleveland, OH 44114"],
-  [ "Stade Guy-Piriou", "Stade_Guy-Pirious.jpg", "13 Rue de Keriolet, 29900 Concarneau"]
+  [ "Toyota Park", "/../assets/images/venues/Toyota_Park.jpg", "7000 Harlem Ave, Bridgeview, IL 60455", "America/Chicago"],
+  [ "BBVA Compass Stadium", "/../assets/images/venues/BBVA_Compass.jpg", "2200 Texas St, Houston, TX 77003", "America/Chicago"],
+  [ "WakeMed Soccer Park", "/../assets/images/venues/Wake_Med.jpg", "201 Soccer Park Dr, Cary, NC 27511", "America/New_York"],
+  [ "Orlando City Stadium", "/../assets/images/venues/Orlando.jpg", "655 W Church St, Orlando, FL 32805", "America/New_York"],
+  [ "Providence Park", "/../assets/images/venues/Providence_Park.png", "1844 SW Morrison St, Portland, OR 97205","America/Los_Angeles"],
+  [ "Memorial Stadium", "/../assets/images/venues/Memorial_Stadium.jpg", "401 5th Ave N, Seattle, WA 98109", "America/Los_Angeles"],
+  [ "Yurcak Field", "/../assets/images/venues/Yurcak_Field.jpg", "83 Fitch Rd, Piscataway Township, NJ 08854", "America/New_York"],
+  [ "Rio Tinto Stadium", "/../assets/images/venues/Rio_Tinto_Stadium.jpeg", "9256 State St, Sandy, UT 84070", "America/Denver"],
+  [ "Maryland SoccerPlex", "/../assets/images/venues/Maryland_Soccerplex.jpeg", "18031 Central Park Cir, Boyds, MD 20841", "America/New_York"],
+  [ "Audi Field", "/../assets/images/venues/Audi_Field.jpg", "32-60 R St SW, Washington, DC 20024", "America/New_York"],
+  [ "Avaya Stadium", "/../assets/images/venues/Avaya_Stadium.png", "1123 Coleman Ave, San Jose, CA 95110","America/Los_Angeles"],
+  [ "EverBank Field", "/../assets/images/venues/Everbank_Field.jpg", "1 Everbank Field Dr, Jacksonville, FL 32202", "America/New_York"],
+  [ "Talen Energy Stadium", "/../assets/images/venues/Talen_Energy_Stadium.jpg", "1 Stadium Dr, Chester, PA 19013", "America/New_York"],
+  [ "FirstEnergy Stadium", "/../assets/images/venues/FirstEnergy_Stadium.jpg", "100 Alfred Lerner Way, Cleveland, OH 44114", "America/Chicago"],
+  [ "Stade Guy-Piriou", "/../assets/images/venues/Stade_Guy-Pirious.jpg", "13 Rue de Keriolet, 29900 Concarneau", "Europe/Paris"]
 ]
 
 
 venues_list.each do |venue|
-  Venue.create ( :name => venue[0], :picture_url => venue[1], :address => venue[2] )
+  Venue.create ( :name => venue[0], :picture_url => venue[1], :address => venue[2], :timezone => venue[3] )
 end
 
 
-#need to add timezone to matches and to user
-# https://nandovieira.com/working-with-dates-on-ruby-on-rails
-# should home, away, or tie be numbers?
-matches_list = [
-  [ "home", "Lifetime", "MAR 24 2018", 12:00, "America/Sao_Paulo", 2, 7, 12, 1, 7 ],
-  [ "tie", "go90 App", "MAR 24 2018", 12:00, "America/Sao_Paulo", 2, 12, 8, 1, 3 ],
-  [ "away", "go90 App", "MAR 24 2018", 12:00, "America/Los_Angeles", 2, 13, 10, 1, 5 ],
-  [ "home_field", "Lifetime", "JUNE 24 2018", 14:00, "America/Los_Angeles", 2, 9, 11, 1, 3 ]
-  [ "away", "fox sports 1", "AUG 9 2018", 14:15, , "America/Los_Angeles", 2, 4, 6, 1, 2 ]
-  # matches for games that haven't happened [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  # [ "result", "channel", "date", "time", , "timezone", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
-  [ "nil", "go90 App", "SEP 8 2018", 19:00, , "America/New_York", 2, 8, 9, 1, 3 ]
-  [ "nil", "Lifetime", "SEP 8 2018", 19:00, , "America/New_York", 2, 8, 9, 1, 3 ]
 
+# should home, away, or tie be numbers?
+# [ "result", "channel", "date", "time", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+matches_list = [
+  [ "home", "Lifetime", "MAR 24 2018", 12:00, 2, 7, 12, 1, 7 ],
+  [ "tie", "go90 App", "MAR 24 2018", 12:00, 2, 12, 8, 1, 3 ],
+  [ "away", "go90 App", "MAR 24 2018", 12:00, 2, 13, 10, 1, 5 ],
+  [ "home", "Lifetime", "JUNE 24 2018", 14:00, 2, 9, 11, 1, 3 ],
+  [ "away", "fox sports 1", "AUG 9 2018", 14:15, 2, 4, 6, 1, 2 ],
+  [ nil, "go90 App", "SEP 8 2018", 19:00, 2, 8, 9, 1, 3 ],
+  [ nil, "Lifetime", "SEP 8 2018", 19:00, 2, 14, 7, 1, 8 ]
 ]
 
 
@@ -150,11 +149,11 @@ end
 
 
 predictions_list = [
-  [ "home_team_id", "home field advantage", "yes", 3, 2, 1],
-  [ "away_team_id", "Sky blue is faster", "no", 10, 3, 2],
-  [ "tie", "equally matched and a bunch of other things", "no", 6, 4, 2],
-  [ "home_team_id", "more skilled". "no", 5, 1, 3],
-  [ "home_team_id", "they are clicking on all levels", "yes", 8, 5, 4],
+  [ "home", "home field advantage", true, 3, 2, 1],
+  [ "away", "Sky blue is faster", false, 10, 3, 2],
+  [ "tie", "equally matched and a bunch of other things", false, 6, 4, 2],
+  [ "home", "more skilled", false, 5, 1, 3],
+  [ "away", "they are clicking on all levels", true, 8, 5, 4]
 ]
 
 predictions_list.each do |prediction|
@@ -162,17 +161,15 @@ predictions_list.each do |prediction|
 end
 
 
-
+# [ "name", "email", "username", "twitter_handle", "street_address", "city", "state", "zipcode", "country", "level", "stripeToken", "encrypted_password", "sign_in_count" ],
 users_list = [
-  [ "name", "email", "username", "twitter_handle", "street_address", "city", "state", "zipcode", "country", "level", "stripeToken", "encrypted_password", "sign_in_count" ],
-  [],
-  [],
-  [],
-  []
+  ["Ethan Fertsch", "ethan@mail.com", "efertsch", "@ethanlovesdogs", "2 Salem Green", "Salem", "MA", "01970", "USA", "admin", nil, "password"],
+  ["Angie Dale", "angie@mail.com", "adale91", "@angielovesdogs", "865 Franklin St", "Melrose", "MA", "02176", "USA", "user", nil, "password"],
+  [ "Denise Duffy", "denise@deniseduffy.com", "female inventor", "@denise_duffy", "142 Whitney Street", "San Francisco", "USA", "CA",  "94131", "admin", "BQokikJOvBiI2HlWgH4olfQ2", "password-1", 50],
+  [ "Mike Duffy", "mike.duffy@usa.com", "big bro", "@hao_cleats", "2700 Great Highway", "San Francisco", "CA", "96161", "USA", "user", "BQokikJOvBiI2HlWgH4olfQ3", "password-2", 2]
 ]
 
-# timezone
 # this is not turning the color i want
 users_list.each do |user|
-  User.create ( :name => user[0], :email => user[1], :username => user[2], :twitter_handle => user[3], :encrypted_password => user[4], :street_address => user[5], :city => user[6], :state => user[7], :zipcode => user[8], :country => user[9], :level => user[10], :stripeToken => user[11], sign_in_count => user[12] )
+  User.create(:name => user[0], :email => user[1], :username => user[2], :twitter_handle => user[3], :street_address => user[4], :city => user[5], :state => user[6], :zipcode => user[7], :country => user[8], :level => user[9], :stripeToken => user[10], :encrypted_password => user[11], sign_in_count => user[12])
 end
