@@ -6,6 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# User.destroy_all
+# Team.destroy_all
+# League.destroy_all
+# Match.destroy_all
+# Sport.destroy_all
+# Prediction.destroy_all
+
 
 # seed file has already been run
 require 'csv'
@@ -34,8 +41,8 @@ sport_list = [
   [ "Volleyball", "/../assets/images/small_sports/tennis_ball.png"]
 ]
 
-sports_list.each do |sport|
-  Sport.create ( :name => sport[0], :image_url => sport[1] )
+sport_list.each do |sport|
+  Sport.create(name: sport[0], image_url: sport[1])
 end
 
 # how do i add foreign key information to seed data? #SPORT_ID
@@ -102,7 +109,7 @@ league_list = [
 ]
 
 league_list.each do |league|
-  League.create ( :name => league[0], :abbreviation => league[1], :sport_id => league[2])
+  League.create(name: league[0], abbreviation: league[1], sport_id: league[2])
 end
 
 venues_list = [
@@ -125,7 +132,7 @@ venues_list = [
 
 
 venues_list.each do |venue|
-  Venue.create ( :name => venue[0], :picture_url => venue[1], :address => venue[2], :timezone => venue[3] )
+  Venue.create(name: venue[0], picture_url: venue[1], address: venue[2], timezone: venue[3])
 end
 
 
@@ -133,18 +140,18 @@ end
 # should home, away, or tie be numbers?
 # [ "result", "channel", "date", "time", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
 matches_list = [
-  [ "home", "Lifetime", "MAR 24 2018", 12:00, 2, 7, 12, 1, 7 ],
-  [ "tie", "go90 App", "MAR 24 2018", 12:00, 2, 12, 8, 1, 3 ],
-  [ "away", "go90 App", "MAR 24 2018", 12:00, 2, 13, 10, 1, 5 ],
-  [ "home", "Lifetime", "JUNE 24 2018", 14:00, 2, 9, 11, 1, 3 ],
-  [ "away", "fox sports 1", "AUG 9 2018", 14:15, 2, 4, 6, 1, 2 ],
-  [ nil, "go90 App", "SEP 8 2018", 19:00, 2, 8, 9, 1, 3 ],
-  [ nil, "Lifetime", "SEP 8 2018", 19:00, 2, 14, 7, 1, 8 ]
+  [ "home", "Lifetime", "MAR 24 2018", '12:15:00', 2, 7, 12, 1, 7 ],
+  [ "tie", "go90 App", "MAR 24 2018", '12:00:00', 2, 12, 8, 1, 3 ],
+  [ "away", "go90 App", "MAR 24 2018", '12:00:00', 2, 13, 10, 1, 5 ],
+  [ "home", "Lifetime", "JUNE 24 2018", '14:00:00', 2, 9, 11, 1, 3 ],
+  [ "away", "fox sports 1", "AUG 9 2018", '14:15:00', 2, 4, 6, 1, 2 ],
+  [ nil, "go90 App", "SEP 8 2018", '19:00:00', 2, 8, 9, 1, 3 ],
+  [ nil, "Lifetime", "SEP 8 2018", '19:00:00', 2, 14, 7, 1, 8 ]
 ]
 
 
 matches_list.each do |match|
-  Match.create ( :result => match[0], :channel => match[1], :date => match[2], :time => match[3], :league_id => match[4], :away_team_id => match[5], :home_team_id => match[6], :sport_id => match[7], :venue_id => match[8] )
+  Match.create(result: match[0], channel: match[1], date: match[2], time: match[3], league_id: match[4], away_team_id: match[5], home_team_id: match[6], sport_id: match[7], venue_id: match[8] )
 end
 
 
@@ -157,7 +164,7 @@ predictions_list = [
 ]
 
 predictions_list.each do |prediction|
-  Prediction.create ( :guess => prediction[0], :reason => prediction[1], :correct => prediction[2], :likes => prediction[3], :user_id => prediction[4], :match_id => prediction[5] )
+  Prediction.create(guess: prediction[0], reason: prediction[1], correct?: prediction[2], likes: prediction[3], user_id: prediction[4], match_id: prediction[5])
 end
 
 
@@ -165,11 +172,11 @@ end
 users_list = [
   ["Ethan Fertsch", "ethan@mail.com", "efertsch", "@ethanlovesdogs", "2 Salem Green", "Salem", "MA", "01970", "USA", "admin", nil, "password"],
   ["Angie Dale", "angie@mail.com", "adale91", "@angielovesdogs", "865 Franklin St", "Melrose", "MA", "02176", "USA", "user", nil, "password"],
-  [ "Denise Duffy", "denise@deniseduffy.com", "female inventor", "@denise_duffy", "142 Whitney Street", "San Francisco", "USA", "CA",  "94131", "admin", "BQokikJOvBiI2HlWgH4olfQ2", "password-1", 50],
-  [ "Mike Duffy", "mike.duffy@usa.com", "big bro", "@hao_cleats", "2700 Great Highway", "San Francisco", "CA", "96161", "USA", "user", "BQokikJOvBiI2HlWgH4olfQ3", "password-2", 2]
+  ["Denise Duffy", "denise@deniseduffy.com", "female inventor", "@denise_duffy", "142 Whitney Street", "San Francisco", "USA", "CA",  "94131", "admin", "BQokikJOvBiI2HlWgH4olfQ2", "password-1", 50],
+  ["Mike Duffy", "mike.duffy@usa.com", "big bro", "@hao_cleats", "2700 Great Highway", "San Francisco", "CA", "96161", "USA", "user", "BQokikJOvBiI2HlWgH4olfQ3", "password-2", 2]
 ]
 
 # this is not turning the color i want
 users_list.each do |user|
-  User.create(:name => user[0], :email => user[1], :username => user[2], :twitter_handle => user[3], :street_address => user[4], :city => user[5], :state => user[6], :zipcode => user[7], :country => user[8], :level => user[9], :stripeToken => user[10], :encrypted_password => user[11], sign_in_count => user[12])
+  User.create(name: user[0], email: user[1], username: user[2], twitter_handle: user[3], street_address: user[4], city: user[5], state: user[6], zipcode: user[7], country: user[8], level: user[9], stripeToken: user[10], encrypted_password: user[11])
 end

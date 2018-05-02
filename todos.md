@@ -4,4 +4,6 @@
 
 
 ## Database
-1. Get rid of twitter list in leagues table 
+1. Get rid of twitter list in leagues table
+2. DateTime Object for Match model
+3. Seed that database!
