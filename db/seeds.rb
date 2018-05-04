@@ -1,17 +1,17 @@
 # This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+# The data can then be loaded with the rails db:seed command (or create!d alongside the database with db:setup).
 #
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.destroy_all
-# Team.destroy_all
-# League.destroy_all
-# Match.destroy_all
-# Sport.destroy_all
-# Prediction.destroy_all
+User.destroy_all
+Team.destroy_all
+League.destroy_all
+Match.destroy_all
+Sport.destroy_all
+Prediction.destroy_all
 
 
 # seed file has already been run
@@ -27,7 +27,7 @@ csv.each do |row|
   t.light_color = row['light_color']
   t.dark_color = row['dark_color']
   t.twitter_list = row['twitter_list']
-  t.save
+  t.save!
 end
 
 #Initializing sports
@@ -42,10 +42,10 @@ sport_list = [
 ]
 
 sport_list.each do |sport|
-  Sport.create(name: sport[0], image_url: sport[1])
+  Sport.create!(name: sport[0], image_url: sport[1])
 end
 
-# how do i add foreign key information to seed data? #SPORT_ID
+# # how do i add foreign key information to seed data? #SPORT_ID
 league_list = [
   [ "FIFA (Worldwide National Teams)", "FIFA", 1],
   [ "National Women's Soccer League (USA)", "NWSL", 1],
@@ -109,7 +109,7 @@ league_list = [
 ]
 
 league_list.each do |league|
-  League.create(name: league[0], abbreviation: league[1], sport_id: league[2])
+  League.create!(name: league[0], abbreviation: league[1], sport_id: league[2])
 end
 
 venues_list = [
@@ -132,7 +132,7 @@ venues_list = [
 
 
 venues_list.each do |venue|
-  Venue.create(name: venue[0], picture_url: venue[1], address: venue[2], timezone: venue[3])
+  Venue.create!(name: venue[0], picture_url: venue[1], address: venue[2], timezone: venue[3])
 end
 
 
@@ -151,7 +151,20 @@ matches_list = [
 
 
 matches_list.each do |match|
-  Match.create(result: match[0], channel: match[1], date: match[2], time: match[3], league_id: match[4], away_team_id: match[5], home_team_id: match[6], sport_id: match[7], venue_id: match[8] )
+  Match.create!(result: match[0], channel: match[1], date: match[2], time: match[3], league_id: match[4], away_team_id: match[5], home_team_id: match[6], sport_id: match[7], venue_id: match[8] )
+end
+
+# [ "name", "username", "twitter_handle", "street_address", "city", "state", "zipcode", "country", "level", "stripeToken", "email", encrypted_password ],
+users_list = [
+  ["Ethan Fertsch", "efertsch", "@ethanlovesdogs",  "2 Salem Green", "Salem", "MA", "01970", "USA", "admin", "00000", "ethan@mail.com", "password"],
+  ["Angie Dale", "adale91", "@angielovesdogs", "865 Franklin St", "Melrose", "MA", "02176", "USA", "user", "00000", "angie@mail.com", "password"],
+  ["Denise Duffy", "female inventor", "@denise_duffy", "142 Whitney Street", "San Francisco", "USA", "CA",  "94131", "admin", "BQokikJOvBiI2HlWgH4olfQ2", "denise@deniseduffy.com", "password-1", 50],
+  ["Mike Duffy", "big bro", "@hao_cleats", "2700 Great Highway", "San Francisco", "CA", "96161", "USA", "user", "BQokikJOvBiI2HlWgH4olfQ3", "mike.duffy@usa.com", "password-2", 2]
+]
+
+# this is not turning the color i want
+users_list.each do |user|
+  User.create!(name: user[0], username: user[1], twitter_handle: user[2], street_address: user[3], city: user[4], state: user[5], zipcode: user[6], country: user[7], level: user[8], stripeToken: user[9], email: user[10], password: user[11])
 end
 
 
@@ -160,23 +173,16 @@ predictions_list = [
   [ "away", "Sky blue is faster", false, 10, 3, 2],
   [ "tie", "equally matched and a bunch of other things", false, 6, 4, 2],
   [ "home", "more skilled", false, 5, 1, 3],
-  [ "away", "they are clicking on all levels", true, 8, 5, 4]
+  [ "away", "they are clicking on all levels", true, 8, 2, 4]
 ]
 
 predictions_list.each do |prediction|
-  Prediction.create(guess: prediction[0], reason: prediction[1], correct?: prediction[2], likes: prediction[3], user_id: prediction[4], match_id: prediction[5])
+  Prediction.create!(guess: prediction[0], reason: prediction[1], correct?: prediction[2], likes: prediction[3], user_id: prediction[4], match_id: prediction[5])
 end
 
-
-# [ "name", "email", "username", "twitter_handle", "street_address", "city", "state", "zipcode", "country", "level", "stripeToken", "encrypted_password", "sign_in_count" ],
-users_list = [
-  ["Ethan Fertsch", "ethan@mail.com", "efertsch", "@ethanlovesdogs", "2 Salem Green", "Salem", "MA", "01970", "USA", "admin", nil, "password"],
-  ["Angie Dale", "angie@mail.com", "adale91", "@angielovesdogs", "865 Franklin St", "Melrose", "MA", "02176", "USA", "user", nil, "password"],
-  ["Denise Duffy", "denise@deniseduffy.com", "female inventor", "@denise_duffy", "142 Whitney Street", "San Francisco", "USA", "CA",  "94131", "admin", "BQokikJOvBiI2HlWgH4olfQ2", "password-1", 50],
-  ["Mike Duffy", "mike.duffy@usa.com", "big bro", "@hao_cleats", "2700 Great Highway", "San Francisco", "CA", "96161", "USA", "user", "BQokikJOvBiI2HlWgH4olfQ3", "password-2", 2]
-]
-
-# this is not turning the color i want
-users_list.each do |user|
-  User.create(name: user[0], email: user[1], username: user[2], twitter_handle: user[3], street_address: user[4], city: user[5], state: user[6], zipcode: user[7], country: user[8], level: user[9], stripeToken: user[10], encrypted_password: user[11])
-end
+# Issues:
+# encrypted_password => password as specified in devise docs
+# added 'optional: true' to belongs_to associations
+# had to drop database because even though all records are destroyed the ids continue to be reserved. (Did not match up)
+# Had to remove 'remove email from users' migration 
+# Small issues where certain foreign keys werent present (i.e. predictions list where user 5 made the predicition but we only had 4...)
