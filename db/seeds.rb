@@ -27,8 +27,10 @@ csv.each do |row|
   t.light_color = row['light_color']
   t.dark_color = row['dark_color']
   t.twitter_list = row['twitter_list']
+  t.sport_id = row['sport_id']
   t.save!
 end
+
 
 #Initializing sports
 
@@ -112,6 +114,34 @@ league_list.each do |league|
   League.create!(name: league[0], abbreviation: league[1], sport_id: league[2])
 end
 
+# leagues_and_teams = [
+#   [1,15],
+#   [1,16],
+#   [1,17],
+#   [1,20],
+#   [1,21],
+#   [1,22],
+#   [1,23],
+#   [1,26],
+#   [1,27],
+#   [1,28],
+#   [1,29],
+#   [1,32],
+#   [1,33],
+#   [1,34],
+#   [1,35],
+#   [2,5],
+#   [2,6],
+#   [2,7],
+#   [2,8],
+#   [2,9],
+#   [2,10],
+#   [2,11],
+#   [2,12],
+#   [2,13]
+# ]
+
+
 venues_list = [
   [ "Toyota Park", "/../assets/images/venues/Toyota_Park.jpg", "7000 Harlem Ave, Bridgeview, IL 60455", "America/Chicago"],
   [ "BBVA Compass Stadium", "/../assets/images/venues/BBVA_Compass.jpg", "2200 Texas St, Houston, TX 77003", "America/Chicago"],
@@ -184,5 +214,5 @@ end
 # encrypted_password => password as specified in devise docs
 # added 'optional: true' to belongs_to associations
 # had to drop database because even though all records are destroyed the ids continue to be reserved. (Did not match up)
-# Had to remove 'remove email from users' migration 
+# Had to remove 'remove email from users' migration
 # Small issues where certain foreign keys werent present (i.e. predictions list where user 5 made the predicition but we only had 4...)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180501234732) do
+ActiveRecord::Schema.define(version: 20180505002834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 20180501234732) do
     t.string "twitter_list"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "sport_id"
+    t.index ["sport_id"], name: "index_teams_on_sport_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -120,4 +122,5 @@ ActiveRecord::Schema.define(version: 20180501234732) do
   add_foreign_key "matches", "venues"
   add_foreign_key "predictions", "matches"
   add_foreign_key "predictions", "users"
+  add_foreign_key "teams", "sports"
 end
