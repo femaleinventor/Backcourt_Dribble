@@ -6,4 +6,7 @@
 ## Database
 1. Get rid of twitter list in leagues table
 2. DateTime Object for Match model
-3. Seed that database!
+
+##Misc.
+1. Re-structure terms of service (make it pretty!)
+2. Autofill checkbox if user clicks accept button of modal
