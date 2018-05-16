@@ -1,11 +1,39 @@
-<h1>Dribble#index</h1>
-<p>Find me in app/views/dribble/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fullpagejs - Practice</title>
+  </head>
+  <body>
 
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path  %> |
-  <%= link_to "Login", new_user_session_path  %>
-<% end %>
+    <div id="fullpage">
+	     <div class="section fp-bg">
+         <div class="container">
+           <div class="row">
+             <div class="col-xs-12">
+               <h1>Soccer</h1>
+             </div>
+           </div>
+         </div>
+       </div>
+	     <div class="section fp-bg">
+         <h1>Basketball</h1>
+       </div>
+       <div class="section fp-bg">
+         <h1>Hockey</h1>
+       </div>
+       <div class="section fp-bg">
+         <h1>Rugby</h1>
+       </div>
+	     <div class="section fp-bg">
+         <h1>Tennis</h1>
+       </div>
+       <div class="section fp-bg">
+         <h1>Volleyball</h1>
+       </div>
+       <div class="section fp-bg">
+         <h1>Softball</h1>
+       </div>
+    </div>
+  </body>
+</html>
