@@ -19,6 +19,9 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Integrate Slick Carousel 
+gem "jquery-slick-rails"
+
 gem 'devise'
 
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'

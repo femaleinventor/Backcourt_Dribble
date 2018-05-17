@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require fullpage.parallax.min
 //= require jquery.fullpage.extensions.min
+//= require jquery.slick
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
