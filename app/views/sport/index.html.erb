@@ -10,8 +10,24 @@
   <body>
 
     <div id="fullpage">
-	       <div class="section fp-bg">
-               <h1>Soccer</h1>
+           <% @sports.each do |sport| %>
+           <div class="section fp-bg">
+               <h1><%=sport.name%></h1>
+
+            <% sport.leagues.each do |league| %>
+               <!-- <div class="carousel"> -->
+                 <div>
+                   <% if league.matches.length > 0 %>
+                      <a href="/dribble/<%=sport.id%>/<%=league.id%>/matches"><%=league.name%></a>
+                   <% end %>
+                 </div>
+               <!-- </div> -->
+              <% end %>
+          </div>
+           <% end %>
+
+
+               <!-- <h1>Soccer</h1>
              <div class="carousel">
                <div class="league-selector">
                  <p>league 1</p>
@@ -32,10 +48,10 @@
                  <p>league 6</p>
                </div>
              </div>
-           </div>
+           </div> -->
 
 
-	     <div class="section fp-bg">
+	     <!-- <div class="section fp-bg">
          <h1>Basketball</h1>
        </div>
        <div class="section fp-bg">
@@ -52,7 +68,7 @@
        </div>
        <div class="section fp-bg">
          <h1>Softball</h1>
-       </div>
+       </div> -->
     </div>
   </body>
 </html>

@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
+
+  resources :sports do
+    resources :leagues
+  end
+
   get 'shop/index'
 
   get 'tweets/index'
 
   get 'wall/index'
 
-  get 'dribble/index'
+  # get 'sport/index'
 
   devise_for :users
+
   get 'match/index'
 
   get 'pages/soccer/woso_writers' => 'high_voltage/pages#show', id: 'woso_writers'

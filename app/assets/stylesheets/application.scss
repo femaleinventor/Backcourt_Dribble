@@ -15,7 +15,7 @@
  */
 @import "bootstrap";
 @import "slick";
-@import 'slick-theme';
+// @import 'slick-theme';
 
 body {
   // background: black;
@@ -25,4 +25,8 @@ body {
 .terms {
   color: black;
   text-align: left;
+}
+
+#fullpage.p {
+  color: black;
 }
