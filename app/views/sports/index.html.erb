@@ -18,7 +18,8 @@
                <!-- <div class="carousel"> -->
                  <div>
                    <% if league.matches.length > 0 %>
-                      <a href="/dribble/<%=sport.id%>/<%=league.id%>/matches"><%=league.name%></a>
+                      <!-- <a href="/<%=sport.id%>/<%=league.id%>/matches"><%=league.name%></a> -->
+                      <%= link_to "NWSL", league_matches_path(league) %>
                    <% end %>
                  </div>
                <!-- </div> -->

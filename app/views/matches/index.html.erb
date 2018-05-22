@@ -1,0 +1,14 @@
+
+<%= @matches.each do |match| %>
+  <% home_team = Team.find(match.home_team_id) %>
+  <% away_team = Team.find(match.away_team_id) %>
+  <h1> <%= home_team.name %> vs. <%=  away_team.name %> </h1>
+
+  <p><%=match.result%></p>
+  <p><%=match.channel%></p>
+  <p><%=match.date%></p>
+  <p><%=match.time%></p>
+  <p><%=match.league.name%></p>
+  <p><%=match.venue.name%></p>
+  <hr>
+<% end %>

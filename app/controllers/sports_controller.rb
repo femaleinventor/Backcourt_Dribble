@@ -1,4 +1,4 @@
-class SportController < ApplicationController
+class SportsController < ApplicationController
 
   protect_from_forgery with: :exception
   before_action :authenticate_user!
@@ -9,4 +9,5 @@ class SportController < ApplicationController
     end
     @sports = Sport.all
   end
+
 end

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SportControllerTest < ActionDispatch::IntegrationTest
+class SportsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

@@ -4,13 +4,16 @@ Rails.application.routes.draw do
     resources :leagues
   end
 
+  resources :leagues do
+    resources :matches
+  end
+
   get 'shop/index'
 
   get 'tweets/index'
 
   get 'wall/index'
 
-  # get 'sport/index'
 
   devise_for :users
 
