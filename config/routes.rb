@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :sports do
-    resources :leagues
-  end
-
-  resources :leagues do
-    resources :matches
-  end
+  git 
 
   get 'shop/index'
 
