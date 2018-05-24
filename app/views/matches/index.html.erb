@@ -12,3 +12,29 @@
   <p><%=match.venue.name%></p>
   <hr>
 <% end %>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fullpagejs - Practice</title>
+  </head>
+  <body>
+
+      <div id="fullpage">
+           <% @matches.each do |match| %>
+            <% home_team = Team.find(match.home_team_id) %>
+            <% away_team = Team.find(match.away_team_id) %>
+            <div class="section fp-bg">
+             <h1> <%= home_team.name %> vs. <%=  away_team.name %> </h1>
+             <p><%=match.result%></p>
+             <p><%=match.channel%></p>
+             <p><%=match.date%></p>
+             <p><%=match.time%></p>
+             <p><%=match.league.name%></p>
+             <p><%=match.venue.name%></p>
+           </div>
+          <% end %>
+      </div>
+  </body>
+</html>

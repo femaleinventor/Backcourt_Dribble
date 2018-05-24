@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
-  git 
+  resources :sports do
+    resources :leagues
+  end
+
+  resources :leagues do
+    resources :matches
+  end
+
 
   get 'shop/index'
 
@@ -11,7 +18,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get 'match/index'
+  # get 'match/index'
 
   get 'pages/soccer/woso_writers' => 'high_voltage/pages#show', id: 'woso_writers'
 

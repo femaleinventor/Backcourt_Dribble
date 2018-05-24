@@ -18,14 +18,17 @@
                <!-- <div class="carousel"> -->
                  <div>
                    <% if league.matches.length > 0 %>
-                      <!-- <a href="/<%=sport.id%>/<%=league.id%>/matches"><%=league.name%></a> -->
                       <%= link_to "NWSL", league_matches_path(league) %>
                    <% end %>
                  </div>
                <!-- </div> -->
               <% end %>
-          </div>
+            </div>
            <% end %>
+    </div>
+  </body>
+</html>
+
 
 
                <!-- <h1>Soccer</h1>
@@ -70,6 +73,3 @@
        <div class="section fp-bg">
          <h1>Softball</h1>
        </div> -->
-    </div>
-  </body>
-</html>

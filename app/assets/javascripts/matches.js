@@ -6,3 +6,7 @@ $(document).ready(function() {
     sectionsColor: ['yellow', 'orange', '#C0C0C0', '#ADD8E6']
   });
 });
+
+// $(document).ready(function() {
+// 	$('#fullpage').fullpage();
+// });
