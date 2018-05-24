@@ -1,18 +1,3 @@
-
-<%= @matches.each do |match| %>
-  <% home_team = Team.find(match.home_team_id) %>
-  <% away_team = Team.find(match.away_team_id) %>
-  <h1> <%= home_team.name %> vs. <%=  away_team.name %> </h1>
-
-  <p><%=match.result%></p>
-  <p><%=match.channel%></p>
-  <p><%=match.date%></p>
-  <p><%=match.time%></p>
-  <p><%=match.league.name%></p>
-  <p><%=match.venue.name%></p>
-  <hr>
-<% end %>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -25,7 +10,7 @@
            <% @matches.each do |match| %>
             <% home_team = Team.find(match.home_team_id) %>
             <% away_team = Team.find(match.away_team_id) %>
-            <div class="section fp-bg">
+            <div id="test" class="section fp-bg">
              <h1> <%= home_team.name %> vs. <%=  away_team.name %> </h1>
              <p><%=match.result%></p>
              <p><%=match.channel%></p>
@@ -36,5 +21,8 @@
            </div>
           <% end %>
       </div>
+      <!-- <script>
+        $('#fullpage').fullpage({ 	sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'], });
+      </script> -->
   </body>
 </html>
