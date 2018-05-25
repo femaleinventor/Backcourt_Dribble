@@ -11,18 +11,39 @@
             <% home_team = Team.find(match.home_team_id) %>
             <% away_team = Team.find(match.away_team_id) %>
             <div id="test" class="section fp-bg">
-             <h1> <%= home_team.name %> vs. <%=  away_team.name %> </h1>
-             <p><%=match.result%></p>
-             <p><%=match.channel%></p>
-             <p><%=match.date%></p>
-             <p><%=match.time%></p>
-             <p><%=match.league.name%></p>
-             <p><%=match.venue.name%></p>
+              <div class="slide">
+                <h1> <%= home_team.name %> vs. <%=  away_team.name %> </h1>
+                <h3> Make Your Prediction </h3>
+                <%= form_for @prediction, url: {action: "create"} do |f| %>
+                  <%= f.label :home_team %>
+                  <%= f.check_box :guess %>
+
+                  <%= f.label :away_team %>
+                  <%= f.check_box :guess %>
+
+                  <%= f.label :reason %>
+                  <%= f.text_area :reason %>
+
+                  <!-- invisible form field for match_id -->
+
+                  <%= f.submit "Submit" %>
+                <% end %>
+
+              </div>
+              <div class="slide">
+                <h2> Match Info </h2>
+                <p><%=match.result%></p>
+                <p><%=match.channel%></p>
+                <p><%=match.date%></p>
+                <p><%=match.time%></p>
+                <p><%=match.league.name%></p>
+                <p><%=match.venue.name%></p>
+              </div>
+              <div class="slide">
+                <h1>Slide 3</h1>
+              </div>
            </div>
           <% end %>
       </div>
-      <!-- <script>
-        $('#fullpage').fullpage({ 	sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'], });
-      </script> -->
   </body>
 </html>

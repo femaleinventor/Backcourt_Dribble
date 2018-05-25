@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :matches
   end
 
+  resources :predictions
 
   get 'shop/index'
 
