@@ -14,19 +14,23 @@
               <div class="slide">
                 <h1> <%= home_team.name %> vs. <%=  away_team.name %> </h1>
                 <h3> Make Your Prediction </h3>
-                <%= form_for @prediction, url: {action: "create"} do |f| %>
-                  <%= f.label :home_team %>
-                  <%= f.check_box :guess %>
+                <h3> Make Your Prediction </h3>
+                <%= form_tag(controller: 'predictions', action: 'create') do %>
+                  <%= label_tag :home_team %>
+                  <%= check_box_tag :guess %>
 
-                  <%= f.label :away_team %>
-                  <%= f.check_box :guess %>
+                  <%= label_tag :away_team %>
+                  <%= check_box_tag :guess %>
 
-                  <%= f.label :reason %>
-                  <%= f.text_area :reason %>
+                  <%= label_tag :reason %>
+                  <%= text_area_tag :reason %>
 
-                  <!-- invisible form field for match_id -->
+                  <%= hidden_field_tag "user_id", current_user.id %>
 
-                  <%= f.submit "Submit" %>
+                  <%= hidden_field_tag "match_id", match.id %>
+
+
+                  <%= submit_tag "Submit" %>
                 <% end %>
 
               </div>
