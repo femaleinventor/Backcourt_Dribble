@@ -2,23 +2,16 @@
 <p>Find me in app/views/wall/index.html.erb</p>
 
 <div class="woso_wall_container container-fluid d-md-inline-flex align-items d-flex justify-content-center ">
-    <div class="woso_words green col-3 d-flex justify-content-end">
+    <div id="word_list" class="woso_words green col-3 d-flex justify-content-end">
     <ul>
-      <li>WoSo</li>
-      <li>Tournament of Nations</li>
+      <li><%= link_to 'WoSo', wall_index_path %></li>
+      <li>USWNT</li>
       <li>NWSL</li>
-      <!-- <li>Soccer</li> -->
-      <!-- <li>Football</li> -->
-      <!-- <li>USWNT</li> -->
-      <!-- <li>She Believes Cup</li> -->
-      <!-- <li>Jill Ellis</li> -->
-      <!-- <li>Phil Nevil</li> -->
-      <!-- <li>Horst Hrubesch</li> -->
     </ul>
     </div>
 
     <div class="red col-8 align-self-end ">
-     Tweets
+    <%= render 'woso'%>
     </div>
 
     <div class="pink col-2">
