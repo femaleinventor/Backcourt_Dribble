@@ -12,27 +12,30 @@
             <% away_team = Team.find(match.away_team_id) %>
             <div id="test" class="section fp-bg">
               <div class="slide">
+                <p> your match id is <%= match.id %> </p>
                 <h1> <%= home_team.name %> vs. <%=  away_team.name %> </h1>
-                <h3> Make Your Prediction </h3>
-                <h3> Make Your Prediction </h3>
-                <%= form_tag(controller: 'predictions', action: 'create') do %>
-                  <%= label_tag :home_team %>
-                  <%= check_box_tag :guess %>
-
-                  <%= label_tag :away_team %>
-                  <%= check_box_tag :guess %>
-
-                  <%= label_tag :reason %>
-                  <%= text_area_tag :reason %>
-
-                  <%= hidden_field_tag "user_id", current_user.id %>
-
-                  <%= hidden_field_tag "match_id", match.id %>
+                  <% if current_user.predictions.where(match_id: match.id) %>
+                  <p>  here i am  </p>
+                <p> <% end %> </p>
 
 
-                  <%= submit_tag "Submit" %>
-                <% end %>
+                  <h3> Make Your Prediction </h3>
+                  <%= form_tag(controller: 'predictions', action: 'create') do %>
+                    <%= label_tag :home_team %>
+                    <%= check_box_tag :guess %>
 
+                    <%= label_tag :away_team %>
+                    <%= check_box_tag :guess %>
+
+                    <%= label_tag :reason %>
+                    <%= text_area_tag :reason %>
+
+                    <%= hidden_field_tag "user_id", current_user.id %>
+
+                    <%= hidden_field_tag "match_id", match.id %>
+
+                    <%= submit_tag "Submit" %>
+            <% end %>
               </div>
               <div class="slide">
                 <h2> Match Info </h2>
