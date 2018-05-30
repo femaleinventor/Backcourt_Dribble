@@ -14,11 +14,7 @@
               <div class="slide">
                 <p> your match id is <%= match.id %> </p>
                 <h1> <%= home_team.name %> vs. <%=  away_team.name %> </h1>
-                  <% if current_user.predictions.where(match_id: match.id) %>
-                  <p>  here i am  </p>
-                <p> <% end %> </p>
-
-
+                  <% if current_user.predictions.select{|prediction| prediction.match_id == match.id}.empty?  %>
                   <h3> Make Your Prediction </h3>
                   <%= form_tag(controller: 'predictions', action: 'create') do %>
                     <%= label_tag :home_team %>
@@ -35,7 +31,14 @@
                     <%= hidden_field_tag "match_id", match.id %>
 
                     <%= submit_tag "Submit" %>
-            <% end %>
+                    <% end %>
+
+                  <% else %>
+                    <p>you have already made a prediction</p>
+                  <%end%>
+
+
+
               </div>
               <div class="slide">
                 <h2> Match Info </h2>
