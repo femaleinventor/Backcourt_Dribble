@@ -12,16 +12,25 @@
             <% away_team = Team.find(match.away_team_id) %>
             <div id="test" class="section fp-bg">
               <div class="slide">
-                <p> your match id is <%= match.id %> </p>
                 <h1> <%= home_team.name %> vs. <%=  away_team.name %> </h1>
+                  <h3> Venue </h3>
+                    <p> <%= match.venue.name %> </p>
+                    <!-- add image here, issues with asset pipleine -->
+
+                  <h3> Time </h3>
+                    <p> <%= match.time %> </p>
+                <!-- Logic checking if a prediction has already been made for a certain match by the current user -->
                   <% if current_user.predictions.select{|prediction| prediction.match_id == match.id}.empty?  %>
-                  <h3> Make Your Prediction </h3>
+                  <h2> Make Your Prediction </h2>
                   <%= form_tag(controller: 'predictions', action: 'create') do %>
                     <%= label_tag :home_team %>
-                    <%= check_box_tag :guess %>
+                    <%= check_box_tag :guess, home_team.name %>
+
+                    <%= label_tag :tie %>
+                    <%= check_box_tag :guess, "Tie" %>
 
                     <%= label_tag :away_team %>
-                    <%= check_box_tag :guess %>
+                    <%= check_box_tag :guess, away_team.name %>
 
                     <%= label_tag :reason %>
                     <%= text_area_tag :reason %>
@@ -34,10 +43,12 @@
                     <% end %>
 
                   <% else %>
-                    <p>you have already made a prediction</p>
+                    <h2>Your Prediction</h2>
+                    <% user_prediction = current_user.predictions.find{|prediction| prediction.match_id == match.id} %>
+                    <p> Your Guess: <%= user_prediction.guess %> </p>
+                    <p> Your Reasoning: <%= user_prediction.reason %> </p>
+
                   <%end%>
-
-
 
               </div>
               <div class="slide">

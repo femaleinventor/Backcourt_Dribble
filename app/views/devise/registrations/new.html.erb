@@ -20,6 +20,11 @@
       </div>
 
       <div class="field form-group">
+        <%= f.label :time_zone %><br />
+        <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, include_blank: true %>
+      </div>
+
+      <div class="field form-group">
         <%= f.label :password %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -30,11 +35,6 @@
       <div class="field form-group">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Password" %>
-      </div>
-
-      <div class="field form-group">
-        <%= f.check_box :terms_of_service %>
-        <%= link_to 'I agree to the terms of service', "#", data: {toggle: "modal", target: "#termsOfService"} %>
       </div>
 
       <div class="actions">

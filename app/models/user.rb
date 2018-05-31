@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :username, exclusion: { in: %w(Tierna-Davidson Tierna_Davidson TiernaDavidson Tierna.Davidson Ashley-Hatch Ashley_Hatch AshleyHatch Ashley.Hatch Lynn-Williams Lynn_Williams LynnWilliams Lynn.Williams Sofia-Huerta Sofia_Huerta SofiaHuerta Sofia.Huerta Mallory-Pugh Mallory_Pugh MalloryPugh Mallory.Pugh Mal-Pugh Mal_Pugh MalPugh Mal.Pugh Julie-Johnston-Ertz Julie_Johnston_Ertz JulieJohnstonErtz Julie.Johnston.Ertz Julie-Johnston Julie_Johnston JulieJohnston Julie.Johnston Julie-Ertz Julie_Ertz JulieErtz Julie.Ertz Savannah-McCaskill Savannah_McCaskill SavannahMcCaskill Savannah.McCaskill Crystal-Dunn Crystal_Dunn CrystalDunn Crystal.Dunn Ashlyn-Harris Ashlyn_Harris AshlynHarris Ashlyn.Harris Ali-Krieger Ali_Krieger AliKrieger Ali.Krieger Abby-Wambach Abby_Wambach AbbyWambach Abby.Wambach Aly-Wagner Aly_Wagner AlyWagner Aly.Wagner Morgan-Brian Morgan_Brian MorganBrian Morgan.Brian Casey-Short Casey_Short CaseyShort Casey.Short),
     message: "%{value} is a restricted username. Please choose another." }
 
-  validates_acceptance_of :terms_of_service, :allow_nil => false, :message => :terms_of_service_not_accepted, :on => :create
+  # validates_acceptance_of :terms_of_service, :allow_nil => false, :message => :terms_of_service_not_accepted, :on => :create
 
 
 

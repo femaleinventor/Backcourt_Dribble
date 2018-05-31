@@ -6,11 +6,8 @@ class PredictionsController < ApplicationController
 
   def create
     @prediction = Prediction.new(prediction_params)
-    if current_user.predictions.include?(@prediction)
-      puts "cats are soft!"
-    end
     if @prediction.save
-        redirect_to '/', alert: "Thanks for making a prediction!"
+        redirect_to "/", alert: "Thanks for making a prediction!"
     else
         redirect_to league_matches_path, alert: "Oops! Your prediction wasn't recorded. Try again!"
     end
