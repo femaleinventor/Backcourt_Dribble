@@ -15,10 +15,10 @@
                 <h1> <%= home_team.name %> vs. <%=  away_team.name %> </h1>
                   <h3> Venue </h3>
                     <p> <%= match.venue.name %> </p>
-                    <!-- add image here, issues with asset pipleine -->
-                    <img src="https://dc-mp7static.mlsdigital.net/elfinderimages/DC%20United%20Images/Miscellaneous/2.jpg"/>
+                    <%= image_tag "#{match.venue.picture_url}", class: "img-thumbnail" %>
                   <h3> Time </h3>
                     <p> <%= match.time %> </p>
+
                 <!-- Logic checking if a prediction has already been made for a certain match by the current user -->
                   <% if current_user.predictions.select{|prediction| prediction.match_id == match.id}.empty?  %>
                   <h2> Make Your Prediction </h2>
