@@ -1,3 +1,65 @@
 // Place all the styles related to the predictions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$theme-orange: #F0900E;
+$theme-blue: #16A7D5;
+$theme-grey: #707070;
+// .prediction-check {
+//   display: inline-block;
+// }
+
+.match-teams {
+  text-align: center;
+}
+
+.reason-textbox {
+  display: block;
+  width: 25em;
+}
+
+.prediction-submit {
+  margin: 0;
+  text-align: center;
+  .btn {
+    background-color: $theme-orange;
+    border: none;
+  }
+}
+
+.section {
+  border-bottom: 2px solid $theme-blue;
+}
+// .prediction-check {
+//   width: 20px;
+//   position: relative;
+//   margin: 20px auto;
+//   label {
+//     width: 20px;
+//     height: 20px;
+//     cursor: pointer;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     background: linear-gradient(top, #222 0%, #45484d 100%);
+//     border-radius: 4px;
+//     box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+//     &:after {
+//       content: '';
+//       width: 9px;
+//       height: 5px;
+//       position: absolute;
+//       top: 4px;
+//       left: 4px;
+//       border: 3px solid #fcfff4;
+//       border-top: none;
+//       border-right: none;
+//       background: transparent;
+//       opacity: 0;
+//       transform: rotate(-45deg);
+//     }
+//     &:hover::after {
+//       opacity: 0.3;
+//     }
+//   }
+
+// }
