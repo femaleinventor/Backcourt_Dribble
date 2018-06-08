@@ -6,7 +6,8 @@
   </head>
   <body>
       <div id="fullpage">
-           <% @matches.each do |match| %>
+           <% find_future_matches(@matches).each do |match| %>
+
             <% home_team = Team.find(match.home_team_id) %>
             <% away_team = Team.find(match.away_team_id) %>
             <div class="section fp-bg">
@@ -27,20 +28,24 @@
                         <%= form_tag(controller: 'predictions', action: 'create', class: "form-inline") do %>
 
 
-                          <div class=" d-flex justify-content-between">
+                          <div class="d-flex justify-content-between custom-control custom-checkbox">
                             <!-- home -->
                             <div class="prediction-check form-group">
-                              <%= check_box_tag :guess, class: "form-control", style:"height: 100px;" %>
+                              <%= check_box_tag :guess, home_team.name %>
                             </div>
 
                             <!-- tie -->
+
                             <div class="prediction-check form-group">
-                              <%= check_box_tag :guess, class: "form-control" %>
+                              <!-- custom control for check boxes? -->
+                              <!-- <label class="custom-control custom-checkbox"> -->
+                                <%= check_box_tag :guess, "Tie" %>
+                              <!-- </label> -->
                             </div>
 
                             <!-- away -->
                             <div class="prediction-check form-group">
-                              <%= check_box_tag :guess, class: "form-control" %>
+                              <%= check_box_tag :guess, away_team.name %>
                             </div>
                           </div>
 
@@ -52,9 +57,11 @@
                           <%= hidden_field_tag "user_id", current_user.id %>
 
                           <%= hidden_field_tag "match_id", match.id %>
-                        <div class="form-actions prediction-submit">
-                          <%= submit_tag "Submit", class: "btn btn-primary btn-md" %>
-                        </div>
+
+                          <div class="form-actions prediction-submit">
+                            <%= submit_tag "Submit", class: "btn btn-primary btn-md" %>
+                          </div>
+
                         <% end %>
 
                       <% else %>
@@ -63,7 +70,7 @@
                         <p> Your Guess: <%= user_prediction.guess %> </p>
                         <p> Your Reasoning: <%= user_prediction.reason %> </p>
 
-                      <%end%>
+                      <% end %>
                     </div>
                     </div>
                   </div>
@@ -81,7 +88,11 @@
                 <%= image_tag "#{match.venue.picture_url}", class: "w-25" %>
               </div>
               <div class="slide">
-                <h1>Slide 3</h1>
+                <h1> All Predictions </h1>
+
+                <% match.predictions.each do |prediction| %>
+                  <p>The user <%=prediction.user.username%> predicts that <%=prediction.guess%> will win because <%=prediction.reason%>. </p>
+                <% end %>
               </div>
            </div>
           <% end %>

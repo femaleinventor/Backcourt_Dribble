@@ -5,7 +5,7 @@
 
 ## Database
 1. Get rid of twitter list in leagues table
-2. DateTime Object for Match model
+2. DateTime Object for Match model !!!!!!!!!
 3. Has accepted terms field
 
 ##Misc.
