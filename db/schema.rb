@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180530232607) do
+ActiveRecord::Schema.define(version: 20180611215642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,8 +32,6 @@ ActiveRecord::Schema.define(version: 20180530232607) do
   create_table "matches", force: :cascade do |t|
     t.string "result"
     t.string "channel"
-    t.date "date"
-    t.time "time"
     t.bigint "league_id"
     t.bigint "home_team_id"
     t.bigint "away_team_id"
@@ -41,6 +39,7 @@ ActiveRecord::Schema.define(version: 20180530232607) do
     t.bigint "venue_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "start"
     t.index ["away_team_id"], name: "index_matches_on_away_team_id"
     t.index ["home_team_id"], name: "index_matches_on_home_team_id"
     t.index ["league_id"], name: "index_matches_on_league_id"
