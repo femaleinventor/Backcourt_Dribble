@@ -81,8 +81,8 @@
                 <h2> Match Info </h2>
                 <p><%=match.result%></p>
                 <p><%=match.channel%></p>
-                <p><%=match.date%></p>
-                <p><%=match.time%></p>
+                <p><%=match.start%></p>
+                <p><%=current_user.time_zone%></p>
                 <p><%=match.league.name%></p>
                 <p><%=match.venue.name%></p>
                 <%= image_tag "#{match.venue.picture_url}", class: "w-25" %>
