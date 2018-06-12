@@ -114,33 +114,6 @@ league_list.each do |league|
   League.create!(name: league[0], abbreviation: league[1], sport_id: league[2])
 end
 
-# leagues_and_teams = [
-#   [1,15],
-#   [1,16],
-#   [1,17],
-#   [1,20],
-#   [1,21],
-#   [1,22],
-#   [1,23],
-#   [1,26],
-#   [1,27],
-#   [1,28],
-#   [1,29],
-#   [1,32],
-#   [1,33],
-#   [1,34],
-#   [1,35],
-#   [2,5],
-#   [2,6],
-#   [2,7],
-#   [2,8],
-#   [2,9],
-#   [2,10],
-#   [2,11],
-#   [2,12],
-#   [2,13]
-# ]
-
 
 venues_list = [
   [ "Toyota Park", "venues/Toyota_Park.jpg", "7000 Harlem Ave, Bridgeview, IL 60455", "America/Chicago"],
@@ -165,9 +138,28 @@ venues_list.each do |venue|
   Venue.create!(name: venue[0], picture_url: venue[1], address: venue[2], timezone: venue[3])
 end
 
+# 1 Top WoSo Journalists
+# 2 WoSo Journalists
+# 3 Notable WoSo Accounts
+# 4 Soccer Journalists
+# 5 NWSL Accounts
+# 6 Chicago Redstars
+# 7 Houston Dash
+# 8 North Carolina Courage
+# 9 Orlando Pride
+# 10 Portland Thorns
+# 11 Seattle Reign
+# 12 Sky Blue FC
+# 13 Utah Royals
+# 14 Washington Spirit
+# 15 NWSL Retired Players
+# 16 USWNT Soccer
+# 17 USWNT Soccer U-23
+# 18 USWNT Soccer U-20
+# 19 USWNT Soccer U-19
+# 21 USWNT Soccer Retired
+# 22 USWNT Recent Callups
 
-
-# should home, away, or tie be numbers?
 # [ "result", "channel", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id", "start" ],
 matches_list = [
   [ "home", "Lifetime", 2, 7, 12, 1, 7, DateTime.new(2018,3,24,12,15)],
@@ -176,7 +168,8 @@ matches_list = [
   [ "home", "Lifetime", 2, 9, 11, 1, 3, DateTime.new(2018,6,24,14)],
   [ "away", "fox sports 1", 2, 4, 6, 1, 2, DateTime.new(2018,8,9,14,15)],
   [ nil, "go90 App", 2, 8, 9, 1, 3, DateTime.new(2018,9,8,19) ],
-  [ nil, "Lifetime", 2, 14, 7, 1, 8, DateTime.new(2018,9,8,19)]
+  [ nil, "Lifetime", 2, 14, 7, 1, 8, DateTime.new(2018,9,8,19)],
+  # [ nil, "ESPN2", 1, ]
 ]
 
 # matches_list = [
@@ -188,6 +181,8 @@ matches_list = [
 #   [ nil, "go90 App", 2, 8, 9, 1, 3, "2001-02-04%16:05:06+03:30" ],
 #   [ nil, "Lifetime", 2, 14, 7, 1, 8, "2001-02-04%16:05:06+03:30"]
 # ]
+
+
 
 matches_list.each do |match|
   Match.create!(result: match[0], channel: match[1], league_id: match[2], away_team_id: match[3], home_team_id: match[4], sport_id: match[5], venue_id: match[6], start: match[7])
