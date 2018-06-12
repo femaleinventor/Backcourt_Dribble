@@ -8,15 +8,15 @@
       <div id="fullpage">
            <% find_future_matches(@matches).each do |match| %>
 
-            <% home_team = Team.find(match.home_team_id) %>
-            <% away_team = Team.find(match.away_team_id) %>
+            <% @home_team = Team.find(match.home_team_id) %>
+            <% @away_team = Team.find(match.away_team_id) %>
             <div class="section fp-bg">
               <div class="slide">
                 <div class="container-fluid">
                   <div class="row">
                     <div class="col-xs-12 mx-auto">
                       <div class="match-teams">
-                        <h1> <%= home_team.name %> vs. <%=  away_team.name %> </h1>
+                        <h1> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
                       </div>
                     </div>
                   </div>
@@ -31,7 +31,7 @@
                           <div class="d-flex justify-content-between custom-control custom-checkbox">
                             <!-- home -->
                             <div class="prediction-check form-group">
-                              <%= check_box_tag :guess, home_team.name %>
+                              <%= check_box_tag :guess, @home_team.name %>
                             </div>
 
                             <!-- tie -->
@@ -45,7 +45,7 @@
 
                             <!-- away -->
                             <div class="prediction-check form-group">
-                              <%= check_box_tag :guess, away_team.name %>
+                              <%= check_box_tag :guess, @away_team.name %>
                             </div>
                           </div>
 
@@ -94,6 +94,21 @@
                   <p>The user <%=prediction.user.username%> predicts that <%=prediction.guess%> will win because <%=prediction.reason%>. </p>
                 <% end %>
               </div>
+
+              <div class="slide">
+                <h1> Home Team </h1>
+                <div>
+                  <%= raw @home_team.twitter_list %>
+                </div>
+              </div>
+
+              <div class="slide">
+                <h1> Away Team </h1>
+                <div>
+                  <%= raw @away_team.twitter_list %>
+                </div>
+              </div>
+
            </div>
           <% end %>
       </div>
