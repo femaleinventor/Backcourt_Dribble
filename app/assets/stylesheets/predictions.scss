@@ -21,11 +21,26 @@ $theme-grey: #707070;
   margin: 0;
   text-align: center;
   .btn {
-    background-color: $theme-orange;
+    background-color: #707070;
     border: none;
+    &:hover {
+     background-color: $theme-orange;
+   }
   }
 }
 
 .section {
   border-bottom: 2px solid $theme-blue;
+}
+
+// input[type=checkbox] {
+//   background-color: yellow !important;
+// }
+
+// .checkbox-teal [type="checkbox"]:checked+label:before {
+//     border-color: transparent #009688 #009688 transparent !important;
+// }
+
+input[type="checkbox"] {
+  color: blue !important;
 }

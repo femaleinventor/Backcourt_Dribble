@@ -10,13 +10,18 @@
 
             <% @home_team = Team.find(match.home_team_id) %>
             <% @away_team = Team.find(match.away_team_id) %>
-            <div class="section fp-bg">
-              <div class="slide">
+            <div class="section fp-bg fp-auto-height-reponsive">
+              <!-- Makes gradient behind match up -->
+              <div class="slide" style="background: #FFFFFF; background: -webkit-linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);
+              background: linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);">
                 <div class="container-fluid">
                   <div class="row">
                     <div class="col-xs-12 mx-auto">
                       <div class="match-teams">
-                        <h1> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
+                        <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
+                        <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> (<%= match.venue.timezone %>) </p>
+
+
                       </div>
                     </div>
                   </div>
@@ -31,7 +36,7 @@
                           <div class="d-flex justify-content-between custom-control custom-checkbox">
                             <!-- home -->
                             <div class="prediction-check form-group">
-                              <%= check_box_tag :guess, @home_team.name %>
+                              <%= check_box_tag :guess, @home_team.name, class: "our-checkbox" %>
                             </div>
 
                             <!-- tie -->
@@ -50,8 +55,8 @@
                           </div>
 
                           <div class="reason-textbox form-group">
-                            <%= label_tag :add_your_reason_why %>
-                            <%= text_area_tag :reason, nil, class:"form-control" %>
+
+                            <%= text_area_tag :reason, nil, class:"form-control", placeholder: "Add Your Reason Why... " %>
                           </div>
 
                           <%= hidden_field_tag "user_id", current_user.id %>
@@ -78,16 +83,6 @@
 
 
               <div class="slide">
-                <h2> Match Info </h2>
-                <p><%=match.result%></p>
-                <p><%=match.channel%></p>
-                <p><%=match.start%></p>
-                <p><%=current_user.time_zone%></p>
-                <p><%=match.league.name%></p>
-                <p><%=match.venue.name%></p>
-                <%= image_tag "#{match.venue.picture_url}", class: "w-25" %>
-              </div>
-              <div class="slide">
                 <h1> All Predictions </h1>
 
                 <% match.predictions.each do |prediction| %>
@@ -96,16 +91,45 @@
               </div>
 
               <div class="slide">
-                <h1> Home Team </h1>
-                <div>
-                  <%= raw @home_team.twitter_list %>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 col-md-6 mx-auto">
+                      <p><%=match.result%></p>
+                      <p><%=match.channel%></p>
+                      <p><%=match.start%></p>
+                      <p><%=current_user.time_zone%></p>
+                      <p><%=match.league.name%></p>
+                      <p><%=match.venue.name%></p>
+                    <%= image_tag "#{match.venue.picture_url}", class: "w-25" %>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <div class="slide">
-                <h1> Away Team </h1>
-                <div>
-                  <%= raw @away_team.twitter_list %>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 col-md-8 mx-auto">
+                      <h1> Home Team</h1>
+                      <div class="team-twitter-list">
+                        <%= raw @home_team.twitter_list %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="slide">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 col-md-8 mx-auto">
+                      <h1> Away Team </h1>
+                      <div class="team-twitter-list">
+                        <%= raw @away_team.twitter_list %>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
