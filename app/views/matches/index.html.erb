@@ -36,7 +36,7 @@
                           <div class="d-flex justify-content-between custom-control custom-checkbox">
                             <!-- home -->
                             <div class="prediction-check form-group">
-                              <%= check_box_tag :guess, @home_team.name, class: "our-checkbox" %>
+                              <%= check_box_tag :guess, @home_team.name, false, class: "prediction-checkbox" %>
                             </div>
 
                             <!-- tie -->
@@ -44,13 +44,13 @@
                             <div class="prediction-check form-group">
                               <!-- custom control for check boxes? -->
                               <!-- <label class="custom-control custom-checkbox"> -->
-                                <%= check_box_tag :guess, "Tie" %>
+                                <%= check_box_tag :guess, "Tie", false, class: "prediction-checkbox" %>
                               <!-- </label> -->
                             </div>
 
                             <!-- away -->
                             <div class="prediction-check form-group">
-                              <%= check_box_tag :guess, @away_team.name %>
+                              <%= check_box_tag :guess, @away_team.name, false, class: "prediction-checkbox" %>
                             </div>
                           </div>
 

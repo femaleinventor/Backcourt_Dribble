@@ -33,14 +33,8 @@ $theme-grey: #707070;
   border-bottom: 2px solid $theme-blue;
 }
 
-// input[type=checkbox] {
-//   background-color: yellow !important;
-// }
 
-// .checkbox-teal [type="checkbox"]:checked+label:before {
-//     border-color: transparent #009688 #009688 transparent !important;
-// }
-
-input[type="checkbox"] {
-  color: blue !important;
+#guess {
+  transform: scale(3);
+  font-size: x-large;
 }
