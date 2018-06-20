@@ -33,6 +33,18 @@ $theme-grey: #707070;
   border-bottom: 2px solid $theme-blue;
 }
 
+.prediction-board {
+  height: 200px;
+  background: $theme-grey;
+  margin-bottom: 10px;
+}
+
+  .prediction-board-header {
+    font-size: 15px;
+    background: blue;
+    text-align: center;
+  }
+
 
 #guess {
   transform: scale(3);

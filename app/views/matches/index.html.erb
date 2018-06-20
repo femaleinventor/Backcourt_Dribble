@@ -83,11 +83,39 @@
 
 
               <div class="slide">
-                <h1> All Predictions </h1>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 mx-auto">
+                      <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
+                      <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> (<%= match.venue.timezone %>) </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                      <div class="prediction-board">
+                        <% home_predictions = select_team_predictions(match, @home_team) %>
+                        <h4 class="prediction-board-header"> <%= home_predictions.count %> Predict that <%= @home_team.name %> will win (<%= calculate_prediction_percentage(match, @home_team) %>) </h4>
+                        <% home_predictions.each do |prediction| %>
+                        <span>  <%= prediction.user.username %> </span>
+                        <span>  <%= prediction.reason %> </span>
+                        <span>  <%= prediction.likes %> </span>
+                        <% end %>
+                      </div>
+                    </div>
 
-                <% match.predictions.each do |prediction| %>
-                  <p>The user <%=prediction.user.username%> predicts that <%=prediction.guess%> will win because <%=prediction.reason%>. </p>
-                <% end %>
+                    <div class="col-xs-12 col-sm-4">
+                      <div class="prediction-board">
+                        <h4> Tie Predictions </h4>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4">
+                      <div class="prediction-board">
+                        <h4> <%= @away_team.name %> Predictions </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div class="slide">
