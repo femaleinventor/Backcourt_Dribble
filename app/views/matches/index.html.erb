@@ -8,15 +8,20 @@
       <div id="fullpage">
            <% find_future_matches(@matches).each do |match| %>
 
-            <% home_team = Team.find(match.home_team_id) %>
-            <% away_team = Team.find(match.away_team_id) %>
-            <div class="section fp-bg">
-              <div class="slide">
+            <% @home_team = Team.find(match.home_team_id) %>
+            <% @away_team = Team.find(match.away_team_id) %>
+            <div class="section fp-bg fp-auto-height-reponsive">
+              <!-- Makes gradient behind match up -->
+              <div class="slide" style="background: #FFFFFF; background: -webkit-linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);
+              background: linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);">
                 <div class="container-fluid">
                   <div class="row">
                     <div class="col-xs-12 mx-auto">
                       <div class="match-teams">
-                        <h1> <%= home_team.name %> vs. <%=  away_team.name %> </h1>
+                        <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
+                        <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> (<%= match.venue.timezone %>) </p>
+
+
                       </div>
                     </div>
                   </div>
@@ -31,7 +36,7 @@
                           <div class="d-flex justify-content-between custom-control custom-checkbox">
                             <!-- home -->
                             <div class="prediction-check form-group">
-                              <%= check_box_tag :guess, home_team.name %>
+                              <%= check_box_tag :guess, @home_team.name, false, class: "prediction-checkbox" %>
                             </div>
 
                             <!-- tie -->
@@ -39,19 +44,19 @@
                             <div class="prediction-check form-group">
                               <!-- custom control for check boxes? -->
                               <!-- <label class="custom-control custom-checkbox"> -->
-                                <%= check_box_tag :guess, "Tie" %>
+                                <%= check_box_tag :guess, "Tie", false, class: "prediction-checkbox" %>
                               <!-- </label> -->
                             </div>
 
                             <!-- away -->
                             <div class="prediction-check form-group">
-                              <%= check_box_tag :guess, away_team.name %>
+                              <%= check_box_tag :guess, @away_team.name, false, class: "prediction-checkbox" %>
                             </div>
                           </div>
 
                           <div class="reason-textbox form-group">
-                            <%= label_tag :add_your_reason_why %>
-                            <%= text_area_tag :reason, nil, class:"form-control" %>
+
+                            <%= text_area_tag :reason, nil, class:"form-control", placeholder: "Add Your Reason Why... " %>
                           </div>
 
                           <%= hidden_field_tag "user_id", current_user.id %>
@@ -78,22 +83,84 @@
 
 
               <div class="slide">
-                <h2> Match Info </h2>
-                <p><%=match.result%></p>
-                <p><%=match.channel%></p>
-                <p><%=match.date%></p>
-                <p><%=match.time%></p>
-                <p><%=match.league.name%></p>
-                <p><%=match.venue.name%></p>
-                <%= image_tag "#{match.venue.picture_url}", class: "w-25" %>
-              </div>
-              <div class="slide">
-                <h1> All Predictions </h1>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 mx-auto">
+                      <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
+                      <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> (<%= match.venue.timezone %>) </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                      <div class="prediction-board">
+                        <% home_predictions = select_team_predictions(match, @home_team) %>
+                        <h4 class="prediction-board-header"> <%= home_predictions.count %> Predict that <%= @home_team.name %> will win (<%= calculate_prediction_percentage(match, @home_team) %>) </h4>
+                        <% home_predictions.each do |prediction| %>
+                        <span>  <%= prediction.user.username %> </span>
+                        <span>  <%= prediction.reason %> </span>
+                        <span>  <%= prediction.likes %> </span>
+                        <% end %>
+                      </div>
+                    </div>
 
-                <% match.predictions.each do |prediction| %>
-                  <p>The user <%=prediction.user.username%> predicts that <%=prediction.guess%> will win because <%=prediction.reason%>. </p>
-                <% end %>
+                    <div class="col-xs-12 col-sm-4">
+                      <div class="prediction-board">
+                        <h4> Tie Predictions </h4>
+                      </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4">
+                      <div class="prediction-board">
+                        <h4> <%= @away_team.name %> Predictions </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+
+              <div class="slide">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 col-md-6 mx-auto">
+                      <p><%=match.result%></p>
+                      <p><%=match.channel%></p>
+                      <p><%=match.start%></p>
+                      <p><%=current_user.time_zone%></p>
+                      <p><%=match.league.name%></p>
+                      <p><%=match.venue.name%></p>
+                    <%= image_tag "#{match.venue.picture_url}", class: "w-25" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="slide">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 col-md-8 mx-auto">
+                      <h1> Home Team</h1>
+                      <div class="team-twitter-list">
+                        <%= raw @home_team.twitter_list %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="slide">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-12 col-md-8 mx-auto">
+                      <h1> Away Team </h1>
+                      <div class="team-twitter-list">
+                        <%= raw @away_team.twitter_list %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
            </div>
           <% end %>
       </div>

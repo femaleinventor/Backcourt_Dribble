@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
-Team.destroy_all
-League.destroy_all
-Match.destroy_all
-Sport.destroy_all
-Prediction.destroy_all
+# User.destroy_all
+# Team.destroy_all
+# League.destroy_all
+# Match.destroy_all
+# Sport.destroy_all
+# Prediction.destroy_all
 
 
 # seed file has already been run
@@ -114,33 +114,6 @@ league_list.each do |league|
   League.create!(name: league[0], abbreviation: league[1], sport_id: league[2])
 end
 
-# leagues_and_teams = [
-#   [1,15],
-#   [1,16],
-#   [1,17],
-#   [1,20],
-#   [1,21],
-#   [1,22],
-#   [1,23],
-#   [1,26],
-#   [1,27],
-#   [1,28],
-#   [1,29],
-#   [1,32],
-#   [1,33],
-#   [1,34],
-#   [1,35],
-#   [2,5],
-#   [2,6],
-#   [2,7],
-#   [2,8],
-#   [2,9],
-#   [2,10],
-#   [2,11],
-#   [2,12],
-#   [2,13]
-# ]
-
 
 venues_list = [
   [ "Toyota Park", "venues/Toyota_Park.jpg", "7000 Harlem Ave, Bridgeview, IL 60455", "America/Chicago"],
@@ -165,36 +138,67 @@ venues_list.each do |venue|
   Venue.create!(name: venue[0], picture_url: venue[1], address: venue[2], timezone: venue[3])
 end
 
+# 1 Top WoSo Journalists
+# 2 WoSo Journalists
+# 3 Notable WoSo Accounts
+# 4 Soccer Journalists
+# 5 NWSL Accounts
+# 6 Chicago Redstars
+# 7 Houston Dash
+# 8 North Carolina Courage
+# 9 Orlando Pride
+# 10 Portland Thorns
+# 11 Seattle Reign
+# 12 Sky Blue FC
+# 13 Utah Royals
+# 14 Washington Spirit
+# 15 NWSL Retired Players
+# 16 USWNT Soccer
+# 17 USWNT Soccer U-23
+# 18 USWNT Soccer U-20
+# 19 USWNT Soccer U-19
+# 21 USWNT Soccer Retired
+# 22 USWNT Recent Callups
 
-
-# should home, away, or tie be numbers?
-# [ "result", "channel", "date", "time", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id" ],
+# [ "result", "channel", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id", "start" ],
 matches_list = [
-  [ "home", "Lifetime", "MAR 24 2018", '12:15:00', 2, 7, 12, 1, 7 ],
-  [ "tie", "go90 App", "MAR 24 2018", '12:00:00', 2, 12, 8, 1, 3 ],
-  [ "away", "go90 App", "MAR 24 2018", '12:00:00', 2, 13, 10, 1, 5 ],
-  [ "home", "Lifetime", "JUNE 24 2018", '14:00:00', 2, 9, 11, 1, 3 ],
-  [ "away", "fox sports 1", "AUG 9 2018", '14:15:00', 2, 4, 6, 1, 2 ],
-  [ nil, "go90 App", "SEP 8 2018", '19:00:00', 2, 8, 9, 1, 3 ],
-  [ nil, "Lifetime", "SEP 8 2018", '19:00:00', 2, 14, 7, 1, 8 ]
+  [ "home", "Lifetime", 2, 7, 12, 1, 7, DateTime.new(2018,3,24,12,15)],
+  [ "tie", "go90 App", 2, 12, 8, 1, 3, DateTime.new(2018,3,24,12)],
+  [ "away", "go90 App", 2, 13, 10, 1, 5, DateTime.new(2018,3,24,12)],
+  [ "home", "Lifetime", 2, 9, 11, 1, 3, DateTime.new(2018,6,24,14)],
+  [ "away", "fox sports 1", 2, 4, 6, 1, 2, DateTime.new(2018,8,9,14,15)],
+  [ nil, "go90 App", 2, 8, 9, 1, 3, DateTime.new(2018,9,8,19) ],
+  [ nil, "Lifetime", 2, 14, 7, 1, 8, DateTime.new(2018,9,8,19)],
+  # [ nil, "ESPN2", 1, ]
 ]
+
+# matches_list = [
+#   [ "home", "Lifetime", 2, 7, 12, 1, 7, "2001-02-04%16:05:06+03:30"],
+#   [ "tie", "go90 App", 2, 12, 8, 1, 3, "2001-02-04%16:05:06+03:30"],
+#   [ "away", "go90 App", 2, 13, 10, 1, 5, "2001-02-04%16:05:06+03:30"],
+#   [ "home", "Lifetime", 2, 9, 11, 1, 3, "2001-02-04%16:05:06+03:30"],
+#   [ "away", "fox sports 1", 2, 4, 6, 1, 2, "2001-02-04%16:05:06+03:30"],
+#   [ nil, "go90 App", 2, 8, 9, 1, 3, "2001-02-04%16:05:06+03:30" ],
+#   [ nil, "Lifetime", 2, 14, 7, 1, 8, "2001-02-04%16:05:06+03:30"]
+# ]
+
 
 
 matches_list.each do |match|
-  Match.create!(result: match[0], channel: match[1], date: match[2], time: match[3], league_id: match[4], away_team_id: match[5], home_team_id: match[6], sport_id: match[7], venue_id: match[8] )
+  Match.create!(result: match[0], channel: match[1], league_id: match[2], away_team_id: match[3], home_team_id: match[4], sport_id: match[5], venue_id: match[6], start: match[7])
 end
 
 # [ "name", "username", "twitter_handle", "street_address", "city", "state", "zipcode", "country", "level", "stripeToken", "email", encrypted_password ],
 users_list = [
-  ["Ethan Fertsch", "efertsch", "@ethanlovesdogs",  "2 Salem Green", "Salem", "MA", "01970", "USA", "admin", "00000", "ethan@mail.com", "password"],
-  ["Angie Dale", "adale91", "@angielovesdogs", "865 Franklin St", "Melrose", "MA", "02176", "USA", "user", "00000", "angie@mail.com", "password"],
-  ["Denise Duffy", "female inventor", "@denise_duffy", "142 Whitney Street", "San Francisco", "USA", "CA",  "94131", "admin", "BQokikJOvBiI2HlWgH4olfQ2", "denise@deniseduffy.com", "password-1", 50],
-  ["Mike Duffy", "big bro", "@hao_cleats", "2700 Great Highway", "San Francisco", "CA", "96161", "USA", "user", "BQokikJOvBiI2HlWgH4olfQ3", "mike.duffy@usa.com", "password-2", 2]
+  ["Ethan Fertsch", "efertsch", "@ethanlovesdogs",  "2 Salem Green", "Salem", "MA", "01970","Eastern Time (US & Canada)", "USA", "ethan@mail.com", "password"],
+  ["Angie Dale", "adale91", "@angielovesdogs", "865 Franklin St", "Melrose", "MA", "02176", "Eastern Time (US & Canada)",  "USA", "angie@mail.com", "password"],
+  ["Denise Duffy", "female inventor", "@denise_duffy", "142 Whitney Street", "San Francisco", "CA",  "94131", "Pacific Time (US & Canada)", "USA", "denise@deniseduffy.com", "password-1"],
+  ["Mike Duffy", "big bro", "@hao_cleats", "2700 Great Highway", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA", "mike.duffy@usa.com", "password-2"]
 ]
 
 # this is not turning the color i want
 users_list.each do |user|
-  User.create!(name: user[0], username: user[1], twitter_handle: user[2], street_address: user[3], city: user[4], state: user[5], zipcode: user[6], country: user[7], level: user[8], stripeToken: user[9], email: user[10], password: user[11])
+  User.create!(name: user[0], username: user[1], twitter_handle: user[2], street_address: user[3], city: user[4], state: user[5], zipcode: user[6], time_zone: user[7], country: user[8], email: user[9], password: user[10])
 end
 
 
