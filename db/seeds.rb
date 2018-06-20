@@ -199,78 +199,78 @@ matches_list = [
   [ nil, "Lifetime", 2, 14, 7, 1, 8, DateTime.new(2018,9,8,19)],
   #id 8
   # Dash vs Thorns
-  [ nil, "go90 App", 2, 10, 7, 1, 2, DateTime.new(2018,6,22, 0530)],
+  [ nil, "go90 App", 2, 10, 7, 1, 2, DateTime.new(2018,6,22,17,30)],
   #id 9
   # Reign vs Courage
-  [ nil, "go90 App", 2, 8, 11, 1, 6, DateTime.new(2018,6,23, 1300)],
+  [ nil, "go90 App", 2, 8, 11, 1, 6, DateTime.new(2018,6,23,13)],
   #id 10
   # Spirit vs Pride
-  [ nil, "ESPN News", 2, 9, 14, 1, 9, DateTime.new(2018,6,23, 1900)],
+  [ nil, "ESPN News", 2, 9, 14, 1, 9, DateTime.new(2018,6,23,19)],
   #id 11
   # Redstars vs Royals
-  [ nil, "go90 App", 2, 13, 6, 1, 1, DateTime.new(2018,6,23, 1900)],
+  [ nil, "go90 App", 2, 13, 6, 1, 1, DateTime.new(2018,6,23,19)],
   #id 12
   # Pride vs Dash
-  [ nil, "go90 App", 2, 7, 9, 1, 4, DateTime.new(2018,6,23, 1530)],
+  [ nil, "go90 App", 2, 7, 9, 1, 4, DateTime.new(2018,6,23,15,30)],
   #id 13
   # Royals vs Seattle 6/27
-  [ nil, "go90 App", 2, 7, 9, 1, 4, DateTime.new(2018,6,23, 1530)],
+  [ nil, "go90 App", 2, 7, 9, 1, 4, DateTime.new(2018,6,23,15,30)],
 
   # Coming up after hackathon games
   #id 14
   # sky blue vs Courage
-  [ nil, "go90 App", 2, 8, 12, 1, 7, DateTime.new(2018,7,14, 1900)],
+  [ nil, "go90 App", 2, 8, 12, 1, 7, DateTime.new(2018,7,14,19)],
   #id 15
   # royals vs pride
-  [ nil, "ESPN News", 2, 9, 13, 1, 8, DateTime.new(2018,7,14, 1700)],
+  [ nil, "ESPN News", 2, 9, 13, 1, 8, DateTime.new(2018,7,14,17)],
   #id 16
   # redstars vs Reign
-  [ nil, "go90 App", 2, 11, 6, 1, 1, DateTime.new(2018,7,14, 1900)],
+  [ nil, "go90 App", 2, 11, 6, 1, 1, DateTime.new(2018,7,14,19)],
   #id 17
   # thorns vs dash
-  [ nil, "go90 App", 2, 7, 10, 1, 5, DateTime.new(2018,7,15, 1900)],
+  [ nil, "go90 App", 2, 7, 10, 1, 5, DateTime.new(2018,7,15,19)],
   #id 18
   # royals vs Courage
-  [ nil, "go90 App", 2, 8, 13, 1, 8, DateTime.new(2018,7,20, 2000)],
+  [ nil, "go90 App", 2, 8, 13, 1, 8, DateTime.new(2018,7,20,20)],
   #id 19
   # pride vs Reign
-  [ nil, "Lifetime", 2, 11, 9, 1, 6, DateTime.new(2018,7,21, 1530)],
+  [ nil, "Lifetime", 2, 11, 9, 1, 6, DateTime.new(2018,7,21,15,30)],
   #id 20
   # spirit vs dash
-  [ nil, "go90 App", 2, 7, 14, 1, 2, DateTime.new(2018,7,21, 1900)],
+  [ nil, "go90 App", 2, 7, 14, 1, 2, DateTime.new(2018,7,21,19)],
   #id 21
   # sky blue vs thorns
-  [ nil, "go90 App", 2, 10, 12, 1, 5, DateTime.new(2018,7,21, 1900)],
+  [ nil, "go90 App", 2, 10, 12, 1, 5, DateTime.new(2018,7,21,19)],
   #id 22
   # redstars vs sky blue
-  [ nil, "go90 App", 2, 12, 6, 1, 7, DateTime.new(2018,7,28, 1900)],
+  [ nil, "go90 App", 2, 12, 6, 1, 7, DateTime.new(2018,7,28,19)],
   #id 23
   # courage vs Thorns 8/5
-  [ nil, "go90 App", 2, 10, 8, 1, 3, DateTime.new(2018,8,05, 2000)],
+  [ nil, "go90 App", 2, 10, 8, 1, 3, DateTime.new(2018,8,05,20)],
   #id 24
   # pride vs SKY
-  [ nil, "go90 App", 2, 12, 9, 1, 4, DateTime.new(2018,8,05, 1930)],
+  [ nil, "go90 App", 2, 12, 9, 1, 4, DateTime.new(2018,8,05,19,30)],
   #id 25
   # dash vs Royals
-  [ nil, "go90 App", 2, 13, 7, 1, 2, DateTime.new(2018,8,05, 1900)],
+  [ nil, "go90 App", 2, 13, 7, 1, 2, DateTime.new(2018,8,05,19)],
   #id 26
   # reign vs spirit
-  [ nil, "go90 App", 2, 11, 14, 1, 6, DateTime.new(2018,8,05, 1900)],
+  [ nil, "go90 App", 2, 11, 14, 1, 6, DateTime.new(2018,8,05,19)],
   #id 27
   # USA vs Japan
-  [ nil, "FS1", 1, 41, 16, 1, 16, DateTime.new(2018,7,23, 1800)],
+  [ nil, "FS1", 1, 41, 16, 1, 16, DateTime.new(2018,7,23,18)],
   #id 28
   # USA vs Australia
-  [ nil, "FS1", 1, 43, 16, 1, 17, DateTime.new(2018,7,29, 1900)],
+  [ nil, "FS1", 1, 43, 16, 1, 17, DateTime.new(2018,7,29,19)],
   #id 29
   # USA vs Brazil
-  [ nil, "FS1", 1, 44, 16, 1, 1, DateTime.new(2018,8,02, 1930)],
+  [ nil, "FS1", 1, 44, 16, 1, 1, DateTime.new(2018,8,02,19,30)],
   #id 30
   # USA vs Chile
-  [ nil, "ESPN2", 1, 45, 16, 1, 18, DateTime.new(2018,8,31, 2000)],
+  [ nil, "ESPN2", 1, 45, 16, 1, 18, DateTime.new(2018,8,31,20)],
   #id 31
   # USA vs Chile
-  [ nil, "ESPN2", 1, 45, 16, 1, 19, DateTime.new(2018,7,29, 1900)],
+  [ nil, "ESPN2", 1, 45, 16, 1, 19, DateTime.new(2018,7,29,19)],
 ]
 
 matches_list.each do |match|
@@ -284,7 +284,7 @@ users_list = [
   ["Denise Duffy", "female inventor", "@denise_duffy", "142 Whitney Street", "San Francisco", "CA",  "94131", "Pacific Time (US & Canada)", "USA", "denise@deniseduffy.com", "password"],
   ["Mike Duffy", "big bro", "@hao_cleats", "2700 Great Highway", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA", "mike.duffy@usa.com", "password"],
   ["Big Pappy", "notDanLauletta", "@bigboy", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notdan@usa.com", "password"],
-  ["Tom Tom", "tom tom", "@wosoboy", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notdan@usa.com", "password"],
+  ["Tom Tom", "tom tom", "@wosoboy", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","danny@usa.com", "password"],
   ["Sue Bright", "susan14", "@wosogirl", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notsusan@usa.com", "password"],
   ["Tim Tim", "defnotJohnHalloran", "@josoboy", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notjohn@usa.com", "password"],
   ["Sue Sue", "ballergirl", "@ballergirl", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","ballergirl@usa.com", "password"],
@@ -393,7 +393,7 @@ predictions_list = [
   #id 31
   # USA vs Chile
 
-]
+
   # sky blue vs Courage
   [ "home", "home field advantage", true, 3, 2, 14],
   [ "away", "Sky blue is faster", false, 10, 3, 2],
@@ -401,7 +401,7 @@ predictions_list = [
   [ "home", "more skilled", false, 5, 1, 3],
   [ "away", "they are clicking on all levels", true, 8, 2, 4],
   [ "away", "they are clicking on all levels", true, 8, 2, 4],
-  [ "away", "they are clicking on all levels", true, 8, 2, 4],
+  [ "away", "they are clicking on all levels", true, 8, 2, 4]
 ]
 
 predictions_list.each do |prediction|
