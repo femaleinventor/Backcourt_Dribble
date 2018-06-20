@@ -81,7 +81,7 @@
                   </div>
                 </div>
 
-
+              <!-- Leaderboard Slide -->
               <div class="slide">
                 <div class="container-fluid">
                   <div class="row">
@@ -91,32 +91,90 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-xs-12 col-sm-4">
-                      <div class="prediction-board">
-                        <% home_predictions = select_team_predictions(match, @home_team) %>
-                        <h4 class="prediction-board-header"> <%= home_predictions.count %> Predict that <%= @home_team.name %> will win (<%= calculate_prediction_percentage(match, @home_team) %>) </h4>
-                        <% home_predictions.each do |prediction| %>
-                        <span>  <%= prediction.user.username %> </span>
-                        <span>  <%= prediction.reason %> </span>
-                        <span>  <%= prediction.likes %> </span>
-                        <% end %>
+                    <div class="col-sm-12 mx-auto">
+                      <div id="scroller">
+                         <% home_predictions = select_team_predictions(match, @home_team) %>
+                         <% away_predictions = select_team_predictions(match, @away_team) %>
+                         <% tie_predictions = select_tie_predictions(match, "tie") %>
+
+                         <h4 class="prediction-board-header"> <%= home_predictions.count %> Predict that <%= @home_team.name %> will win (<%= calculate_prediction_percentage(match, @home_team) %>) </h4>
+                         <table class="table table-bordered prediction-board">
+                           <thead class="thead-dark">
+                             <tr>
+                              <th scope="col">Rank</th>
+                              <th scope="col">Username</th>
+                              <th scope="col">Reason</th>
+                              <th scope="col">Likes</th>
+                             </tr>
+                           </thead>
+                         <tbody>
+                         <% home_predictions.each do |prediction| %>
+                              <tr>
+                                <!-- <th scope="row">2</th> -->
+                                <td>user_rank</td>
+                                <td><%= prediction.user.username %></td>
+                                <td><%= prediction.reason%></td>
+                                <td><%= prediction.likes%></td>
+                              </tr>
+                            <% end %>
+                            </tbody>
+                          </table>
+
+
+                         <h4 class="prediction-board-header">Tie</h4>
+                         <table class="table table-bordered prediction-board">
+                           <thead class="thead-dark">
+                             <tr>
+                              <!-- <th scope="col">#</th> -->
+                              <th scope="col">Username</th>
+                              <th scope="col">Reason</th>
+                              <th scope="col">Likes</th>
+                             </tr>
+                           </thead>
+                         <tbody>
+                         <% tie_predictions.each do |prediction| %>
+                              <tr>
+                                <!-- <th scope="row">2</th> -->
+                                <td><%= prediction.user.username %></td>
+                                <td><%= prediction.reason%></td>
+                                <td><%= prediction.likes%></td>
+                              </tr>
+                            <% end %>
+                            </tbody>
+                          </table>
+
+
+                         <h4 class="prediction-board-header"><%=@away_team.name%></h4>
+                         <table class="table table-bordered prediction-board">
+                           <thead class="thead-dark">
+                             <tr>
+                              <!-- <th scope="col">#</th> -->
+                              <th scope="col">Username</th>
+                              <th scope="col">Reason</th>
+                              <th scope="col">Likes</th>
+                             </tr>
+                           </thead>
+                         <tbody>
+                         <% away_predictions.each do |prediction| %>
+                              <tr>
+                                <!-- <th scope="row">2</th> -->
+                                <td><%= prediction.user.username %></td>
+                                <td><%= prediction.reason%></td>
+                                <td><%= prediction.likes%></td>
+                              </tr>
+                            <% end %>
+                            </tbody>
+                          </table>
+
+
+
+
                       </div>
                     </div>
 
-                    <div class="col-xs-12 col-sm-4">
-                      <div class="prediction-board">
-                        <h4> Tie Predictions </h4>
-                      </div>
-                    </div>
-
-                    <div class="col-xs-12 col-sm-4">
-                      <div class="prediction-board">
-                        <h4> <%= @away_team.name %> Predictions </h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  </div> <!-- End leaderboard row 2 -->
+                </div> <!-- End leaderboard container -->
+              </div> <!-- End leaderboard slide -->
 
               <div class="slide">
                 <div class="container-fluid">
