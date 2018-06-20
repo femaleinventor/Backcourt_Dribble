@@ -16,7 +16,7 @@ Prediction.destroy_all
 
 # seed file has already been run
 require 'csv'
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'BCD_for_CSV_teams.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'BCD_for_CSV_teams_062018.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
   t = Team.new
