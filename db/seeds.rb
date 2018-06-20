@@ -116,21 +116,46 @@ end
 
 
 venues_list = [
+  #id 1
   [ "Toyota Park", "venues/Toyota_Park.jpg", "7000 Harlem Ave, Bridgeview, IL 60455", "America/Chicago"],
+  #id 2
   [ "BBVA Compass Stadium", "venues/BBVA_Compass.jpg", "2200 Texas St, Houston, TX 77003", "America/Chicago"],
+  #id 3
   [ "WakeMed Soccer Park", "venues/Wake_Med.jpg", "201 Soccer Park Dr, Cary, NC 27511", "America/New_York"],
+  #id 4
   [ "Orlando City Stadium", "venues/Orlando.jpg", "655 W Church St, Orlando, FL 32805", "America/New_York"],
+  #id 5
   [ "Providence Park", "venues/Providence_Park.png", "1844 SW Morrison St, Portland, OR 97205","America/Los_Angeles"],
+  #id 6
   [ "Memorial Stadium", "venues/Memorial_Stadium.jpg", "401 5th Ave N, Seattle, WA 98109", "America/Los_Angeles"],
+  #id 7
   [ "Yurcak Field", "venues/Yurcak_Field.jpg", "83 Fitch Rd, Piscataway Township, NJ 08854", "America/New_York"],
+  #id 8
   [ "Rio Tinto Stadium", "venues/Rio_Tinto_Stadium.jpeg", "9256 State St, Sandy, UT 84070", "America/Denver"],
+  #id 9
   [ "Maryland SoccerPlex", "venues/Maryland_Soccerplex.jpeg", "18031 Central Park Cir, Boyds, MD 20841", "America/New_York"],
+  #id 10
   [ "Audi Field", "venues/Audi_Field.jpg", "32-60 R St SW, Washington, DC 20024", "America/New_York"],
+  #id 11
   [ "Avaya Stadium", "venues/Avaya_Stadium.png", "1123 Coleman Ave, San Jose, CA 95110","America/Los_Angeles"],
+  #id 12
   [ "EverBank Field", "venues/Everbank_Field.jpg", "1 Everbank Field Dr, Jacksonville, FL 32202", "America/New_York"],
+  #id 13
   [ "Talen Energy Stadium", "venues/Talen_Energy_Stadium.jpg", "1 Stadium Dr, Chester, PA 19013", "America/New_York"],
+  #id 14
   [ "FirstEnergy Stadium", "venues/FirstEnergy_Stadium.jpg", "100 Alfred Lerner Way, Cleveland, OH 44114", "America/Chicago"],
-  [ "Stade Guy-Piriou", "venues/Stade_Guy-Pirious.jpg", "13 Rue de Keriolet, 29900 Concarneau", "Europe/Paris"]
+  #id 15
+  [ "Stade Guy-Piriou", "venues/Stade_Guy-Pirious.jpg", "13 Rue de Keriolet, 29900 Concarneau", "Europe/Paris"],
+  #id 16
+  [ "Children’s Mercy Park", nil, "1 Sporting Way, Kansas City, KS 66111 Kansas City", "America/Chicago"],
+  #id 17
+  [ "Pratt & Whitney Stadium at Rentschler Field", nil, "615 Silver Ln, East Hartford, CT 06118", "America/New_York"],
+  #id 18
+  [ "StubHub Center", nil, "18400 S Avalon Blvd, Carson, CA 90746", "America/Los_Angeles"],
+  #id 19
+  [ "Avaya Stadium", nil, "1123 Coleman Ave, San Jose, CA 95110", "America/Los_Angeles"],
+
+
 ]
 
 
@@ -138,11 +163,6 @@ venues_list.each do |venue|
   Venue.create!(name: venue[0], picture_url: venue[1], address: venue[2], timezone: venue[3])
 end
 
-# 1 Top WoSo Journalists
-# 2 WoSo Journalists
-# 3 Notable WoSo Accounts
-# 4 Soccer Journalists
-# 5 NWSL Accounts
 # 6 Chicago Redstars
 # 7 Houston Dash
 # 8 North Carolina Courage
@@ -157,32 +177,101 @@ end
 # 17 USWNT Soccer U-23
 # 18 USWNT Soccer U-20
 # 19 USWNT Soccer U-19
-# 21 USWNT Soccer Retired
-# 22 USWNT Recent Callups
+
+
+
 
 # [ "result", "channel", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id", "start" ],
 matches_list = [
+  #id 1
   [ "home", "Lifetime", 2, 7, 12, 1, 7, DateTime.new(2018,3,24,12,15)],
+  #id 2
   [ "tie", "go90 App", 2, 12, 8, 1, 3, DateTime.new(2018,3,24,12)],
+  #id 3
   [ "away", "go90 App", 2, 13, 10, 1, 5, DateTime.new(2018,3,24,12)],
+  #id 4
   [ "home", "Lifetime", 2, 9, 11, 1, 3, DateTime.new(2018,6,24,14)],
+  #id 5
   [ "away", "fox sports 1", 2, 4, 6, 1, 2, DateTime.new(2018,8,9,14,15)],
-  [ nil, "go90 App", 2, 8, 9, 1, 3, DateTime.new(2018,9,8,19) ],
+  #id 6
+  [ nil, "go90 App", 2, 8, 9, 1, 3, DateTime.new(2018,9,8,19)],
+  #id 7
   [ nil, "Lifetime", 2, 14, 7, 1, 8, DateTime.new(2018,9,8,19)],
-  # [ nil, "ESPN2", 1, ]
+  #id 8
+  # Dash vs Thorns
+  [ nil, "go90 App", 2, 10, 7, 1, 2, DateTime.new(2018,6,22, 0530)],
+  #id 9
+  # Reign vs Courage
+  [ nil, "go90 App", 2, 8, 11, 1, 6, DateTime.new(2018,6,23, 1300)],
+  #id 10
+  # Spirit vs Pride
+  [ nil, "ESPN News", 2, 9, 14, 1, 9, DateTime.new(2018,6,23, 1900)],
+  #id 11
+  # Redstars vs Royals
+  [ nil, "go90 App", 2, 13, 6, 1, 1, DateTime.new(2018,6,23, 1900)],
+  #id 12
+  # Pride vs Dash
+  [ nil, "go90 App", 2, 7, 9, 1, 4, DateTime.new(2018,6,23, 1530)],
+  #id 13
+  # Royals vs Seattle 6/27
+  [ nil, "go90 App", 2, 7, 9, 1, 4, DateTime.new(2018,6,23, 1530)],
+
+  # Coming up after hackathon games
+  #id 14
+  # sky blue vs Courage
+  [ nil, "go90 App", 2, 8, 12, 1, 7, DateTime.new(2018,7,14, 1900)],
+  #id 15
+  # royals vs pride
+  [ nil, "ESPN News", 2, 9, 13, 1, 8, DateTime.new(2018,7,14, 1700)],
+  #id 16
+  # redstars vs Reign
+  [ nil, "go90 App", 2, 11, 6, 1, 1, DateTime.new(2018,7,14, 1900)],
+  #id 17
+  # thorns vs dash
+  [ nil, "go90 App", 2, 7, 10, 1, 5, DateTime.new(2018,7,15, 1900)],
+  #id 18
+  # royals vs Courage
+  [ nil, "go90 App", 2, 8, 13, 1, 8, DateTime.new(2018,7,20, 2000)],
+  #id 19
+  # pride vs Reign
+  [ nil, "Lifetime", 2, 11, 9, 1, 6, DateTime.new(2018,7,21, 1530)],
+  #id 20
+  # spirit vs dash
+  [ nil, "go90 App", 2, 7, 14, 1, 2, DateTime.new(2018,7,21, 1900)],
+  #id 21
+  # sky blue vs thorns
+  [ nil, "go90 App", 2, 10, 12, 1, 5, DateTime.new(2018,7,21, 1900)],
+  #id 22
+  # redstars vs sky blue
+  [ nil, "go90 App", 2, 12, 6, 1, 7, DateTime.new(2018,7,28, 1900)],
+  #id 23
+  # courage vs Thorns 8/5
+  [ nil, "go90 App", 2, 10, 8, 1, 3, DateTime.new(2018,8,05, 2000)],
+  #id 24
+  # pride vs SKY
+  [ nil, "go90 App", 2, 12, 9, 1, 4, DateTime.new(2018,8,05, 1930)],
+  #id 25
+  # dash vs Royals
+  [ nil, "go90 App", 2, 13, 7, 1, 2, DateTime.new(2018,8,05, 1900)],
+  #id 26
+  # reign vs spirit
+  [ nil, "go90 App", 2, 11, 14, 1, 6, DateTime.new(2018,8,05, 1900)],
+  #id 27
+  # USA vs Japan
+  [ nil, "FS1", 1, 41, 16, 1, 16, DateTime.new(2018,7,23, 1800)],
+  #id 28
+  # USA vs Australia
+  [ nil, "FS1", 1, 43, 16, 1, 17, DateTime.new(2018,7,29, 1900)],
+  #id 29
+  # USA vs Brazil
+  [ nil, "FS1", 1, 44, 16, 1, 1, DateTime.new(2018,8,02, 1930)],
+  #id 30
+  # USA vs Chile
+  [ nil, "ESPN2", 1, 45, 16, 1, 18, DateTime.new(2018,8,31, 2000)],
+  #id 31
+  # USA vs Chile
+  [ nil, "ESPN2", 1, 45, 16, 1, 19, DateTime.new(2018,7,29, 1900)],
 ]
-
-# matches_list = [
-#   [ "home", "Lifetime", 2, 7, 12, 1, 7, "2001-02-04%16:05:06+03:30"],
-#   [ "tie", "go90 App", 2, 12, 8, 1, 3, "2001-02-04%16:05:06+03:30"],
-#   [ "away", "go90 App", 2, 13, 10, 1, 5, "2001-02-04%16:05:06+03:30"],
-#   [ "home", "Lifetime", 2, 9, 11, 1, 3, "2001-02-04%16:05:06+03:30"],
-#   [ "away", "fox sports 1", 2, 4, 6, 1, 2, "2001-02-04%16:05:06+03:30"],
-#   [ nil, "go90 App", 2, 8, 9, 1, 3, "2001-02-04%16:05:06+03:30" ],
-#   [ nil, "Lifetime", 2, 14, 7, 1, 8, "2001-02-04%16:05:06+03:30"]
-# ]
-
-
 
 matches_list.each do |match|
   Match.create!(result: match[0], channel: match[1], league_id: match[2], away_team_id: match[3], home_team_id: match[4], sport_id: match[5], venue_id: match[6], start: match[7])
@@ -192,8 +281,13 @@ end
 users_list = [
   ["Ethan Fertsch", "efertsch", "@ethanlovesdogs",  "2 Salem Green", "Salem", "MA", "01970","Eastern Time (US & Canada)", "USA", "ethan@mail.com", "password"],
   ["Angie Dale", "adale91", "@angielovesdogs", "865 Franklin St", "Melrose", "MA", "02176", "Eastern Time (US & Canada)",  "USA", "angie@mail.com", "password"],
-  ["Denise Duffy", "female inventor", "@denise_duffy", "142 Whitney Street", "San Francisco", "CA",  "94131", "Pacific Time (US & Canada)", "USA", "denise@deniseduffy.com", "password-1"],
-  ["Mike Duffy", "big bro", "@hao_cleats", "2700 Great Highway", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA", "mike.duffy@usa.com", "password-2"]
+  ["Denise Duffy", "female inventor", "@denise_duffy", "142 Whitney Street", "San Francisco", "CA",  "94131", "Pacific Time (US & Canada)", "USA", "denise@deniseduffy.com", "password"],
+  ["Mike Duffy", "big bro", "@hao_cleats", "2700 Great Highway", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA", "mike.duffy@usa.com", "password"],
+  ["Big Pappy", "notDanLauletta", "@bigboy", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notdan@usa.com", "password"],
+  ["Tom Tom", "tom tom", "@wosoboy", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notdan@usa.com", "password"],
+  ["Sue Bright", "susan14", "@wosogirl", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notsusan@usa.com", "password"],
+  ["Tim Tim", "defnotJohnHalloran", "@josoboy", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notjohn@usa.com", "password"],
+  ["Sue Sue", "ballergirl", "@ballergirl", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","ballergirl@usa.com", "password"],
 ]
 
 # this is not turning the color i want
@@ -203,11 +297,111 @@ end
 
 
 predictions_list = [
-  [ "home", "home field advantage", true, 3, 2, 1],
+  # guess: prediction[0], reason: prediction[1], correct?: prediction[2], likes: prediction[3], user_id: prediction[4], match_id: prediction[5]
+  # id 8
+  # Dash vs Thorns
+  [ "home", "Parsons is going to get Pauwed", nil, 8, 2, 8],
+  [ "home", "Horan won't be there", nil, 3, 3, 8],
+  [ "away", "Thorns are finally flowing", nil, 1, 1, 8],
+  [ "away", "Thorns have too much Talent", nil, 2, 1, 8],
+  #id 9
+  # Reign vs Courage
+  [ "tie", "As the season goes on these teams are evenly matched", nil, 2, 1, 9],
+  [ "away", "Courage on penalty kicks are just so tall, the ball will go over the defense", nil, 2, 2, 9],
+  [ "home", "Seattle will give us a perfect storm", nil, 2, 8, 9],
+  [ "tie", "It will be a good game, but no winners though", nil, 2, 4, 9],
+  #id 10
+  # Spirit vs Pride
+  [ "tie", "Too close to call", nil, 2, 5, 10],
+  [ "home", "Seatlle has tons of soccer IQ", nil, 2, 8, 10],
+  [ "away", "Pride have more scoring talent", nil, 2, 1, 10],
+  [ "away", "Pride's defense has improved", nil, 2, 2, 10],
+  #id 11
+  # Redstars vs Royals
+  [ "tie", "Too close to call", nil, 2, 1, 11],
+  [ "home", "Redstars have Sam Kerr", nil, 2, 8, 11],
+  [ "away", "Royals have Press", nil, 2, 8, 11],
+  [ "away", "Laura Harvey really knows how to coach", nil, 2, 5, 11],
+
+  #id 12
+  # Pride vs Dash
+  [ "tie", "They both will score 1 goal", nil, 2, 1, 12],
+  [ "home", "Krieger fever will take over", nil, 2, 8, 12],
+  [ "away", "The Dash will surprise us", nil, 2, 8, 12],
+  [ "away", "Pauw really knows how to coach", nil, 2, 5, 12],
+
+  #id 13
+  # Royals vs Seattle 6/27
+  [ "tie", "Royals have amazing defense, 0-0 tie", nil, 2, 1, 13],
+  [ "home", "Press will get one or two", nil, 2, 8, 13],
+  [ "home", "The Royals are just gelling", nil, 2, 8, 13],
+  [ "away", "Seattle knows what they are doing", nil, 2, 5, 13],
+
+
+  # Coming up after hackathon games
+  #id 14
+  # sky blue vs Courage
+
+  #id 15
+  # royals vs pride
+
+  #id 16
+  # redstars vs Reign
+
+  #id 17
+  # thorns vs dash
+
+  #id 18
+  # royals vs Courage
+
+  #id 19
+  # pride vs Reign
+
+  #id 20
+  # spirit vs dash
+
+  #id 21
+  # sky blue vs thorns
+
+  #id 22
+  # redstars vs sky blue
+
+  #id 23
+  # courage vs Thorns 8/5
+
+  #id 24
+  # pride vs SKY
+
+  #id 25
+  # dash vs Royals
+
+  #id 26
+  # reign vs spirit
+
+  #id 27
+  # USA vs Japan
+
+  #id 28
+  # USA vs Australia
+
+  #id 29
+  # USA vs Brazil
+
+  #id 30
+  # USA vs Chile
+
+  #id 31
+  # USA vs Chile
+
+]
+  # sky blue vs Courage
+  [ "home", "home field advantage", true, 3, 2, 14],
   [ "away", "Sky blue is faster", false, 10, 3, 2],
   [ "tie", "equally matched and a bunch of other things", false, 6, 4, 2],
   [ "home", "more skilled", false, 5, 1, 3],
-  [ "away", "they are clicking on all levels", true, 8, 2, 4]
+  [ "away", "they are clicking on all levels", true, 8, 2, 4],
+  [ "away", "they are clicking on all levels", true, 8, 2, 4],
+  [ "away", "they are clicking on all levels", true, 8, 2, 4],
 ]
 
 predictions_list.each do |prediction|
