@@ -36,6 +36,7 @@
                           <div class="d-flex justify-content-between custom-control custom-checkbox">
                             <!-- home -->
                             <div class="prediction-check form-group">
+                              <%= label_tag :guess, "#{@home_team.name}"%>
                               <%= check_box_tag :guess, @home_team.name, false, class: "prediction-checkbox" %>
                             </div>
 
@@ -44,12 +45,14 @@
                             <div class="prediction-check form-group">
                               <!-- custom control for check boxes? -->
                               <!-- <label class="custom-control custom-checkbox"> -->
+                                <%= label_tag :guess, "Tie"%>
                                 <%= check_box_tag :guess, "Tie", false, class: "prediction-checkbox" %>
                               <!-- </label> -->
                             </div>
 
                             <!-- away -->
                             <div class="prediction-check form-group">
+                              <%= label_tag :guess, "#{@away_team.name}"%>
                               <%= check_box_tag :guess, @away_team.name, false, class: "prediction-checkbox" %>
                             </div>
                           </div>
@@ -96,6 +99,9 @@
                          <% home_predictions = select_team_predictions(match, @home_team) %>
                          <% away_predictions = select_team_predictions(match, @away_team) %>
                          <% tie_predictions = select_tie_predictions(match, "tie") %>
+                         <%= home_predictions %>
+                         <%= away_predictions %>
+                         <%= tie_predictions %>
 
                          <h4 class="prediction-board-header"> <%= home_predictions.count %> Predict that <%= @home_team.name %> will win (<%= calculate_prediction_percentage(match, @home_team) %>) </h4>
                          <table class="table table-bordered prediction-board">
@@ -136,8 +142,8 @@
                               <tr>
                                 <!-- <th scope="row">2</th> -->
                                 <td><%= prediction.user.username %></td>
-                                <td><%= prediction.reason%></td>
-                                <td><%= prediction.likes%></td>
+                                <td><%= prediction.reason %></td>
+                                <td><%= prediction.likes %></td>
                               </tr>
                             <% end %>
                             </tbody>
