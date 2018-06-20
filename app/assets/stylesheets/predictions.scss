@@ -38,8 +38,16 @@ $theme-grey: #707070;
   margin-bottom: 10px;
 }
 
+.prediction-check{
+  text-align: center;
+}
+
   // .prediction-board-header {
   // }
+
+label {
+    display:block;
+  }
 
 
 #guess {
