@@ -324,12 +324,12 @@ predictions_list = [
   #id 2
   # pride vs Royals
   [ "Orland Pride", "The pride has all the pieces", nil, 8, 2, 2],
-  [ "Orland Pride", "Horan won't be there", nil, 3, 3, 2],
-  [ "Utah Royals", "Thorns are finally flowing", nil, 1, 1, 2],
-  [ "Utah Royals", "Thorns have too much Talent", nil, 2, 1, 2],
+  [ "Orland Pride", "Pride has Marta. She's the biggest generator in the world", nil, 3, 3, 2],
+  [ "Utah Royals", "Laura Harvey will make the ball go in the net with her eyes", nil, 1, 1, 2],
+  [ "Utah Royals", "They have the best defense in the league by far", nil, 2, 1, 2],
   #id 3
   # reign vs spirit
-  [ "Seattle Reign", "Parsons is going to get Pauwed", nil, 8, 2, 3],
+  [ "Seattle Reign", "Vlatko ", nil, 8, 2, 3],
   [ "Seattle Reign", "Horan won't be there", nil, 3, 3, 3],
   [ "Washington Spirit", "Thorns are finally flowing", nil, 1, 1, 3],
   [ "Washington Spirit", "Thorns have too much Talent", nil, 2, 1, 3],
@@ -361,38 +361,38 @@ predictions_list = [
   # Dash vs Thorns
   [ "Houston Dash", "Parsons is going to get Pauwed", nil, 8, 2, 8],
   [ "Houston Dash", "Horan won't be there", nil, 3, 3, 8],
-  [ "tie", "Thorns are finally flowing", nil, 1, 1, 8],
+  [ "tie", "They are evenly matched without the great Horan", nil, 1, 1, 8],
   [ "Portland Thorns", "Thorns have too much Talent", nil, 2, 1, 8],
   #id 9
-  # Reign vs Courage
-  [ "tie", "As the season goes on these teams are evenly matched", nil, 2, 1, 9],
-  [ "away", "Courage on penalty kicks are just so tall, the ball will go over the defense", nil, 2, 2, 9],
-  [ "home", "Seattle will give us a perfect storm", nil, 2, 8, 9],
-  [ "tie", "It will be a good game, but no winners though", nil, 2, 4, 9],
-  #id 10
-  # Spirit vs Pride
-  [ "tie", "Too close to call", nil, 2, 5, 10],
-  [ "home", "Seatlle has tons of soccer IQ", nil, 2, 8, 10],
-  [ "away", "Pride have more scoring talent", nil, 2, 1, 10],
-  [ "away", "Pride's defense has improved", nil, 2, 2, 10],
-  #id 11
-  # Redstars vs Royals
-  [ "tie", "Too close to call", nil, 2, 1, 11],
-  [ "home", "Redstars have Sam Kerr", nil, 2, 8, 11],
-  [ "away", "Royals have Press", nil, 2, 8, 11],
-  [ "away", "Laura Harvey really knows how to coach", nil, 2, 5, 11],
-  #id 12
-  # Pride vs Dash
-  [ "tie", "They both will score 1 goal", nil, 2, 1, 12],
-  [ "home", "Krieger fever will take over", nil, 2, 8, 12],
-  [ "away", "The Dash will surprise us", nil, 2, 8, 12],
-  [ "away", "Pauw really knows how to coach", nil, 2, 5, 12],
-  #id 13
-  # Royals vs Seattle 6/27
-  [ "tie", "Royals have amazing defense, 0-0 tie", nil, 2, 1, 13],
-  [ "home", "Press will get one or two", nil, 2, 8, 13],
-  [ "home", "The Royals are just gelling", nil, 2, 8, 13],
-  [ "away", "Seattle knows what they are doing", nil, 2, 5, 13],
+  # # Reign vs Courage
+  # [ "tie", "As the season goes on these teams are evenly matched", nil, 2, 1, 9],
+  # [ "away", "Courage on penalty kicks are just so tall, the ball will go over the defense", nil, 2, 2, 9],
+  # [ "home", "Seattle will give us a perfect storm", nil, 2, 8, 9],
+  # [ "tie", "It will be a good game, but no winners though", nil, 2, 4, 9],
+  # #id 10
+  # # Spirit vs Pride
+  # [ "tie", "Too close to call", nil, 2, 5, 10],
+  # [ "home", "Seatlle has tons of soccer IQ", nil, 2, 8, 10],
+  # [ "away", "Pride have more scoring talent", nil, 2, 1, 10],
+  # [ "away", "Pride's defense has improved", nil, 2, 2, 10],
+  # #id 11
+  # # Redstars vs Royals
+  # [ "tie", "Too close to call", nil, 2, 1, 11],
+  # [ "home", "Redstars have Sam Kerr", nil, 2, 8, 11],
+  # [ "away", "Royals have Press", nil, 2, 8, 11],
+  # [ "away", "Laura Harvey really knows how to coach", nil, 2, 5, 11],
+  # #id 12
+  # # Pride vs Dash
+  # [ "tie", "They both will score 1 goal", nil, 2, 1, 12],
+  # [ "home", "Krieger fever will take over", nil, 2, 8, 12],
+  # [ "away", "The Dash will surprise us", nil, 2, 8, 12],
+  # [ "away", "Pauw really knows how to coach", nil, 2, 5, 12],
+  # #id 13
+  # # Royals vs Seattle 6/27
+  # [ "tie", "Royals have amazing defense, 0-0 tie", nil, 2, 1, 13],
+  # [ "home", "Press will get one or two", nil, 2, 8, 13],
+  # [ "home", "The Royals are just gelling", nil, 2, 8, 13],
+  # [ "away", "Seattle knows what they are doing", nil, 2, 5, 13],
 
 
   # Coming up after hackathon games
