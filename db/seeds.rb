@@ -184,19 +184,26 @@ end
 # [ "result", "channel", "league_id", "away_team_id", "home_team_id", "sport_id", "venue_id", "start" ],
 matches_list = [
   #id 1
-  [ "home", "Lifetime", 2, 7, 12, 1, 7, DateTime.new(2018,3,24,12,15)],
+  # courage vs portland
+  [ "North Carolina Courage", "Lifetime", 2, 10, 8, 1, 3, DateTime.new(2018,3,24,12,15)],
   #id 2
-  [ "tie", "go90 App", 2, 12, 8, 1, 3, DateTime.new(2018,3,24,12)],
+  # pride vs Royals
+  [ "tie", "go90 App", 2, 13, 9, 1, 4, DateTime.new(2018,3,24,12)],
   #id 3
-  [ "away", "go90 App", 2, 13, 10, 1, 5, DateTime.new(2018,3,24,12)],
+  # reign vs spirit
+  [ "Seattle Reign", "go90 App", 2, 14, 11, 1, 6, DateTime.new(2018,3,24,12)],
   #id 4
-  [ "home", "Lifetime", 2, 9, 11, 1, 3, DateTime.new(2018,6,24,14)],
+  # dash vs redstars
+  [ "tie", "go90 App", 2, 6, 7, 1, 2, DateTime.new(2018,3,24,12)],
   #id 5
-  [ "away", "fox sports 1", 2, 4, 6, 1, 2, DateTime.new(2018,8,9,14,15)],
+  # dash vs royals
+  [ "tie", "go90 App", 2, 13, 7, 1, 2, DateTime.new(2018,3,30,15)],
   #id 6
-  [ nil, "go90 App", 2, 8, 9, 1, 3, DateTime.new(2018,9,8,19)],
+  # courage vs sky blue
+  [ "North Carolina Courage", "go90 App", 2, 8, 9, 1, 3, DateTime.new(2018,9,8,19)],
   #id 7
-  [ nil, "Lifetime", 2, 14, 7, 1, 8, DateTime.new(2018,9,8,19)],
+  # washington vs pride
+  [ "Washington Spirit", "Lifetime", 2, 9, 14, 1, 9, DateTime.new(2018,9,8,19)],
   #id 8
   # Dash vs Thorns
   [ nil, "go90 App", 2, 10, 7, 1, 2, DateTime.new(2018,6,22,17,30)],
@@ -279,14 +286,23 @@ end
 
 # [ "name", "username", "twitter_handle", "street_address", "city", "state", "zipcode", "country", "level", "stripeToken", "email", encrypted_password ],
 users_list = [
+  #id1
   ["Ethan Fertsch", "efertsch", "@ethanlovesdogs",  "2 Salem Green", "Salem", "MA", "01970","Eastern Time (US & Canada)", "USA", "ethan@mail.com", "password"],
+  #id2
   ["Angie Dale", "adale91", "@angielovesdogs", "865 Franklin St", "Melrose", "MA", "02176", "Eastern Time (US & Canada)",  "USA", "angie@mail.com", "password"],
-  ["Denise Duffy", "female inventor", "@denise_duffy", "142 Whitney Street", "San Francisco", "CA",  "94131", "Pacific Time (US & Canada)", "USA", "denise@deniseduffy.com", "password"],
+  #id3
+  ["Denise Duffy", "sunnysideup", "@denise_duffy", "142 Whitney Street", "San Francisco", "CA",  "94131", "Pacific Time (US & Canada)", "USA", "denise@deniseduffy.com", "password"],
+  #id4
   ["Mike Duffy", "big bro", "@hao_cleats", "2700 Great Highway", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA", "mike.duffy@usa.com", "password"],
+  #id5
   ["Big Pappy", "notDanLauletta", "@bigboy", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notdan@usa.com", "password"],
+  #id6
   ["Tom Tom", "tom tom", "@wosoboy", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","danny@usa.com", "password"],
+  #id7
   ["Sue Bright", "susan14", "@wosogirl", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notsusan@usa.com", "password"],
+  #id8
   ["Tim Tim", "defnotJohnHalloran", "@josoboy", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notjohn@usa.com", "password"],
+  #id9
   ["Sue Sue", "ballergirl", "@ballergirl", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","ballergirl@usa.com", "password"],
 ]
 
@@ -298,12 +314,55 @@ end
 
 predictions_list = [
   # guess: prediction[0], reason: prediction[1], correct?: prediction[2], likes: prediction[3], user_id: prediction[4], match_id: prediction[5]
+
+  #id 1
+  # courage vs portland
+  [ "North Carolina Courage", "Parsons is going to get Pauwed", true, 8, 2, 1],
+  [ "North Carolina Courage", "Horan can't carry the full team", true, 3, 3, 1],
+  [ "Portland Thorns", "Thorns are finally flowing", false, 1, 5, 1],
+  [ "Portland Thorns", "Thorns have too much Talent", false, 2, 4, 1],
+  #id 2
+  # pride vs Royals
+  [ "Orland Pride", "The pride has all the pieces", nil, 8, 2, 2],
+  [ "Orland Pride", "Horan won't be there", nil, 3, 3, 2],
+  [ "Utah Royals", "Thorns are finally flowing", nil, 1, 1, 2],
+  [ "Utah Royals", "Thorns have too much Talent", nil, 2, 1, 2],
+  #id 3
+  # reign vs spirit
+  [ "Seattle Reign", "Parsons is going to get Pauwed", nil, 8, 2, 3],
+  [ "Seattle Reign", "Horan won't be there", nil, 3, 3, 3],
+  [ "Washington Spirit", "Thorns are finally flowing", nil, 1, 1, 3],
+  [ "Washington Spirit", "Thorns have too much Talent", nil, 2, 1, 3],
+  #id 4
+  # dash vs redstars
+  [ "Houston Dash", "Parsons is going to get Pauwed", nil, 8, 2, 4],
+  [ "Houston Dash", "Horan won't be there", nil, 3, 3, 4],
+  [ "Chicago Redstars", "Thorns are finally flowing", nil, 1, 1, 4],
+  [ "Chicago Redstars", "Thorns have too much Talent", nil, 2, 1, 4],
+  #id 5
+  # dash vs royals
+  [ "Houston Dash", "Parsons is going to get Pauwed", nil, 8, 2, 5],
+  [ "Houston Dash", "Horan won't be there", nil, 3, 3, 5],
+  [ "tie", "Thorns are finally flowing", nil, 1, 1, 5],
+  [ "Utah Royals", "Thorns have too much Talent", nil, 2, 1, 5],
+  #id 6
+  # courage vs sky blue
+  [ "North Carolina Courage", "Parsons is going to get Pauwed", nil, 8, 2, 6],
+  [ "North Carolina Courage", "Horan won't be there", nil, 3, 3, 6],
+  [ "Sky Blue FC", "Thorns are finally flowing", nil, 1, 1, 6],
+  [ "Sky Blue FC", "Thorns have too much Talent", nil, 2, 1, 6],
+  #id 7
+  # washington vs pride
+  [ "Washington spirit", "Parsons is going to get Pauwed", nil, 8, 2, 7],
+  [ "Washington spirit", "Horan won't be there", nil, 3, 3, 7],
+  [ "Orlando Pride", "Thorns are finally flowing", nil, 1, 1, 7],
+  [ "Orlando Pride", "Thorns have too much Talent", nil, 2, 1, 7],
   # id 8
   # Dash vs Thorns
-  [ "home", "Parsons is going to get Pauwed", nil, 8, 2, 8],
-  [ "home", "Horan won't be there", nil, 3, 3, 8],
-  [ "away", "Thorns are finally flowing", nil, 1, 1, 8],
-  [ "away", "Thorns have too much Talent", nil, 2, 1, 8],
+  [ "Houston Dash", "Parsons is going to get Pauwed", nil, 8, 2, 8],
+  [ "Houston Dash", "Horan won't be there", nil, 3, 3, 8],
+  [ "tie", "Thorns are finally flowing", nil, 1, 1, 8],
+  [ "Portland Thorns", "Thorns have too much Talent", nil, 2, 1, 8],
   #id 9
   # Reign vs Courage
   [ "tie", "As the season goes on these teams are evenly matched", nil, 2, 1, 9],
@@ -322,14 +381,12 @@ predictions_list = [
   [ "home", "Redstars have Sam Kerr", nil, 2, 8, 11],
   [ "away", "Royals have Press", nil, 2, 8, 11],
   [ "away", "Laura Harvey really knows how to coach", nil, 2, 5, 11],
-
   #id 12
   # Pride vs Dash
   [ "tie", "They both will score 1 goal", nil, 2, 1, 12],
   [ "home", "Krieger fever will take over", nil, 2, 8, 12],
   [ "away", "The Dash will surprise us", nil, 2, 8, 12],
   [ "away", "Pauw really knows how to coach", nil, 2, 5, 12],
-
   #id 13
   # Royals vs Seattle 6/27
   [ "tie", "Royals have amazing defense, 0-0 tie", nil, 2, 1, 13],
@@ -393,15 +450,6 @@ predictions_list = [
   #id 31
   # USA vs Chile
 
-
-  # sky blue vs Courage
-  [ "home", "home field advantage", true, 3, 2, 14],
-  [ "away", "Sky blue is faster", false, 10, 3, 2],
-  [ "tie", "equally matched and a bunch of other things", false, 6, 4, 2],
-  [ "home", "more skilled", false, 5, 1, 3],
-  [ "away", "they are clicking on all levels", true, 8, 2, 4],
-  [ "away", "they are clicking on all levels", true, 8, 2, 4],
-  [ "away", "they are clicking on all levels", true, 8, 2, 4]
 ]
 
 predictions_list.each do |prediction|
