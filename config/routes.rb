@@ -12,10 +12,16 @@ Rails.application.routes.draw do
 
   get 'shop/index'
 
-  get 'tweets/index'
-
   get 'wall/index'
 
+  resources :wall do
+    resources :woso
+
+    get 'wall/woso/index' to: 'wall/woso#index'
+
+    resources :uswnt
+    resources :nwsl
+  end
 
   devise_for :users
 
