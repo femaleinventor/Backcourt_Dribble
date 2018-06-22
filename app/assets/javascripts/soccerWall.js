@@ -1,8 +1,8 @@
-$(document).ready(function() {
-  $('.woso_words').click(function(event) {
-    event.preventDefault();
-  });
-});
+// $(document).ready(function() {
+//   $('.woso_words').click(function(event) {
+//     event.preventDefault();
+//   });
+// });
 //     $('<div>')
 //       .append('default ' + event.type + ' prevented')
 //       .appendTo('#log');
