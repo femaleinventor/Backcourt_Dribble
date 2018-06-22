@@ -5,12 +5,58 @@
     <title></title>
   </head>
   <body>
-    <h1>HOME PAGE</h1>
-    <%= link_to 'Dribble!', sports_path %>
-    <%= link_to 'WoSo Wall', wall_index_path %>
-    <%= link_to 'Team Tweets', '/pages/soccer/woso_writers.html.erb' %>
-    <%= link_to 'Shop', shop_index_path %>
 
-    <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+    <div class="home-nav">
+      <div class="nav-row">
+        <div class="action-button left">
+          <div class="action-title">
+            <%= link_to 'Wall', wall_index_path %>
+          </div>
+          <div class="action-subtext">
+            exploring the twitterverse for key words for woman's soccer
+          </div>
+        </div>
+        <div class="action-button right">
+          <div class="action-title">
+            <%= link_to 'Dribble!', sports_path %>
+          </div>
+          <div class="action-subtext">
+            make predictions about team performance and engage with statistics
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-row">
+        <div class="action-button left">
+          <div class="action-title">
+            <%= link_to 'Twitter', '/pages/soccer/woso_writers.html.erb' %>
+          </div>
+          <div class="action-subtext">
+            collecting currents tweets from teams around the world
+          </div>
+        </div>
+        <div class="action-button right">
+          <div class="action-title">
+            <%= link_to 'Shop', shop_index_path %>
+          </div>
+          <div class="action-subtext">
+            cool stuff made by or about female athletes (coming soon)
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    <!-- <%= link_to 'Log out', destroy_user_session_path, method: :delete %> -->
+
+
+
+
+
+
+
   </body>
 </html>
