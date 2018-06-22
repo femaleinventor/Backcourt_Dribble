@@ -1,2 +1,13 @@
 <h1>Tweets#index</h1>
 <p>Find me in app/views/tweets/index.html.erb</p>
+
+<h3>Results for "<%=@search_string%>"</h3>
+<p>
+  <ul>
+    <% @results.each do |result| %>
+      <img src="<%= result %>">
+      <br>
+    <% end %>
+  </ul>
+</p>
+

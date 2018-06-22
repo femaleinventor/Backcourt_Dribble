@@ -5,6 +5,8 @@
     <div id="word_list" class="woso_words green col-3 d-flex justify-content-end">
     <ul>
       <li><%= link_to 'WoSo', wall_index_path %></li>
+      <!-- create hidden form -->
+      <form action="/tweets_index" method="post" type="hidden" value="WoSo"></form> 
       <li>USWNT</li>
       <li>NWSL</li>
     </ul>
