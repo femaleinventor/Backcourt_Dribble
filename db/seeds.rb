@@ -276,10 +276,14 @@ matches_list = [
   [ nil, "FS1", 1, 44, 16, 1, 1, DateTime.new(2018,8,02,19,30)],
   #id 30
   # USA vs Chile
-  [ nil, "ESPN2", 1, 45, 16, 1, 18, DateTime.new(2018,8,31,20)],
+  [ nil, "ESPN2", 1, 45, 16, 1, 11, DateTime.new(2018,8,31,20)],
   #id 31
   # USA vs Chile
-  [ nil, "ESPN2", 1, 45, 16, 1, 19, DateTime.new(2018,7,29,19)],
+  [ nil, "ESPN2", 1, 45, 16, 1, 18, DateTime.new(2018,9,4,19)],
+  # Courage vs PSG
+  [ nil, "ESPN2", 3, 47, 8, 1, 19, DateTime.new(2018,7,26,18,15)],
+  # Lyon vs Man City
+  [ nil, "ESPN2", 3, 48, 46, 1, 19, DateTime.new(2018,7,26,21)]
 ]
 
 matches_list.each do |match|
