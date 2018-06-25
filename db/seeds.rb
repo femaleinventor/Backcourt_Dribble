@@ -147,15 +147,13 @@ venues_list = [
   #id 15
   [ "Stade Guy-Piriou", "venues/Stade_Guy-Pirious.jpg", "13 Rue de Keriolet, 29900 Concarneau", "Europe/Paris"],
   #id 16
-  [ "Children’s Mercy Park", nil, "1 Sporting Way, Kansas City, KS 66111 Kansas City", "America/Chicago"],
+  [ "Children’s Mercy Park", "venues/Childrens_Mercy_Park.png", "1 Sporting Way, Kansas City, KS 66111 Kansas City", "America/Chicago"],
   #id 17
-  [ "Pratt & Whitney Stadium at Rentschler Field", nil, "615 Silver Ln, East Hartford, CT 06118", "America/New_York"],
+  [ "Pratt & Whitney Stadium at Rentschler Field", "venues/Pratt_and_Whitney_Stadium.jpg", "615 Silver Ln, East Hartford, CT 06118", "America/New_York"],
   #id 18
-  [ "StubHub Center", nil, "18400 S Avalon Blvd, Carson, CA 90746", "America/Los_Angeles"],
+  [ "StubHub Center", "venues/StubHub_Center.jpg", "18400 S Avalon Blvd, Carson, CA 90746", "America/Los_Angeles"],
   #id 19
-  [ "Avaya Stadium", nil, "1123 Coleman Ave, San Jose, CA 95110", "America/Los_Angeles"],
-
-
+  [ "Hard Rock Stadium", "venues/hard_rock_stadium.jpg", "347 Don Shula Dr, Miami Gardens, FL 33056", "America/New_York"]
 ]
 
 
