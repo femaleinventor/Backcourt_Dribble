@@ -305,7 +305,7 @@ users_list = [
   #id6
   ["Butch Loy", "sportyinmiami", "@HMLoy86", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","danny@usa.com", "password"], #bitmojis/butch.jpeg
   #id7
-  ["Lura McCoy", "luramccoy81", "@wosogirl", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notsusan@usa.com", "password"], #bitmojis/lura.jpeg
+  ["Lura McCoy", "luramccoy81", "@wosogirl", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notsusan@usa.com", "password"], #bitmojis/laura.jpeg
   #id8
   ["Alice Keeney", "navy_vet", "@alicesauce", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notjohn@usa.com", "password"], #bitmojis/alice.jpeg
   #id9
