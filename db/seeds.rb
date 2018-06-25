@@ -16,7 +16,7 @@
 
 # seed file has already been run
 require 'csv'
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'BCD_for_CSV_teams_062218.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'BCD_for_CSV_teams_062518.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
   t = Team.new
@@ -51,15 +51,16 @@ end
 league_list = [
   [ "FIFA (Worldwide National Teams)", "FIFA", 1],
   [ "National Women's Soccer League (USA)", "NWSL", 1],
+  [ "International Champions Cup", "ICC", 1],
+  [ "Liga MX Femenil (Mexico)", "Liga MX", 1],
+  [ "UEFA Women's Champions League Champion's League (Europe)", 1 ],
   [ "Allianz Frauen-Bundesliga (Germany)", "Frauen-Bundesliga", 1],
   [ "FA Women's Super League (England)", "FA Super League", 1],
-  [ "UEFA Women's Champions League Champion's League (Europe)", 1 ],
-  [ "National Women’s League (New Zealand)", "NWL", 1 ],
+  [ "FA Women's Championship (England)", "FA Championship", 1],
   [ "Westfield W-League (Australia)", "W-League", 1],
-  [ "Liga MX Femenil (Mexico)", "Liga MX", 1],
+  [ "National Women’s League (New Zealand)", "NWL", 1 ],
   [ "Primera División Femenina (Spain)", "Primera División", 1],
   [ "Serie A Women (Italy)", "Serie A", 1],
-  [ "FA Women's Championship (England)", "FA Championship", 1],
   [ "Damallsvenskan (Sweden)", "Damallsvenskan", 1],
   [ "Division 1 Féminine (France)", "Division 1", 1],
   [ "Indian Women's Football League (India)", "IWFL", 1],
@@ -161,20 +162,7 @@ venues_list.each do |venue|
   Venue.create!(name: venue[0], picture_url: venue[1], address: venue[2], timezone: venue[3])
 end
 
-# 6 Chicago Redstars
-# 7 Houston Dash
-# 8 North Carolina Courage
-# 9 Orlando Pride
-# 10 Portland Thorns
-# 11 Seattle Reign
-# 12 Sky Blue FC
-# 13 Utah Royals
-# 14 Washington Spirit
-# 15 NWSL Retired Players
-# 16 USWNT Soccer
-# 17 USWNT Soccer U-23
-# 18 USWNT Soccer U-20
-# 19 USWNT Soccer U-19
+
 
 
 
@@ -204,22 +192,38 @@ matches_list = [
   [ "Washington Spirit", "Lifetime", 2, 9, 14, 1, 9, DateTime.new(2018,9,8,19)],
   #id 8
   # Dash vs Thorns
-  [ nil, "go90 App", 2, 10, 7, 1, 2, DateTime.new(2018,6,22,17,30)],
+  [ "Portland Thorns", "go90 App", 2, 10, 7, 1, 2, DateTime.new(2018,6,22,17,30)],
   #id 9
   # Reign vs Courage
-  [ nil, "go90 App", 2, 8, 11, 1, 6, DateTime.new(2018,6,23,13)],
+  [ "North Carolina Courage", "go90 App", 2, 8, 11, 1, 6, DateTime.new(2018,6,23,13)],
   #id 10
   # Spirit vs Pride
-  [ nil, "ESPN News", 2, 9, 14, 1, 9, DateTime.new(2018,6,23,19)],
+  [ "Orland Pride", "ESPN News", 2, 9, 14, 1, 9, DateTime.new(2018,6,23,19)],
   #id 11
   # Redstars vs Royals
-  [ nil, "go90 App", 2, 13, 6, 1, 1, DateTime.new(2018,6,23,19)],
+  [ "Chicago Redstars", "go90 App", 2, 13, 6, 1, 1, DateTime.new(2018,6,23,19)],
   #id 12
   # Pride vs Dash
-  [ nil, "go90 App", 2, 7, 9, 1, 4, DateTime.new(2018,6,23,15,30)],
+  [ nil, "go90 App", 2, 7, 9, 1, 4, DateTime.new(2018,6,27,15,30)],
   #id 13
   # Royals vs Seattle 6/27
-  [ nil, "go90 App", 2, 7, 9, 1, 4, DateTime.new(2018,6,23,15,30)],
+  [ nil, "go90 App", 2, 11, 13, 1, 4, DateTime.new(2018,6,27,15,30)],
+
+
+  # 6 Chicago Redstars
+  # 7 Houston Dash
+  # 8 North Carolina Courage
+  # 9 Orlando Pride
+  # 10 Portland Thorns
+  # 11 Seattle Reign
+  # 12 Sky Blue FC
+  # 13 Utah Royals
+  # 14 Washington Spirit
+  # 15 NWSL Retired Players
+  # 16 USWNT Soccer
+  # 17 USWNT Soccer U-23
+  # 18 USWNT Soccer U-20
+  # 19 USWNT Soccer U-19
 
   # Coming up after hackathon games
   #id 14
@@ -285,23 +289,23 @@ end
 # [ "name", "username", "twitter_handle", "street_address", "city", "state", "zipcode", "country", "level", "stripeToken", "email", encrypted_password ],
 users_list = [
   #id1
-  ["Ethan Fertsch", "efertsch", "@ethanlovesdogs",  "2 Salem Green", "Salem", "MA", "01970","Eastern Time (US & Canada)", "USA", "ethan@mail.com", "password"],
+  ["Eric Amaya", "woso_boy", "@ericamaya6",  "2 Salem Green", "Salem", "MA", "01970","Eastern Time (US & Canada)", "USA", "erick@mail.com", "password"],
   #id2
-  ["Angie Dale", "adale91", "@angielovesdogs", "865 Franklin St", "Melrose", "MA", "02176", "Eastern Time (US & Canada)",  "USA", "angie@mail.com", "password"],
+  ["Heather Yeager", "oceanlvr", "@oceanlvr328", "865 Franklin St", "Melrose", "MA", "02176", "Eastern Time (US & Canada)",  "USA", "angie@mail.com", "password"],
   #id3
   ["Denise Duffy", "sunnysideup", "@denise_duffy", "142 Whitney Street", "San Francisco", "CA",  "94131", "Pacific Time (US & Canada)", "USA", "denise@deniseduffy.com", "password"],
   #id4
-  ["Mike Duffy", "big bro", "@hao_cleats", "2700 Great Highway", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA", "mike.duffy@usa.com", "password"],
+  ["Tania Ardel", "spiritpride", "@ardelltania", "2700 Great Highway", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA", "mike.duffy@usa.com", "password"],
   #id5
-  ["Big Pappy", "notDanLauletta", "@bigboy", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notdan@usa.com", "password"],
+  ["Rachel W", "Rachel_Will!", "@rachelwill", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notdan@usa.com", "password"],
   #id6
-  ["Tom Tom", "tom tom", "@wosoboy", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","danny@usa.com", "password"],
+  ["Heather Loy", "sportyinmiami", "@HMLoy86", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","danny@usa.com", "password"],
   #id7
-  ["Sue Bright", "susan14", "@wosogirl", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notsusan@usa.com", "password"],
+  ["Lura McCoy", "luramccoy81", "@wosogirl", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notsusan@usa.com", "password"],
   #id8
-  ["Tim Tim", "defnotJohnHalloran", "@josoboy", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notjohn@usa.com", "password"],
+  ["Alice Keeney", "navy_vet", "@alicesauce", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notjohn@usa.com", "password"],
   #id9
-  ["Sue Sue", "ballergirl", "@ballergirl", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","ballergirl@usa.com", "password"],
+  ["Hannah Basso", "ballergirl", "@bassohannah", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","ballergirl@usa.com", "password"],
 ]
 
 # this is not turning the color i want
@@ -328,9 +332,9 @@ predictions_list = [
   #id 3
   # reign vs spirit
   [ "Seattle Reign", "Vlatko ", nil, 8, 2, 3],
-  [ "Seattle Reign", "Horan won't be there", nil, 3, 3, 3],
-  [ "Washington Spirit", "Thorns are finally flowing", nil, 1, 1, 3],
-  [ "Washington Spirit", "Thorns have too much Talent", nil, 2, 1, 3],
+  [ "Seattle Reign", "It will Reign down on them", nil, 3, 3, 3],
+  [ "Washington Spirit", "Sullivan and Pugh will finally get it going", nil, 1, 1, 3],
+  [ "Washington Spirit", "JoLo will do something creative", nil, 2, 1, 3],
   #id 4
   # dash vs redstars
   [ "Houston Dash", "Parsons is going to get Pauwed", nil, 8, 2, 4],
@@ -362,35 +366,35 @@ predictions_list = [
   [ "tie", "They are evenly matched without the great Horan", nil, 1, 1, 8],
   [ "Portland Thorns", "Thorns have too much Talent", nil, 2, 1, 8],
   #id 9
-  # # Reign vs Courage
-  # [ "tie", "As the season goes on these teams are evenly matched", nil, 2, 1, 9],
-  # [ "away", "Courage on penalty kicks are just so tall, the ball will go over the defense", nil, 2, 2, 9],
-  # [ "home", "Seattle will give us a perfect storm", nil, 2, 8, 9],
-  # [ "tie", "It will be a good game, but no winners though", nil, 2, 4, 9],
-  # #id 10
-  # # Spirit vs Pride
-  # [ "tie", "Too close to call", nil, 2, 5, 10],
-  # [ "home", "Seatlle has tons of soccer IQ", nil, 2, 8, 10],
-  # [ "away", "Pride have more scoring talent", nil, 2, 1, 10],
-  # [ "away", "Pride's defense has improved", nil, 2, 2, 10],
-  # #id 11
-  # # Redstars vs Royals
-  # [ "tie", "Too close to call", nil, 2, 1, 11],
-  # [ "home", "Redstars have Sam Kerr", nil, 2, 8, 11],
-  # [ "away", "Royals have Press", nil, 2, 8, 11],
-  # [ "away", "Laura Harvey really knows how to coach", nil, 2, 5, 11],
-  # #id 12
-  # # Pride vs Dash
-  # [ "tie", "They both will score 1 goal", nil, 2, 1, 12],
-  # [ "home", "Krieger fever will take over", nil, 2, 8, 12],
-  # [ "away", "The Dash will surprise us", nil, 2, 8, 12],
-  # [ "away", "Pauw really knows how to coach", nil, 2, 5, 12],
-  # #id 13
-  # # Royals vs Seattle 6/27
-  # [ "tie", "Royals have amazing defense, 0-0 tie", nil, 2, 1, 13],
-  # [ "home", "Press will get one or two", nil, 2, 8, 13],
-  # [ "home", "The Royals are just gelling", nil, 2, 8, 13],
-  # [ "away", "Seattle knows what they are doing", nil, 2, 5, 13],
+  # Reign vs Courage
+  [ "tie", "As the season goes on these teams are evenly matched", nil, 2, 1, 9],
+  [ "away", "Courage on penalty kicks are just so tall, the ball will go over the defense", nil, 2, 2, 9],
+  [ "home", "Seattle will give us a perfect storm", nil, 2, 8, 9],
+  [ "tie", "It will be a good game, but no winners though", nil, 2, 4, 9],
+  #id 10
+  # Spirit vs Pride
+  [ "tie", "Too close to call", nil, 2, 5, 10],
+  [ "home", "Seatlle has tons of soccer IQ", nil, 2, 8, 10],
+  [ "away", "Pride have more scoring talent", nil, 2, 1, 10],
+  [ "away", "Pride's defense has improved", nil, 2, 2, 10],
+  #id 11
+  # Redstars vs Royals
+  [ "tie", "Too close to call", nil, 2, 1, 11],
+  [ "home", "Redstars have Sam Kerr", nil, 2, 8, 11],
+  [ "away", "Royals have Press", nil, 2, 8, 11],
+  [ "away", "Laura Harvey really knows how to coach", nil, 2, 5, 11],
+  #id 12
+  # Pride vs Dash
+  [ "tie", "They both will score 1 goal", nil, 2, 1, 12],
+  [ "home", "Krieger fever will take over", nil, 2, 8, 12],
+  [ "away", "The Dash will surprise us", nil, 2, 8, 12],
+  [ "away", "Pauw really knows how to coach", nil, 2, 5, 12],
+  #id 13
+  # Royals vs Seattle 6/27
+  [ "tie", "Royals have amazing defense, 0-0 tie", nil, 2, 1, 13],
+  [ "home", "Press will get one or two", nil, 2, 8, 13],
+  [ "home", "The Royals are just gelling", nil, 2, 8, 13],
+  [ "away", "Seattle knows what they are doing", nil, 2, 5, 13],
 
 
   # Coming up after hackathon games
