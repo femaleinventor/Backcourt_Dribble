@@ -5,26 +5,55 @@
 $theme-orange: #F0900E;
 $theme-blue: #16A7D5;
 $theme-grey: #707070;
+$theme-green: #00D37F;
 
 .home-menu-area {
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-// html {
-//
-// }
-//
-// body {
-//   height: 100%;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
+// When smaller than 750px
+@media (max-width: 750px){
+  .action-title{
+    a{
+      font-size: 8.5vmin;
+    }
+  }
+}
 
-// @media
+// When smaller than 500px
+@media (max-width: 500px){
+  .action-subtext {
+    display: none;
+  }
+  .action-title {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media(min-width: 500px){
+  .action-title{
+    height: 50%;
+  }
+  .left{
+    align-items: flex-end;
+  }
+}
+
+// When larger than 750px
+@media (min-width: 750px){
+  .action-title{
+    a{
+      font-size: 63.75px;
+    }
+  }
+}
+
 
 .home-nav { // *thing to center* //
   background-color: $theme-grey;
@@ -36,6 +65,7 @@ $theme-grey: #707070;
   flex-direction: column;
   // flex-grow: 1;
   justify-content: space-between;
+  margin: 5vmin;
   .nav-row{
     display: flex;
     justify-content: space-between;
@@ -48,25 +78,34 @@ $theme-grey: #707070;
       width: 49.5%;
       background-color: white;
       .action-title{
-        height: 50%;
         display: flex;
         flex-direction: column-reverse;
         // background-color: pink;
-        a{
-          font-size: 8.5vmin;
-        }
+        // a {
+        // }
+      }
+      .orange{
+        color: $theme-orange;
+      }
+      .green-ish{
+        color: $theme-green;
+      }
+      .blue{
+        color: $theme-blue;
       }
       .action-subtext{
-
+        font-size: 2vmin;
       }
     }
     .left{
-      align-items: flex-end;
+      // align-items: flex-end;
       text-align: right;
       padding-right: 5vmin;
+      padding-left: 7vmin;
     }
     .right{
       padding-left: 5vmin;
+      padding-right: 7vmin;
     }
   }
 }
