@@ -7,7 +7,7 @@ class SportsController < ApplicationController
     if !current_user
       render :new_user_registration
     end
-    @sports = Sport.all
+    @sport = Sport.find_by(name: "Soccer")
   end
 
 end

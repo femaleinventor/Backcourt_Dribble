@@ -10,3 +10,6 @@
 ##Misc.
 1. Re-structure terms of service (make it pretty!)
 2. Autofill checkbox if user clicks accept button of modal
+
+
+Add class to site nav to differentiate between that and twitter nav (styling is breaking twitter nav)

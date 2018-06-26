@@ -1,75 +1,29 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Fullpagejs - Practice</title>
-    <% content_for :head do %>
-      <meta name="turbolinks-cache-control" content="no-cache">
-    <% end %>
-  </head>
-  <body>
-    <%= render "shared/site_nav" %>
-    <div id="fullpage">
-           <% @sports.each do |sport| %>
-           <div class="section fp-bg">
-               <h1><%=sport.name%></h1>
+<%= render "shared/site_nav" %>
 
-            <% sport.leagues.each do |league| %>
-               <!-- <div class="carousel"> -->
-                 <div>
-                   <% if league.matches.length > 0 %>
-                      <%= link_to "NWSL", league_matches_path(league) %>
-                   <% end %>
-                 </div>
-               <!-- </div> -->
-              <% end %>
-            </div>
-           <% end %>
+<div class="container-fluid">
+
+  <% if @sport.leagues.length > 0 %>
+    <h1><%=@sport.name%></h1>
+  <% end %>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <h2> Available to Engage with now on Backcourt Dribble </h2>
+      <% @sport.leagues.each do |league| %>
+        <div>
+          <% if league.matches.length > 0 %>
+            <%= link_to "#{league.name}", league_matches_path(league) %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
-  </body>
-</html>
-
-
-
-               <!-- <h1>Soccer</h1>
-             <div class="carousel">
-               <div class="league-selector">
-                 <p>league 1</p>
-               </div>
-               <div class="league-selector">
-                 <p>league 2</p>
-               </div>
-               <div class="league-selector">
-                 <p>league 3</p>
-               </div>
-               <div class="league-selector">
-                 <p>league 4</p>
-               </div>
-               <div class="league-selector">
-                 <p>league 5</p>
-               </div>
-               <div class="league-selector">
-                 <p>league 6</p>
-               </div>
-             </div>
-           </div> -->
-
-
-	     <!-- <div class="section fp-bg">
-         <h1>Basketball</h1>
-       </div>
-       <div class="section fp-bg">
-         <h1>Hockey</h1>
-       </div>
-       <div class="section fp-bg">
-         <h1>Rugby</h1>
-       </div>
-	     <div class="section fp-bg">
-         <h1>Tennis</h1>
-       </div>
-       <div class="section fp-bg">
-         <h1>Volleyball</h1>
-       </div>
-       <div class="section fp-bg">
-         <h1>Softball</h1>
-       </div> -->
+    <div class="col-xs-12 col-md-6">
+      <ul>
+        <h2> Worlwide Leagues </h2>
+        <% @sport.leagues.each do |league| %>
+          <li>  <%= league.name %> </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
