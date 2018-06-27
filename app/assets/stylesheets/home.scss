@@ -63,13 +63,11 @@ $theme-green: #00D37F;
   max-height: 750px;
   display: flex;
   flex-direction: column;
-  // flex-grow: 1;
   justify-content: space-between;
   margin: 5vmin;
   .nav-row{
     display: flex;
     justify-content: space-between;
-    // background-color: pink;
     height: 49.5%;
     width: 100%;
     .action-button{
@@ -80,9 +78,6 @@ $theme-green: #00D37F;
       .action-title{
         display: flex;
         flex-direction: column-reverse;
-        // background-color: pink;
-        // a {
-        // }
       }
       .orange{
         color: $theme-orange;
@@ -98,7 +93,6 @@ $theme-green: #00D37F;
       }
     }
     .left{
-      // align-items: flex-end;
       text-align: right;
       padding-right: 5vmin;
       padding-left: 7vmin;

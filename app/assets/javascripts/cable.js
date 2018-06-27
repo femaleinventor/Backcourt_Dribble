@@ -6,7 +6,7 @@
 //= require_tree ./channels
 
 
-// I have no clue what this is - denise 6/26/18
+// I have no clue what this is - denise 062618
 (function() {
   this.App || (this.App = {});
 

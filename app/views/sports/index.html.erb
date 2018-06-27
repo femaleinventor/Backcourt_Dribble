@@ -8,7 +8,7 @@
 
   <div class="row">
     <div class="col-xs-12 col-md-6">
-      <h2> Available to Engage with now on Backcourt Dribble </h2>
+      <h4> Available to Engage with now on Backcourt Dribble </h4>
       <% @sport.leagues.each do |league| %>
         <div>
           <% if league.matches.length > 0 %>
@@ -19,7 +19,7 @@
     </div>
     <div class="col-xs-12 col-md-6">
       <ul>
-        <h2> Worlwide Leagues </h2>
+        <h4> Worlwide Leagues </h4>
         <% @sport.leagues.each do |league| %>
           <li>  <%= league.name %> </li>
         <% end %>

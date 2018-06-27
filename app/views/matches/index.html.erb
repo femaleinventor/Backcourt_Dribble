@@ -82,7 +82,7 @@
                   </div>
                 </div>
 
-              <!-- Leaderboard Slide -->
+              <!-- All Predictions Slide -->
 
               <div class="slide">
                 <%= render "shared/site_nav" %>
@@ -97,12 +97,12 @@
                   <div class="row">
                     <div class="col-sm-12 mx-auto">
                       <div id="scroller">
-                         <% home_predictions = select_team_predictions(match, @home_team) %>
+                         <!-- <% home_predictions = select_team_predictions(match, @home_team) %>
                          <% away_predictions = select_team_predictions(match, @away_team) %>
                          <% tie_predictions = select_tie_predictions(match, "tie") %>
                          <%= home_predictions %>
                          <%= away_predictions %>
-                         <%= tie_predictions %>
+                         <%= tie_predictions %> -->
 
                          <h4 class="prediction-board-header"> <%= home_predictions.count %> Predict that <%= @home_team.name %> will win (<%= calculate_prediction_percentage(match, @home_team) %>) </h4>
                          <table class="table table-bordered prediction-board">
