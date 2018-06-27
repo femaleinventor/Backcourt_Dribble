@@ -1,28 +1,35 @@
+
 <%= render "shared/site_nav" %>
 
 <div class="container-fluid">
 
-  <% if @sport.leagues.length > 0 %>
-    <h1><%=@sport.name%></h1>
+  <% sports_with_matches = @sports.select {|sport| sport.matches.length > 0 } %>
+
+  <% sports_with_matches.each do |sport| %>
+      <h1> <%= sport.name %> </h1>
   <% end %>
 
   <div class="row">
     <div class="col-xs-12 col-md-6">
       <h4> Available to Engage with now on Backcourt Dribble </h4>
-      <% @sport.leagues.each do |league| %>
-        <div>
-          <% if league.matches.length > 0 %>
-            <%= link_to "#{league.name}", league_matches_path(league) %>
-          <% end %>
-        </div>
+      <!-- Display only leagues with matches -->
+      <% sports_with_matches.each do |sport| %>
+        <% leagues_with_matches = sport.leagues.select{|league| league.matches.length > 0} %>
+        <% leagues_with_matches.each do |league| %>
+          <div> <%= link_to "#{league.name}", league_matches_path(:league_id => league.id) %> </div>
+        <% end %>
       <% end %>
     </div>
     <div class="col-xs-12 col-md-6">
+      <!-- Show all leagues worldwide -->
       <ul>
-        <h4> Worlwide Leagues </h4>
-        <% @sport.leagues.each do |league| %>
-          <li>  <%= league.name %> </li>
+      <h4> Worlwide Leagues </h4>
+      <% sports_with_matches.each do |sport| %>
+        <% all_leagues = sport.leagues %>
+        <% all_leagues.each do |league| %>
+          <li> <%= league.name %> </li>
         <% end %>
+      <% end %>
       </ul>
     </div>
   </div>
