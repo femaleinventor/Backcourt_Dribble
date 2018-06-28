@@ -1,5 +1,6 @@
 
       <div id="fullpage">
+
            <% find_future_matches(@matches).each do |match| %>
 
             <% @home_team = Team.find(match.home_team_id) %>
@@ -86,7 +87,6 @@
               <div class="slide">
                 <%= render "shared/site_nav" %>
                 <div class="container-fluid">
-
                   <div class="row">
                     <div class="col-xs-12 mx-auto">
                       <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
@@ -182,22 +182,49 @@
                 </div> <!-- End leaderboard container -->
               </div> <!-- End leaderboard slide -->
 
-              <div class="slide">
-                <%= render "shared/site_nav" %>
+              <div class="slide big-black">
                 <div class="container-fluid">
+
+                  <h2 class="venue-info-title text-center"> Venue Information: </h2>
+
+
                   <div class="row">
                     <div class="col-xs-12 col-md-6 mx-auto">
-                      <p><%=match.result%></p>
-                      <p><%=match.channel%></p>
-                      <p><%=match.start%></p>
-                      <p><%=current_user.time_zone%></p>
-                      <p><%=match.league.name%></p>
-                      <p><%=match.venue.name%></p>
-                    <%= image_tag "#{match.venue.picture_url}", class: "w-25" %>
+                        <%= image_tag "#{match.venue.picture_url}", class: "img-responsive w-100" %>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                      <div class="venue-info-container">
+                        <p> Network: <%=match.channel%> </p>
+                        <p> Date & Time: <%=format_match_date(match)%> </p>
+                        <p> League: <%=match.league.name%></p>
+                        <p> Venue: <%=match.venue.name%></p>
+                      </div>
+                      <span class="venue-address"><%=match.venue.address%></span>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-center">
+                    <div class="col-xs-12 mr-auto">
+                      <div>
+                        <h3 class="text-center"> Countdown to Game </h3>
+                        <div class="countdown mx-auto"></div>
+                        <a class="game-reminder-link text-center" href="#">Remind Me when Game Starts!</a>
+                        <a class="ticket-link text-center"href="#">Purchase Tickets</a>
+                        </div>
+                      </div>
+
+                    <div class="col-xs-12">
+                      <div id="map">
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+
+
+
+              <%= image_tag "#{match.venue.picture_url}", class: "w-25" %>
 
               <div class="slide">
                 <%= render "shared/site_nav" %>
