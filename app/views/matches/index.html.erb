@@ -13,16 +13,16 @@
                   <source src="audio/soccer-ball-hit-ground.wav" type="audio/wav">
               </audio> -->
                 <div class="container-fluid">
+
                   <div class="row">
                     <div class="col-xs-12 mx-auto">
                       <div class="match-teams">
                         <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
                         <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> (<%= match.venue.timezone %>) </p>
-
-
                       </div>
                     </div>
                   </div>
+
                   <div class="row">
                     <div class="col-xs-12 mx-auto">
                       <h3 class="prediction-prompt"> Which Team will Win? </h3>

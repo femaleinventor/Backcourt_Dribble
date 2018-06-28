@@ -18,7 +18,6 @@
 //= require jquery.fullpage.extensions.min
 //= require jquery.slick
 //= require bootstrap
-//= require turbolinks
 //= require_tree .
 
 $(document).ready(function() {
