@@ -18,8 +18,14 @@
 
 
 body {
-  background: black;
+  background: #707070;
   font-family: 'Comfortaa', cursive;
+}
+
+.big-white{
+  background-color: white;
+  width: 120vw;
+  padding: 15px;
 }
 
 .terms {
@@ -27,9 +33,9 @@ body {
   text-align: left;
 }
 
-#fullpage.p {
-  color: black;
-}
+// #fullpage.p {
+//   color: black;
+// }
 
 li.nav-item {
   margin: 20px;
