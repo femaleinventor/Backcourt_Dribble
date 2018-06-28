@@ -38,21 +38,16 @@ $theme-grey: #707070;
   margin-bottom: 10px;
 }
 
-.prediction-check{
+.prediction-prompt {
+  color: white;
+  font-weight: lighter;
+  font-size: 20px;
   text-align: center;
 }
 
-  // .prediction-board-header {
-  // }
-
-label {
-    display:block;
-  }
-
-
 #guess {
-  transform: scale(3);
-  font-size: x-large;
+  margin-left: 10px;
+  display: block;
 }
 
 #scroller {

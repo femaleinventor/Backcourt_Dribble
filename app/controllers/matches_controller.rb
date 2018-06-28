@@ -3,5 +3,4 @@ class MatchesController < ApplicationController
     @matches = Match.where(league_id: params[:league_id])
   end
 
-
 end

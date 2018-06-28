@@ -25,38 +25,37 @@
                   </div>
                   <div class="row">
                     <div class="col-xs-12 mx-auto">
+                      <h3 class="prediction-prompt"> Which Team will Win? </h3>
                       <!-- Logic checking if a prediction has already been made for a certain match by the current user -->
                       <% if current_user.predictions.select{|prediction| prediction.match_id == match.id}.empty?  %>
 
                         <%= form_tag(controller: 'predictions', action: 'create', class: "form-inline") do %>
 
-
-                          <div class="d-flex justify-content-between custom-control custom-checkbox">
+                          <div class="d-flex justify-content-around">
                             <!-- home -->
-                            <div class="prediction-check form-group">
-                              <%= label_tag :guess, "#{@home_team.name}"%>
-                              <%= check_box_tag :guess, @home_team.name, false, class: "prediction-checkbox" %>
+                            <div class="form-group form-check form-check-inline">
+                              <%= label_tag :guess, "#{@home_team.name}", class: "form-check-label"%>
+                              <%= check_box_tag :guess, @home_team.name, false, class: "prediction-checkbox form-check-input" %>
                             </div>
 
                             <!-- tie -->
 
-                            <div class="prediction-check form-group">
+                            <div class="form-group form-check form-check-inline">
                               <!-- custom control for check boxes? -->
                               <!-- <label class="custom-control custom-checkbox"> -->
-                                <%= label_tag :guess, "Tie"%>
-                                <%= check_box_tag :guess, "Tie", false, class: "prediction-checkbox" %>
+                                <%= label_tag :guess, "Tie", class: "form-check-label"%>
+                                <%= check_box_tag :guess, "Tie", false, class: "prediction-checkbox form-check-input" %>
                               <!-- </label> -->
                             </div>
 
                             <!-- away -->
-                            <div class="prediction-check form-group">
-                              <%= label_tag :guess, "#{@away_team.name}"%>
-                              <%= check_box_tag :guess, @away_team.name, false, class: "prediction-checkbox" %>
+                            <div class="form-group form-check form-check-inline">
+                              <%= label_tag :guess, "#{@away_team.name}", class: "form-check-label"%>
+                              <%= check_box_tag :guess, @away_team.name, false, class: "prediction-checkbox form-check-input" %>
                             </div>
                           </div>
 
-                          <div class="reason-textbox form-group">
-
+                          <div class="reason-textbox form-group mx-auto">
                             <%= text_area_tag :reason, nil, class:"form-control", placeholder: "Add Your Reason Why... " %>
                           </div>
 
