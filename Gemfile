@@ -24,6 +24,8 @@ gem "jquery-slick-rails"
 
 gem 'devise'
 
+gem 'twitter', '~> 6.2'
+
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 gem 'bootstrap', '~> 4.0.0'
