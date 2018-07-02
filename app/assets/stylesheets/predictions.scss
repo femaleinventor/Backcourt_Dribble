@@ -42,6 +42,13 @@ $theme-grey: #707070;
   text-align: center;
 }
 
+.prediction-board-header {
+  color: $theme-blue;
+  margin: 10px;
+  font-size: 15px;
+
+}
+
 #guess {
   margin-left: 10px;
   display: block;

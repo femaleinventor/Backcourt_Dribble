@@ -84,7 +84,7 @@
 
               <!-- All Predictions Slide -->
 
-              <div class="slide">
+              <div class="slide big-black">
                 <div class="container-fluid">
                   <% home_predictions = select_team_predictions(match, @home_team) %>
                   <% away_predictions = select_team_predictions(match, @away_team) %>
@@ -92,14 +92,15 @@
                   <div class="row">
                     <div class="col-xs-12 mx-auto">
                       <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
-                      <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> (<%= match.venue.timezone %>) </p>
-                      <p> Total predictions for this match: <%= calculate_total_predictions(match) %> </p>
+                      <p class="match-info"> <%= match.start.to_date.strftime("%B #{match.start.to_date.day.ordinalize}") %>, <%= match.venue.name %> </p>
+                      <p> Total predictions for this match: <%= calculate_total_predictions(match).to_i %> </p>
                     </div>
                   </div>
                   <!-- Home predictions -->
                   <div class="row">
                     <div class="col-xs-12 mx-auto">
-                      <h4 class="prediction-board-header"> <%= home_predictions.count %> Predict that <%= @home_team.name %> will win (<%= calculate_team_prediction_percentage(match, @home_team) %>) </h4>
+                      <% number_of_home_predictions = home_predictions.count %>
+                      <h4 class="prediction-board-header"> <%= number_of_home_predictions %> <%= pluralize_prediction_statement(number_of_home_predictions) %> that <%= @home_team.name %> will win (<%= calculate_team_prediction_percentage(match, @home_team) %>) </h4>
 
                     </div>
                   </div>
@@ -125,7 +126,8 @@
                     <!-- Tie predictions -->
                     <div class="row">
                       <div class="col-xs-12 mx-auto">
-                        <h4 class="prediction-board-header"> <%= tie_predictions.count %> Predict that there will be a tie (<%= calculate_tie_prediction_percentage(match, "tie") %> ) </h4>
+                        <% number_of_tie_predictions = tie_predictions.count %>
+                        <h4 class="prediction-board-header"> <%= number_of_tie_predictions %> <%= pluralize_prediction_statement(number_of_tie_predictions) %> that there will be a tie (<%= calculate_tie_prediction_percentage(match, "tie") %> ) </h4>
                       </div>
                     </div>
 
@@ -151,7 +153,8 @@
                       <!-- Away predictions -->
                       <div class="row">
                         <div class="col-xs-12 mx-auto">
-                          <h4 class="prediction-board-header"> <%= away_predictions.count %> Predict that <%= @away_team.name %> will win (<%= calculate_team_prediction_percentage(match, @away_team) %>) </h4>
+                          <% number_of_away_predictions = away_predictions.count %>
+                          <h4 class="prediction-board-header"> <%= number_of_away_predictions %> <%= pluralize_prediction_statement(number_of_away_predictions) %> that <%= @away_team.name %> will win (<%= calculate_team_prediction_percentage(match, @away_team) %>) </h4>
                         </div>
                       </div>
 

@@ -41,4 +41,13 @@ module PredictionsHelper
   def format_percent(num)
     "#{num}%"
   end
+
+  def pluralize_prediction_statement(num_predictions)
+    if num_predictions > 1
+      "users predict"
+    else
+      "user predicts"
+    end
+  end
+
 end
