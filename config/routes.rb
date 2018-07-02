@@ -10,9 +10,11 @@ Rails.application.routes.draw do
 
   resources :predictions
 
+  resources :tweets
+
   get 'shop/index'
 
-  get 'tweets/index'
+  # get 'tweets/index'
 
   get 'wall/index'
 
