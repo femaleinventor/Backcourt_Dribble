@@ -26,6 +26,9 @@ gem 'loofah', '>= 2.2.2'
 
 gem 'devise'
 
+# added based on heroku's recommendation
+gem 'ruby', '2.5.1'
+
 gem 'twitter', '~> 6.2'
 
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
