@@ -20,9 +20,9 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Integrate Slick Carousel
-gem "jquery-slick-rails"
+gem 'jquery-slick-rails'
 
-gem "loofah (>= 2.2.2, ~> 2.2)"
+gem 'loofah', '>= 2.2.2, ~> 2.2'
 
 gem 'devise'
 
