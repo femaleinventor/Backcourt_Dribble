@@ -108,7 +108,8 @@
                     <div class="row  ml-4">
                     <div class="col-xs-12 col-md-3">
                       <div class="user-avatar">
-                      
+
+                      </div>
                     </div>
 
                     <div class="col-xs-12 col-md-3">
@@ -144,7 +145,6 @@
                     <div class="row ml-4">
                       <div class="col-xs-12 col-md-3">
                         <div class="user-avatar">
-                          <%= image_tag "#{prediction.user.avatar}", class: "img-responsive img-thumbnail user-avatar" %>
                         </div>
                       </div>
 
@@ -181,7 +181,7 @@
                       <div class="row ml-4">
                         <div class="col-xs-12 col-md-3">
                           <div class="user-avatar">
-                            <%= image_tag "#{prediction.user.avatar}", class: "img-responsive img-thumbnail user-avatar" %>
+
                           </div>
                         </div>
 
@@ -219,7 +219,7 @@
 
                   <div class="row">
                     <div class="col-xs-12 col-md-6 mx-auto">
-                        <%= image_tag "#{match.venue.picture_url}", class: "img-responsive w-100" %>
+
                     </div>
 
                     <div class="col-xs-12 col-md-6">
@@ -237,7 +237,7 @@
                     <div class="col-xs-12 mr-auto">
                       <div>
                         <h3 class="text-center"> Countdown to Game </h3>
-                        <div class="countdown mx-auto"></div>
+                        <div id="clock" class="countdown mx-auto" data-countdown="<%=match.start.strftime('%m/%d/%Y %I:%M:%S')%>"></div>
                         <a class="game-reminder-link text-center" href="#">Remind Me when Game Starts!</a>
                         <a class="ticket-link text-center"href="#">Purchase Tickets</a>
                         </div>
