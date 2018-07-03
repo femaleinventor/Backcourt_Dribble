@@ -44,9 +44,14 @@ $theme-grey: #707070;
 
 .prediction-board-header {
   color: $theme-blue;
-  margin: 10px;
+  margin: 25px;
   font-size: 15px;
 
+}
+
+.user-avatar {
+  height: 50px;
+  width: 50px;
 }
 
 #guess {

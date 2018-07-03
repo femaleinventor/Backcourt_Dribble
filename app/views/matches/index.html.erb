@@ -101,27 +101,37 @@
                     <div class="col-xs-12 mx-auto">
                       <% number_of_home_predictions = home_predictions.count %>
                       <h4 class="prediction-board-header"> <%= number_of_home_predictions %> <%= pluralize_prediction_statement(number_of_home_predictions) %> that <%= @home_team.name %> will win (<%= calculate_team_prediction_percentage(match, @home_team) %>) </h4>
-
                     </div>
                   </div>
 
-                  <div class="row">
+                  <% home_predictions.each do |prediction| %>
+                    <div class="row  ml-4">
                     <div class="col-xs-12 col-md-3">
-                      <div class="user-avatar"></div>
+                      <div class="user-avatar">
+                        <%= image_tag "#{prediction.user.avatar}", class: "img-responsive img-thumbnail user-avatar" %>
+                      </div>
                     </div>
 
                     <div class="col-xs-12 col-md-3">
-                      <div class="username"></div>
+                      <div class="username">
+                        <p class="text-center"><%= prediction.user.username %></p>
+                      </div>
                     </div>
 
                     <div class="col-xs-12 col-md-3">
-                      <div class="prediction-reason"></div>
+                      <div class="prediction-reason">
+                        <p class="text-center"><%= prediction.reason %></p>
+                      </div>
                     </div>
 
                     <div class="col-xs-12 col-md-3">
-                      <div class="likes"></div>
+                      <div class="likes">
+                        <p class="text-center"> <%= prediction.likes %> likes </p>
+                      </div>
                     </div>
+
                   </div>
+                  <%end%>
 
                     <!-- Tie predictions -->
                     <div class="row">
@@ -131,23 +141,33 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <% tie_predictions.each do |prediction| %>
+                    <div class="row ml-4">
                       <div class="col-xs-12 col-md-3">
-                        <div class="user-avatar"></div>
+                        <div class="user-avatar">
+                          <%= image_tag "#{prediction.user.avatar}", class: "img-responsive img-thumbnail user-avatar" %>
+                        </div>
                       </div>
 
                       <div class="col-xs-12 col-md-3">
-                        <div class="username"></div>
+                        <div class="username">
+                          <p class="text-center"><%= prediction.user.username %></p>
+                        </div>
                       </div>
 
                       <div class="col-xs-12 col-md-3">
-                        <div class="prediction-reason"></div>
+                        <div class="prediction-reason">
+                          <p class="text-center"><%= prediction.reason %></p>
+                        </div>
                       </div>
 
                       <div class="col-xs-12 col-md-3">
-                        <div class="likes"></div>
+                        <div class="likes">
+                          <p> <%= prediction.likes %> likes </p>
+                        </div>
                       </div>
                     </div>
+                  <%end%>
 
 
                       <!-- Away predictions -->
@@ -158,28 +178,40 @@
                         </div>
                       </div>
 
-                      <div class="row">
+                      <% away_predictions.each do |prediction| %>
+                      <div class="row ml-4">
                         <div class="col-xs-12 col-md-3">
-                          <div class="user-avatar"></div>
+                          <div class="user-avatar">
+                            <%= image_tag "#{prediction.user.avatar}", class: "img-responsive img-thumbnail user-avatar" %>
+                          </div>
                         </div>
 
                         <div class="col-xs-12 col-md-3">
-                          <div class="username"></div>
+                          <div class="username">
+                            <p class="text-center"><%= prediction.user.username %></p>
+                          </div>
                         </div>
 
                         <div class="col-xs-12 col-md-3">
-                          <div class="prediction-reason"></div>
+                          <div class="prediction-reason">
+                            <p class="text-center"><%= prediction.reason %></p>
+                          </div>
                         </div>
 
                         <div class="col-xs-12 col-md-3">
-                          <div class="likes"></div>
+                          <div class="likes">
+                            <p class="text-center"><%= prediction.likes %> likes </p>
+                          </div>
                         </div>
-
+                      </div>
+                    <%end%>
                   </div> <!-- End leaderboard row 3 -->
                 </div><!-- End leaderboard container -->
-              </div>  <!-- End leaderboard slide -->
 
 
+
+
+              <!-- Venue Information -->
               <div class="slide big-black">
                 <div class="container-fluid">
 
@@ -216,6 +248,7 @@
                       <div id="map">
                       </div>
                     </div>
+
                   </div>
                 </div>
               </div>
@@ -248,7 +281,6 @@
                   </div>
                 </div>
               </div>
-
-           </div>
+            </div> <!-- End Section -->
           <% end %>
-      </div>
+    </div> <!-- End fullpage -->
