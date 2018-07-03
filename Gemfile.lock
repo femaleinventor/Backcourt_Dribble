@@ -242,6 +242,7 @@ DEPENDENCIES
   jquery-rails (~> 4.3, >= 4.3.1)
   jquery-slick-rails
   listen (>= 3.0.5, < 3.2)
+  loofah (>= 2.2.2)
   pg (~> 1.0.0)
   puma (~> 3.7)
   rails (~> 5.1.5)
