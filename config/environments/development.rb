@@ -26,7 +26,8 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  config.assets.compile = true
+  # Added to try to get images to work
+  # config.assets.compile = true
 
   # Sets development default url
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
