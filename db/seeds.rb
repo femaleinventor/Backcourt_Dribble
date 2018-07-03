@@ -272,11 +272,11 @@ matches_list = [
   [ nil, "ESPN2", 3, 47, 8, 1, 19, DateTime.new(2018,7,26,18,15)],
   # 33
   # Lyon vs Man City
-  [ nil, "ESPN2", 3, 48, 46, 1, 19, DateTime.new(2018,7,26,21)],
+  [ nil, "ESPN2", 3, 48, 46, 1, 19, DateTime.new(2018,7,26,21)]
 
   # made up international data for hackathon
   # 34 psg vs lyon, league 14
-  [ "Olympic Lyonnais", "French TV", 14, 47, 46, 1, 15, DateTime.new(2018,3,24,12)]
+  # [ "Olympic Lyonnais", "French TV", 14, 47, 46, 1, 15, DateTime.new(2018,3,24,12)]
 ]
 
 matches_list.each do |match|
@@ -544,13 +544,13 @@ predictions_list = [
   [ "Manchester City", "Man City will hang on and win", nil, 2, 1, 33],
   [ "Olympic Lyonnais", "Best team in the world will destroy Man City", nil, 2, 8, 33],
   [ "Olympic Lyonnais", "They are just so good", nil, 2, 3, 33],
-  [ "Manchester City", "They will be better prepared", nil, 2, 5, 33],
+  [ "Manchester City", "They will be better prepared", nil, 2, 5, 33]
 
   # 34 made up international data for hackathon
   # psg vs lyon, league 14
-  [ "Olympic Lyonnais", "They are always better", true, 5, 1, 34],
-  [ "Olympic Lyonnais", "Best players in the world", true, 7, 3, 34],
-  [ "Olympic Lyonnais", "Always in this league they win", true, 8, 2, 34]
+  # [ "Olympic Lyonnais", "They are always better", true, 5, 1, 34],
+  # [ "Olympic Lyonnais", "Best players in the world", true, 7, 3, 34],
+  # [ "Olympic Lyonnais", "Always in this league they win", true, 8, 2, 34]
 
 ]
 
