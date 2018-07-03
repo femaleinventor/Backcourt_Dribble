@@ -118,43 +118,43 @@ end
 
 venues_list = [
   #id 1
-  [ "Toyota Park", "Toyota_Park.jpg", "7000 Harlem Ave, Bridgeview, IL 60455", "America/Chicago"],
+  [ "Toyota Park", "venues/Toyota_Park.jpg", "7000 Harlem Ave, Bridgeview, IL 60455", "America/Chicago"],
   #id 2
-  [ "BBVA Compass Stadium", "BBVA_Compass.jpg", "2200 Texas St, Houston, TX 77003", "America/Chicago"],
+  [ "BBVA Compass Stadium", "venues/BBVA_Compass.jpg", "2200 Texas St, Houston, TX 77003", "America/Chicago"],
   #id 3
-  [ "WakeMed Soccer Park", "Wake_Med.jpg", "201 Soccer Park Dr, Cary, NC 27511", "America/New_York"],
+  [ "WakeMed Soccer Park", "venues/Wake_Med.jpg", "201 Soccer Park Dr, Cary, NC 27511", "America/New_York"],
   #id 4
-  [ "Orlando City Stadium", "Orlando.jpg", "655 W Church St, Orlando, FL 32805", "America/New_York"],
+  [ "Orlando City Stadium", "venues/Orlando.jpg", "655 W Church St, Orlando, FL 32805", "America/New_York"],
   #id 5
-  [ "Providence Park", "Providence_Park.png", "1844 SW Morrison St, Portland, OR 97205","America/Los_Angeles"],
+  [ "Providence Park", "venues/Providence_Park.png", "1844 SW Morrison St, Portland, OR 97205","America/Los_Angeles"],
   #id 6
-  [ "Memorial Stadium", "Memorial_Stadium.jpg", "401 5th Ave N, Seattle, WA 98109", "America/Los_Angeles"],
+  [ "Memorial Stadium", "venues/Memorial_Stadium.jpg", "401 5th Ave N, Seattle, WA 98109", "America/Los_Angeles"],
   #id 7
-  [ "Yurcak Field", "Yurcak_Field.jpg", "83 Fitch Rd, Piscataway Township, NJ 08854", "America/New_York"],
+  [ "Yurcak Field", "venues/Yurcak_Field.jpg", "83 Fitch Rd, Piscataway Township, NJ 08854", "America/New_York"],
   #id 8
-  [ "Rio Tinto Stadium", "Rio_Tinto_Stadium.jpeg", "9256 State St, Sandy, UT 84070", "America/Denver"],
+  [ "Rio Tinto Stadium", "venues/Rio_Tinto_Stadium.jpeg", "9256 State St, Sandy, UT 84070", "America/Denver"],
   #id 9
-  [ "Maryland SoccerPlex", "Maryland_Soccerplex.jpeg", "18031 Central Park Cir, Boyds, MD 20841", "America/New_York"],
+  [ "Maryland SoccerPlex", "venues/Maryland_Soccerplex.jpeg", "18031 Central Park Cir, Boyds, MD 20841", "America/New_York"],
   #id 10
-  [ "Audi Field", "Audi_Field.jpg", "32-60 R St SW, Washington, DC 20024", "America/New_York"],
+  [ "Audi Field", "venues/Audi_Field.jpg", "32-60 R St SW, Washington, DC 20024", "America/New_York"],
   #id 11
-  [ "Avaya Stadium", "Avaya_Stadium.png", "1123 Coleman Ave, San Jose, CA 95110","America/Los_Angeles"],
+  [ "Avaya Stadium", "venues/Avaya_Stadium.png", "1123 Coleman Ave, San Jose, CA 95110","America/Los_Angeles"],
   #id 12
-  [ "EverBank Field", "Everbank_Field.jpg", "1 Everbank Field Dr, Jacksonville, FL 32202", "America/New_York"],
+  [ "EverBank Field", "venues/Everbank_Field.jpg", "1 Everbank Field Dr, Jacksonville, FL 32202", "America/New_York"],
   #id 13
-  [ "Talen Energy Stadium", "Talen_Energy_Stadium.jpg", "1 Stadium Dr, Chester, PA 19013", "America/New_York"],
+  [ "Talen Energy Stadium", "venues/Talen_Energy_Stadium.jpg", "1 Stadium Dr, Chester, PA 19013", "America/New_York"],
   #id 14
-  [ "FirstEnergy Stadium", "FirstEnergy_Stadium.jpg", "100 Alfred Lerner Way, Cleveland, OH 44114", "America/Chicago"],
+  [ "FirstEnergy Stadium", "venues/FirstEnergy_Stadium.jpg", "100 Alfred Lerner Way, Cleveland, OH 44114", "America/Chicago"],
   #id 15
-  [ "Stade Guy-Piriou", "Stade_Guy-Pirious.jpg", "13 Rue de Keriolet, 29900 Concarneau", "Europe/Paris"],
+  [ "Stade Guy-Piriou", "venues/Stade_Guy-Pirious.jpg", "13 Rue de Keriolet, 29900 Concarneau", "Europe/Paris"],
   #id 16
-  [ "Children’s Mercy Park", "Childrens_Mercy_Park.png", "1 Sporting Way, Kansas City, KS 66111 Kansas City", "America/Chicago"],
+  [ "Children’s Mercy Park", "venues/Childrens_Mercy_Park.png", "1 Sporting Way, Kansas City, KS 66111 Kansas City", "America/Chicago"],
   #id 17
-  [ "Pratt & Whitney Stadium at Rentschler Field", "Pratt_and_Whitney_Stadium.jpg", "615 Silver Ln, East Hartford, CT 06118", "America/New_York"],
+  [ "Pratt & Whitney Stadium at Rentschler Field", "venues/Pratt_and_Whitney_Stadium.jpg", "615 Silver Ln, East Hartford, CT 06118", "America/New_York"],
   #id 18
-  [ "StubHub Center", "StubHub_Center.jpg", "18400 S Avalon Blvd, Carson, CA 90746", "America/Los_Angeles"],
+  [ "StubHub Center", "venues/StubHub_Center.jpg", "18400 S Avalon Blvd, Carson, CA 90746", "America/Los_Angeles"],
   #id 19
-  [ "Hard Rock Stadium", "hard_rock_stadium.jpg", "347 Don Shula Dr, Miami Gardens, FL 33056", "America/New_York"]
+  [ "Hard Rock Stadium", "venues/hard_rock_stadium.jpg", "347 Don Shula Dr, Miami Gardens, FL 33056", "America/New_York"]
 ]
 
 
@@ -286,23 +286,23 @@ end
 # [ "name", "username", "twitter_handle", "street_address", "city", "state", "zipcode", "country", "level", "stripeToken", "email", encrypted_password, avatar ],
 users_list = [
   #id1
-  ["Erica Amaya", "woso_girl", "@ericamaya6",  "2 Salem Green", "Salem", "MA", "01970","Eastern Time (US & Canada)", "USA", "erick@mail.com", "password", "erica.jpeg"],
+  ["Erica Amaya", "woso_girl", "@ericamaya6",  "2 Salem Green", "Salem", "MA", "01970","Eastern Time (US & Canada)", "USA", "erick@mail.com", "password", "bitmoji/erica.jpeg"],
   #id2
-  ["Heather Yeager", "oceanlvr", "@oceanlvr328", "865 Franklin St", "Melrose", "MA", "02176", "Eastern Time (US & Canada)",  "USA", "angie@mail.com", "password", "heather.jpeg"],
+  ["Heather Yeager", "oceanlvr", "@oceanlvr328", "865 Franklin St", "Melrose", "MA", "02176", "Eastern Time (US & Canada)",  "USA", "angie@mail.com", "password", "bitmoji/heather.jpeg"],
   #id3
-  ["Denise Duffy", "sunnysideup", "@denise_duffy", "142 Whitney Street", "San Francisco", "CA",  "94131", "Pacific Time (US & Canada)", "USA", "denise@deniseduffy.com", "password", "denise.jpeg"],
+  ["Denise Duffy", "sunnysideup", "@denise_duffy", "142 Whitney Street", "San Francisco", "CA",  "94131", "Pacific Time (US & Canada)", "USA", "denise@deniseduffy.com", "password", "bitmoji/denise.jpeg"],
   #id4
-  ["Tania Ardel", "sunnysideup", "@ardelltania", "2700 Great Highway", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA", "mike.duffy@usa.com", "password", "tania.jpeg"],
+  ["Tania Ardel", "sunnysideup", "@ardelltania", "2700 Great Highway", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA", "mike.duffy@usa.com", "password", "bitmoji/tania.jpeg"],
   #id5
-  ["Rachel W", "Rachel_Will!", "@rachelwill", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notdan@usa.com", "password", "rachel.jpeg"],
+  ["Rachel W", "Rachel_Will!", "@rachelwill", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notdan@usa.com", "password", "bitmoji/rachel.jpeg"],
   #id6
-  ["Butch Loy", "sportyinmiami", "@HMLoy86", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","danny@usa.com", "password", "butch.jpeg"],
+  ["Butch Loy", "sportyinmiami", "@HMLoy86", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","danny@usa.com", "password", "bitmoji/butch.jpeg"],
   #id7
-  ["Lura McCoy", "luramccoy81", "@wosogirl", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notsusan@usa.com", "password", "laura.jpeg"],
+  ["Lura McCoy", "luramccoy81", "@wosogirl", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notsusan@usa.com", "password", "bitmoji/laura.jpeg"],
   #id8
-  ["Alice Keeney", "navy_vet", "@alicesauce", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notjohn@usa.com", "password", "alice.jpeg"],
+  ["Alice Keeney", "navy_vet", "@alicesauce", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notjohn@usa.com", "password", "bitmoji/alice.jpeg"],
   #id9
-  ["Hannah Basso", "ballergirl", "@bassohannah", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","ballergirl@usa.com", "password", "hannah.jpeg"]
+  ["Hannah Basso", "ballergirl", "@bassohannah", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","ballergirl@usa.com", "password", "bitmoji/hannah.jpeg"]
 ]
 
 # this is not turning the color i want
