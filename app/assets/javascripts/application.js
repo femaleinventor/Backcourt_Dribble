@@ -18,6 +18,7 @@
 //= require jquery.fullpage.extensions.min
 //= require jquery.slick
 //= require bootstrap
+//= require jquery.countdown.min
 //= require_tree .
 
 $(document).ready(function() {
