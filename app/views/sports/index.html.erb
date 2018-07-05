@@ -7,6 +7,7 @@
 
   <% sports_with_matches.each do |sport| %>
       <h1> <%= sport.name %> </h1>
+      <%= link_to "Leaderboard", leaderboard_sport_path(@sport) %>
   <% end %>
 
   <div class="row">
