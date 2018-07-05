@@ -7,11 +7,11 @@
 
   <% sports_with_matches.each do |sport| %>
       <h1> <%= sport.name %> </h1>
-      <%= link_to "Leaderboard", leaderboard_sport_path(@sport) %>
   <% end %>
 
   <div class="row">
     <div class="col-xs-12 col-md-6">
+      <%= link_to "Leaderboard", "/sports/1/leaderboard" %>
       <h4> Available to Engage with now on Backcourt Dribble </h4>
       <!-- Display only leagues with matches -->
       <% sports_with_matches.each do |sport| %>
