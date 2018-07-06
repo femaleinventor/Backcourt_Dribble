@@ -1,11 +1,10 @@
 <%= render 'shared/site_nav' %>
 
-<div class="container-fluid">
+<div class="container-fluid mt-5">
+    <h1 class="leaderboard-title"> <%= @sport.name %> Leaderboard </h1>
 
-    <h1> <%= @sport.name %> Leaderboard </h1>
-
-      <table class="table">
-      <thead>
+      <table class="table leaderboard-table">
+      <thead class="hidden" style='display:none;'>
         <tr>
           <th scope="col">Username</th>
           <th scope="col"># Predictions</th>
@@ -16,9 +15,9 @@
 
         <% get_unique_users(@predictions).each do |user| %>
         <tr>
-          <td><%= user.username %></td>
-          <td><%= user.predictions.count %></td>
-          <td><%= user.calculate_percent_correct_predictions %>%</td>
+          <td class="remove-border"><%= user.username %></td>
+          <td class="remove-border"><%= user.predictions.count %> predictions </td>
+          <td class="remove-border"><%= user.calculate_percent_correct_predictions %>% correct</td>
         </tr>
         <% end %>
       </tbody>
