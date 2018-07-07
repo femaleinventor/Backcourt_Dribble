@@ -142,6 +142,15 @@ NAMES = [ "Tierna Davidson","Ashley Hatch","Lynn Williams","Sofia  Huerta","Mall
     return restricted_names
   end
 
+  def calculate_percent_correct_predictions
+    correct_predictions = self.predictions.where(correct?: true).count
+    total_predictions = self.predictions.count
+
+    percent_correct = (correct_predictions.to_f / total_predictions.to_f) * 100
+
+    percent_correct.to_i
+  end
+
 
 
 
