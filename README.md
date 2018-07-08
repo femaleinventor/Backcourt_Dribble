@@ -8,7 +8,7 @@ Things you may want to cover:
 
 * Configuration
 
-* Database creation
+* Postgres Database creation
 
 * Database initialization
 
