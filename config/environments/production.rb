@@ -36,7 +36,7 @@ Rails.application.configure do
   config.serve_static_assets = true
 
   # added in attempts to debug heroku asset pipeline
-  # rake assets:precompile RAILS_ENV=production
+  rake assets:precompile RAILS_ENV=production
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
