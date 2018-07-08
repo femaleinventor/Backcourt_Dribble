@@ -239,7 +239,6 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
-  dancroak-twitter-search (~> 0.5.8)
   devise
   high_voltage (~> 3.0.0)
   jbuilder (~> 2.5)
