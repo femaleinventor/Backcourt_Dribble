@@ -21,4 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* Ethan is a glamazon
+* Ethan is truly an ultimate glamazon

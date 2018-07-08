@@ -70,7 +70,6 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
-    dancroak-twitter-search (0.5.8)
       json (>= 1.1.2)
     devise (4.4.3)
       bcrypt (~> 3.0)
