@@ -1,3 +1,18 @@
 // Place all the styles related to the sports controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$theme-blue: #16A7D5;
+
+.leaderboard-title{
+  color: white;
+}
+
+.leaderboard-table {
+  color: $theme-blue;
+}
+
+.remove-border {
+  border: none;
+  border-top: none;
+}

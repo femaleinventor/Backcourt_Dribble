@@ -1,0 +1,25 @@
+<%= render 'shared/site_nav' %>
+
+<div class="container-fluid mt-5">
+    <h1 class="leaderboard-title"> <%= @sport.name %> Leaderboard </h1>
+
+      <table class="table leaderboard-table">
+      <thead class="hidden" style='display:none;'>
+        <tr>
+          <th scope="col">Username</th>
+          <th scope="col"># Predictions</th>
+          <th scope="col"> % correct </th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% get_unique_users(@predictions).each do |user| %>
+        <tr>
+          <td class="remove-border"><%= user.username %></td>
+          <td class="remove-border"><%= user.predictions.count %> predictions </td>
+          <td class="remove-border"><%= user.calculate_percent_correct_predictions %>% correct</td>
+        </tr>
+        <% end %>
+      </tbody>
+      </table>
+</div>

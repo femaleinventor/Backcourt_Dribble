@@ -1,28 +1,22 @@
-<h1>Wall#index</h1>
-<p>Find me in app/views/wall/index.html.erb</p>
-
-<div class="woso_wall_container container-fluid d-md-inline-flex align-items d-flex justify-content-center ">
-    <div id="word_list" class="woso_words green col-3 d-flex justify-content-end">
-    <ul>
-      <li><%= link_to 'WoSo', wall_index_path %></li>
-      <li>USWNT</li>
-      <li>NWSL</li>
-    </ul>
+<div class="twitter-app">
+  <div class="keyword-list">
+    <div class="home-container">
+      <%= link_to "RETURN HOME", root_path, class: "return-home" %>
+      <!-- <a class="return-home">RETURN HOME</a> -->
     </div>
-
-    <div class="red col-8 align-self-end ">
-    <%= render partial: "show" %>
-    </div>
-
-    <div class="pink col-2">
-      <a data-turbolinks="false" href="/"><%= image_tag "logos/bcd_black_blue_lg_rectangle2.jpg", :id => "bcd_blue" %></a>
-     <ul>
-      <li>Soccer</li>
-      <li>Basketball</li>
-      <li>Rugby</li>
-      <li>Hockey</li>
-      <li>Tennis</li>
-    </ul>
-    </div>
+    <div class="keyword">WoSo</div>
+    <div class="keyword">USWNT</div>
+    <div class="keyword">NWSL</div>
+  </div>
+  <div class="tweet-feed">
+    <% @tweets.each do |t|%>
+      <div class="keyword-tweet">
+        <div class="wrapper">
+          <div class="timestamp"><%= "#{t[:created_at]}" %></div>
+          <div class="tweet-text"><%= "#{t[:text]}" %></div>
+          <div class="by-line"><%= "#{t[:screen_name]} in #{t[:location]}" %></div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -204,10 +204,10 @@ matches_list = [
   [ "Chicago Redstars", "go90 App", 2, 13, 6, 1, 1, DateTime.new(2018,6,23,19)],
   #id 12
   # Pride vs Dash
-  [ nil, "go90 App", 2, 7, 9, 1, 4, DateTime.new(2018,6,27,15,30)],
+  [ "Houston Dash", "go90 App", 2, 7, 9, 1, 4, DateTime.new(2018,6,27,15,30)],
   #id 13
   # Royals vs Seattle 6/27
-  [ nil, "go90 App", 2, 11, 13, 1, 4, DateTime.new(2018,6,27,15,30)],
+  [ "tie", "go90 App", 2, 11, 13, 1, 4, DateTime.new(2018,6,27,15,30)],
 
 
 
@@ -272,11 +272,11 @@ matches_list = [
   [ nil, "ESPN2", 3, 47, 8, 1, 19, DateTime.new(2018,7,26,18,15)],
   # 33
   # Lyon vs Man City
-  [ nil, "ESPN2", 3, 48, 46, 1, 19, DateTime.new(2018,7,26,21)],
+  [ nil, "ESPN2", 3, 48, 46, 1, 19, DateTime.new(2018,7,26,21)]
 
   # made up international data for hackathon
   # 34 psg vs lyon, league 14
-  [ "Olympic Lyonnais", "French TV", 14, 47, 46, 1, 15, DateTime.new(2018,3,24,12)]
+  # [ "Olympic Lyonnais", "French TV", 14, 47, 46, 1, 15, DateTime.new(2018,3,24,12)]
 ]
 
 matches_list.each do |match|
@@ -376,10 +376,10 @@ predictions_list = [
 
   #id 9
   # Reign vs Courage
-  [ "Seattle Reign", "Rapinoe has so many ideas", nil, 2, 3, 9],
-  [ "North Carolina Courage", "Courage on penalty kicks are just so tall, the ball will go over the defense", nil, 2, 4, 9],
-  [ "North Carolina Courage", "Seattle will give us a perfect storm but the courage will rock it.", nil, 2, 8, 9],
-  [ "tie", "It will be a good game, but no winners though", nil, 2, 5, 9],
+  [ "Seattle Reign", "Rapinoe has so many ideas", false, 2, 3, 9],
+  [ "North Carolina Courage", "Courage on penalty kicks are just so tall, the ball will go over the defense", true, 2, 4, 9],
+  [ "North Carolina Courage", "Seattle will give us a perfect storm but the courage will rock it.", true, 2, 8, 9],
+  [ "tie", "It will be a good game, but no winners though", false, 2, 5, 9],
   #id 10
   # Spirit vs Pride
   [ "tie", "Too close to call", false, 2, 5, 10],
@@ -394,16 +394,16 @@ predictions_list = [
   [ "Utah Royals", "Laura Harvey really knows how to coach", false, 2, 5, 11],
   #id 12
   # Pride vs Dash
-  [ "tie", "They both will score 1 goal", nil, 2, 4, 12],
-  [ "Orlando Pride", "Krieger fever will take over", nil, 2, 5, 12],
-  [ "Orlando Pride", "Kennedy will kill it", nil, 2, 8, 12],
-  [ "Houston Dash", "Pauw really knows how to coach", nil, 2, 7, 12],
+  [ "tie", "They both will score 1 goal", false, 2, 4, 12],
+  [ "Orlando Pride", "Krieger fever will take over", false, 2, 5, 12],
+  [ "Orlando Pride", "Kennedy will kill it", false, 2, 8, 12],
+  [ "Houston Dash", "Pauw really knows how to coach", true, 2, 7, 12],
   #id 13
   # Royals vs Seattle 6/27
-  [ "tie", "Royals have amazing defense, 0-0 tie", nil, 2, 1, 13],
-  [ "Utah Royals", "Press will get one or two", nil, 2, 2, 13],
-  [ "Utah Royals", "The Royals are just gelling", nil, 2, 3, 13],
-  [ "Seattle Reign", "Seattle knows what they are doing", nil, 2, 4, 13],
+  [ "tie", "Royals have amazing defense, 0-0 tie", true, 2, 1, 13],
+  [ "Utah Royals", "Press will get one or two", false, 2, 2, 13],
+  [ "Utah Royals", "The Royals are just gelling", false, 2, 3, 13],
+  [ "Seattle Reign", "Seattle knows what they are doing", false, 2, 4, 13],
 
   # Coming up after hackathon games
   #id 14
@@ -544,13 +544,13 @@ predictions_list = [
   [ "Manchester City", "Man City will hang on and win", nil, 2, 1, 33],
   [ "Olympic Lyonnais", "Best team in the world will destroy Man City", nil, 2, 8, 33],
   [ "Olympic Lyonnais", "They are just so good", nil, 2, 3, 33],
-  [ "Manchester City", "They will be better prepared", nil, 2, 5, 33],
+  [ "Manchester City", "They will be better prepared", nil, 2, 5, 33]
 
   # 34 made up international data for hackathon
   # psg vs lyon, league 14
-  [ "Olympic Lyonnais", "They are always better", true, 5, 1, 34],
-  [ "Olympic Lyonnais", "Best players in the world", true, 7, 3, 34],
-  [ "Olympic Lyonnais", "Always in this league they win", true, 8, 2, 34]
+  # [ "Olympic Lyonnais", "They are always better", true, 5, 1, 34],
+  # [ "Olympic Lyonnais", "Best players in the world", true, 7, 3, 34],
+  # [ "Olympic Lyonnais", "Always in this league they win", true, 8, 2, 34]
 
 ]
 
