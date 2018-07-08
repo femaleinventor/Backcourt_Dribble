@@ -1,4 +1,25 @@
+<div class="twitter-app">
+  <div class="keyword-list">
+    <div class="keyword">WoSo</div>
+    <div class="keyword">USWNT</div>
+    <div class="keyword">NWSL</div>
+    <div class="home-container">
+      <div class="return-home">RETURN HOME</div>
+    </div>
+  </div>
+  <div class="tweet-feed">
+    <% @tweets.each do |t|%>
+      <div class="keyword-tweet">
+        <div class="timestamp"><%= "#{t[:created_at]}" %></div>
+        <div class="tweet-text"><%= "#{t[:text]}" %></div>
+        <div class="by-line"><%= "#{t[:screen_name]} in #{t[:location]}" %></div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
+
+<!--
 <div class="woso_wall_container container-fluid d-md-inline-flex align-items d-flex justify-content-center ">
     <div id="word_list" class="woso_words green col-3 d-flex justify-content-end">
     <ul>
@@ -23,4 +44,4 @@
     </ul>
     </div>
   </div>
-</div>
+</div> -->

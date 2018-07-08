@@ -1,3 +1,68 @@
 // Place all the styles related to the tweets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$theme-orange: #F0900E;
+$theme-blue: #16A7D5;
+$theme-grey: #707070;
+$theme-green: #00D37F;
+
+.twitter-app {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+
+  .keyword-list {
+    // background-color: teal;
+    flex-grow: 1;
+    box-shadow: 5px 10px grey;
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    .keyword {
+      color: $theme-green;
+      font-size: 2em;
+      font-weight: 400;
+      text-align: center;
+      margin: 10px;
+    }
+    .keyword:hover {
+      background-color: $theme-grey;
+    }
+    .home-container{
+      flex-grow: 5;
+      display: flex;
+      flex-direction: column-reverse;
+      .return-home{
+      color: $theme-orange;
+      font-size: 1.5em;
+      font-weight: lighter;
+      text-align: center;
+      margin-bottom: 20px;
+      }
+    }
+  }
+  .tweet-feed {
+    flex-grow: 4;
+    display: flex;
+    flex-direction: column-reverse;
+    .keyword-tweet{
+      height: 10vh;
+      .timestamp{
+        color: $theme-orange;
+        font-size: .8em;
+      }
+      .tweet-text{
+        font-size: 1.5em;
+        color: $theme-blue;
+        text-align: center;
+      }
+      .by-line{
+        color: $theme-orange;
+        font-size: .8em;
+        text-align: right;
+      }
+    }
+  }
+
+}
