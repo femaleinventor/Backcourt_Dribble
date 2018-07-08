@@ -26,7 +26,6 @@ gem 'loofah', '>= 2.2.2'
 
 gem 'devise'
 
-
 gem 'twitter', '~> 6.2'
 
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
