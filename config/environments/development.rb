@@ -62,7 +62,7 @@ Rails.application.configure do
   # attempts to fix javascript precompile raise_delivery_errors
   config.assets.compress = false
   config.assets.debug = true
-  config.assets.compile = true
+  # config.assets.compile = true
   #config.assets.debug = false
-  
+
 end
