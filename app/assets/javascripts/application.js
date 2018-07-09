@@ -21,6 +21,7 @@
 //= require jquery.countdown.min
 //= require_tree .
 
+
 $(document).ready(function() {
 	$('#fullpage').fullpage({
 			// parallaxKey: ‘YmFja2NvdXJ0ZHJpYmJsZS5jb21fanh6Y0dGeVlXeHNZWGc9ZDYx’,
