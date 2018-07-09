@@ -10,7 +10,6 @@
 // }
 
 // function searchWoSo() {
-//   $('#woso-link').on(click)
 //     // on click make a call to twitter and return a hash
 //     // parse the hash
 //     // return parsed hash to dom
@@ -18,7 +17,6 @@
 // }
 
 // function searchWoSo() {
-//   $('#uswnt-link').on(click)
 //     // on click make a call to twitter and return a hash
 //     // parse the hash
 //     // return parsed hash to dom
@@ -26,7 +24,6 @@
 // }
 
 // function searchWoSo() {
-//   $('#nwsl-link').on(click)
 //     // on click make a call to twitter and return a hash
 //     // parse the hash
 //     // return parsed hash to dom
