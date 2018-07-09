@@ -216,8 +216,9 @@ GEM
       simple_oauth (~> 0.3.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.14)
-      execjs (>= 0.3.0, < 3)
+    uglifier (2.7.2)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.5)
@@ -260,7 +261,7 @@ DEPENDENCIES
   therubyracer
   twitter (~> 6.2)
   tzinfo-data
-  uglifier
+  uglifier (~> 2.7, >= 2.7.2)
   web-console (>= 3.3.0)
 
 RUBY VERSION
