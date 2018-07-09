@@ -32,7 +32,7 @@ Rails.application.configure do
 
 
   # last commit - undo if it doesn't work
-  RAILS_ENV=production rake assets:precompile
+  # RAILS_ENV=production rake assets:precompile
 
 
 

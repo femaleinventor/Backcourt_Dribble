@@ -60,7 +60,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # last commit attempt undo if doesn't work
-  config.assets.prefix = "/assets_dev"
+  # config.assets.prefix = "/assets_dev"
 
   # attempts to fix javascript precompile raise_delivery_errors
   config.assets.compress = false
