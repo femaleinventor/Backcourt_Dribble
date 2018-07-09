@@ -17,6 +17,6 @@ module BCDApp
     # -- all .rb files in that directory are automatically loaded.
 
     # on suggestion from stackoverflow
-    config.assets.initialize_on_precompile = false
+    # config.assets.initialize_on_precompile = false
   end
 end

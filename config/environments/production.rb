@@ -28,8 +28,8 @@ Rails.application.configure do
   # config.assets.js_compressor = Uglifier.new(harmony: true)
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
-
+  # config.assets.compile = false
+  config.assets.compile = true
 
   # last commit - undo if it doesn't work
   # RAILS_ENV=production rake assets:precompile
