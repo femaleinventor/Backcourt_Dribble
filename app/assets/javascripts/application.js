@@ -14,6 +14,7 @@
 // require jquery - was here before fullpage
 //= require jquery3
 //= require jquery_ujs
+//= require static
 //= require fullpage.parallax.min
 //= require jquery.fullpage.extensions.min
 //= require jquery.slick
