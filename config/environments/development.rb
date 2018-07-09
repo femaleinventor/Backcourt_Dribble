@@ -47,7 +47,6 @@ Rails.application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   # was true on sunday
-  config.assets.debug = false
 
 
   # Suppress logger output for asset requests.
@@ -60,4 +59,10 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+  # attempts to fix javascript precompile raise_delivery_errors
+  config.assets.compress = false
+  config.assets.debug = true
+  config.assets.compile = true
+  #config.assets.debug = false
+  
 end
