@@ -1,37 +1,37 @@
-$(document).ready(function() {
-	attachEventListeners();
-});
+// $(document).ready(function() {
+// 	attachEventListeners();
+// });
 
 
-function attachEventListeners() {
-  searchWoSo();
-  searchUSWNT();
-  searchNWSL();
-}
+// function attachEventListeners() {
+//   searchWoSo();
+//   searchUSWNT();
+//   searchNWSL();
+// }
 
-function searchWoSo() {
-  $('#woso-link').on(click)
-    // on click make a call to twitter and return a hash
-    // parse the hash
-    // return parsed hash to dom
-	});
-}
+// function searchWoSo() {
+//   $('#woso-link').on(click)
+//     // on click make a call to twitter and return a hash
+//     // parse the hash
+//     // return parsed hash to dom
+// 	});
+// }
 
-function searchWoSo() {
-  $('#uswnt-link').on(click)
-    // on click make a call to twitter and return a hash
-    // parse the hash
-    // return parsed hash to dom
-	});
-}
+// function searchWoSo() {
+//   $('#uswnt-link').on(click)
+//     // on click make a call to twitter and return a hash
+//     // parse the hash
+//     // return parsed hash to dom
+// 	});
+// }
 
-function searchWoSo() {
-  $('#nwsl-link').on(click)
-    // on click make a call to twitter and return a hash
-    // parse the hash
-    // return parsed hash to dom
-	});
-}
+// function searchWoSo() {
+//   $('#nwsl-link').on(click)
+//     // on click make a call to twitter and return a hash
+//     // parse the hash
+//     // return parsed hash to dom
+// 	});
+// }
 
 
 // make method to parse the hash
