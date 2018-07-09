@@ -14,7 +14,8 @@
         <div class="wrapper">
           <div class="timestamp"><%= "#{t[:created_at]}" %></div>
           <div class="tweet-text"><%= "#{t[:text]}" %></div>
-           %></div>
+          <div class="by-line"><%= "#{t[:screen_name]}" in "#{t[:location]}" %>
+          </div>
         </div>
       </div>
     <% end %>
