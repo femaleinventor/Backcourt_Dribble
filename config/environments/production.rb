@@ -30,6 +30,12 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
+
+  # last commit - undo if it doesn't work
+  RAILS_ENV=production rake assets:precompile
+
+
+
   # config.assets.css_compressor = :sass
 
   # added in attempts to debug heroku asset pipeline
