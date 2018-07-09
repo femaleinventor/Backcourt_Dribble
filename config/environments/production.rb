@@ -6,7 +6,7 @@ Rails.application.configure do
   # config.assets.digest = true
   # config.assets.compress = true
   # config.assets.debug = true
-  config.assets.debug = true
+  # config.assets.debug = true
 
   # Settings specified here will take precedence over those in config/application.rb.
 
