@@ -5,7 +5,7 @@
            <% sorted_matches.each do |match| %>
             <% @home_team = Team.find(match.home_team_id) %>
             <% @away_team = Team.find(match.away_team_id) %>
-            <div class="section fp-bg fp-auto-height-reponsive">
+            <div class="section fp-bg fp-noscroll">
               <!-- Makes gradient behind match up -->
               <div class="slide" style="background: #FFFFFF; background: -webkit-linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);
               background: linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);">
@@ -245,7 +245,7 @@
                 </div>
               </div>
 
-              <div class="slide">
+              <div class="slide fp-noscroll">
                 <%= render "shared/site_nav" %>
                 <div class="container-fluid">
                   <div class="row">
@@ -260,7 +260,7 @@
               </div>
 
 
-              <div class="slide">
+              <div class="slide fp-noscroll">
                 <%= render "shared/site_nav" %>
                 <div class="container-fluid">
                   <div class="row">
