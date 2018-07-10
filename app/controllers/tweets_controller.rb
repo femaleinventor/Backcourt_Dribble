@@ -20,9 +20,9 @@ class TweetsController < ApplicationController
     @search_string = params[:keyword]
     @tweets = TwitterAdapter::search("woso")
     @tweets.each do |tweet|
-      p "*************************************************"
-      p tweet
-      p "*************************************************"
+      # p "*************************************************"
+      # p tweet
+      # p "*************************************************"
     end
   end
 

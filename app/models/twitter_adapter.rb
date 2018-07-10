@@ -44,8 +44,12 @@ private
     http.use_ssl = true
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-    # consumer_key    = ENV['TWITTER_CONSUMER_KEY']
+    consumer_key    = ENV["TWITTER_CONSUMER_KEY"]
     # consumer_secret = ENV['TWITTER_CONSUMER_SECRET']
+
+    # p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+    # puts "consumer key: #{consumer_key}"
+    # p "3333333333333333333333333333"
 
 
     consumer_key    = 'eSn7tq41cyXLO71xTrSzWJDpg'
