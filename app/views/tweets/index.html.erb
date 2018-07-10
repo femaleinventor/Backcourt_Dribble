@@ -2,11 +2,16 @@
   <div class="keyword-list">
     <div class="home-container">
       <%= link_to "RETURN HOME", root_path, class: "return-home" %>
-      <!-- <a class="return-home">RETURN HOME</a> -->
     </div>
-    <div class="keyword">WoSo</div>
-    <div class="keyword">USWNT</div>
-    <div class="keyword">NWSL</div>
+    <div class="keyword">
+      <%= link_to 'WOSO', tweets_path(:keyword => "woso") %>
+    </div>
+    <div class="keyword">
+      <%= link_to 'USWNT', tweets_path(:keyword => "USWNT") %>
+    </div>
+    <div class="keyword">
+      <%= link_to 'NWSL', tweets_path(:keyword => "NWSL") %>
+    </div>
   </div>
   <div class="tweet-feed">
     <% @tweets.each do |t|%>
