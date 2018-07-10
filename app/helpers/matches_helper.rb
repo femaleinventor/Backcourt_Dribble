@@ -8,4 +8,8 @@ module MatchesHelper
     match_date = match.start
     match_date.strftime("%m/%d/%Y at %I:%M%p")
   end
+
+  def sort_matches_by_date(matches)
+    matches.sort_by{ |match| match.start }
+  end
 end
