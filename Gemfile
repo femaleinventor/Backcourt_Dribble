@@ -19,6 +19,8 @@ gem 'uglifier', '~> 2.7', '>= 2.7.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+
 # Integrate Slick Carousel
 gem 'jquery-slick-rails'
 

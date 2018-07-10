@@ -45,15 +45,7 @@ private
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
     consumer_key    = ENV["TWITTER_CONSUMER_KEY"]
-    # consumer_secret = ENV['TWITTER_CONSUMER_SECRET']
-
-    # p "$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-    # puts "consumer key: #{consumer_key}"
-    # p "3333333333333333333333333333"
-
-
-    consumer_key    = 'eSn7tq41cyXLO71xTrSzWJDpg'
-    consumer_secret = '4pCZU7wmXGVEmkWVzBvS6sfqdNyQcJrrPKHR7km2BMXKVTJH06'
+    consumer_secret = ENV['TWITTER_CONSUMER_SECRET']
 
     bearer_token_credentials = Base64.strict_encode64("#{consumer_key}:#{consumer_secret}")
 
