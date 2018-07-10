@@ -11,7 +11,7 @@
           Sports
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item menu-link" href="/">Soccer</a>
+          <%= link_to "Soccer", sports_path, class:"dropdown-item menu-link" %>
           <a class="dropdown-item menu-link" href="/">Basketball</a>
           <a class="dropdown-item menu-link" href="/">Rugby</a>
           <a class="dropdown-item menu-link" href="/">Tennis</a>
@@ -22,23 +22,22 @@
 
       <li class="nav-item active">
         <form class="form-inline">
-          <button class="btn dribble btn-lg" type="button">Let's Dribble!</button>
+          <%= link_to "Let's Dribble", sports_path, class:"btn dribble btn-lg" %>
         </form>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link menu-link" href="/">Login</a>
+        <%= link_to "Shop", shop_index_path, class:"nav-link menu-link" %>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link menu-link" href="/">Signup</a>
+        <%= link_to "Wall", tweets_path, class:"nav-link menu-link" %>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link menu-link" href="/">Store</a>
-      </li><li class="nav-item">
-        <a class="nav-link menu-link" href="pages/wall/woso_wall.html.erb">Wall</a>
+        <%= link_to "Leaderboard", sports_path, class:"nav-link menu-link" %>
       </li>
-      <li class="nav-item">
-        <a class="nav-link menu-link" href="/">Leaderboard</a>
-      </li>
+
       <li class="nav-item">
           <%= image_tag "small_sports/soccer_ball_menu.png" %>
       </li>
