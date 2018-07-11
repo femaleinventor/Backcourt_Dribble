@@ -14,9 +14,10 @@
 //  require jquery - was here before pullpage
 //= require jquery3
 //= require jquery_ujs
-//= require fullpage.parallax.min
-//= require jquery.fullpage.extensions.min
 //= require jquery.slick
-//= require bootstrap
 //= require jquery.countdown.min
+//= require scrolloverflow.min
+//= require jquery.fullpage.extensions.min
+//= require fullpage.min
+//= require bootstrap
 //= require_tree .

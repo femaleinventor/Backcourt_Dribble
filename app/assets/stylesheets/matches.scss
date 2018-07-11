@@ -39,6 +39,14 @@ $theme-green: #00D37F;
   font-size: 10px;
 }
 
+.venue-match-links {
+  margin: 20px;
+}
+
+.countdown-text {
+  margin-top: 10px;
+}
+
 
 
 .ticket-link {
@@ -53,6 +61,10 @@ $theme-green: #00D37F;
   font-size: 20px;
   text-decoration: none;
   display: block;
+}
+
+.prediction-divider {
+  background-color: white;
 }
 
 // #clock {

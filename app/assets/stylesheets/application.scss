@@ -54,3 +54,20 @@ a {
   color: $theme-blue;
   }
 }
+
+.sign-up-btn {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background: $theme-orange;
+  border: 1px solid $theme-orange;
+  &:hover {
+    background: #ef7b0d;
+    border: 1px solid #ef7b0d;
+  }
+}
+
+.slimScrollBar {
+  background: red !important;
+  opacity: 1 !important;
+  z-index: 999 !important;
+}
