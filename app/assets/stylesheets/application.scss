@@ -35,14 +35,15 @@ body {
   background-color: black;
 }
 
+.big-white{
+  background-color: white;
+}
+
 .terms {
   color: black;
   text-align: left;
 }
 
-// #fullpage.p {
-//   color: black;
-// }
 
 li.nav-item {
   margin: 20px;
@@ -64,10 +65,4 @@ a {
     background: #ef7b0d;
     border: 1px solid #ef7b0d;
   }
-}
-
-.slimScrollBar {
-  background: red !important;
-  opacity: 1 !important;
-  z-index: 999 !important;
 }

@@ -22,7 +22,7 @@ $theme-green: #00D37F;
 }
 
 .venue-info-container {
-  line-height: 3;
+  // line-height: 3;
   p {
     color: $theme-blue;
     text-align: left;
@@ -30,23 +30,39 @@ $theme-green: #00D37F;
 }
 
 .venue-info-title {
-  color: white;
+  color: $theme-blue;
   font-weight: lighter;
   margin-top: 15px;
 }
 
-.venue-address {
-  font-size: 10px;
+.venue-location-info {
+  margin: 20px;
+  font-size: 20px;
 }
 
 .venue-match-links {
-  margin: 20px;
+  margin-top: 20px;
 }
+
+.match-date {
+  color: $theme-orange;
+}
+
+.match-channel {
+  color: $theme-blue;
+}
+
 
 .countdown-text {
-  margin-top: 10px;
+  .coutdown-title {
+    color: $theme-orange;
+    margin-top: 10px;
+  }
+  .countdown {
+    color: white;
+    font-size: 30px;
+  }
 }
-
 
 
 .ticket-link {
@@ -63,8 +79,12 @@ $theme-green: #00D37F;
   display: block;
 }
 
-.prediction-divider {
-  background-color: white;
+.logo-link {
+  height: 150px;
+}
+
+.prediction-labels {
+  color: white;
 }
 
 // #clock {
