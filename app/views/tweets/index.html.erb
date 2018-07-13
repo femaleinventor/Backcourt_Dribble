@@ -3,14 +3,14 @@
     <div class="home-container">
       <%= link_to "RETURN HOME", root_path, class: "return-home" %>
     </div>
-    <div class="keyword">
-      <%= link_to 'WOSO', tweets_path(:keyword => "woso") %>
+    <div class="keyword" id="WOSO">
+      <%= link_to 'WOSO', tweets_path(:keyword => "woso"), class: "keyword-link", id: "woso"%>
     </div>
-    <div class="keyword">
-      <%= link_to 'USWNT', tweets_path(:keyword => "USWNT") %>
+    <div class="keyword" id="USWNT">
+      <%= link_to 'USWNT', tweets_path(:keyword => "USWNT"), class: "keyword-link", id: "uswnt" %>
     </div>
-    <div class="keyword">
-      <%= link_to 'NWSL', tweets_path(:keyword => "NWSL") %>
+    <div class="keyword" id="NWSL">
+      <%= link_to 'NWSL', tweets_path(:keyword => "NWSL"), class: "keyword-link", id: "nwsl" %>
     </div>
   </div>
   <div class="tweet-feed">
