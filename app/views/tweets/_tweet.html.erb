@@ -1,0 +1,6 @@
+
+<div class="wrapper">
+  <div class="timestamp"><%= "#{t["created_at"]}" %></div>
+  <div class="tweet-text"><%= "#{t["full_text"]}" %></div>
+  <div class="by-line"> <%= "#{t.dig("user","screen_name")} in #{t.dig("user","location")}" %> </div>
+</div>
