@@ -10,7 +10,14 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//
+//  require jquery - was here before pullpage
+//= require jquery3
+//= require jquery_ujs
+//= require jquery.slick
+//= require jquery.countdown.min
+//= require scrolloverflow.min
+//= require jquery.fullpage.extensions.min
+//= require fullpage.min
 //= require bootstrap
-//= require turbolinks
 //= require_tree .

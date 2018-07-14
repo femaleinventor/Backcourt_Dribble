@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-xl navbar-dark menu-nav" data-turbolinks="false">
+  <a class="navbar-brand" href="/"><%= image_tag "logos/BCD_updated_color_sm2.jpg" %></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle menu-link" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sports
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item menu-link" href="/sports/1/leaderboard">Soccer</a>
+          <!-- <a class="dropdown-item menu-link" href="/">Basketball</a>
+          <a class="dropdown-item menu-link" href="/">Rugby</a>
+          <a class="dropdown-item menu-link" href="/">Tennis</a>
+          <a class="dropdown-item menu-link" href="/">Hockey</a>
+          <a class="dropdown-item menu-link" href="/">Volleyball</a> -->
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link menu-link" href="#">Personal Stats</a>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Leaderboard", "/sports/1/leaderboard", class: "nav-link menu-link" %>
+      </li>
+      <% if current_user %>
+        <li class="nav-item">
+          <%= link_to "#{current_user.username}", root_path, class: "nav-link menu-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link menu-link"%>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", user_session_path, class: "nav-link menu-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Register", new_user_registration_path, class: "nav-link menu-link"%>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

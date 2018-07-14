@@ -1,0 +1,209 @@
+// Place all the styles related to the WoSo controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  text-align: center;
+}
+
+p {
+  // color: white;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  margin: 15px;
+}
+
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  background-color: #16a7d5;
+}
+
+.test {
+  padding-top: 0px;
+}
+
+.btn.dribble {
+  background-color: #ff6600;
+  border-color: #ff6600;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.btn.dribble:hover {
+  background-color: #16a7d5;
+  border-color: #16a7d5;
+}
+
+.thank_you {
+  color: #16a7d5;
+  text-align: center;
+}
+
+a.menu-link {
+  color: #16a7d5;
+}
+
+a.menu-link:hover {
+  color: #00d37f;
+}
+
+a.league-link {
+  color: #16a7d5;
+}
+
+a.league-link:hover {
+  color: #ff6600;
+}
+
+.back-link {
+  color: #16a7d5;
+}
+
+.fifa_team_link {
+  color: #00d37f;
+  text-align: left;
+}
+
+.fifa_team_link:hover {
+  color: #ff6600;
+}
+
+.alert-text {
+  color: #ff6600;
+}
+
+.alert {
+  margin-top: 20px;
+}
+
+.sport {
+  color: #16a7d5;
+}
+
+.sport:hover {
+  color: #ff6600;
+}
+
+.league_menu {
+  height: 1500px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border-radius: 6px 6px 6px 6px;
+}
+
+.large_twitter_list {
+  margin-left: 15px;
+}
+
+.template_large_list {
+  height: 4830px;
+}
+
+.template_small_list {
+  height: 1000px;
+}
+
+.placeholder_text {
+  color: #16a7d5;
+  font-size: 1.2em;
+  margin-top: 1.5em;
+}
+
+.banner {
+  height: 225px;
+  margin-left: 20px;
+  margin-top: 10px;
+  border-radius: 6px;
+  margin-bottom: 7px;
+}
+
+.banner-links {
+  display: block;
+}
+
+.panel-container {
+  margin-top: 20px;
+}
+
+.template-panel-container {
+  border: 1px solid #16a7d5;
+  margin-top: 20px;
+}
+
+.icon-container {
+  margin-right: 5px;
+  margin-left: 20px;
+  margin-top: 10px;
+  border-radius: 6px 6px 0px 0px;
+}
+
+.ad-container {
+  margin-top: 50px;
+}
+
+.menu {
+  background: #292f33;
+}
+
+.menu-nav {
+  // border-radius: 6px 6px 6px 6px;
+  background: #292f33;
+}
+
+.ad {
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+}
+
+.nwsl-list-container {
+  margin-left: 10px;
+}
+
+.active {
+  color: #00d37f;
+}
+
+.green {
+  border: 2px solid green;
+  color: blue;
+}
+//
+.red {
+  border: 2px solid red;
+  color: blue;
+}
+//
+.pink {
+  border: 2px solid pink;
+  color: blue;
+  height: 100vh;
+}
+
+.woso_words {
+  font-size: 1.5em;
+}
+.woso_wall_container {
+}
+.woso_container {
+  background-color: pink;
+}
+
+#bcd_blue {
+  max-width: 100%;
+}
+
+// .fifa-league-link {
+//   display: "none";
+// }

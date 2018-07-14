@@ -1,208 +1,107 @@
-// Place all the styles related to the WoSo controller here.
+// Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 {
-  text-align: center;
-}
+$theme-orange: #F0900E;
+$theme-blue: #16A7D5;
+$theme-grey: #707070;
+$theme-green: #00D37F;
 
-p {
-  color: white;
-  text-align: center;
-}
-
-li {
-  list-style: none;
-  margin: 15px;
-}
-
-hr {
-  display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-left: auto;
-  margin-right: auto;
-  border-style: inset;
-  border-width: 1px;
-  background-color: #16a7d5;
-}
-
-.test {
-  padding-top: 0px;
-}
-
-.btn.dribble {
-  background-color: #ff6600;
-  border-color: #ff6600;
-  padding-left: 30px;
-  padding-right: 30px;
-  font-weight: bold;
-}
-
-.btn.dribble:hover {
-  background-color: #16a7d5;
-  border-color: #16a7d5;
-}
-
-.thank_you {
-  color: #16a7d5;
-  text-align: center;
-}
-
-a.menu-link {
-  color: #16a7d5;
-}
-
-a.menu-link:hover {
-  color: #00d37f;
-}
-
-a.league-link {
-  color: #16a7d5;
-}
-
-a.league-link:hover {
-  color: #ff6600;
-}
-
-.back-link {
-  color: #16a7d5;
-}
-
-.fifa_team_link {
-  color: #00d37f;
-  text-align: left;
-}
-
-.fifa_team_link:hover {
-  color: #ff6600;
-}
-
-.alert-text {
-  color: #ff6600;
-}
-
-.alert {
-  margin-top: 20px;
-}
-
-.sport {
-  color: #16a7d5;
-}
-
-.sport:hover {
-  color: #ff6600;
-}
-
-.league_menu {
-  height: 900px;
-  margin-left: 20px;
-  margin-top: 20px;
-  border-radius: 6px 6px 6px 6px;
-}
-
-.large_twitter_list {
-  margin-left: 15px;
-}
-
-.template_large_list {
-  height: 4830px;
-}
-
-.template_small_list {
-  height: 1000px;
-}
-
-.placeholder_text {
-  color: #16a7d5;
-  font-size: 1.2em;
-  margin-top: 1.5em;
-}
-
-.banner {
-  height: 225px;
-  margin-left: 20px;
-  margin-top: 10px;
-  border-radius: 6px;
-  margin-bottom: 7px;
-}
-
-.banner-links {
-  display: block;
-}
-
-.panel-container {
-  margin-top: 20px;
-}
-
-.template-panel-container {
-  border: 1px solid #16a7d5;
-  margin-top: 20px;
-}
-
-.icon-container {
-  margin-right: 5px;
-  margin-left: 20px;
-  margin-top: 10px;
-  border-radius: 6px 6px 0px 0px;
-}
-
-.ad-container {
-  margin-top: 50px;
-}
-
-.menu {
-  background: #292f33;
-}
-
-.menu-nav {
-  border-radius: 6px 6px 6px 6px;
-  background: #292f33;
-}
-
-.ad {
-  height: 200px;
-  width: 200px;
-  margin: 10px;
-}
-
-.nwsl-list-container {
-  margin-left: 20px;
-}
-
-.active {
-  color: #00d37f;
-}
-
-.green {
-  border: 2px solid green;
-  color: blue;
-}
-//
-.red {
-  border: 2px solid red;
-  color: blue;
-}
-//
-.pink {
-  border: 2px solid pink;
-  color: blue;
+.home-menu-area {
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
 }
 
-.woso_words {
-  font-size: 1.5em;
-}
-.woso_wall_container {
-}
-.woso_container {
-  background-color: pink;
-}
-
-#bcd_blue {
-  max-width: 100%;
+// When smaller than 750px
+@media (max-width: 750px){
+  .action-title{
+    a{
+      font-size: 8.5vmin;
+    }
+  }
 }
 
-// .fifa-league-link {
-//   display: "none";
-// }
+// When larger than 750px
+@media (min-width: 750px){
+  .action-title{
+    a{
+      font-size: 63.75px;
+    }
+  }
+}
+
+// When smaller than 500px
+@media (max-width: 500px){
+  .action-subtext {
+    display: none;
+  }
+  .action-title {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media(min-width: 500px){
+  .action-title{
+    height: 50%;
+  }
+  .left{
+    align-items: flex-end;
+  }
+}
+
+
+
+.home-nav { // *thing to center* //
+  background-color: $theme-grey;
+  height: 100vmin;
+  width: 100vmin;
+  max-width: 750px;
+  max-height: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5vmin;
+  .nav-row{
+    display: flex;
+    justify-content: space-between;
+    height: 49.5%;
+    width: 100%;
+    .action-button{
+      display: flex;
+      flex-direction: column;
+      width: 49.5%;
+      background-color: white;
+      .action-title{
+        display: flex;
+        flex-direction: column-reverse;
+      }
+      .orange{
+        color: $theme-orange;
+      }
+      .green-ish{
+        color: $theme-green;
+      }
+      .blue{
+        color: $theme-blue;
+      }
+      .action-subtext{
+        font-size: 1.6vmin;
+      }
+    }
+    .left{
+      text-align: right;
+      padding-right: 5vmin;
+      padding-left: 2vmin;
+    }
+    .right{
+      padding-left: 5vmin;
+      padding-right: 2vmin;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BCDApp</title>
+  <title>Backcourt Dribble</title>
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,9 +9,16 @@
   <style>
     @import url('https://fonts.googleapis.com/css?family=Comfortaa');
   </style>
+
+  <% if content_for?(:head) %>
+    <%= yield(:head) %>
+  <% end %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
   <%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 </body>
 </html>

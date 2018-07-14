@@ -1,0 +1,32 @@
+// Place all the styles related to the sports controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$theme-blue: #16A7D5;
+
+.leaderboard-title{
+  color: white;
+}
+
+.leaderboard-table {
+  color: $theme-blue;
+}
+
+.remove-border {
+  border: none;
+  border-top: none;
+}
+
+.sport-name {
+  margin: 15px;
+}
+
+.league-column-headers {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.worldwide-league {
+  font-size: 12px;
+}

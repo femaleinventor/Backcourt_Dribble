@@ -1,0 +1,50 @@
+  <div class="home-menu-area">
+    <div class="home-nav">
+      <div class="nav-row">
+        <div class="action-button left">
+          <div class="action-title">
+            <%= link_to 'Wall', tweets_path, class: "orange" %>
+          </div>
+          <div class="action-subtext">
+            exploring the twitterverse for key words for woman's soccer
+          </div>
+        </div>
+        <div class="action-button right">
+          <div class="action-title">
+            <%= link_to 'Dribble', sports_path, class:"green-ish" %>
+          </div>
+          <div class="action-subtext">
+            make predictions and engage with WoSo statistics
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-row">
+        <div class="action-button left">
+          <div class="action-title">
+            <%= link_to 'Twitter', '/pages/soccer/woso_writers.html.erb', class:"blue" %>
+          </div>
+          <div class="action-subtext">
+            collecting currents tweets from teams around the world
+          </div>
+        </div>
+        <div class="action-button right">
+          <div class="action-title">
+            <!-- <%= link_to 'Shop', shop_index_path, class:"wall" %> -->
+            <%= link_to shop_index_path, class: "orange" do %>
+              Sh<span class='blue'>o</span>p
+            <% end %>
+
+          </div>
+          <div class="action-subtext">
+            cool stuff made by or about female athletes (coming soon)
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+    <!-- <%= link_to 'Log out', destroy_user_session_path, method: :delete %> -->

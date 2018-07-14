@@ -1,0 +1,27 @@
+<div class="twitter-app">
+  <div class="keyword-list">
+    <div class="home-container">
+      <%= link_to "RETURN HOME", root_path, class: "return-home" %>
+    </div>
+    <div class="keyword">
+      <%= link_to 'WOSO', tweets_path(:keyword => "woso") %>
+    </div>
+    <div class="keyword">
+      <%= link_to 'USWNT', tweets_path(:keyword => "USWNT") %>
+    </div>
+    <div class="keyword">
+      <%= link_to 'NWSL', tweets_path(:keyword => "NWSL") %>
+    </div>
+  </div>
+  <div class="tweet-feed">
+    <% @tweets.each do |t|%>
+      <div class="keyword-tweet">
+        <div class="wrapper">
+          <div class="timestamp"><%= "#{t["created_at"]}" %></div>
+          <div class="tweet-text"><%= "#{t["full_text"]}" %></div>
+          <div class="by-line"> <%= "#{t.dig("user","screen_name")} in #{t.dig("user","location")}" %> </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

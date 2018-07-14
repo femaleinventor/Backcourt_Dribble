@@ -1,0 +1,24 @@
+// Place all the styles related to the Shop controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.items-index{
+  margin-top: 100px;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-content: space-around;
+  .shop-item {
+    width: 19vw;
+    height: 19vw;
+    background-color: grey;
+    margin: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2vw;
+  }
+}

@@ -1,4 +1,13 @@
 Rails.application.configure do
+
+  #suggested from stack stackoverflow
+  # config.serve_static_assets = true
+  # config.assets.compile = true
+  # config.assets.digest = true
+  # config.assets.compress = true
+  # config.assets.debug = true
+
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -25,10 +34,23 @@ Rails.application.configure do
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
-  # config.assets.css_compressor = :sass
+  # config.assets.js_compressor = Uglifier.new(harmony: true)
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
+
+
+  # last commit - undo if it doesn't work
+  # RAILS_ENV=production rake assets:precompile
+
+  # config.assets.css_compressor = :sass
+
+  # added in attempts to debug heroku asset pipeline
+  # config.serve_static_assets = true
+
+  # added in attempts to debug heroku asset pipeline
+  # rake assets:precompile RAILS_ENV=production
+  # rake assets:precompile
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -61,6 +83,9 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "BCD_App_#{Rails.env}"
   config.action_mailer.perform_caching = false
+
+
+  config.action_mailer.default_url_options = { host: 'backcourtdribble.herokuapp.com'}
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

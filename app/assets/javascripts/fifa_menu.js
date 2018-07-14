@@ -1,4 +1,4 @@
-  $(document).on("ready", function(){
+  $(document).ready(function(){
 
     if ($('.league-link').length > 1) {
       // Hides FIFA Team list on load
@@ -11,11 +11,8 @@
         $('.fifa_team_link').show();
       });
 
-    }
-
-    else {
+    } else {
       $('.fifa-league-link').show();
       $('.league_menu').height(2500);
     }
-
   });

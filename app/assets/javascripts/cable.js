@@ -5,6 +5,8 @@
 //= require_self
 //= require_tree ./channels
 
+
+// I have no clue what this is - denise 062618
 (function() {
   this.App || (this.App = {});
 
