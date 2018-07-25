@@ -1,25 +1,52 @@
 <%= render 'shared/site_nav' %>
 
-<div class="container-fluid mt-5">
-    <h1 class="leaderboard-title"> <%= @sport.name %> Leaderboard </h1>
+<div class="container-fluid">
+    <h1 class="leaderboard-title text-center"> <%= @sport.name %> Leaderboard </h1>
+    <div class="row justify-content-around">
+      <!-- Leaderboard column -->
+      <div class="col-xs-12 col-md-7">
+          <table class="table table-striped table-dark leaderboard-table">
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Username</th>
+                <th scope="col">No. Predictions</th>
+                <th scope="col">% Correct</th>
+              </tr>
+            </thead>
+            <tbody>
+            <% get_unique_users(@predictions).each do |user| %>
+              <tr>
+                <td>Rank</td>
+                <td><%= user.username %></td>
+                <td><%= user.predictions.count %> </td>
+                <td><%= user.calculate_percent_correct_predictions %> </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
 
-      <table class="table leaderboard-table">
-      <thead class="hidden" style='display:none;'>
-        <tr>
-          <th scope="col">Username</th>
-          <th scope="col"># Predictions</th>
-          <th scope="col"> % correct </th>
-        </tr>
-      </thead>
-      <tbody>
+        <!-- Store Items -->
+        <div class="col-xs-12 col-md-3">
+          <div class="row justify-content-around">
+            <div class="col-xs-12">
+              <div class="store-item d-flex align-items-center justify-content-center">
+                <h3 class="store-item-title"> Store Item </h3>
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <div class="store-item d-flex align-items-center justify-content-center">
+                <h3 class="store-item-title"> Store Item </h3>
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <div class="store-item d-flex align-items-center justify-content-center">
+                <h3 class="store-item-title"> Store Item </h3>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <% get_unique_users(@predictions).each do |user| %>
-        <tr>
-          <td class="remove-border"><%= user.username %></td>
-          <td class="remove-border"><%= user.predictions.count %> predictions </td>
-          <td class="remove-border"><%= user.calculate_percent_correct_predictions %>% correct</td>
-        </tr>
-        <% end %>
-      </tbody>
-      </table>
+    </div>
 </div>

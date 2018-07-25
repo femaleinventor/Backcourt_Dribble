@@ -1,0 +1,20 @@
+$theme-blue: #16A7D5;
+
+.leaderboard-title{
+  color: white;
+  margin-top: 20px;
+}
+
+.leaderboard-table {
+  margin-top: 20px;
+}
+
+.store-item {
+  width: 19vw;
+  height: 19vw;
+  background-color: grey;
+  margin: 20px;
+  .store-item-title {
+    color: $theme-blue;
+  }
+}

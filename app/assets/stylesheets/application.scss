@@ -18,6 +18,7 @@
 
 $theme-orange: #F0900E;
 $theme-blue: #16A7D5;
+$theme-green: #00D37F;
 
 
 body {
@@ -65,4 +66,8 @@ a {
     background: #ef7b0d;
     border: 1px solid #ef7b0d;
   }
+}
+
+.leaderboard-select{
+  color: $theme-green !important;
 }
