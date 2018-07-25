@@ -23,8 +23,19 @@
       <li class="nav-item">
         <a class="nav-link menu-link" href="#">Personal Stats</a>
       </li>
-      <li class="nav-item">
-        <%= link_to "Leaderboard", "/sports/1/leaderboard", class: "nav-link menu-link" %>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle menu-link" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Leaderboards
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <%= link_to "Soccer", "/sports/1/leaderboard", class: "nav-link menu-link leaderboard-select" %>
+          <%= link_to "Basketball", "/sports/2/leaderboard", class: "nav-link menu-link leaderboard-select" %>
+          <%= link_to "Rugby", "/sports/3/leaderboard", class: "nav-link menu-link leaderboard-select" %>
+          <%= link_to "Tennis", "/sports/4/leaderboard", class: "nav-link menu-link leaderboard-select" %>
+          <%= link_to "Hockey", "/sports/5/leaderboard", class: "nav-link menu-link leaderboard-select" %>
+          <%= link_to "Volleyball", "/sports/6/leaderboard", class: "nav-link menu-link leaderboard-select" %>
+        </div>
       </li>
       <% if current_user %>
         <li class="nav-item">
