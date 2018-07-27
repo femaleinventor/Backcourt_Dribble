@@ -5,4 +5,8 @@ module SportsHelper
     users = predictions.collect {|prediction| prediction.user}
     users.uniq
   end
+
+  def sort_leaderboard_by_percent(user)
+    user.predictions.sort_by{ |prediction| prediction.count }
+  end
 end
