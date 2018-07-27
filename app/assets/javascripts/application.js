@@ -11,10 +11,8 @@
 // about supported directives.
 //
 //
-//  require jquery - was here before pullpage
 //= require jquery3
 //= require jquery_ujs
-//= require jquery.slick
 //= require jquery.countdown.min
 //= require scrolloverflow.min
 //= require jquery.fullpage.extensions.min
