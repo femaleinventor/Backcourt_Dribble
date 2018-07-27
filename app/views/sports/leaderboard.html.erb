@@ -1,10 +1,35 @@
 <%= render 'shared/site_nav' %>
 
 <div class="container-fluid">
-    <h1 class="leaderboard-title text-center"> <%= @sport.name %> Leaderboard </h1>
+    <h1 class="leaderboard-page-title text-center"> <%= @sport.name %> Leaderboard </h1>
     <div class="row justify-content-around">
       <!-- Leaderboard column -->
       <div class="col-xs-12 col-md-7">
+          <h2 class="leaderboard-title">All Soccer Predictions Leaderboard</h2>
+          <table id="soccer-table" class="table table-striped table-dark leaderboard-table">
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Username</th>
+                <th scope="col">No. Predictions</th>
+                <th scope="col">% Correct</th>
+              </tr>
+            </thead>
+            <tbody>
+
+            <% get_unique_users(@predictions).each do |user| %>
+              <tr>
+                <td>Rank</td>
+                <td><%= user.username %></td>
+                <td><%= user.predictions.count %> </td>
+                <td><%= user.calculate_percent_correct_predictions %> </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table> <!--All sport leaderboard-->
+
+          <!-- Sort function by % correct -->
+          <h2 class="leaderboard-title"><%=@nwsl.name%> Leaderboard</h2>
           <table class="table table-striped table-dark leaderboard-table">
             <thead>
               <tr>
@@ -15,7 +40,8 @@
               </tr>
             </thead>
             <tbody>
-            <% get_unique_users(@predictions).each do |user| %>
+
+            <% get_unique_users(@nwsl.predictions).each do |user| %>
               <tr>
                 <td>Rank</td>
                 <td><%= user.username %></td>
@@ -24,7 +50,11 @@
               </tr>
             <% end %>
             </tbody>
-          </table>
+          </table> <!--All sport leaderboard-->
+
+
+          <!-- Display a table of predictions for the NWSL only -->
+
         </div>
 
         <!-- Store Items -->

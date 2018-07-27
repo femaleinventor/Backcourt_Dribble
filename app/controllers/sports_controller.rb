@@ -13,6 +13,8 @@ class SportsController < ApplicationController
   def leaderboard
     @sport = Sport.find(params[:id])
     @predictions = @sport.predictions
+    @leagues = @sport.leagues
+    @nwsl = @leagues.find(2)
   end
 
 end
