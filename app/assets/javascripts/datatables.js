@@ -3,8 +3,8 @@
 // optional change '//' --> '//=' to enable
 
 // require datatables/extensions/AutoFill/dataTables.autoFill
-// require datatables/extensions/Buttons/dataTables.buttons
-// require datatables/extensions/Buttons/buttons.html5
+//= require datatables/extensions/Buttons/dataTables.buttons
+//= require datatables/extensions/Buttons/buttons.html5
 // require datatables/extensions/Buttons/buttons.print
 // require datatables/extensions/Buttons/buttons.colVis
 // require datatables/extensions/Buttons/buttons.flash
