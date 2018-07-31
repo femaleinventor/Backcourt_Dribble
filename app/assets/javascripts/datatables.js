@@ -12,7 +12,7 @@
 // require datatables/extensions/FixedColumns/dataTables.fixedColumns
 // require datatables/extensions/FixedHeader/dataTables.fixedHeader
 // require datatables/extensions/KeyTable/dataTables.keyTable
-//= require datatables/extensions/Responsive/dataTables.responsive
+// require datatables/extensions/Responsive/dataTables.responsive
 // require datatables/extensions/RowGroup/dataTables.rowGroup
 // require datatables/extensions/RowReorder/dataTables.rowReorder
 // require datatables/extensions/Scroller/dataTables.scroller
@@ -20,8 +20,8 @@
 
 //= require datatables/dataTables.bootstrap4
 // require datatables/extensions/AutoFill/autoFill.bootstrap4
-//= require datatables/extensions/Buttons/buttons.bootstrap4
-//= require datatables/extensions/Responsive/responsive.bootstrap4
+// require datatables/extensions/Buttons/buttons.bootstrap4
+// require datatables/extensions/Responsive/responsive.bootstrap4
 
 
 //Global setting and initializer
