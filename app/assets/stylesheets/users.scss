@@ -25,26 +25,39 @@ $theme-green: #00D37F;
       text-decoration: underline;
       text-decoration-color: $theme-blue;
     }
-
   }
   .prediction-content-wrapper {
     margin-top: 50px;
     .prediction-card {
-      margin: 20px;
-      height: 5vw;
+      margin: 30px;
       .date {
-        color: $theme-blue;
+        color: $theme-dark-grey;
+      }
+      .prediction-details {
+        .teams {
+          font-size: 30px;
+          color: white;
+          .winner {
+            color: $theme-blue;
+          }
+          .check {
+            color: $theme-green;
+          }
+        }
+        .reason {
+          color: $theme-dark-grey;
+        }
       }
     }
   }
-}
 
-.store-item {
-  width: 19vw;
-  height: 19vw;
-  background-color: grey;
-  margin: 20px;
-  .store-item-title {
-    color: $theme-blue;
+  .store-item {
+    width: 19vw;
+    height: 19vw;
+    background-color: grey;
+    margin: 20px;
+    .store-item-title {
+      color: $theme-blue;
+    }
   }
 }
