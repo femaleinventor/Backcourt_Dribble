@@ -30,6 +30,9 @@ $theme-green: #00D37F;
     margin-top: 30px;
     .prediction-card {
       margin: 30px;
+      &:hover {
+        transform: scale(1.1);
+      }
       .date {
         color: $theme-dark-grey;
         border-bottom: 1px solid $theme-orange;
@@ -49,7 +52,7 @@ $theme-green: #00D37F;
           }
         }
         .reason {
-          color: $theme-dark-grey;
+          color: white;
           @media screen and (max-width: 550px){
             font-size: 12px;
           }
