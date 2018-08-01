@@ -16,9 +16,28 @@ $theme-green: #00D37F;
       color: $theme-orange;
     }
   }
+  .overall-correct {
+    color: white;
+    .percentage {
+      color: $theme-orange;
+    }
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: $theme-blue;
+    }
+
+  }
+  .prediction-content-wrapper {
+    margin-top: 50px;
+    .prediction-card {
+      margin: 20px;
+      height: 5vw;
+      .date {
+        color: $theme-blue;
+      }
+    }
+  }
 }
-
-
 
 .store-item {
   width: 19vw;

@@ -7,14 +7,59 @@
   <div class="row justify-content-center">
     <div class="col-xs-12">
         <h1 class="profile-greeting"> Hi, <span class="profile-greeting-username"><%=@user.username%></span>. </h1>
-        <p class="profile-description"> Welcome to your stats dashboard </p>
+        <p class="profile-sub-greeting"> Welcome to your stats dashboard </p>
+        <p class="overall-correct"> <span class="percentage"><%= @user.calculate_percent_correct_predictions %>%</span> Overall Correct for WoSo Predictions </p>
     </div>
   </div> <!--End Header Row -->
 
   <!-- Main Row -->
-  <div class="row">
+  <div class="prediction-content-wrapper row justify-content-around">
 
-      
-  </div>
+    <!-- Prediction Date Column -->
+    <div class="col-xs-12 col-md-8">
+      <% predictions.each do |prediction| %>
+        <% @home_team = Team.find(prediction.match.home_team_id) %>
+        <% @away_team = Team.find(prediction.match.away_team_id) %>
+        <div class="prediction-card d-flex flex-column">
+
+          <div class="prediction-card-info date">
+            <%= prediction.match.start.to_date.strftime("%B #{prediction.match.start.to_date.day.ordinalize}, %Y") %>
+          </div>
+
+          <div class="prediction-card-info">
+            <%= @home_team.name %> vs. <%= @away_team.name %>
+          </div>
+
+          <div class="prediction-card-info">
+            <%= prediction.reason %>
+          </div>
+
+        </div>
+      <% end %>
+    </div> <!--End prediction details column-->
+
+
+    <!-- Store Items Column -->
+    <div class="col-xs-12 col-md-3">
+        <div class="row justify-content-around">
+          <div class="col-xs-12">
+            <div class="store-item d-flex align-items-center justify-content-center">
+              <h3 class="store-item-title"> Store Item </h3>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="store-item d-flex align-items-center justify-content-center">
+              <h3 class="store-item-title"> Store Item </h3>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <div class="store-item d-flex align-items-center justify-content-center">
+              <h3 class="store-item-title"> Store Item </h3>
+            </div>
+          </div>
+        </div>
+      </div> <!---End store items column-->
+
+    </div> <!-- End Main Row -->
 
 </div> <!--End Container->
