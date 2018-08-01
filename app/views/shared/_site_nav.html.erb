@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle menu-link" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Sports
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -25,16 +25,16 @@
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle menu-link" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Leaderboards
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <%= link_to "Soccer", "/sports/1/leaderboard", class: "nav-link menu-link leaderboard-select" %>
-          <%= link_to "Basketball", "/sports/2/leaderboard", class: "nav-link menu-link leaderboard-select" %>
-          <%= link_to "Rugby", "/sports/3/leaderboard", class: "nav-link menu-link leaderboard-select" %>
-          <%= link_to "Tennis", "/sports/4/leaderboard", class: "nav-link menu-link leaderboard-select" %>
-          <%= link_to "Hockey", "/sports/5/leaderboard", class: "nav-link menu-link leaderboard-select" %>
-          <%= link_to "Volleyball", "/sports/6/leaderboard", class: "nav-link menu-link leaderboard-select" %>
+          <%= link_to "Soccer", "/sports/1/leaderboard", class: "dropdown-item menu-link" %>
+          <%= link_to "Basketball", "/sports/2/leaderboard", class: "dropdown-item menu-link" %>
+          <%= link_to "Rugby", "/sports/3/leaderboard", class: "dropdown-item menu-link" %>
+          <%= link_to "Tennis", "/sports/4/leaderboard", class: "dropdown-item menu-link" %>
+          <%= link_to "Hockey", "/sports/5/leaderboard", class: "dropdown-item menu-link" %>
+          <%= link_to "Volleyball", "/sports/6/leaderboard", class: "dropdown-item menu-link" %>
         </div>
       </li>
       <% if current_user %>
