@@ -27,16 +27,20 @@ $theme-green: #00D37F;
     }
   }
   .prediction-content-wrapper {
-    margin-top: 50px;
+    margin-top: 30px;
     .prediction-card {
       margin: 30px;
       .date {
         color: $theme-dark-grey;
+        border-bottom: 1px solid $theme-orange;
       }
       .prediction-details {
         .teams {
           font-size: 30px;
           color: white;
+          @media screen and (max-width: 550px){
+            font-size: 15px;
+          }
           .winner {
             color: $theme-blue;
           }
@@ -46,6 +50,9 @@ $theme-green: #00D37F;
         }
         .reason {
           color: $theme-dark-grey;
+          @media screen and (max-width: 550px){
+            font-size: 12px;
+          }
         }
       }
     }
@@ -61,3 +68,15 @@ $theme-green: #00D37F;
     }
   }
 }
+
+// @media screen and (max-width: 750px){
+//   .profile-wrapper {
+//     .prediction-content-wrapper {
+//       .prediction-details {
+//         .teams {
+//           font-size: 20px;
+//         }
+//       }
+//     }
+//   }
+// }
