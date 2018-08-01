@@ -1,7 +1,9 @@
 $theme-blue: #16A7D5;
+$theme-orange: #F0900E;
 
 .leaderboard-page-title{
   margin-top: 50px;
+  margin-bottom: 40px;
 }
 
 .leaderboard-title {
@@ -12,6 +14,9 @@ $theme-blue: #16A7D5;
 
 .leaderboard-table {
   margin-top: 20px;
+  th {
+    color: $theme-orange;
+  }
 }
 
 .store-item {
@@ -22,4 +27,36 @@ $theme-blue: #16A7D5;
   .store-item-title {
     color: $theme-blue;
   }
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+
+
+// When smaller than 750px
+@media (max-width: 750px){
+  .leaderboard-title {
+    font-size: 15px;
+    text-align: center;
+    margin: 15px;
+    margin-top: 20px;
+  }
+
+  .store-item-title {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .leaderboard-page-title{
+    font-size: 30px;
+  }
+  // #DataTables_Table_0_filter {
+  //   background: blue;
+  //   display: flex;
+  //   justify-content: start;
+  // }
 }
