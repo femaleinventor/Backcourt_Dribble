@@ -21,8 +21,10 @@ Rails.application.routes.draw do
 
   get 'wall/index'
 
+  match '/users/:id',     to: 'users#show',       via: 'get'
+  devise_for :users, :path_prefix => 'd'
   resources :users, only: [:show]
-  devise_for :users
+
 
   # get 'match/index'
 
