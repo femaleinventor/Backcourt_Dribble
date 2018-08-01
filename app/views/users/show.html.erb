@@ -1,2 +1,20 @@
 <%= render "shared/site_nav" %>
-<h1>users#show</h1>
+<div class="profile-wrapper container-fluid">
+
+  <% predictions = @user.predictions %>
+
+  <!-- Header Row -->
+  <div class="row justify-content-center">
+    <div class="col-xs-12">
+        <h1 class="profile-greeting"> Hi, <span class="profile-greeting-username"><%=@user.username%></span>. </h1>
+        <p class="profile-description"> Welcome to your stats dashboard </p>
+    </div>
+  </div> <!--End Header Row -->
+
+  <!-- Main Row -->
+  <div class="row">
+
+      
+  </div>
+
+</div> <!--End Container->
