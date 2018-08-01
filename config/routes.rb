@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   get 'wall/index'
 
-
+  resources :users, only: [:show]
   devise_for :users
 
   # get 'match/index'
