@@ -42,9 +42,6 @@ $theme-green: #00D37F;
           font-size: 30px;
           color: white;
           border-bottom: 1px solid $theme-orange;
-          @media screen and (max-width: 550px){
-            font-size: 15px;
-          }
           .winner {
             color: $theme-blue;
           }
