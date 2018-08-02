@@ -60,11 +60,11 @@
 
 
       <li class="nav-item">
-        <% if current_user.admin? %>
-          <%= link_to "Admin Portal", user_path(current_user), class: "nav-link menu-link" %>
+        <% if current_user && current_user.admin? %>
+          <%= link_to "Admin Portal", admin_index_path, class: "nav-link menu-link" %>
         <% end %>
-
       </li>
+
     </ul>
   </div>
 </nav>

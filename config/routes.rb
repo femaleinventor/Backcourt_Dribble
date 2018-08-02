@@ -26,9 +26,11 @@ Rails.application.routes.draw do
   devise_for :users, :path_prefix => 'd'
   resources :users, only: [:show]
 
+  #admin
+  resources :admin 
+
 
   # get 'match/index'
-
   get 'pages/soccer/woso_writers' => 'high_voltage/pages#show', id: 'woso_writers'
 
 
