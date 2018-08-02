@@ -2,81 +2,98 @@
 <div class="profile-wrapper container-fluid">
 
   <% predictions = @user.predictions %>
+  <% if predictions.count != 0 %>
+      <!-- Header Row -->
+      <div class="row justify-content-center">
+        <div class="header-col col-xs-12">
+            <h1 class="profile-greeting"> Hi, <span class="profile-greeting-username"><%=@user.username%></span>. </h1>
+            <p class="profile-sub-greeting"> Welcome to your stats dashboard </p>
+            <p class="overall-correct"> <span class="percentage"><%= @user.calculate_percent_correct_predictions %>%</span> Overall Correct for WoSo Predictions </p>
+        </div>
+      </div> <!--End Header Row -->
 
-  <!-- Header Row -->
-  <div class="row justify-content-center">
-    <div class="header-col col-xs-12">
-        <h1 class="profile-greeting"> Hi, <span class="profile-greeting-username"><%=@user.username%></span>. </h1>
-        <p class="profile-sub-greeting"> Welcome to your stats dashboard </p>
-        <p class="overall-correct"> <span class="percentage"><%= @user.calculate_percent_correct_predictions %>%</span> Overall Correct for WoSo Predictions </p>
-    </div>
-  </div> <!--End Header Row -->
+      <!-- Main Row -->
+      <div class="prediction-content-wrapper row justify-content-around">
 
-  <!-- Main Row -->
-  <div class="prediction-content-wrapper row justify-content-around">
+        <!-- Prediction Details Column -->
+        <div class="col-xs-12 col-md-8">
+          <% predictions.each do |prediction| %>
+            <% @home_team = Team.find(prediction.match.home_team_id) %>
+            <% @away_team = Team.find(prediction.match.away_team_id) %>
+            <div class="prediction-card row justify-content-start">
+              <div class="col-xs-12">
+              <div class="prediction-details d-flex flex-column">
+                <div class="prediction-card-info date">
+                  <%= prediction.match.start.to_date.strftime("%B #{prediction.match.start.to_date.day.ordinalize}, %Y") %>
+                </div>
 
-    <!-- Prediction Details Column -->
-    <div class="col-xs-12 col-md-8">
-      <% predictions.each do |prediction| %>
-        <% @home_team = Team.find(prediction.match.home_team_id) %>
-        <% @away_team = Team.find(prediction.match.away_team_id) %>
-        <div class="prediction-card row justify-content-start">
-          <div class="col-xs-12">
-          <div class="prediction-details d-flex flex-column">
-            <div class="prediction-card-info date">
-              <%= prediction.match.start.to_date.strftime("%B #{prediction.match.start.to_date.day.ordinalize}, %Y") %>
+                <div class="prediction-card-info teams">
+                  <% winning_team = find_winner(prediction.match, @home_team.name, @away_team.name)%>
+                  <%if winning_team == @home_team.name%>
+                    <span class="winner"><%= @home_team.name %></span>  vs. <%= @away_team.name %>
+                  <%elsif winning_team == @away_team.name%>
+                    <%= @home_team.name %>  vs. <span class="winner"><%= @away_team.name %></span>
+                  <%elsif winning_team == "tie"%>
+                    <span class="winner"><%= @home_team.name %></span>  vs. <span class="winner"><%= @away_team.name %></span>
+                  <%else%>
+                    <%= @home_team.name %>  vs. <%= @away_team.name %>
+                  <%end%>
+
+
+                  <%if prediction.match.result == prediction.guess%>
+                    <span class="check"><%= fa_icon "check" %></span>
+                  <%end%>
+                </div>
+
+                <div class="prediction-card-info reason">
+                  <%= prediction.reason %>
+                </div>
+              </div>
             </div>
-
-            <div class="prediction-card-info teams">
-              <% winning_team = find_winner(prediction.match, @home_team.name, @away_team.name)%>
-              <%if winning_team == @home_team.name%>
-                <span class="winner"><%= @home_team.name %></span>  vs. <%= @away_team.name %>
-              <%elsif winning_team == @away_team.name%>
-                <%= @home_team.name %>  vs. <span class="winner"><%= @away_team.name %></span>
-              <%elsif winning_team == "tie"%>
-                <span class="winner"><%= @home_team.name %></span>  vs. <span class="winner"><%= @away_team.name %></span>
-              <%else%>
-                <%= @home_team.name %>  vs. <%= @away_team.name %>
-              <%end%>
-
-
-              <%if prediction.match.result == prediction.guess%>
-                <span class="check"><%= fa_icon "check" %></span>
-              <%end%>
             </div>
+          <% end %>
+        </div> <!--End prediction details column-->
 
-            <div class="prediction-card-info reason">
-              <%= prediction.reason %>
+
+
+        <!-- Store Items Column -->
+        <div class="col-xs-12 col-md-3">
+            <div class="row justify-content-around">
+              <div class="col-xs-12">
+                <div class="store-item d-flex align-items-center justify-content-center">
+                  <h3 class="store-item-title"> Store Item </h3>
+                </div>
+              </div>
+              <div class="col-xs-12">
+                <div class="store-item d-flex align-items-center justify-content-center">
+                  <h3 class="store-item-title"> Store Item </h3>
+                </div>
+              </div>
+              <div class="col-xs-12">
+                <div class="store-item d-flex align-items-center justify-content-center">
+                  <h3 class="store-item-title"> Store Item </h3>
+                </div>
+              </div>
             </div>
+          </div> <!---End store items column-->
+
+        </div> <!-- End Main Row -->
+      <% else %>
+        <!-- Header Row -->
+        <div class="row justify-content-center">
+          <div class="header-col col-xs-12">
+              <h1 class="profile-greeting"> Hi, <span class="profile-greeting-username"><%=@user.username%></span>. </h1>
+              <p class="profile-sub-greeting"> Welcome to your stats dashboard </p>
+          </div>
+        </div> <!--End Header Row -->
+
+        <!-- Main Row -->
+        <div class="prediction-content-wrapper row justify-content-center">
+          <div class="col-xs-12 align-items-center">
+            <p class="no-predictions-prompt"> Oops, you haven't made any predictions yet.</p>
+            <p class="no-predictions-prompt">Click <%= link_to 'here', sports_path %> to climb the ranks!</p>
           </div>
         </div>
-        </div>
-      <% end %>
-    </div> <!--End prediction details column-->
-
-
-
-    <!-- Store Items Column -->
-    <div class="col-xs-12 col-md-3">
-        <div class="row justify-content-around">
-          <div class="col-xs-12">
-            <div class="store-item d-flex align-items-center justify-content-center">
-              <h3 class="store-item-title"> Store Item </h3>
-            </div>
-          </div>
-          <div class="col-xs-12">
-            <div class="store-item d-flex align-items-center justify-content-center">
-              <h3 class="store-item-title"> Store Item </h3>
-            </div>
-          </div>
-          <div class="col-xs-12">
-            <div class="store-item d-flex align-items-center justify-content-center">
-              <h3 class="store-item-title"> Store Item </h3>
-            </div>
-          </div>
-        </div>
-      </div> <!---End store items column-->
-
-    </div> <!-- End Main Row -->
+      <%end%>
 
 </div> <!--End Container->
