@@ -45,8 +45,18 @@
                   <%end%>
                 </div>
 
-                <div class="prediction-card-info reason">
-                  <%= prediction.reason %>
+                <div class="prediction-card-info reason d-flex flex-column align-items-start">
+                  <%if prediction.guess == "tie"%>
+                    <p>Your predicted that there would be a tie.</p>
+                  <%else%>
+                    <p>You predicted that <%=prediction.guess %> would win.</p>
+                  <%end%>
+                  <p>Your reasoning: <%= prediction.reason %></p>
+                  <%if prediction.match.result == nil%>
+                    <p class="winning-team-text">This match hasn't happened yet, check back soon for results!</p>
+                  <%else%>
+                    <p class="winning-team-text">Winning Team: <%= prediction.match.result.capitalize %></p>
+                  <%end%>
                 </div>
               </div>
             </div>
