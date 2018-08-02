@@ -1,27 +1,40 @@
-<div class="twitter-app">
-  <div class="keyword-list">
-    <div class="home-container">
-      <%= link_to "RETURN HOME", root_path, class: "return-home" %>
-    </div>
-    <div class="keyword">
-      <%= link_to 'WOSO', tweets_path(:keyword => "woso") %>
-    </div>
-    <div class="keyword">
-      <%= link_to 'USWNT', tweets_path(:keyword => "USWNT") %>
-    </div>
-    <div class="keyword">
-      <%= link_to 'NWSL', tweets_path(:keyword => "NWSL") %>
-    </div>
+<body class="black-bg">
+  <div class="container-fluid tweet-container">
+    <!-- Main row -->
+    <div class="row justify-content-center">
+
+      <!-- Column for keywords -->
+      <div class="col-xs-12 co-md-4">
+        <div class="keywords-container">
+          <div class="keyword">
+            <%= link_to "HOME", root_path, class: "return-home" %>
+          </div>
+          <div class="keyword">
+            <%= link_to 'WOSO', tweets_path(:keyword => "woso") %>
+          </div>
+          <div class="keyword">
+            <%= link_to 'USWNT', tweets_path(:keyword => "USWNT") %>
+          </div>
+          <div class="keyword">
+            <%= link_to 'NWSL', tweets_path(:keyword => "NWSL") %>
+          </div>
+        </div> <!-- End keywords-container -->
+      </div> <!-- End col for keywords -->
+
+      <!-- Column for tweets -->
+      <div class="col-xs-12 col-md-8">
+        <% @tweets.each do |t|%>
+          <div class="keyword-tweet">
+            <div class="tweet-wrapper">
+              <div class="timestamp"><%= "#{t["created_at"]}" %></div>
+              <div class="tweet-text"><%= "#{t["full_text"]}" %></div>
+              <div class="by-line"> <%= "#{t.dig("user","screen_name")} in #{t.dig("user","location")}" %> </div>
+            </div>
+          </div>
+        <% end %>
+      </div> <!-- End column for tweets -->
+
+    </div> <!-- End main row -->
+
   </div>
-  <div class="tweet-feed">
-    <% @tweets.each do |t|%>
-      <div class="keyword-tweet">
-        <div class="wrapper">
-          <div class="timestamp"><%= "#{t["created_at"]}" %></div>
-          <div class="tweet-text"><%= "#{t["full_text"]}" %></div>
-          <div class="by-line"> <%= "#{t.dig("user","screen_name")} in #{t.dig("user","location")}" %> </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+</body>
