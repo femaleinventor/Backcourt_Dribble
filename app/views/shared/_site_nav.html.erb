@@ -57,6 +57,14 @@
           <%= link_to "Register", new_user_registration_path, class: "nav-link menu-link"%>
         </li>
       <% end %>
+
+
+      <li class="nav-item">
+        <% if current_user.admin? %>
+          <%= link_to "Admin Portal", user_path(current_user), class: "nav-link menu-link" %>
+        <% end %>
+
+      </li>
     </ul>
   </div>
 </nav>
