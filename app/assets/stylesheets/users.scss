@@ -59,6 +59,14 @@ $theme-green: #00D37F;
         }
       }
     }
+    .no-predictions-prompt {
+      font-size: 40px;
+      color: $theme-orange;
+      display: block;
+      @media screen and (max-width: 750px){
+        font-size: 30px;
+      }
+    }
   }
 
   .store-item {
