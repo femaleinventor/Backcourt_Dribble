@@ -104,26 +104,6 @@
                     </div>
                   </div>
 
-                  <!-- <div class="row justify-content-between">
-                    <div class="col-xs-12 col-md-3">
-                      <div>
-                        <h5 class="text-center prediction-labels">Username</h5>
-                      </div>
-                    </div>
-
-                    <div class="col-xs-12 col-md-3">
-                      <div>
-                        <h5 class="text-center prediction-labels">Prediction</h5>
-                      </div>
-                    </div>
-
-                    <div class="col-xs-12 col-md-3">
-                      <div>
-                        <h5 class="text-center prediction-labels">Likes</h5>
-                      </div>
-                    </div>
-                  </div> -->
-
                   <% home_predictions.each do |prediction| %>
                     <div class="row justify-content-between">
                     <!-- <div class="col-xs-12 col-md-3">
@@ -281,34 +261,5 @@
                 </div>
               </div>
 
-              <div class="slide fp-noscroll">
-                <%= render "shared/site_nav" %>
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-xs-12 col-md-8 mx-auto">
-                      <h1> Home Team</h1>
-                      <div class="team-twitter-list">
-                        <%= raw @home_team.twitter_list %>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="slide fp-noscroll">
-                <%= render "shared/site_nav" %>
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-xs-12 col-md-8 mx-auto">
-                      <h1> Away Team </h1>
-                      <div class="team-twitter-list">
-                        <%= raw @away_team.twitter_list %>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> <!-- End Section -->
           <% end %>
     </div> <!-- End fullpage -->

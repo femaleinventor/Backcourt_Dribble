@@ -41,9 +41,7 @@ $theme-green: #00D37F;
         .teams {
           font-size: 30px;
           color: white;
-          @media screen and (max-width: 550px){
-            font-size: 15px;
-          }
+          border-bottom: 1px solid $theme-orange;
           .winner {
             color: $theme-blue;
           }
@@ -55,6 +53,9 @@ $theme-green: #00D37F;
           color: white;
           @media screen and (max-width: 550px){
             font-size: 12px;
+          }
+          .winning-team-text {
+            color: $theme-dark-grey;
           }
         }
       }
