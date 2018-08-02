@@ -1,0 +1,85 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$theme-orange: #F0900E;
+$theme-blue: #16A7D5;
+$theme-dark-grey: #343a40;
+$theme-grey: #707070;
+$theme-green: #00D37F;
+
+.profile-wrapper {
+  .profile-greeting {
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    .profile-greeting-username {
+      color: $theme-orange;
+    }
+  }
+  .overall-correct {
+    color: white;
+    .percentage {
+      color: $theme-orange;
+    }
+    &:hover {
+      text-decoration: underline;
+      text-decoration-color: $theme-blue;
+    }
+  }
+  .prediction-content-wrapper {
+    margin-top: 30px;
+    .prediction-card {
+      margin: 30px;
+      &:hover {
+        transform: scale(1.1);
+      }
+      .date {
+        color: $theme-dark-grey;
+        border-bottom: 1px solid $theme-orange;
+      }
+      .prediction-details {
+        .teams {
+          font-size: 30px;
+          color: white;
+          @media screen and (max-width: 550px){
+            font-size: 15px;
+          }
+          .winner {
+            color: $theme-blue;
+          }
+          .check {
+            color: $theme-green;
+          }
+        }
+        .reason {
+          color: white;
+          @media screen and (max-width: 550px){
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  .store-item {
+    width: 19vw;
+    height: 19vw;
+    background-color: grey;
+    margin: 20px;
+    .store-item-title {
+      color: $theme-blue;
+    }
+  }
+}
+
+// @media screen and (max-width: 750px){
+//   .profile-wrapper {
+//     .prediction-content-wrapper {
+//       .prediction-details {
+//         .teams {
+//           font-size: 20px;
+//         }
+//       }
+//     }
+//   }
+// }
