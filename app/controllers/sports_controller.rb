@@ -17,4 +17,21 @@ class SportsController < ApplicationController
     @nwsl = @leagues.find(2)
   end
 
+  def new
+    @sport = Sport.new
+  end
+
+  def create
+    @sport = Sport.new(sport_params)
+    if @sport.save
+      redirect_to admin_index_path, alert: "Sport created successfully!"
+    else
+        redirect_to admin_index_path, alert: "Oops! Your prediction wasn't recorded. Try again!"
+    end
+  end
+
+  private
+    def sport_params
+      params.permit(:name, :image_url)
+    end
 end
