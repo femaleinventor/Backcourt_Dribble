@@ -1,6 +1,8 @@
 class AdminController < ApplicationController
   def index
     @sports = Sport.all
-    puts @sports
+    @venues = Venue.all
+    @leagues = League.all
+    @teams = Team.all
   end
 end

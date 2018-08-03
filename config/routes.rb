@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
   resources :predictions
 
+  resources :venues
+
+  resources :matches
+
   resources :tweets
 
   get 'shop/index'
@@ -27,7 +31,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   #admin
-  resources :admin 
+  resources :admin
 
 
   # get 'match/index'

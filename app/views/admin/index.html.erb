@@ -110,40 +110,114 @@
 
   <!-- Venue CRUD -->
 
-  <div id="venues" class="row justify-content-center resource-section">
+  <div id="venues" class="row justify-content-around resource-section">
     <h2 class="section-heading"></h2>
-    <div class="col-xs-12">
 
-
+    <div class="col-xs-12 col-md-6">
       <div class="create-action">
-      </div>
+        <h3 class="text-center edit-options"> Create A New Venue: </h3>
+        <%= form_tag(controller: 'venues', action: 'create', class: "form-inline") do %>
+          <div class="form-group">
+            <%= label_tag :name, "Venue Name"%>
+            <%= text_field_tag :name, nil, class:"form-control"%>
+          </div>
 
-      <!-- Venue Dropdown -->
+          <div class="form-group">
+            <%= label_tag :picture_url, "Image" %>
+            <%= text_field_tag :picture_url, nil, class:"form-control"%>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :address %>
+            <%= text_field_tag :address, nil, class:"form-control", placeholder: "Street Address, City, State Zipcode"%>
+          </div>
+
+          <div class="field form-group">
+            <%= label_tag :time_zone %> <br/>
+            <%= time_zone_select :venue, :time_zone, nil,  default: "Eastern Time (US & Canada)", class:"form-control" %>
+          </div>
+
+          <div class="form-actions">
+            <%= submit_tag "Submit", class: "btn btn-primary btn-md" %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <h3 class="text-center edit-options"> Choose a Venue to Update: </h3>
+
 
       <div class="edit-action">
       </div>
 
       <div class="delete-action">
       </div>
-
     </div>
   </div> <!-- End Venue CRUD -->
 
-  <!-- Match CRUD -->
-  <div id="matches" class="row justify-content-center resource-section">
+  <div id="matches" class="row justify-content-around resource-section">
     <h2 class="section-heading"></h2>
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-md-6">
       <div class="create-action">
-      </div>
+        <h3 class="text-center edit-options"> Create A New Match: </h3>
+        <%= form_tag(controller: 'matches', action: 'create', class: "form-inline") do %>
 
-      <!-- Venue Dropdown -->
+          <div class="form-group">
+            <%= label_tag :sport %>
+            <%= select_tag :sport_id, options_from_collection_for_select(@sports, "id", "name"), include_blank: true, class: "form-control"  %>
+          </div>
 
-      <div class="edit-action">
-      </div>
+          <div class="form-group">
+            <%= label_tag :league %>
+            <%= select_tag :league_id, options_from_collection_for_select(@leagues, "id", "name"), include_blank: true, class: "form-control"  %>
+          </div>
 
-      <div class="delete-action">
+          <div class="form-group">
+            <%= label_tag :Home_Team %>
+            <%= select_tag :home_team_id, options_from_collection_for_select(@teams, "id", "name"), include_blank: true, class: "form-control"  %>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :Away_Team %>
+            <%= select_tag :away_team_id, options_from_collection_for_select(@teams, "id", "name"), include_blank: true, class: "form-control"  %>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :Start_Time %> <br/>
+            <%= datetime_select :venue, :start, class: "form-control"  %>
+          </div>
+
+
+          <div class="form-group">
+            <%= label_tag :Channel %>
+            <%= text_field_tag :channel, nil, class:"form-control"%>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :Venue %>
+            <%= select_tag :venue_id, options_from_collection_for_select(@venues, "id", "name"), include_blank: true, class: "form-control"  %>
+          </div>
+
+          <div class="form-actions">
+            <%= submit_tag "Submit", class: "btn btn-primary btn-md" %>
+          </div>
+        <% end %>
       </div>
     </div>
-  </div> <!-- End Match CRUD -->
+
+      <!-- League Dropdown -->
+      <div class="col-xs-12 col-md-6">
+        <h3 class="text-center edit-options"> Choose a Match to Update: </h3>
+
+
+        <div class="edit-action">
+        </div>
+
+        <div class="delete-action">
+        </div>
+      </div>
+  </div> <!-- End Matches CRUD -->
 
 </div>
