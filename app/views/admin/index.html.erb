@@ -31,7 +31,7 @@
     <div class="col-xs-12 col-md-6">
       <div class="create-action">
         <h3 class="text-center edit-options"> Create A New Sport: </h3>
-        <%= form_tag(controller: 'sports', action: 'create', class: "form-inline") do %>
+        <%= form_tag(controller: 'sports', action: 'create') do %>
           <div class="form-group">
             <%= label_tag :name, "Sport Name"%>
             <%= text_field_tag :name, nil, class:"form-control"%>
@@ -70,7 +70,7 @@
     <div class="col-xs-12 col-md-6">
       <div class="create-action">
         <h3 class="text-center edit-options"> Create A New League: </h3>
-        <%= form_tag(controller: 'leagues', action: 'create', class: "form-inline") do %>
+        <%= form_tag(controller: 'leagues', action: 'create') do %>
           <div class="form-group">
             <%= label_tag :name, "League Name"%>
             <%= text_field_tag :name, nil, class:"form-control"%>
@@ -116,7 +116,7 @@
     <div class="col-xs-12 col-md-6">
       <div class="create-action">
         <h3 class="text-center edit-options"> Create A New Venue: </h3>
-        <%= form_tag(controller: 'venues', action: 'create', class: "form-inline") do %>
+        <%= form_tag(controller: 'venues', action: 'create') do %>
           <div class="form-group">
             <%= label_tag :name, "Venue Name"%>
             <%= text_field_tag :name, nil, class:"form-control"%>
@@ -131,6 +131,8 @@
             <%= label_tag :address %>
             <%= text_field_tag :address, nil, class:"form-control", placeholder: "Street Address, City, State Zipcode"%>
           </div>
+
+          <!-- Not saving in db, is being taken in as a hash on server side. may need to use Time instead of DateTime -->
 
           <div class="field form-group">
             <%= label_tag :time_zone %> <br/>
@@ -162,7 +164,7 @@
     <div class="col-xs-12 col-md-6">
       <div class="create-action">
         <h3 class="text-center edit-options"> Create A New Match: </h3>
-        <%= form_tag(controller: 'matches', action: 'create', class: "form-inline") do %>
+        <%= form_tag(controller: 'matches', action: 'create') do %>
 
           <div class="form-group">
             <%= label_tag :sport %>
@@ -184,6 +186,7 @@
             <%= select_tag :away_team_id, options_from_collection_for_select(@teams, "id", "name"), include_blank: true, class: "form-control"  %>
           </div>
 
+          <!-- Not saving in db, may need to switch to date and time vs datetime -->
           <div class="form-group">
             <%= label_tag :Start_Time %> <br/>
             <%= datetime_select :venue, :start, class: "form-control"  %>
