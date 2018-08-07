@@ -116,6 +116,7 @@
     <div class="col-xs-12 col-md-6">
       <div class="create-action">
         <h3 class="text-center edit-options"> Create A New Venue: </h3>
+
         <%= form_tag(controller: 'venues', action: 'create') do %>
           <div class="form-group">
             <%= label_tag :name, "Venue Name"%>
@@ -136,7 +137,8 @@
 
           <div class="field form-group">
             <%= label_tag :time_zone %> <br/>
-            <%= time_zone_select :venue, :time_zone, nil,  default: "Eastern Time (US & Canada)", class:"form-control" %>
+            <%= time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones%>
+
           </div>
 
           <div class="form-actions">
