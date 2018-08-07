@@ -17,5 +17,6 @@
 //= require scrolloverflow.min
 //= require jquery.fullpage.extensions.min
 //= require fullpage.min
+//= require popper
 //= require bootstrap
 //= require_tree .
