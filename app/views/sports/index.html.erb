@@ -8,16 +8,23 @@
   <div class="row justify-content-around">
     <div class="col-xs-12 col-md-6 ">
       <h2 class="league-column-headers"> Available to Engage with now on Backcourt Dribble: </h2>
-      <!-- Display only leagues with matches -->
+      <!-- Get sports with matches -->
       <% sports_with_matches.each do |sport| %>
-        <% leagues_with_matches = sport.leagues.select{|league| league.matches.length > 0} %>
+      <!-- Get leagues with matches -->
+        <% all_leagues = sport.leagues %>
+        <% leagues_with_matches = sport.leagues.select{|league| league.matches.length > 0 } %>
         <% leagues_with_matches.each do |league| %>
-          <div class="available-leagues-list">
-           <%= link_to "#{league.name}", league_matches_path(:league_id => league.id) %>
-          </div>
-        <% end %>
+            <!-- Get leagues with matches in the future  -->
+            <% league_specific_future_matches = find_future_matches(league.matches) %>
+            <!-- For each league with matches in the future, display the name of the league -->
+            <% if league_specific_future_matches.any? %>
+             <div class="available-leagues-list">
+               <%= link_to "#{league.name}", league_matches_path(:league_id => league.id) %>
+             </div>
+            <%end%>
+        <%end%>
       </ul>
-      <% end %>
+    <% end %>
     </div>
     <div class="col-xs-12 col-md-6">
       <!-- Show all leagues worldwide -->
@@ -35,3 +42,10 @@
   </div>
 </div>
 <body>
+  </div>
+</div>
+<body>
+
+  <!-- Get all leagues with future matches (Array 1) -->
+  <!-- Get all leagues (Array 2) -->
+  <!-- Only display leagues in array 2 that are not present in array 1-->

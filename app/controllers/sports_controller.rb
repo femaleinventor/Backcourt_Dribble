@@ -8,6 +8,7 @@ class SportsController < ApplicationController
     #   render :new_user_registration
     # end
     @sports = Sport.all
+    @leagues = League.all
   end
 
   def leaderboard
