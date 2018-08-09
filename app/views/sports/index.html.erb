@@ -1,37 +1,50 @@
+<%= render 'shared/site_nav'%>
 <body class="big-white">
-<%= render "shared/site_nav" %>
+  <div class="admin-container container-fluid">
 
-<div class="container-fluid">
-
-  <% sports_with_matches = @sports.select {|sport| sport.matches.length > 0 } %>
-
-  <div class="row justify-content-around">
-    <div class="col-xs-12 col-md-6 ">
-      <h2 class="league-column-headers"> Available to Engage with now on Backcourt Dribble: </h2>
-      <!-- Display only leagues with matches -->
-      <% sports_with_matches.each do |sport| %>
-        <% leagues_with_matches = sport.leagues.select{|league| league.matches.length > 0} %>
-        <% leagues_with_matches.each do |league| %>
-          <div class="available-leagues-list">
-           <%= link_to "#{league.name}", league_matches_path(:league_id => league.id) %>
-          </div>
-        <% end %>
-      </ul>
-      <% end %>
-    </div>
-    <div class="col-xs-12 col-md-6">
-      <!-- Show all leagues worldwide -->
-
-      <h2 class="league-column-headers"> Worldwide Leagues (Eventually on Backcourt Dribble): </h2>
-      <div>
-          <% sports_with_matches.each do |sport| %>
-          <% all_leagues = sport.leagues %>
-          <% all_leagues.each do |league| %>
-            <div class="worldwide-league"> <%= league.name %> </div>
-            <% end %>
-          <% end %>
+    <div class="row justify-content-center align-items-center dashboard-section sports_container">
+      <div class="col-xs-12 align-items-center">
+        <div class="resources d-flex justify-content-center">
+          <%@sports.each do |sport|%>
+            <div class="resource">
+              <%= link_to "#{sport.name}", "##{sport.name}", class: "btn btn-lg btn-primary resource-button"%>
+            </div>
+          <%end%>
+        </div>
       </div>
     </div>
+
+    <!-- <% sports_with_matches = @sports.select {|sport| sport.matches.length > 0 } %> -->
+    <% @sports.each do |sport| %>
+    <!-- Sport CRUD -->
+    <div id="<%=sport.name%>" class="row justify-content-around resource-section">
+      <div class="col-xs-12 col-md-4">
+        <div class="create-action">
+          <h3 class="edit-options available-message"> Available to Engage with now on Backcourt Dribble: </h3>
+          <% leagues_with_matches = sport.leagues.select{|league| league.matches.length > 0 } %>
+          <% leagues_with_matches.each do |league| %>
+              <!-- Get leagues with matches in the future  -->
+              <% league_specific_future_matches = find_future_matches(league.matches) %>
+              <!-- For each league with matches in the future, display the name of the league -->
+              <% if league_specific_future_matches.any? %>
+               <div class="available-leagues-list">
+                 <%= link_to "#{league.name}", league_matches_path(:league_id => league.id) %>
+               </div>
+              <%end%>
+          <%end%>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-4">
+        <h3 class="edit-options unavailable-message"> Leagues Around the World: </h3>
+        <div class="league-scroller">
+            <% all_leagues = sport.leagues %>
+            <% all_leagues.each do |league| %>
+              <div class="worldwide-league"> <%= league.name %> </div>
+              <% end %>
+        </div>
+      </div>
+    </div> <!-- End Sport CRUD -->
+    <%end%>
   </div>
-</div>
-<body>
+</body>
