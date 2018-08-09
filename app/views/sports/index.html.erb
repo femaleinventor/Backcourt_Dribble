@@ -17,7 +17,9 @@
     <!-- Sport CRUD -->
     <div id="<%=sport.name%>" class="row justify-content-around sport-section">
       <div class="col-xs-12 col-md-4">
+
         <div class="create-action">
+          <h2 class="sport-section-header"><%=sport.name%></h2>
           <h3 class="league-message"> Available to Engage with now on Backcourt Dribble: </h3>
           <% leagues_with_matches = sport.leagues.select{|league| league.matches.length > 0 } %>
           <% leagues_with_matches.each do |league| %>
