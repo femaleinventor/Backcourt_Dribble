@@ -21,6 +21,10 @@
         <div class="resource">
             <%= link_to 'Matches', '#matches', class: "btn btn-lg btn-primary resource-button"%>
         </div>
+
+        <div class="resource">
+            <%= link_to 'Teams', '#teams', class: "btn btn-lg btn-primary resource-button"%>
+        </div>
       </div>
     </div>
   </div>
@@ -163,18 +167,6 @@
 
     <div class="col-xs-12 col-md-6">
       <h3 class="text-center edit-options"> Choose a Venue to Update: </h3>
-      <div class="dropdown-choice">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown button
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
-      </div>
 
       <div class="edit-action">
       </div>
@@ -247,5 +239,73 @@
         </div>
       </div>
   </div> <!-- End Matches CRUD -->
+
+
+  <!-- Team CRUD -->
+  <div id="teams" class="row justify-content-around resource-section">
+    <h2 class="section-heading"></h2>
+    <div class="col-xs-12 col-md-6">
+      <div class="create-action">
+        <h3 class="text-center edit-options"> Create A New Team: </h3>
+        <%= form_tag(controller: 'teams', action: 'create') do %>
+          <div class="form-group">
+            <%= label_tag :name, "Team Name"%>
+            <%= text_field_tag :name, nil, class:"form-control"%>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :Abbreviation %>
+            <%= text_field_tag :abbreviation, nil, class:"form-control"%>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :Nickname %>
+            <%= text_field_tag :nickname, nil, class:"form-control"%>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :Bright_color %>
+            <%= text_field_tag :bright_color, nil, class:"form-control"%>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :Light_color %>
+            <%= text_field_tag :light_color, nil, class:"form-control"%>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :Dark_color %>
+            <%= text_field_tag :dark_color, nil, class:"form-control"%>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :Twitter_list %>
+            <%= text_field_tag :twitter_list, nil, class:"form-control"%>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :sport %>
+            <%= select_tag :sport_id, options_from_collection_for_select(@sports, "id", "name"), include_blank: true, class: "form-control"  %>
+          </div>
+
+          <div class="form-actions">
+            <%= submit_tag "Submit", class: "btn btn-primary btn-md" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+      <div class="col-xs-12 col-md-6">
+        <h3 class="text-center edit-options"> Choose a Team to Update: </h3>
+
+
+        <div class="edit-action">
+        </div>
+
+        <div class="delete-action">
+        </div>
+      </div>
+  </div> <!-- End Team CRUD -->
+
 
 </div>
