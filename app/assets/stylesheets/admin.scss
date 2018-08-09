@@ -35,8 +35,24 @@ $theme-green: #00D37F;
     .edit-options {
       color: $theme-orange;
     }
+    .available-message {
+      color: $theme-blue;
+      font-size: 1.2em;
+    }
+    .unavailable-message {
+      color: $theme-blue;
+        font-size: 1.2em;
+    }
     .section-heading {
       display: block;
     }
+    .league-scroller{
+      height: 300px;
+      overflow: scroll;
+    }
   }
+}
+
+.sports-container {
+  height: auto;
 }
