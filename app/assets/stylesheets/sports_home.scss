@@ -1,24 +1,16 @@
-// Place all the styles related to the admin controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 $theme-orange: #F0900E;
 $theme-blue: #16A7D5;
 $theme-dark-grey: #343a40;
 $theme-grey: #707070;
 $theme-green: #00D37F;
 
-.admin-container {
-  .admin-welcome {
-    color: white;
-    margin-top: 40px;
-  }
+.sports-container {
   .dashboard-section {
-    // height: 400px;
     border-bottom: 1px solid $theme-blue;
-    .resource {
+    .sports {
       display: inline-block;
       margin: 15px;
-      .resource-button {
+      .sports-button {
         background-color: $theme-orange;
         border: 1px solid $theme-orange;
         &:hover {
@@ -28,15 +20,26 @@ $theme-green: #00D37F;
       }
     }
   }
-  .resource-section {
+  .sport-section {
     margin-top: 50px;
     border-bottom: 1px solid $theme-blue;
     padding-bottom: 50px;
-    .edit-options {
-      color: $theme-orange;
+    .sport-section-header {
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: $theme-green;
+      }
     }
-    .section-heading {
-      display: block;
+    .league-message {
+      color: $theme-blue;
+      font-size: 1.2em;
+      @media screen and (max-width: 850px){
+        margin-top: 15px;
+      }
+    }
+    .league-scroller{
+      height: 300px;
+      overflow: scroll;
     }
   }
 }
