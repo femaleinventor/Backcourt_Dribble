@@ -151,10 +151,9 @@
 
           <!-- Not saving in db, is being taken in as a hash on server side. may need to use Time instead of DateTime -->
 
-          <div class="field form-group">
+          <div class="form-group">
             <%= label_tag :time_zone %> <br/>
-            <%= time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones%>
-
+            <%= time_zone_select(:venue, :time_zone, ActiveSupport::TimeZone.all.sort, model: ActiveSupport::TimeZone)%>
           </div>
 
           <div class="form-actions">
