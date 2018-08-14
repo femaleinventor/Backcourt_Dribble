@@ -159,7 +159,7 @@ venues_list = [
 
 
 venues_list.each do |venue|
-  Venue.create!(name: venue[0], picture_url: venue[1], address: venue[2], timezone: venue[3])
+  Venue.create!(name: venue[0], picture_url: venue[1], address: venue[2], time_zone: venue[3])
 end
 
 
