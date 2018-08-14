@@ -1,18 +1,15 @@
 
       <div id="fullpage">
-            <% future_matches = find_future_matches(@matches)%>
-            <% sorted_matches = sort_matches_by_date(future_matches) %>
-           <% sorted_matches.each do |match| %>
+          <% future_matches = find_future_matches(@matches)%>
+          <% sorted_matches = sort_matches_by_date(future_matches) %>
+          <% sorted_matches.each do |match| %>
             <% @home_team = Team.find(match.home_team_id) %>
             <% @away_team = Team.find(match.away_team_id) %>
-            <div class="section fp-bg fp-noscroll" data-anchor="<%=@home_team.name%>-<%=@away_team.name%>-<%=match.id%>">
+            <div class="section fp-bg">
               <!-- Makes gradient behind match up -->
               <div class="slide" style="background: #FFFFFF; background: -webkit-linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);
               background: linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);">
-              <!-- attempting audio -->
-              <!-- <audio data-autoplay>
-                  <source src="audio/soccer-ball-hit-ground.wav" type="audio/wav">
-              </audio> -->
+
                 <div class="container-fluid">
 
                   <div class="row">
@@ -262,4 +259,5 @@
               </div>
 
           <% end %>
-    </div> <!-- End fullpage -->
+    </div> <!-- End section template -->
+  </div> <!-- End fullpage -->
