@@ -2,10 +2,11 @@
       <div id="fullpage">
           <% future_matches = find_future_matches(@matches)%>
           <% sorted_matches = sort_matches_by_date(future_matches) %>
+          <%= sorted_matches%>
           <% sorted_matches.each do |match| %>
             <% @home_team = Team.find(match.home_team_id) %>
             <% @away_team = Team.find(match.away_team_id) %>
-            <div class="section fp-bg">
+            <div class="section fp-bg fp-noscroll">
               <!-- Makes gradient behind match up -->
               <div class="slide" style="background: #FFFFFF; background: -webkit-linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);
               background: linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);">
@@ -74,13 +75,12 @@
                         <p> Your Reasoning: <%= user_prediction.reason %> </p>
 
                       <% end %>
-                    </div>
-                    </div>
-                  </div>
-                </div>
+                      </div><!--End column-->
+                    </div> <!--End Row-->
+                  </div> <!--End container-->
+                </div> <!--End make prediction slide-->
 
               <!-- All Predictions Slide -->
-
               <div class="slide big-black">
                 <div class="container-fluid">
                   <% home_predictions = select_team_predictions(match, @home_team) %>
@@ -201,10 +201,11 @@
                             <p class="text-center"><%= prediction.likes %> likes </p>
                           </div>
                         </div>
-                      </div>
+
+                      </div><!-- End row -->
                     <%end%>
-                  </div> <!-- End leaderboard row 3 -->
-                </div><!-- End leaderboard container -->
+                  </div> <!-- End contiainer -->
+                </div><!-- End All predictions container -->
 
 
 
@@ -245,9 +246,9 @@
                           <a class="ticket-link text-center"href="#">Purchase Tickets</a>
                         </div>
 
-                      </div>
+                      </div><!--End col -->
 
-                    </div>
+                    </div> <!--End row -->
 
                     <div class="row justify-content-center">
                       <div class="col-xs-12">
@@ -255,8 +256,8 @@
                       </div>
                     </div>
 
-                </div>
-              </div>
+                </div> <!--End contiainer-->
+              </div> <!--End Venue Info-->
 
           <% end %>
     </div> <!-- End section template -->
