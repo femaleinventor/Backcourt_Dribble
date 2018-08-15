@@ -67,10 +67,12 @@
                   <% end %>
 
                 <% else %>
+                <div>
                   <h2>Your Prediction</h2>
                   <% user_prediction = current_user.predictions.find{|prediction| prediction.match_id == match.id} %>
                   <p> Your Guess: <%= user_prediction.guess %> </p>
                   <p> Your Reasoning: <%= user_prediction.reason %> </p>
+                </div>
 
                 <% end %>
                 </div><!--End column-->
@@ -83,7 +85,7 @@
           <div class="container-fluid">
             <% home_predictions = select_team_predictions(match, @home_team) %>
             <% away_predictions = select_team_predictions(match, @away_team) %>
-            <% tie_predictions = select_tie_predictions(match, "tie") %>
+            <% tie_predictions = select_tie_predictions(match, "Tie") %>
             <div class="row">
               <div class="col-xs-12 mx-auto">
                 <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
