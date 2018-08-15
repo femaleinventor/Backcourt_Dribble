@@ -1,1 +1,66 @@
-<h1><%=@match.id%></h1>
+<%=render "shared/site_nav"%>
+<% @home_team = Team.find(@match.home_team_id) %>
+<% @away_team = Team.find(@match.away_team_id) %>
+<%match_identifier = "#{@match.start}: #{@home_team.name} vs. #{@away_team.name}"%>
+<div class="container">
+  <h1 class="show-title">Update or Delete <span class"team-name"><%=match_identifier%></span></h1>
+
+  <!-- Update -->
+  <div class="row justify-content-center">
+    <div class="col-xs-12 align-items-center">
+      <div class="show-container flex-row justify-content-center">
+        <%= form_for @match do |f| %>
+          <div class="form-group">
+            <%= f.label "Result" %>
+            <%= f.text_field :result, class: "form-control form-control-lg", value: @match.result%>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "Channel" %>
+            <%= f.text_field :channel, class: "form-control form-control-lg", value: @match.channel%>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "League" %><br/>
+            <%= f.select :league_id, League.all.collect { |l| [ l.name, l.id ] }, include_blank: true, value: @match.league%>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "Home Team" %><br/>
+            <%= f.select :home_team_id, Team.all.collect { |t| [ t.name, t.id ] }, include_blank: true, value: @home_team%>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "Away Team" %><br/>
+            <%= f.select :away_team_id, Team.all.collect { |t| [ t.name, t.id ] }, include_blank: true, value: @away_team%>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "Sport" %><br/>
+            <%= f.select :sport_id, Sport.all.collect { |s| [ s.name, s.id ] }, include_blank: true, value: @match.sport%>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "Venue" %><br/>
+            <%= f.select :venue_id, Venue.all.collect { |v| [ v.name, v.id ] }, include_blank: true, value: @match.venue%>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "Start Date and Time: YYYY-MM-DD hh:mm:ss" %>
+            <%= f.text_field :start, class:"form-control", value: @match.start%>
+          </div>
+          <%= f.submit "Update Match", class: "btn btn-primary btn-lg show-button"%>
+        <% end %>
+
+
+      <!-- Delete  -->
+        <%= form_for @match, :method => :delete do |f|  %>
+          <%= submit_tag "Delete Match", class: "btn btn-primary btn-lg show-button delete" %>
+        <% end %>
+      </div>
+
+      </div>
+
+  </div>
+
+</div>
