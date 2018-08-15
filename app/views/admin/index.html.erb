@@ -53,31 +53,14 @@
       </div>
     </div>
 
-    <div class="col-xs-12 col-md-6">
-      <h3 class="text-center edit-options"> Choose a Sport to Update: </h3>
-      <div class="dropdown-choice d-flex justify-content-center">
-          <form id="sportSelectForm" action="#sports">
-            <div class="form-group">
-              <label for="SportSelect"></label>
-              <select class="form-control" id="sportSelect">
-                <% @sports.each do |sport| %>
-                  <option> <%="#{sport.name}"%> </option>
-                  <%end%>
-              </select>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </form>
-      </div>
-
-      <div class="edit-action">
-        <!-- Sport Dropdown -->
-      </div>
-
-      <div class="delete-action">
-        <!-- Sport Dropdown -->
+    <div class="col-xs-12 col-md-4">
+      <h3 class="text-center edit-options"> All Sports: </h3>
+      <div class="scroller">
+          <% @sports.each do |sport| %>
+            <%=link_to sport.name, sport_path(sport), class:"show-links"%>
+            <% end %>
       </div>
     </div>
-
   </div> <!-- End Sport CRUD -->
 
   <!-- League CRUD -->
@@ -111,17 +94,14 @@
       </div>
     </div>
 
-      <!-- League Dropdown -->
-      <div class="col-xs-12 col-md-6">
-        <h3 class="text-center edit-options"> Choose a League to Update: </h3>
-
-
-        <div class="edit-action">
-        </div>
-
-        <div class="delete-action">
-        </div>
+    <div class="col-xs-12 col-md-4">
+      <h3 class="text-center edit-options"> All Leagues: </h3>
+      <div class="scroller">
+          <% @leagues.each do |league| %>
+            <%=link_to league.name, league_path(league), class:"show-links"%>
+            <% end %>
       </div>
+    </div>
   </div> <!-- End League CRUD -->
 
   <!-- Venue CRUD -->
@@ -164,13 +144,12 @@
       </div>
     </div>
 
-    <div class="col-xs-12 col-md-6">
-      <h3 class="text-center edit-options"> Choose a Venue to Update: </h3>
-
-      <div class="edit-action">
-      </div>
-
-      <div class="delete-action">
+    <div class="col-xs-12 col-md-4">
+      <h3 class="text-center edit-options"> All Venues: </h3>
+      <div class="scroller">
+          <% @venues.each do |venue| %>
+            <%=link_to venue.name, venue_path(venue), class:"show-links"%>
+            <% end %>
       </div>
     </div>
   </div> <!-- End Venue CRUD -->
@@ -202,10 +181,10 @@
             <%= select_tag :away_team_id, options_from_collection_for_select(@teams, "id", "name"), include_blank: true, class: "form-control"  %>
           </div>
 
-          <!-- Not saving in db, may need to switch to date and time vs datetime -->
+
           <div class="form-group">
-            <%= label_tag :Start_Time %> <br/>
-            <%= datetime_select :venue, :start, class: "form-control"  %>
+            <%= label_tag :start, "Start Date and Time: YYYY-MM-DD hh:mm:ss" %> <br/>
+            <%= text_field_tag :start, nil, class:"form-control"%>
           </div>
 
 
@@ -226,17 +205,16 @@
       </div>
     </div>
 
-      <!-- League Dropdown -->
-      <div class="col-xs-12 col-md-6">
-        <h3 class="text-center edit-options"> Choose a Match to Update: </h3>
-
-
-        <div class="edit-action">
-        </div>
-
-        <div class="delete-action">
-        </div>
+    <div class="col-xs-12 col-md-4">
+      <h3 class="text-center edit-options"> All Matches: </h3>
+      <div class="scroller">
+          <% @matches.each do |match| %>
+            <% @home_team = Team.find(match.home_team_id) %>
+            <% @away_team = Team.find(match.away_team_id) %>
+            <%=link_to "#{match.start}: #{@home_team.name} vs. #{@away_team.name}", match_path(match), class:"show-links"%>
+            <% end %>
       </div>
+    </div>
   </div> <!-- End Matches CRUD -->
 
 
@@ -294,16 +272,14 @@
       </div>
     </div>
 
-      <div class="col-xs-12 col-md-6">
-        <h3 class="text-center edit-options"> Choose a Team to Update: </h3>
-
-
-        <div class="edit-action">
-        </div>
-
-        <div class="delete-action">
-        </div>
+    <div class="col-xs-12 col-md-4">
+      <h3 class="text-center edit-options"> All Teams: </h3>
+      <div class="scroller">
+          <% @teams.each do |team| %>
+            <%=link_to team.name, team_path(team), class:"show-links"%>
+            <% end %>
       </div>
+    </div>
   </div> <!-- End Team CRUD -->
 
 

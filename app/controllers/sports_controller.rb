@@ -31,6 +31,10 @@ class SportsController < ApplicationController
     end
   end
 
+  def show
+    @sport = Sport.find(params[:id])
+  end
+
   private
     def sport_params
       params.permit(:name, :image_url)

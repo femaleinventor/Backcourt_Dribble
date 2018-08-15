@@ -16,6 +16,10 @@ class MatchesController < ApplicationController
     end
   end
 
+  def show
+    @match = Match.find(params[:id])
+  end
+
   private
     def match_params
       params.permit(:channel, :start, :venue_id, :sport_id, :league_id, :home_team_id, :away_team_id)
