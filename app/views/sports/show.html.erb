@@ -1,1 +1,15 @@
 <h1><%=@sport.name%></h1>
+
+<!-- Update -->
+<%= form_for @sport do |f| %>
+  <%= f.label "Name" %>
+  <%= f.text_field :name, :value => @sport.name%>
+  <%= f.label "Image" %>
+  <%= f.text_field :image_url, :value => @sport.image_url%>
+  <%= f.submit%>
+<% end %>
+
+<!-- Delete  -->
+<%= form_for @sport, :method => :delete do |f|  %>
+  <%= submit_tag "Delete #{@sport.name}" %>
+<% end %>
