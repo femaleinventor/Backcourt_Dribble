@@ -56,7 +56,8 @@ league_list = [
   [ "UEFA Women's Champions League Champion's League (Europe)", 1 ],
   [ "Allianz Frauen-Bundesliga (Germany)", "Frauen-Bundesliga", 1],
   [ "FA Women's Super League (England)", "FA Super League", 1],
-  [ "FA Women's Championship (England)", "FA Championship", 1],
+  [ "FA Women's Championship League (England)", "FA Championship", 1],
+  [ "FA Women's National League (England)", "FA National", 1],
   [ "Westfield W-League (Australia)", "W-League", 1],
   [ "National Women’s League (New Zealand)", "NWL", 1 ],
   [ "Primera División Femenina (Spain)", "Primera División", 1],
@@ -86,8 +87,8 @@ league_list = [
   [ "Malta League (Malta)", "Malta League", 1],
   [ "Toppserien (Norway)", "Toppserien", 1],
   [ "Kadınlar 1. Futbol Ligi (Turkey)", "K1FL", 1],
-  # [ "National Collegiate Athletic Association Division 1 Soccer (USA)", "NCAA Soccer D1", 1],
-  # [ "National Collegiate Athletic Association Division 1 Soccer (USA)", "NCAA Soccer D2", 1]
+  [ "National Collegiate Athletic Association Division 1 Soccer (USA)", "NCAA Soccer D1", 1],
+  [ "National Collegiate Athletic Association Division 1 Soccer (USA)", "NCAA Soccer D2", 1],
   [ "Women's National Basketball Association (USA)", "WNBA", 2],
   [ "Women's National Basketball League (Australia)", "WNBL", 2],
   [ "Russian Women's Basketball Premier League (Russia)", "RWBL", 2],
@@ -185,11 +186,11 @@ matches_list = [
   # dash vs royals
   [ "tie", "go90 App", 2, 13, 7, 1, 2, DateTime.new(2018,3,30,15)],
   #id 6
-  # courage vs sky blue
-  [ "North Carolina Courage", "go90 App", 2, 8, 9, 1, 3, DateTime.new(2018,9,8,19)],
+  # courage vs dash
+  [ nil, "NSWL App", 2, 7, 8, 1, 3, DateTime.new(2018,9,8,16)],
   #id 7
-  # washington vs pride
-  [ "Washington Spirit", "Lifetime", 2, 9, 14, 1, 9, DateTime.new(2018,9,8,19)],
+  # sky vs pride
+  [ nil, "NSWL App", 2, 9, 12, 1, 7, DateTime.new(2018,9,8,9)],
   #id 8
   # Dash vs Thorns
   [ "Portland Thorns", "go90 App", 2, 10, 7, 1, 2, DateTime.new(2018,6,22,17,30)],
@@ -208,10 +209,6 @@ matches_list = [
   #id 13
   # Royals vs Seattle 6/27
   [ "tie", "go90 App", 2, 11, 13, 1, 4, DateTime.new(2018,6,27,15,30)],
-
-
-
-
   # Coming up after hackathon games
   #id 14
   # sky blue vs Courage
@@ -263,20 +260,46 @@ matches_list = [
   [ nil, "FS1", 1, 44, 16, 1, 1, DateTime.new(2018,8,02,19,30)],
   #id 30
   # USA vs Chile
-  [ nil, "ESPN2", 1, 45, 16, 1, 11, DateTime.new(2018,8,31,20)],
+  [ nil, "ESPN2", 1, 45, 16, 1, 18, DateTime.new(2018,8,31,20)],
   #id 31
   # USA vs Chile
-  [ nil, "ESPN2", 1, 45, 16, 1, 18, DateTime.new(2018,9,4,19)],
+  [ nil, "ESPN2", 1, 45, 16, 1, 11, DateTime.new(2018,9,4,19)],
   # 32
   # Courage vs PSG
   [ nil, "ESPN2", 3, 47, 8, 1, 19, DateTime.new(2018,7,26,18,15)],
   # 33
   # Lyon vs Man City
-  [ nil, "ESPN2", 3, 48, 46, 1, 19, DateTime.new(2018,7,26,21)]
-
-  # made up international data for hackathon
-  # 34 psg vs lyon, league 14
-  # [ "Olympic Lyonnais", "French TV", 14, 47, 46, 1, 15, DateTime.new(2018,3,24,12)]
+  [ nil, "ESPN2", 3, 48, 46, 1, 19, DateTime.new(2018,7,26,21)],
+  #34
+  # royals vs red stars
+  [ nil, "NWSL App", 2, 6, 13, 1, 8, DateTime.new(2018,9,8,12,30)],
+  #35
+  # thorns vs reign
+  [ nil, "NWSL App", 2, 11, 10, 1, 5, DateTime.new(2018,9,7,19)],
+  #36
+  # wash vs sky blue
+  [ nil, "NWSL App", 2, 12, 14, 1, 9, DateTime.new(2018,9,1,16)],
+  #37
+  # seattle reign vs north carolina
+  [ nil, "NWSL App", 2, 8, 11, 1, 6, DateTime.new(2018,8,25,13)],
+  #38
+  # pride vs redstars
+  [ nil, "NWSL App", 2, 6, 9, 1, 4, DateTime.new(2018,8,25,16,30)],
+  #39
+  # spirit vs thorns
+  [ nil, "NWSL App", 2, 10, 14, 1, 10, DateTime.new(2018,8,25,17)],
+  #40
+  # dash vs sky
+  [ nil, "NWSL App", 2, 12, 7, 1, 2, DateTime.new(2018,8,25,17,30)],
+  #41
+  # thorns vs sky
+  [ nil, "NWSL App", 2, 12, 10, 1, 5, DateTime.new(2018,8,22,20)],
+  #42
+  # spirit vs royals
+  [ nil, "NWSL App", 2, 13, 14, 1, 9, DateTime.new(2018,8,22,16,30)],
+  #43
+  # reign vs dash
+  [ nil, "NWSL App", 2, 7, 11, 1, 6, DateTime.new(2018,8,21,19,30)]
 ]
 
 matches_list.each do |match|
@@ -290,7 +313,7 @@ users_list = [
   #id2
   ["Heather Yeager", "oceanlvr", "@oceanlvr328", "865 Franklin St", "Melrose", "MA", "02176", "Eastern Time (US & Canada)",  "USA", "angie@mail.com", "password", "bitmoji/heather.jpeg"],
   #id3
-  ["Denise Duffy", "sunnysideup", "@denise_duffy", "142 Whitney Street", "San Francisco", "CA",  "94131", "Pacific Time (US & Canada)", "USA", "denise@deniseduffy.com", "password", "bitmoji/denise.jpeg"],
+  ["Denise Duffy", "sunnysideup", "@denise_duffy", "142 Whitney Street", "San Francisco", "CA",  "94131", "Pacific Time (US & Canada)", "USA", "nise@deniseduffy.com", "password", "bitmoji/denise.jpeg"],
   #id4
   ["Tania Ardel", "sunnysideup", "@ardelltania", "2700 Great Highway", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA", "mike.duffy@usa.com", "password", "bitmoji/tania.jpeg"],
   #id5
@@ -545,13 +568,6 @@ predictions_list = [
   [ "Olympic Lyonnais", "Best team in the world will destroy Man City", nil, 2, 8, 33],
   [ "Olympic Lyonnais", "They are just so good", nil, 2, 3, 33],
   [ "Manchester City", "They will be better prepared", nil, 2, 5, 33]
-
-  # 34 made up international data for hackathon
-  # psg vs lyon, league 14
-  # [ "Olympic Lyonnais", "They are always better", true, 5, 1, 34],
-  # [ "Olympic Lyonnais", "Best players in the world", true, 7, 3, 34],
-  # [ "Olympic Lyonnais", "Always in this league they win", true, 8, 2, 34]
-
 ]
 
 predictions_list.each do |prediction|
@@ -561,6 +577,5 @@ end
 # Issues:
 # encrypted_password => password as specified in devise docs
 # added 'optional: true' to belongs_to associations
-# had to drop database because even though all records are destroyed the ids continue to be reserved. (Did not match up)
 # Had to remove 'remove email from users' migration
 # Small issues where certain foreign keys werent present (i.e. predictions list where user 5 made the predicition but we only had 4...)
