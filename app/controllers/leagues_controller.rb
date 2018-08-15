@@ -12,6 +12,10 @@ class LeaguesController < ApplicationController
     end
   end
 
+  def show
+    @league = League.find(params[:id])
+  end
+
   private
     def league_params
       params.permit(:name, :abbreviation, :sport_id)

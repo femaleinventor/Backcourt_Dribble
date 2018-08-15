@@ -13,6 +13,10 @@ class VenuesController < ApplicationController
     end
   end
 
+  def show
+    @venue = Venue.find(params[:id])
+  end 
+
   private
     def venue_params
       params.require(:venue).permit(:name, :image_url, :address, :time_zone)

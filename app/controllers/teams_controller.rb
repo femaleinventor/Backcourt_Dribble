@@ -12,6 +12,10 @@ class TeamsController < ApplicationController
     end
   end
 
+  def show
+    @team = Team.find(params[:id])
+  end
+
   private
     def team_params
       params.permit(:name, :abbreviation, :sport_id, :bright_color, :light_color, :dark_color, :twitter_list)
