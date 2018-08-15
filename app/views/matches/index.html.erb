@@ -22,10 +22,9 @@
 
             <div class="row">
               <div class="col-xs-12 mx-auto">
-                <h3 class="prediction-prompt"> Which Team will Win? </h3>
                 <!-- Logic checking if a prediction has already been made for a certain match by the current user -->
                 <% if current_user.predictions.select{|prediction| prediction.match_id == match.id}.empty?  %>
-
+                  <h3 class="prediction-prompt"> Which Team will Win? </h3>
                   <%= form_tag(controller: 'predictions', action: 'create', class: "form-inline") do %>
 
                     <div class="d-flex justify-content-around">
@@ -67,11 +66,11 @@
                   <% end %>
 
                 <% else %>
-                <div>
-                  <h2>Your Prediction</h2>
+                <div class="user-prediction-summary">
+                  <h2 class="text-center">Your Prediction:</h2>
                   <% user_prediction = current_user.predictions.find{|prediction| prediction.match_id == match.id} %>
-                  <p> Your Guess: <%= user_prediction.guess %> </p>
-                  <p> Your Reasoning: <%= user_prediction.reason %> </p>
+                  <p> Your Guess: <span class="prediction-summary-text"><%= user_prediction.guess %> <span>
+                  <p> Your Reasoning: <span class="prediction-summary-text"><%= user_prediction.reason %> <span>
                 </div>
 
                 <% end %>

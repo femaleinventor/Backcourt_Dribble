@@ -87,6 +87,14 @@ $theme-green: #00D37F;
   color: white;
 }
 
+.user-prediction-summary{
+  margin-top: 15px;
+  .prediction-summary-text{
+    display: block;
+    color: white;
+  }
+}
+
 // #clock {
 //   display: inline;
 // }
