@@ -25,7 +25,7 @@
                 <!-- Logic checking if a prediction has already been made for a certain match by the current user -->
                 <% if current_user.predictions.select{|prediction| prediction.match_id == match.id}.empty?  %>
                   <h3 class="prediction-prompt"> Which Team will Win? </h3>
-                  <%= form_tag(controller: 'predictions', action: 'create', class: "form-inline") do %>
+                  <%= form_tag(controller:'predictions', action:'create') do %>
 
                     <div class="d-flex justify-content-around">
                       <!-- home -->
@@ -58,6 +58,8 @@
                     <%= hidden_field_tag "user_id", current_user.id %>
 
                     <%= hidden_field_tag "match_id", match.id %>
+
+
 
                     <div class="form-actions prediction-submit">
                       <%= submit_tag "Submit", class: "btn btn-primary btn-md" %>
