@@ -129,6 +129,45 @@ $theme-dark-grey: #343a40;
   }
 }
 
+.all-predictions{
+  .match-leaderboard{
+    width: 90vw;
+    .table-header{
+      color: $theme-orange;
+    }
+    // .match-leaderboard-table {
+    //     width: 100%;
+    //     td {
+    //         max-width: 0;
+    //         overflow: hidden;
+    //         text-overflow: ellipsis;
+    //         white-space: nowrap;
+    //       }
+    //   }
+  }
+}
+
+
+// .match-leaderboard-table {
+//     width: 100%;
+//     td {
+//         max-width: 0;
+//         overflow: hidden;
+//         text-overflow: ellipsis;
+//         white-space: nowrap;
+//     }
+//     td.columnA {
+//         width: 20%;
+//     }
+//     td.columnB {
+//         width: 30%;
+//     }
+//     td.columnC {
+//         width: 50%;
+//     }
+// }
+
+
 @media (max-width:768px){
   .match-heading {
     font-size: 35px;
