@@ -131,21 +131,30 @@ $theme-dark-grey: #343a40;
 
 .all-predictions{
   .match-leaderboard{
-    width: 90vw;
-    .table-header{
-      color: $theme-orange;
+    // width: 90vw;
+    // @media (max-width: 480px){
+    //   width: 100vw;
+    // }
+    .match-leaderboard-table{
+      width: 100vw;
+      .table-header{
+        color: $theme-orange;
+      }
+      @media (max-width: 480px){
+        font-size: 12px;
+      }
     }
-    // .match-leaderboard-table {
-    //     width: 100%;
+
+    // @media (max-width:480px){
+    // .match-leaderboard {
+    //     width: 100vw;
     //     td {
-    //         max-width: 0;
-    //         overflow: hidden;
-    //         text-overflow: ellipsis;
-    //         white-space: nowrap;
+    //       font-size: 12px;
     //       }
+    //     }
     //   }
+    }
   }
-}
 
 
 // .match-leaderboard-table {

@@ -101,7 +101,7 @@
                 <% number_of_home_predictions = home_predictions.count %>
                 <% if number_of_home_predictions != 0 %>
                   <h2 class="prediction-board-header text-center"> <%= number_of_home_predictions %> <%= pluralize_prediction_statement(number_of_home_predictions) %> that <%= @home_team.name %> will win (<%= calculate_team_prediction_percentage(match, @home_team) %>) </h2>
-                    <div class="match-leaderboard">
+                    <div class="match-leaderboard table-responsive">
                       <table class="table table-striped table-dark match-leaderboard-table">
                         <thead>
                           <tr>
