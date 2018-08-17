@@ -9,20 +9,20 @@
           <div class="keyword">
             <%= link_to "HOME", root_path, class: "return-home" %>
           </div>
-          <div class="keyword">
-            <%= link_to 'WOSO', tweets_path(:keyword => "woso") %>
+          <div class="keyword" id="WoSo">
+            <%= link_to 'WOSO', tweets_path(:keyword => "WoSo") %>
           </div>
-          <div class="keyword">
+          <div class="keyword" id="USWNT">
             <%= link_to 'USWNT', tweets_path(:keyword => "USWNT") %>
           </div>
-          <div class="keyword">
+          <div class="keyword" id="NWSL">
             <%= link_to 'NWSL', tweets_path(:keyword => "NWSL") %>
           </div>
         </div> <!-- End keywords-container -->
       </div> <!-- End col for keywords -->
 
       <!-- Column for tweets -->
-      <div class="col-xs-12 col-md-8">
+      <div class="col-xs-12 col-md-8 tweets-wall">
         <% @tweets.each do |t|%>
           <div class="keyword-tweet">
             <div class="tweet-wrapper">

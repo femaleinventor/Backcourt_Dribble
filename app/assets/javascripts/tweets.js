@@ -17,9 +17,21 @@ function attachEventListeners() {
       data: { keyword: keyword},
     }).done(function(res){
       console.log(res);
-      // $(e.target).replaceWith(res);
+      res.forEach(
+			setTimeout(function(tweet) {$(".tweets-wall").prepend(buildHtmlFor(tweet))},3000)
+			)
     })
   });
+}
+
+function buildHtmlFor(tweet) {
+	return `<div class="keyword-tweet">
+		<div class="tweet-wrapper">
+			<div class="timestamp">${tweet.created_at}</div>
+			<div class="tweet-text">${tweet.full_text}</div>
+			<div class="by-line">  </div>
+		</div>
+	</div>`
 }
 
 // function keywordClick() {
