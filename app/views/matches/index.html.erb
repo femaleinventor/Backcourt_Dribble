@@ -25,32 +25,27 @@
               <div class="col-xs-12 mx-auto">
                 <!-- Logic checking if a prediction has already been made for a certain match by the current user -->
                 <% if current_user.predictions.select{|prediction| prediction.match_id == match.id}.empty?  %>
-                  <h3 class="prediction-prompt"> Which Team will Win? </h3>
+                  <h3 class="prediction-prompt text-center"> Which Team will Win? </h3>
                   <%= form_tag(controller:'predictions', action:'create') do %>
 
                     <div class="d-flex justify-content-around">
                       <!-- home -->
                       <div class="form-group form-check form-check-inline">
-                        <%= label_tag :guess, "#{@home_team.name}", class: "form-check-label"%>
+                        <%= label_tag :guess, "#{@home_team.abbreviation}", class: "form-check-label"%>
                         <%= check_box_tag :guess, @home_team.name, false, class: "prediction-checkbox form-check-input" %>
                       </div>
 
                       <!-- tie -->
-
                       <div class="form-group form-check form-check-inline">
-                        <!-- custom control for check boxes? -->
-                        <!-- <label class="custom-control custom-checkbox"> -->
                           <%= label_tag :guess, "Tie", class: "form-check-label"%>
                           <%= check_box_tag :guess, "Tie", false, class: "prediction-checkbox form-check-input" %>
-                        <!-- </label> -->
                       </div>
 
                       <!-- away -->
                       <div class="form-group form-check form-check-inline">
-                        <%= label_tag :guess, "#{@away_team.name}", class: "form-check-label"%>
+                        <%= label_tag :guess, "#{@away_team.abbreviation}", class: "form-check-label"%>
                         <%= check_box_tag :guess, @away_team.name, false, class: "prediction-checkbox form-check-input" %>
                       </div>
-
 
                     </div>
 
@@ -62,15 +57,12 @@
 
                     <%= hidden_field_tag "match_id", match.id %>
 
-
-
                     <div class="form-actions prediction-submit">
                       <%= submit_tag "Submit", class: "btn btn-primary btn-md" %>
                     </div>
 
                   <% end %>
                   <%=render "shared/flash_messages"%>
-                  
 
                 <% else %>
                 <div class="user-prediction-summary">

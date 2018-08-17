@@ -89,9 +89,38 @@ $theme-green: #00D37F;
 
 .user-prediction-summary{
   margin-top: 15px;
+  border: 1px solid white;
+  border-radius: 2%;
+  padding: 20px;
+  width: 50vw;
+  h2{
+    color: white;
+  }
   .prediction-summary-text{
     display: block;
     color: white;
+  }
+}
+
+.reason-textbox {
+  width: 10vw;
+}
+
+@media (max-width:768px){
+  .match-heading {
+    font-size: 35px;
+  }
+}
+
+@media (max-width:480px){
+  .match-heading {
+    font-size: 20px;
+  }
+  .match-info {
+    font-size: 15px;
+  }
+  .prediction-prompt{
+    font-size: 15px;
   }
 }
 
