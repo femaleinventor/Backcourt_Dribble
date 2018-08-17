@@ -56,7 +56,8 @@ league_list = [
   [ "UEFA Women's Champions League Champion's League (Europe)", 1 ],
   [ "Allianz Frauen-Bundesliga (Germany)", "Frauen-Bundesliga", 1],
   [ "FA Women's Super League (England)", "FA Super League", 1],
-  [ "FA Women's Championship (England)", "FA Championship", 1],
+  [ "FA Women's Championship League (England)", "FA Championship", 1],
+  [ "FA Women's National League (England)", "FA National", 1],
   [ "Westfield W-League (Australia)", "W-League", 1],
   [ "National Women’s League (New Zealand)", "NWL", 1 ],
   [ "Primera División Femenina (Spain)", "Primera División", 1],
@@ -86,8 +87,8 @@ league_list = [
   [ "Malta League (Malta)", "Malta League", 1],
   [ "Toppserien (Norway)", "Toppserien", 1],
   [ "Kadınlar 1. Futbol Ligi (Turkey)", "K1FL", 1],
-  # [ "National Collegiate Athletic Association Division 1 Soccer (USA)", "NCAA Soccer D1", 1],
-  # [ "National Collegiate Athletic Association Division 1 Soccer (USA)", "NCAA Soccer D2", 1]
+  [ "National Collegiate Athletic Association Division 1 Soccer (USA)", "NCAA Soccer D1", 1],
+  [ "National Collegiate Athletic Association Division 1 Soccer (USA)", "NCAA Soccer D2", 1],
   [ "Women's National Basketball Association (USA)", "WNBA", 2],
   [ "Women's National Basketball League (Australia)", "WNBL", 2],
   [ "Russian Women's Basketball Premier League (Russia)", "RWBL", 2],
@@ -159,7 +160,7 @@ venues_list = [
 
 
 venues_list.each do |venue|
-  Venue.create!(name: venue[0], picture_url: venue[1], address: venue[2], timezone: venue[3])
+  Venue.create!(name: venue[0], picture_url: venue[1], address: venue[2], time_zone: venue[3])
 end
 
 
@@ -185,11 +186,11 @@ matches_list = [
   # dash vs royals
   [ "tie", "go90 App", 2, 13, 7, 1, 2, DateTime.new(2018,3,30,15)],
   #id 6
-  # courage vs sky blue
-  [ "North Carolina Courage", "go90 App", 2, 8, 9, 1, 3, DateTime.new(2018,9,8,19)],
+  # courage vs dash
+  [ nil, "NSWL App", 2, 7, 8, 1, 3, DateTime.new(2018,9,8,16)],
   #id 7
-  # washington vs pride
-  [ "Washington Spirit", "Lifetime", 2, 9, 14, 1, 9, DateTime.new(2018,9,8,19)],
+  # sky vs pride
+  [ nil, "NSWL App", 2, 9, 12, 1, 7, DateTime.new(2018,9,8,9)],
   #id 8
   # Dash vs Thorns
   [ "Portland Thorns", "go90 App", 2, 10, 7, 1, 2, DateTime.new(2018,6,22,17,30)],
@@ -208,10 +209,6 @@ matches_list = [
   #id 13
   # Royals vs Seattle 6/27
   [ "tie", "go90 App", 2, 11, 13, 1, 4, DateTime.new(2018,6,27,15,30)],
-
-
-
-
   # Coming up after hackathon games
   #id 14
   # sky blue vs Courage
@@ -263,20 +260,46 @@ matches_list = [
   [ nil, "FS1", 1, 44, 16, 1, 1, DateTime.new(2018,8,02,19,30)],
   #id 30
   # USA vs Chile
-  [ nil, "ESPN2", 1, 45, 16, 1, 11, DateTime.new(2018,8,31,20)],
+  [ nil, "ESPN2", 1, 45, 16, 1, 18, DateTime.new(2018,8,31,20)],
   #id 31
   # USA vs Chile
-  [ nil, "ESPN2", 1, 45, 16, 1, 18, DateTime.new(2018,9,4,19)],
+  [ nil, "ESPN2", 1, 45, 16, 1, 11, DateTime.new(2018,9,4,19)],
   # 32
   # Courage vs PSG
   [ nil, "ESPN2", 3, 47, 8, 1, 19, DateTime.new(2018,7,26,18,15)],
   # 33
   # Lyon vs Man City
-  [ nil, "ESPN2", 3, 48, 46, 1, 19, DateTime.new(2018,7,26,21)]
-
-  # made up international data for hackathon
-  # 34 psg vs lyon, league 14
-  # [ "Olympic Lyonnais", "French TV", 14, 47, 46, 1, 15, DateTime.new(2018,3,24,12)]
+  [ nil, "ESPN2", 3, 48, 46, 1, 19, DateTime.new(2018,7,26,21)],
+  #34
+  # royals vs red stars
+  [ nil, "NWSL App", 2, 6, 13, 1, 8, DateTime.new(2018,9,8,12,30)],
+  #35
+  # thorns vs reign
+  [ nil, "NWSL App", 2, 11, 10, 1, 5, DateTime.new(2018,9,7,19)],
+  #36
+  # wash vs sky blue
+  [ nil, "NWSL App", 2, 12, 14, 1, 9, DateTime.new(2018,9,1,16)],
+  #37
+  # seattle reign vs north carolina
+  [ nil, "NWSL App", 2, 8, 11, 1, 6, DateTime.new(2018,8,25,13)],
+  #38
+  # pride vs redstars
+  [ nil, "NWSL App", 2, 6, 9, 1, 4, DateTime.new(2018,8,25,16,30)],
+  #39
+  # spirit vs thorns
+  [ nil, "NWSL App", 2, 10, 14, 1, 10, DateTime.new(2018,8,25,17)],
+  #40
+  # dash vs sky
+  [ nil, "NWSL App", 2, 12, 7, 1, 2, DateTime.new(2018,8,25,17,30)],
+  #41
+  # thorns vs sky
+  [ nil, "NWSL App", 2, 12, 10, 1, 5, DateTime.new(2018,8,22,20)],
+  #42
+  # spirit vs royals
+  [ nil, "NWSL App", 2, 13, 14, 1, 9, DateTime.new(2018,8,22,16,30)],
+  #43
+  # reign vs dash
+  [ nil, "NWSL App", 2, 7, 11, 1, 6, DateTime.new(2018,8,21,19,30)]
 ]
 
 matches_list.each do |match|
@@ -285,29 +308,30 @@ end
 
 # [ "name", "username", "twitter_handle", "street_address", "city", "state", "zipcode", "country", "level", "stripeToken", "email", encrypted_password, avatar ],
 users_list = [
+
   #id1
-  ["Erica Amaya", "woso_girl", "@ericamaya6",  "2 Salem Green", "Salem", "MA", "01970","Eastern Time (US & Canada)", "USA", "erick@mail.com", "password", "bitmoji/erica.jpeg"],
+  ["Denise Duffy", "sunnysideup", "@denise_duffy", "142 Whitney Street", "San Francisco", "CA",  "94131", "Pacific Time (US & Canada)", "USA", "denise@deniseduffy.com", "password", "bitmoji/denise.jpeg", true],
   #id2
-  ["Heather Yeager", "oceanlvr", "@oceanlvr328", "865 Franklin St", "Melrose", "MA", "02176", "Eastern Time (US & Canada)",  "USA", "angie@mail.com", "password", "bitmoji/heather.jpeg"],
-  #id3
-  ["Denise Duffy", "sunnysideup", "@denise_duffy", "142 Whitney Street", "San Francisco", "CA",  "94131", "Pacific Time (US & Canada)", "USA", "denise@deniseduffy.com", "password", "bitmoji/denise.jpeg"],
-  #id4
-  ["Tania Ardel", "sunnysideup", "@ardelltania", "2700 Great Highway", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA", "mike.duffy@usa.com", "password", "bitmoji/tania.jpeg"],
-  #id5
-  ["Rachel W", "Rachel_Will!", "@rachelwill", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notdan@usa.com", "password", "bitmoji/rachel.jpeg"],
-  #id6
-  ["Butch Loy", "sportyinmiami", "@HMLoy86", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","danny@usa.com", "password", "bitmoji/butch.jpeg"],
-  #id7
-  ["Lura McCoy", "luramccoy81", "@wosogirl", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notsusan@usa.com", "password", "bitmoji/laura.jpeg"],
-  #id8
-  ["Alice Keeney", "navy_vet", "@alicesauce", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notjohn@usa.com", "password", "bitmoji/alice.jpeg"],
-  #id9
-  ["Hannah Basso", "ballergirl", "@bassohannah", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","ballergirl@usa.com", "password", "bitmoji/hannah.jpeg"]
+  ["Ethan Fertsch", "software engineer", nil,  "2 Salem Green", "Salem", "MA", "01970","Eastern Time (US & Canada)", "USA", "efertsch@gmail.com", "password", "bitmoji/erica.jpeg", true],
+  #id2
+  # ["Heather Yeager", "oceanlvr", "@oceanlvr328", "865 Franklin St", "Melrose", "MA", "02176", "Eastern Time (US & Canada)",  "USA", "angie@mail.com", "password", "bitmoji/heather.jpeg", false],
+  # #id4
+  # ["Tania Ardel", "sunnysideup", "@ardelltania", "2700 Great Highway", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA", "mike.duffy@usa.com", "password", "bitmoji/tania.jpeg", false],
+  # #id5
+  # ["Rachel W", "Rachel_Will!", "@rachelwill", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notdan@usa.com", "password", "bitmoji/rachel.jpeg", false],
+  # #id6
+  # ["Butch Loy", "sportyinmiami", "@HMLoy86", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","danny@usa.com", "password", "bitmoji/butch.jpeg", false],
+  # #id7
+  # ["Lura McCoy", "luramccoy81", "@wosogirl", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notsusan@usa.com", "password", "bitmoji/laura.jpeg", false],
+  # #id8
+  # ["Alice Keeney", "navy_vet", "@alicesauce", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notjohn@usa.com", "password", "bitmoji/alice.jpeg", false],
+  # #id9
+  # ["Hannah Basso", "ballergirl", "@bassohannah", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","ballergirl@usa.com", "password", "bitmoji/hannah.jpeg", false]
 ]
 
 # this is not turning the color i want
 users_list.each do |user|
-  User.create!(name: user[0], username: user[1], twitter_handle: user[2], street_address: user[3], city: user[4], state: user[5], zipcode: user[6], time_zone: user[7], country: user[8], email: user[9], password: user[10], avatar: user[11])
+  User.create!(name: user[0], username: user[1], twitter_handle: user[2], street_address: user[3], city: user[4], state: user[5], zipcode: user[6], time_zone: user[7], country: user[8], email: user[9], password: user[10], avatar: user[11], admin: user[12])
 end
 
 # 6 Chicago Redstars
@@ -327,240 +351,232 @@ predictions_list = [
 
   #id 1
   # courage vs portland
-  [ "North Carolina Courage", "Parsons is going to get Pauwed", true, 8, 2, 1],
-  [ "North Carolina Courage", "Horan can't carry the full team", true, 3, 8, 1],
-  [ "Portland Thorns", "Thorns are finally flowing", false, 1, 5, 1],
-  [ "Portland Thorns", "Thorns have too much Talent", false, 2, 4, 1],
-  #id 2
-  # pride vs Royals
-  [ "tie", "The pride has all the pieces but can't quite put them together", true, 8, 2, 2],
-  [ "Orland Pride", "Pride has Marta. She's the biggest generator in the world", false, 3, 3, 2],
-  [ "Utah Royals", "Laura Harvey will make the ball go in the net with her eyes", false, 1, 1, 2],
-  [ "Utah Royals", "They have the best defense in the league by far", false, 2, 5, 2],
-  #id 3
-  # reign vs spirit
-  [ "Seattle Reign", "Vlatko ", true, 8, 2, 3],
-  [ "Seattle Reign", "It will Reign down on them", true, 3, 1, 3],
-  [ "Washington Spirit", "Sullivan and Pugh will finally get it going", false, 1, 6, 3],
-  [ "Washington Spirit", "JoLo will do something creative", false, 2, 7, 3],
-  #id 4
-  # dash vs redstars
-  [ "Houston Dash", "Parsons is going to get Pauwed", false, 8, 8, 4],
-  [ "Houston Dash", "Back line will hold", false, 3, 3, 4],
-  [ "Chicago Redstars", "Midfield is da bomb", false, 16, 1, 4],
-  [ "tie", "SAM KERR is not here yet", true, 2, 1, 4],
-  #id 5
-  # dash vs royals
-  [ "Houston Dash", "They are getting better", false, 8, 2, 5],
-  [ "Houston Dash", "South Africans are clicking", false, 3, 5, 5],
-  [ "tie", "Um, nobody will winn", true, 1, 6, 5],
-  [ "Utah Royals", "Better coached", false, 2, 7, 5],
-  #id 6
-  # courage vs sky blue
-  [ "North Carolina Courage", "Twin Towers on fire", true, 8, 8, 6],
-  [ "North Carolina Courage", "Erceg will head one in", true, 3, 3, 6],
-  [ "Sky Blue FC", "They might get lucky", false, 1, 1, 6],
-  [ "Sky Blue FC", "Praying and hoping they get some points", false, 2, 2, 6],
-  #id 7
-  # washington vs pride
-  [ "Washington spirit", "JoLo will rock it", true, 8, 4, 7],
-  [ "Washington spirit", "Best fans", true, 3, 3, 7],
-  [ "Orlando Pride", "Harris is the new wall", false, 1, 5, 7],
-  [ "Orlando Pride", "I have Krieger fever", false, 2, 6, 7],
-  # id 8
-  # Dash vs Thorns
-  [ "Houston Dash", "Parsons is going to get Pauwed", false, 8, 7, 8],
-  [ "Houston Dash", "Horan won't be there", false, 3, 8, 8],
-  [ "tie", "They are evenly matched without the great Horan", false, 1, 1, 8],
-  [ "Portland Thorns", "Thorns have too much Talent", true, 2, 2, 8],
-
-  #id 9
-  # Reign vs Courage
-  [ "Seattle Reign", "Rapinoe has so many ideas", false, 2, 3, 9],
-  [ "North Carolina Courage", "Courage on penalty kicks are just so tall, the ball will go over the defense", true, 2, 4, 9],
-  [ "North Carolina Courage", "Seattle will give us a perfect storm but the courage will rock it.", true, 2, 8, 9],
-  [ "tie", "It will be a good game, but no winners though", false, 2, 5, 9],
-  #id 10
-  # Spirit vs Pride
-  [ "tie", "Too close to call", false, 2, 5, 10],
-  [ "Washington Spirit", "Mal Pugh will bring it", false, 2, 8, 10],
-  [ "Washington Spirit", "Sullivan will dominate", false, 2, 6, 10],
-  [ "Orlando Pride", "Marta Marta Marta", true, 2, 7, 10],
-  #id 11
-  # Redstars vs Royals
-  [ "Chicago Redstars", "Best goalie in the world", true, 1, 1, 11],
-  [ "Chicago Redstars", "Redstars have Sam Kerr", true, 2, 8, 11],
-  [ "Utah Royals", "Royals have Press", false, 3, 8, 11],
-  [ "Utah Royals", "Laura Harvey really knows how to coach", false, 2, 5, 11],
-  #id 12
-  # Pride vs Dash
-  [ "tie", "They both will score 1 goal", false, 2, 4, 12],
-  [ "Orlando Pride", "Krieger fever will take over", false, 2, 5, 12],
-  [ "Orlando Pride", "Kennedy will kill it", false, 2, 8, 12],
-  [ "Houston Dash", "Pauw really knows how to coach", true, 2, 7, 12],
-  #id 13
-  # Royals vs Seattle 6/27
-  [ "tie", "Royals have amazing defense, 0-0 tie", true, 2, 1, 13],
-  [ "Utah Royals", "Press will get one or two", false, 2, 2, 13],
-  [ "Utah Royals", "The Royals are just gelling", false, 2, 3, 13],
-  [ "Seattle Reign", "Seattle knows what they are doing", false, 2, 4, 13],
-
-  # Coming up after hackathon games
-  #id 14
-  # sky blue vs Courage
-  [ "tie", "0-0, SBFC will hang on ", nil, 2, 5, 14],
-  [ "North Carolina Courage", "omg, they are so far ahead, doesn't matter if they win or lose, but they will win", nil, 2, 6, 14],
-  [ "North Carolina Courage", "More fit, better mentality", nil, 2, 8, 14],
-  [ "Sky Blue FC", "Going out on a limb here", nil, 2, 7, 14],
-
-  #id 15
-  # royals vs pride
-  [ "tie", "Royals have amazing defense, 0-0 tie", nil, 2, 1, 15],
-  [ "Orlando Pride", "They will step up and own the midfield", nil, 2, 8, 15],
-  [ "Orlando Pride", "Harris will make some great saves", nil, 2, 3, 15],
-  [ "Utah Royals", "Rodriguez will just sop up any rebounds and punch them through", nil, 2, 4, 15],
-
-  #id 16
-  # redstars vs Reign
-  [ "tie", "predicting a 2-2 tie here", nil, 2, 5, 16],
-  [ "Seattle Reign", "Jess Fishlock is just going to squash them", nil, 2, 8, 16],
-  [ "Seattle Reign", "The Reign are just now getting it together for real.", nil, 2, 6, 16],
-  [ "Chicago Redstars", "Chicago knows what they are doing", nil, 2, 7, 16],
-
-  #id 17
-  # thorns vs dash
-  [ "tie", "0-0, they will both play too defensively", nil, 2, 1, 17],
-  [ "Portland Thorns", "Press will get one or two", nil, 2, 8, 17],
-  [ "Portland Thorns", "The Royals are just gelling", nil, 2, 3, 17],
-  [ "Houston Dash", "Seattle knows what they are doing", nil, 2, 5, 17],
-
-  #id 18
-  # royals vs Courage
-  [ "tie", "they will both play scared", nil, 2, 4, 18],
-  [ "North Carolina Courage", "Press will get one or two", nil, 2, 5, 18],
-  [ "North Carolina Courage", "The Royals are just gelling", nil, 2, 6, 18],
-  [ "Utah Royals", "Seattle knows what they are doing", nil, 2, 7, 18],
-
-  #id 19
-  # pride vs Reign
-  [ "tie", "both are over coached", nil, 2, 1, 19],
-  [ "Orlando Pride", "Press will get one or two", nil, 2, 8, 19],
-  [ "Orlando Pride", "The Royals are just gelling", nil, 2, 2, 19],
-  [ "Seattle Reign", "Seattle knows what they are doing on both sides", nil, 2, 3, 19],
-
-  #id 20
-  # spirit vs dash
-  [ "tie", "alot of defense, not alot of offence, 0-0 tie", nil, 2, 4, 20],
-  [ "Washington Spirit", "Pugh will get one or two", nil, 2, 5, 20],
-  [ "Washington Spirit", "Bledsoe is the best goal keeper around", nil, 2, 8, 20],
-  [ "Houston Dash", "They are trying their best and they will dominate this one", nil, 2, 6, 20],
-
-  #id 21
-  # sky blue vs thorns
-  [ "tie", "3-3, the scoring will finally begin", nil, 2, 7, 21],
-  [ "Sky Blue FC", "omg, wouldn't it be great if they beat the throns?", nil, 2, 6, 21],
-  [ "Sky Blue FC", "i mean, why not?", nil, 2, 5, 21],
-  [ "Portland Thorns", "Sorry, they will dominate Sky Blue", nil, 2, 4, 21],
-
-  #id 22
-  # redstars vs sky blue
-  [ "tie", "Sam Kerr will not score. 0-0 tie", nil, 2, 3, 22],
-  [ "Sky Blue FC", "Sky Blue will be highly motivated", nil, 2, 2, 22],
-  [ "Sky Blue FC", "This one they will really be up for", nil, 2, 1, 22],
-  [ "Chicago Redstars", "Too much offensive power", nil, 2, 8, 22],
-
-  #id 23
-  # courage vs Thorns 8/5
-  [ "tie", "they will just detroy each other but it will end up in a tie", nil, 2, 7, 23],
-  [ "North Carolina Courage", "Our outside backs will outrun you", nil, 2, 6, 23],
-  [ "North Carolina Courage", "Zerboni Zerboni Zerboni", nil, 2, 8, 23],
-  [ "Portland Thorns", "Grudge match for sure, we will win", nil, 4, 5, 23],
-
-  #id 24
-  # pride vs SKY
-  [ "tie", "Will be a competitive, 1-1 tie", nil, 2, 5, 24],
-  [ "Orlando Pride", "Alex Morgan is the best player in the world", nil, 2, 4, 24],
-  [ "Orlando Pride", "Our backline is getting better", nil, 2, 3, 24],
-  [ "Sky Blue FC", "Finally we have put a backline together", nil, 2, 2, 24],
-
-  #id 25
-  # dash vs Royals
-  [ "tie", "Royals have amazing defense, 0-0 tie", nil, 2, 1, 25],
-  [ "Houston Dash", "Racheal Daly will rock it!", nil, 2, 8, 25],
-  [ "Houston Dash", "Huuuuueeeerrrrtaaa! She is so good.", nil, 2, 7, 25],
-  [ "Utah Royals", "Press A-Rod O'Hara, omg, so freaking good", nil, 2, 6, 25],
-
-  #id 26
-  # reign vs spirit
-  [ "tie", "Meh, i think they are even", nil, 2, 5, 26],
-  [ "Washington Spirit", "pugh vs rapinoe, i'm going with Pugh", nil, 2, 4, 26],
-  [ "Washington Spirit", "The Spirit are just gelling", nil, 2, 8, 26],
-  [ "Seattle Reign", "Seattle knows what they are doing", nil, 2, 3, 26],
-
-  #id 27
-  # USA vs Japan
-  [ "tie", "both teams won't break each other's defense, 0-0 tie", nil, 2, 1, 27],
-  [ "Japan National Football", "Master class in possession", nil, 2, 2, 27],
-  [ "Japan National Football", "They will patiently find the right counter", nil, 2, 8, 27],
-  [ "USWNT Soccer", "We are just so transitionally fast", nil, 2, 1, 27],
-
-  #id 28
-  # USA vs Australia
-  [ "tie", "4-4 It will be a wild scoring affair", nil, 2, 1, 28],
-  [ "USWNT Soccer", "We will not let last year happen again.", nil, 2, 8, 28],
-  [ "USWNT Soccer", "We have the best front line and back line, working on the middle but we will still win", nil, 2, 8, 28],
-  [ "Australia", "Hottest team in the world right now", nil, 2, 5, 28],
-
-  #id 29
-  # USA vs Brazil
-  [ "tie", "I just think it will be even in the scoring even though US will still dominate", nil, 2, 1, 29],
-  [ "USWNT Soccer", "Press will get one or two", nil, 2, 8, 29],
-  [ "USWNT Soccer", "Our midfield will finally come together", nil, 2, 8, 29],
-  [ "Brazil", "Marta will just find a way to score more than USA", nil, 2, 5, 29],
-
-  #id 30
-  # USA vs Chile
-  [ "tie", "Royals have amazing defense, 0-0 tie", nil, 2, 1, 30],
-  [ "USWNT Soccer", "Press will get one or two", nil, 2, 8, 30],
-  [ "USWNT Soccer", "The Royals are just gelling", nil, 2, 8, 30],
-  [ "Chile", "Seattle knows what they are doing", nil, 2, 5, 30],
-
-  #id 31
-  # USA vs Chile
-  [ "tie", "USA will be trying too many things out and Chile will just go for it.", nil, 2, 1, 31],
-  [ "Chile", "They will steal this one.", nil, 2, 8, 31],
-  [ "USWNT Soccer", "Dunn will find the back of the net", nil, 2, 8, 31],
-  [ "USWNT Soccer", "Our long range passing will just find a way", nil, 2, 5, 31],
-
-  # 32
-  # Courage vs PSG
-  [ "Paris Saint Germain", "The they are evenly matched, but PSG will win", nil, 2, 1, 32],
-  [ "North Carolina Courage", "The courage knows how to win even without their internationals", nil, 2, 8, 32],
-  [ "North Carolina Courage", "If Dunn gets to play, it's over", nil, 2, 8, 32],
-  [ "Paris Saint Germain", "High quality, well rested", nil, 2, 5, 32],
-
-  # 33
-  # Lyon vs Man City
-  [ "Manchester City", "Man City will hang on and win", nil, 2, 1, 33],
-  [ "Olympic Lyonnais", "Best team in the world will destroy Man City", nil, 2, 8, 33],
-  [ "Olympic Lyonnais", "They are just so good", nil, 2, 3, 33],
-  [ "Manchester City", "They will be better prepared", nil, 2, 5, 33]
-
-  # 34 made up international data for hackathon
-  # psg vs lyon, league 14
-  # [ "Olympic Lyonnais", "They are always better", true, 5, 1, 34],
-  # [ "Olympic Lyonnais", "Best players in the world", true, 7, 3, 34],
-  # [ "Olympic Lyonnais", "Always in this league they win", true, 8, 2, 34]
-
+  # [ "North Carolina Courage", "Parsons is going to get Pauwed", true, 8, 2, 1],
+  # [ "North Carolina Courage", "Horan can't carry the full team", true, 3, 8, 1],
+  # [ "Portland Thorns", "Thorns are finally flowing", false, 1, 5, 1],
+  # [ "Portland Thorns", "Thorns have too much Talent", false, 2, 4, 1],
+  # #id 2
+  # # pride vs Royals
+  # [ "Tie", "The pride has all the pieces but can't quite put them together", true, 8, 2, 2],
+  # [ "Orland Pride", "Pride has Marta. She's the biggest generator in the world", false, 3, 3, 2],
+  # [ "Utah Royals", "Laura Harvey will make the ball go in the net with her eyes", false, 1, 1, 2],
+  # [ "Utah Royals", "They have the best defense in the league by far", false, 2, 5, 2],
+  # #id 3
+  # # reign vs spirit
+  # [ "Seattle Reign", "Vlatko ", true, 8, 2, 3],
+  # [ "Seattle Reign", "It will Reign down on them", true, 3, 1, 3],
+  # [ "Washington Spirit", "Sullivan and Pugh will finally get it going", false, 1, 6, 3],
+  # [ "Washington Spirit", "JoLo will do something creative", false, 2, 7, 3],
+  # #id 4
+  # # dash vs redstars
+  # [ "Houston Dash", "Parsons is going to get Pauwed", false, 8, 8, 4],
+  # [ "Houston Dash", "Back line will hold", false, 3, 3, 4],
+  # [ "Chicago Redstars", "Midfield is da bomb", false, 16, 1, 4],
+  # [ "Tie", "SAM KERR is not here yet", true, 2, 1, 4],
+  # #id 5
+  # # dash vs royals
+  # [ "Houston Dash", "They are getting better", false, 8, 2, 5],
+  # [ "Houston Dash", "South Africans are clicking", false, 3, 5, 5],
+  # [ "Tie", "Um, nobody will winn", true, 1, 6, 5],
+  # [ "Utah Royals", "Better coached", false, 2, 7, 5],
+  # #id 6
+  # # courage vs sky blue
+  # [ "North Carolina Courage", "Twin Towers on fire", true, 8, 8, 6],
+  # [ "North Carolina Courage", "Erceg will head one in", true, 3, 3, 6],
+  # [ "Sky Blue FC", "They might get lucky", false, 1, 1, 6],
+  # [ "Sky Blue FC", "Praying and hoping they get some points", false, 2, 2, 6],
+  # #id 7
+  # # washington vs pride
+  # [ "Washington Spirit", "JoLo will rock it", true, 8, 4, 7],
+  # [ "Washington Spirit", "Best fans", true, 3, 3, 7],
+  # [ "Orlando Pride", "Harris is the new wall", false, 1, 5, 7],
+  # [ "Orlando Pride", "I have Krieger fever", false, 2, 6, 7],
+  # # id 8
+  # # Dash vs Thorns
+  # [ "Houston Dash", "Parsons is going to get Pauwed", false, 8, 7, 8],
+  # [ "Houston Dash", "Horan won't be there", false, 3, 8, 8],
+  # [ "Tie", "They are evenly matched without the great Horan", false, 1, 1, 8],
+  # [ "Portland Thorns", "Thorns have too much Talent", true, 2, 2, 8],
+  #
+  # #id 9
+  # # Reign vs Courage
+  # [ "Seattle Reign", "Rapinoe has so many ideas", false, 2, 3, 9],
+  # [ "North Carolina Courage", "Courage on penalty kicks are just so tall, the ball will go over the defense", true, 2, 4, 9],
+  # [ "North Carolina Courage", "Seattle will give us a perfect storm but the courage will rock it.", true, 2, 8, 9],
+  # [ "Tie", "It will be a good game, but no winners though", false, 2, 5, 9],
+  # #id 10
+  # # Spirit vs Pride
+  # [ "Tie", "Too close to call", false, 2, 5, 10],
+  # [ "Washington Spirit", "Mal Pugh will bring it", false, 2, 8, 10],
+  # [ "Washington Spirit", "Sullivan will dominate", false, 2, 6, 10],
+  # [ "Orlando Pride", "Marta Marta Marta", true, 2, 7, 10],
+  # #id 11
+  # # Redstars vs Royals
+  # [ "Chicago Redstars", "Best goalie in the world", true, 1, 1, 11],
+  # [ "Chicago Redstars", "Redstars have Sam Kerr", true, 2, 8, 11],
+  # [ "Utah Royals", "Royals have Press", false, 3, 8, 11],
+  # [ "Utah Royals", "Laura Harvey really knows how to coach", false, 2, 5, 11],
+  # #id 12
+  # # Pride vs Dash
+  # [ "Tie", "They both will score 1 goal", false, 2, 4, 12],
+  # [ "Orlando Pride", "Krieger fever will take over", false, 2, 5, 12],
+  # [ "Orlando Pride", "Kennedy will kill it", false, 2, 8, 12],
+  # [ "Houston Dash", "Pauw really knows how to coach", true, 2, 7, 12],
+  # #id 13
+  # # Royals vs Seattle 6/27
+  # [ "Tie", "Royals have amazing defense, 0-0 tie", true, 2, 1, 13],
+  # [ "Utah Royals", "Press will get one or two", false, 2, 2, 13],
+  # [ "Utah Royals", "The Royals are just gelling", false, 2, 3, 13],
+  # [ "Seattle Reign", "Seattle knows what they are doing", false, 2, 4, 13],
+  #
+  # # Coming up after hackathon games
+  # #id 14
+  # # sky blue vs Courage
+  # [ "Tie", "0-0, SBFC will hang on ", nil, 2, 5, 14],
+  # [ "North Carolina Courage", "omg, they are so far ahead, doesn't matter if they win or lose, but they will win", nil, 2, 6, 14],
+  # [ "North Carolina Courage", "More fit, better mentality", nil, 2, 8, 14],
+  # [ "Sky Blue FC", "Going out on a limb here", nil, 2, 7, 14],
+  #
+  # #id 15
+  # # royals vs pride
+  # [ "Tie", "Royals have amazing defense, 0-0 tie", nil, 2, 1, 15],
+  # [ "Orlando Pride", "They will step up and own the midfield", nil, 2, 8, 15],
+  # [ "Orlando Pride", "Harris will make some great saves", nil, 2, 3, 15],
+  # [ "Utah Royals", "Rodriguez will just sop up any rebounds and punch them through", nil, 2, 4, 15],
+  #
+  # #id 16
+  # # redstars vs Reign
+  # [ "Tie", "predicting a 2-2 tie here", nil, 2, 5, 16],
+  # [ "Seattle Reign", "Jess Fishlock is just going to squash them", nil, 2, 8, 16],
+  # [ "Seattle Reign", "The Reign are just now getting it together for real.", nil, 2, 6, 16],
+  # [ "Chicago Redstars", "Chicago knows what they are doing", nil, 2, 7, 16],
+  #
+  # #id 17
+  # # thorns vs dash
+  # [ "Tie", "0-0, they will both play too defensively", nil, 2, 1, 17],
+  # [ "Portland Thorns", "Press will get one or two", nil, 2, 8, 17],
+  # [ "Portland Thorns", "The Royals are just gelling", nil, 2, 3, 17],
+  # [ "Houston Dash", "Seattle knows what they are doing", nil, 2, 5, 17],
+  #
+  # #id 18
+  # # royals vs Courage
+  # [ "Tie", "they will both play scared", nil, 2, 4, 18],
+  # [ "North Carolina Courage", "Press will get one or two", nil, 2, 5, 18],
+  # [ "North Carolina Courage", "The Royals are just gelling", nil, 2, 6, 18],
+  # [ "Utah Royals", "Seattle knows what they are doing", nil, 2, 7, 18],
+  #
+  # #id 19
+  # # pride vs Reign
+  # [ "Tie", "both are over coached", nil, 2, 1, 19],
+  # [ "Orlando Pride", "Press will get one or two", nil, 2, 8, 19],
+  # [ "Orlando Pride", "The Royals are just gelling", nil, 2, 2, 19],
+  # [ "Seattle Reign", "Seattle knows what they are doing on both sides", nil, 2, 3, 19],
+  #
+  # #id 20
+  # # spirit vs dash
+  # [ "Tie", "alot of defense, not alot of offence, 0-0 tie", nil, 2, 4, 20],
+  # [ "Washington Spirit", "Pugh will get one or two", nil, 2, 5, 20],
+  # [ "Washington Spirit", "Bledsoe is the best goal keeper around", nil, 2, 8, 20],
+  # [ "Houston Dash", "They are trying their best and they will dominate this one", nil, 2, 6, 20],
+  #
+  # #id 21
+  # # sky blue vs thorns
+  # [ "Tie", "3-3, the scoring will finally begin", nil, 2, 7, 21],
+  # [ "Sky Blue FC", "omg, wouldn't it be great if they beat the throns?", nil, 2, 6, 21],
+  # [ "Sky Blue FC", "i mean, why not?", nil, 2, 5, 21],
+  # [ "Portland Thorns", "Sorry, they will dominate Sky Blue", nil, 2, 4, 21],
+  #
+  # #id 22
+  # # redstars vs sky blue
+  # [ "Tie", "Sam Kerr will not score. 0-0 tie", nil, 2, 3, 22],
+  # [ "Sky Blue FC", "Sky Blue will be highly motivated", nil, 2, 2, 22],
+  # [ "Sky Blue FC", "This one they will really be up for", nil, 2, 1, 22],
+  # [ "Chicago Redstars", "Too much offensive power", nil, 2, 8, 22],
+  #
+  # #id 23
+  # # courage vs Thorns 8/5
+  # [ "Tie", "they will just detroy each other but it will end up in a tie", nil, 2, 7, 23],
+  # [ "North Carolina Courage", "Our outside backs will outrun you", nil, 2, 6, 23],
+  # [ "North Carolina Courage", "Zerboni Zerboni Zerboni", nil, 2, 8, 23],
+  # [ "Portland Thorns", "Grudge match for sure, we will win", nil, 4, 5, 23],
+  #
+  # #id 24
+  # # pride vs SKY
+  # [ "Tie", "Will be a competitive, 1-1 tie", nil, 2, 5, 24],
+  # [ "Orlando Pride", "Alex Morgan is the best player in the world", nil, 2, 4, 24],
+  # [ "Orlando Pride", "Our backline is getting better", nil, 2, 3, 24],
+  # [ "Sky Blue FC", "Finally we have put a backline together", nil, 2, 2, 24],
+  #
+  # #id 25
+  # # dash vs Royals
+  # [ "Tie", "Royals have amazing defense, 0-0 tie", nil, 2, 1, 25],
+  # [ "Houston Dash", "Racheal Daly will rock it!", nil, 2, 8, 25],
+  # [ "Houston Dash", "Huuuuueeeerrrrtaaa! She is so good.", nil, 2, 7, 25],
+  # [ "Utah Royals", "Press A-Rod O'Hara, omg, so freaking good", nil, 2, 6, 25],
+  #
+  # #id 26
+  # # reign vs spirit
+  # [ "Tie", "Meh, i think they are even", nil, 2, 5, 26],
+  # [ "Washington Spirit", "pugh vs rapinoe, i'm going with Pugh", nil, 2, 4, 26],
+  # [ "Washington Spirit", "The Spirit are just gelling", nil, 2, 8, 26],
+  # [ "Seattle Reign", "Seattle knows what they are doing", nil, 2, 3, 26],
+  #
+  # #id 27
+  # # USA vs Japan
+  # [ "Tie", "both teams won't break each other's defense, 0-0 tie", nil, 2, 1, 27],
+  # [ "Japan National Football", "Master class in possession", nil, 2, 2, 27],
+  # [ "Japan National Football", "They will patiently find the right counter", nil, 2, 8, 27],
+  # [ "USWNT Soccer", "We are just so transitionally fast", nil, 2, 1, 27],
+  #
+  # #id 28
+  # # USA vs Australia
+  # [ "Tie", "4-4 It will be a wild scoring affair", nil, 2, 1, 28],
+  # [ "USWNT Soccer", "We will not let last year happen again.", nil, 2, 8, 28],
+  # [ "USWNT Soccer", "We have the best front line and back line, working on the middle but we will still win", nil, 2, 8, 28],
+  # [ "Australia", "Hottest team in the world right now", nil, 2, 5, 28],
+  #
+  # #id 29
+  # # USA vs Brazil
+  # [ "Tie", "I just think it will be even in the scoring even though US will still dominate", nil, 2, 1, 29],
+  # [ "USWNT Soccer", "Press will get one or two", nil, 2, 8, 29],
+  # [ "USWNT Soccer", "Our midfield will finally come together", nil, 2, 8, 29],
+  # [ "Brazil", "Marta will just find a way to score more than USA", nil, 2, 5, 29],
+  #
+  # #id 30
+  # # USA vs Chile
+  # [ "Tie", "Royals have amazing defense, 0-0 tie", nil, 2, 1, 30],
+  # [ "USWNT Soccer", "Press will get one or two", nil, 2, 8, 30],
+  # [ "USWNT Soccer", "The Royals are just gelling", nil, 2, 8, 30],
+  # [ "Chile", "Seattle knows what they are doing", nil, 2, 5, 30],
+  #
+  # #id 31
+  # # USA vs Chile
+  # [ "Tie", "USA will be trying too many things out and Chile will just go for it.", nil, 2, 1, 31],
+  # [ "Chile", "They will steal this one.", nil, 2, 8, 31],
+  # [ "USWNT Soccer", "Dunn will find the back of the net", nil, 2, 8, 31],
+  # [ "USWNT Soccer", "Our long range passing will just find a way", nil, 2, 5, 31],
+  #
+  # # 32
+  # # Courage vs PSG
+  # [ "Paris Saint Germain", "The they are evenly matched, but PSG will win", nil, 2, 1, 32],
+  # [ "North Carolina Courage", "The courage knows how to win even without their internationals", nil, 2, 8, 32],
+  # [ "North Carolina Courage", "If Dunn gets to play, it's over", nil, 2, 8, 32],
+  # [ "Paris Saint Germain", "High quality, well rested", nil, 2, 5, 32],
+  #
+  # # 33
+  # # Lyon vs Man City
+  # [ "Manchester City", "Man City will hang on and win", nil, 2, 1, 33],
+  # [ "Olympic Lyonnais", "Best team in the world will destroy Man City", nil, 2, 8, 33],
+  # [ "Olympic Lyonnais", "They are just so good", nil, 2, 3, 33],
+  # [ "Manchester City", "They will be better prepared", nil, 2, 5, 33]
 ]
 
-predictions_list.each do |prediction|
-  Prediction.create!(guess: prediction[0], reason: prediction[1], correct?: prediction[2], likes: prediction[3], user_id: prediction[4], match_id: prediction[5])
-end
+# predictions_list.each do |prediction|
+#   Prediction.create!(guess: prediction[0], reason: prediction[1], correct?: prediction[2], likes: prediction[3], user_id: prediction[4], match_id: prediction[5])
+# end
 
 # Issues:
 # encrypted_password => password as specified in devise docs
 # added 'optional: true' to belongs_to associations
-# had to drop database because even though all records are destroyed the ids continue to be reserved. (Did not match up)
 # Had to remove 'remove email from users' migration
 # Small issues where certain foreign keys werent present (i.e. predictions list where user 5 made the predicition but we only had 4...)

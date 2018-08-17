@@ -43,7 +43,7 @@ module PredictionsHelper
   end
 
   def pluralize_prediction_statement(num_predictions)
-    if num_predictions > 1
+    if num_predictions > 1 || 0
       "users predict"
     else
       "user predicts"
