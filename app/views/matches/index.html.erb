@@ -4,6 +4,7 @@
     <% sorted_matches.each do |match| %>
       <% @home_team = Team.find(match.home_team_id) %>
       <% @away_team = Team.find(match.away_team_id) %>
+
       <div class="section fp-bg fp-noscroll">
         <!-- Makes gradient behind match up -->
         <div class="slide" style="background: #FFFFFF; background: -webkit-linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);
@@ -49,6 +50,8 @@
                         <%= label_tag :guess, "#{@away_team.name}", class: "form-check-label"%>
                         <%= check_box_tag :guess, @away_team.name, false, class: "prediction-checkbox form-check-input" %>
                       </div>
+
+
                     </div>
 
                     <div class="reason-textbox form-group mx-auto">
@@ -66,6 +69,8 @@
                     </div>
 
                   <% end %>
+                  <%=render "shared/flash_messages"%>
+                  
 
                 <% else %>
                 <div class="user-prediction-summary">
