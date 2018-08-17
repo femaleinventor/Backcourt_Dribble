@@ -16,12 +16,12 @@
               <div class="col-xs-12 mx-auto">
                 <div class="match-teams">
                   <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
-                  <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> (<%= match.venue.time_zone %>) </p>
+                  <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> <span class="match-venue-timezone">(<%= match.venue.time_zone %>)</span> </p>
                 </div>
               </div>
             </div>
 
-            <div class="row">
+            <div class="row justify-content-center">
               <div class="col-xs-12 mx-auto">
                 <!-- Logic checking if a prediction has already been made for a certain match by the current user -->
                 <% if current_user.predictions.select{|prediction| prediction.match_id == match.id}.empty?  %>
@@ -49,8 +49,10 @@
 
                     </div>
 
-                    <div class="reason-textbox form-group mx-auto">
-                      <%= text_area_tag :reason, nil, class:"form-control", placeholder: "Add Your Reason Why... " %>
+                    <div class="reason-textbox d-flex justify-content-center">
+                      <div class="reason-input form-group">
+                        <%= text_area_tag :reason, nil, class:"form-control", placeholder: "Add Your Reason Why... " %>
+                      </div>
                     </div>
 
                     <%= hidden_field_tag "user_id", current_user.id %>
@@ -58,7 +60,7 @@
                     <%= hidden_field_tag "match_id", match.id %>
 
                     <div class="form-actions prediction-submit">
-                      <%= submit_tag "Submit", class: "btn btn-primary btn-md" %>
+                      <%= submit_tag "Submit", class: "btn btn-outline-light btn-md" %>
                     </div>
 
                   <% end %>
@@ -66,10 +68,10 @@
 
                 <% else %>
                 <div class="user-prediction-summary">
-                  <h2 class="text-center">Your Prediction:</h2>
+                  <h2 class="text-center user-prediction-title">Your Prediction:</h2>
                   <% user_prediction = current_user.predictions.find{|prediction| prediction.match_id == match.id} %>
-                  <p> Your Guess: <span class="prediction-summary-text"><%= user_prediction.guess %> <span>
-                  <p> Your Reasoning: <span class="prediction-summary-text"><%= user_prediction.reason %> <span>
+                  <p class="user-predictions"> Your Guess: <span class="prediction-summary-text"><%= user_prediction.guess %> <span>
+                  <p class="user-predictions"> Your Reasoning: <span class="prediction-summary-text"><%= user_prediction.reason %> <span>
                 </div>
 
                 <% end %>
