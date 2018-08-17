@@ -21,12 +21,14 @@ gem 'therubyracer', platforms: :ruby
 
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
-# Integrate Slick Carousel
-gem 'jquery-slick-rails'
+gem 'jquery-datatables'
 
 gem 'loofah', '>= 2.2.2'
 
 gem 'devise'
+
+gem 'friendly_id', '~> 5.2.0'
+gem "font-awesome-rails"
 
 gem 'twitter', '~> 6.2'
 

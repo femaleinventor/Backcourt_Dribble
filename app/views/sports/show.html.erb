@@ -1,0 +1,33 @@
+<%=render "shared/site_nav"%>
+
+<div class="container">
+  <h1 class="show-title">Update or Delete <span class"sport-name"><%=@sport.name%></span></h1>
+
+  <!-- Update -->
+  <div class="row justify-content-center">
+    <div class="col-xs-12 align-items-center">
+      <div class="show-container">
+        <%= form_for @sport do |f| %>
+          <div class="form-group">
+            <%= f.label "Name" %>
+            <%= f.text_field :name, class: "form-control form-control-lg", value: @sport.name%>
+          </div>
+          <div class="form-group">
+            <%= f.label "Image" %>
+            <%= f.text_field :image_url, class: "form-control form-control-lg", value: @sport.image_url%>
+          </div>
+          <%= f.submit "Update #{@sport.name}", class: "btn btn-primary btn-lg show-button"%>
+        <% end %>
+
+
+      <!-- Delete  -->
+        <%= form_for @sport, :method => :delete do |f|  %>
+          <%= submit_tag "Delete #{@sport.name}", class: "btn btn-primary btn-lg show-button delete" %>
+        <% end %>
+      </div>
+
+      </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,40 @@
+<%=render "shared/site_nav"%>
+
+<div class="container">
+  <h1 class="show-title">Update or Delete <span class"team-name"><%=@league.name%></span></h1>
+
+  <!-- Update -->
+  <div class="row justify-content-center">
+    <div class="col-xs-12 align-items-center">
+      <div class="show-container flex-row justify-content-center">
+        <%= form_for @league do |f| %>
+          <div class="form-group">
+            <%= f.label "Name" %>
+            <%= f.text_field :name, class: "form-control form-control-lg", value: @league.name%>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "Abbreviation" %>
+            <%= f.text_field :abbreviation, class: "form-control form-control-lg", value: @league.abbreviation%>
+          </div>
+
+          <div class="form-group">
+            <%= f.label "Sport" %><br/>
+            <%= f.select :sport_id, Sport.all.collect { |s| [ s.name, s.id ] }, include_blank: true, value: @league.sport%>
+          </div>
+
+          <%= f.submit "Update #{@league.name}", class: "btn btn-primary btn-lg show-button"%>
+        <% end %>
+
+
+      <!-- Delete  -->
+        <%= form_for @league, :method => :delete do |f|  %>
+          <%= submit_tag "Delete #{@league.name}", class: "btn btn-primary btn-lg show-button delete" %>
+        <% end %>
+      </div>
+
+      </div>
+
+  </div>
+
+</div>

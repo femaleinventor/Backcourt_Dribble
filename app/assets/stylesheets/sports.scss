@@ -4,10 +4,6 @@
 
 $theme-blue: #16A7D5;
 
-.leaderboard-title{
-  color: white;
-}
-
 .leaderboard-table {
   color: $theme-blue;
 }
@@ -15,4 +11,18 @@ $theme-blue: #16A7D5;
 .remove-border {
   border: none;
   border-top: none;
+}
+
+.sport-name {
+  margin: 15px;
+}
+
+.league-column-headers {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.worldwide-league {
+  font-size: 12px;
 }
