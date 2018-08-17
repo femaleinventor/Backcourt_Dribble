@@ -63,8 +63,8 @@
                       <%= submit_tag "Submit", class: "btn btn-outline-light btn-md" %>
                     </div>
 
+
                   <% end %>
-                  <%=render "shared/flash_messages"%>
 
                 <% else %>
                 <div class="user-prediction-summary">
@@ -73,7 +73,6 @@
                   <p class="user-predictions"> Your Guess: <span class="prediction-summary-text"><%= user_prediction.guess %> <span>
                   <p class="user-predictions"> Your Reasoning: <span class="prediction-summary-text"><%= user_prediction.reason %> <span>
                 </div>
-
                 <% end %>
                 </div><!--End column-->
               </div> <!--End Row-->

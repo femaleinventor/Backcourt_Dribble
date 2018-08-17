@@ -9,8 +9,7 @@ class PredictionsController < ApplicationController
     @league = @prediction.match.league
     if @prediction.save
       # Returns to matches#index page after prediction submission
-      redirect_to league_matches_path(@league), alert: "Your prediction has been recorded successfully!"
-      # redirect_to "/", alert: "Thanks for making a prediction!"
+      redirect_to league_matches_path(@league)
     else
         redirect_to league_matches_path(@league), danger: "You must enter both a guess and a reason to submit a prediction!"
     end
