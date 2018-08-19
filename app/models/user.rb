@@ -161,11 +161,16 @@ NAMES = [ "Tierna Davidson","Ashley Hatch","Lynn Williams","Sofia  Huerta","Mall
     all_user_predictions_on_a_league = user_predictions.select{|prediction| prediction.match.league_id == league.id }
     total_num_predictions = all_user_predictions_on_a_league.count
     correct_user_predictions_on_a_league = all_user_predictions_on_a_league.select{|prediction| prediction.correct? == true}
-    total_num_correct_predictions = correct_user_predictions_on_a_league.count
+    if all_user_predictions_on_a_league.find{|prediction| prediction.correct? == nil}
+      return "TBD"
+    else
+      total_num_correct_predictions = correct_user_predictions_on_a_league.count
 
-    percent_correct = (total_num_correct_predictions.to_f / total_num_predictions.to_f) * 100
+      percent_correct = (total_num_correct_predictions.to_f / total_num_predictions.to_f) * 100
 
-    percent_correct.to_i
+      percent_correct.to_i
+    end
+
   end
 
 
