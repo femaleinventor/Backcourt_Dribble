@@ -46,11 +46,16 @@
                 <tbody>
 
                 <% get_unique_users(league.predictions).each do |user| %>
+                  <!-- Get a users predictions on a specific league -->
+                  <%users_predictions = user.predictions%>
+                  <%all_user_predictions_on_a_league = users_predictions.select{|prediction| prediction.match.league_id == league.id }%>
+                  <% correct_user_predictions_on_a_league = all_user_predictions_on_a_league.select{|prediction| prediction.correct? == true}%>
+                  <%correct_user_predictions_on_a_league%>
                   <tr>
                     <td></td>
                     <td><%= user.username %></td>
-                    <td><%= user.predictions.count %> </td>
-                    <td><%= user.calculate_percent_correct_predictions %> </td>
+                    <td><%= all_user_predictions_on_a_league.count %> </td>
+                    <td><%= user.calculate_percent_correct_league_predictions(league) %> </td>
                   </tr>
                 <% end %>
                 </tbody>
