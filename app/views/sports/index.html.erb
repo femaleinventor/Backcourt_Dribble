@@ -22,16 +22,25 @@
           <h2 class="sport-section-header"><%=sport.name%></h2>
           <h3 class="league-message"> Available to Engage with now on Backcourt Dribble: </h3>
           <% leagues_with_matches = sport.leagues.select{|league| league.matches.length > 0 } %>
-          <% leagues_with_matches.each do |league| %>
-              <!-- Get leagues with matches in the future  -->
-              <% league_specific_future_matches = find_future_matches(league.matches) %>
-              <!-- For each league with matches in the future, display the name of the league -->
-              <% if league_specific_future_matches.any? %>
-               <div class="available-leagues-list">
-                 <%= link_to "#{league.name}", league_matches_path(:league_id => league.id) %>
-               </div>
+          <%if leagues_with_matches.any?%>
+
+              <% leagues_with_matches.each do |league| %>
+                  <!-- Get leagues with matches in the future  -->
+                  <% league_specific_future_matches = find_future_matches(league.matches) %>
+                  <!-- For each league with matches in the future, display the name of the league -->
+                  <% if league_specific_future_matches.any? %>
+                   <div class="available-leagues-list">
+                     <%= link_to "#{league.name}", league_matches_path(:league_id => league.id) %>
+                   </div>
+                  <%end%>
               <%end%>
-          <%end%>
+
+            <%else%>
+             <div class="no-engagement">Nothing here yet, check back soon!</div>
+            <%end%>
+
+
+
         </div>
       </div>
 

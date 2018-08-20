@@ -20,3 +20,5 @@
 //= require popper
 //= require bootstrap
 //= require_tree .
+
+$(".alert").alert('close')
