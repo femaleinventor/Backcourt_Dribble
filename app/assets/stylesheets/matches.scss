@@ -6,6 +6,7 @@ $theme-orange: #F0900E;
 $theme-blue: #16A7D5;
 $theme-grey: #707070;
 $theme-green: #00D37F;
+$theme-dark-grey: #343a40;
 
 
 .match-heading {
@@ -87,11 +88,115 @@ $theme-green: #00D37F;
   color: white;
 }
 
+.match-venue-timezone {display:block;}
+
+
 .user-prediction-summary{
   margin-top: 15px;
+  border: 1px solid white;
+  border-radius: 2%;
+  padding: 20px;
+  width: 50vw;
+  h2{
+    color: white;
+  }
+  .user-prediction-title{
+    color: $theme-dark-grey;
+    font-size: 25px;
+    &:hover{
+      text-decoration: underline;
+      text-decoration-color: white;
+    }
+    @media (max-width: 480px){
+        font-size: 15px;
+    }
+  }
   .prediction-summary-text{
     display: block;
     color: white;
+  }
+  .user-predictions{
+    color: $theme-dark-grey;
+    @media (max-width: 480px){
+        font-size: 12px;
+    }
+  }
+}
+
+.reason-textbox {
+  .reason-input {
+    width: 70vw;
+  }
+}
+
+.all-predictions{
+  .match-leaderboard{
+    // width: 90vw;
+    // @media (max-width: 480px){
+    //   width: 100vw;
+    // }
+    .match-leaderboard-table{
+      width: 100vw;
+      .table-header{
+        color: $theme-orange;
+      }
+      @media (max-width: 480px){
+        font-size: 12px;
+      }
+    }
+
+
+
+    // @media (max-width:480px){
+    // .match-leaderboard {
+    //     width: 100vw;
+    //     td {
+    //       font-size: 12px;
+    //       }
+    //     }
+    //   }
+    }
+  }
+
+
+// .match-leaderboard-table {
+//     width: 100%;
+//     td {
+//         max-width: 0;
+//         overflow: hidden;
+//         text-overflow: ellipsis;
+//         white-space: nowrap;
+//     }
+//     td.columnA {
+//         width: 20%;
+//     }
+//     td.columnB {
+//         width: 30%;
+//     }
+//     td.columnC {
+//         width: 50%;
+//     }
+// }
+
+
+@media (max-width:768px){
+  .match-heading {
+    font-size: 35px;
+  }
+}
+
+@media (max-width:480px){
+  .match-heading {
+    font-size: 20px;
+  }
+  .match-info {
+    font-size: 14px;
+  }
+  .prediction-prompt{
+    font-size: 15px;
+  }
+  .fp-controlArrow{
+    top: 75%;
   }
 }
 

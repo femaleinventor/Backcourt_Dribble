@@ -4,6 +4,7 @@
 $theme-orange: #F0900E;
 $theme-blue: #16A7D5;
 $theme-grey: #707070;
+$theme-dark-grey: #343a40;
 
 .match-teams {
   text-align: center;
@@ -17,13 +18,10 @@ $theme-grey: #707070;
 .prediction-submit {
   margin: 0;
   text-align: center;
-  .btn {
-    background-color: #707070;
-    border: none;
-    &:hover {
-     background-color: $theme-orange;
-   }
-  }
+}
+
+.form-check-label {
+  color: black;
 }
 
 .section {
