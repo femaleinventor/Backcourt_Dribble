@@ -34,12 +34,10 @@
           Leaderboards
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <%= link_to "Soccer", "/sports/1/leaderboard", class: "dropdown-item menu-link" %>
-          <%= link_to "Basketball", "/sports/2/leaderboard", class: "dropdown-item menu-link" %>
-          <%= link_to "Rugby", "/sports/3/leaderboard", class: "dropdown-item menu-link" %>
-          <%= link_to "Tennis", "/sports/4/leaderboard", class: "dropdown-item menu-link" %>
-          <%= link_to "Hockey", "/sports/5/leaderboard", class: "dropdown-item menu-link" %>
-          <%= link_to "Volleyball", "/sports/6/leaderboard", class: "dropdown-item menu-link" %>
+          <%sports_with_matches = @sports.select{|sport| sport.predictions.any? }%>
+          <% sports_with_matches.each do |sport| %>
+            <%= link_to sport.name, "/sports/#{sport.id}/leaderboard", class: "dropdown-item menu-link" %>
+          <% end %>
         </div>
       </li>
       <% if current_user %>
@@ -64,6 +62,9 @@
           <%= link_to "Admin Portal", admin_index_path, class: "nav-link menu-link" %>
         <% end %>
       </li>
+
+
+
 
     </ul>
   </div>

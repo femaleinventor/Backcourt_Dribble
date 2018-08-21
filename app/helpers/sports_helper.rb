@@ -6,9 +6,6 @@ module SportsHelper
     users.uniq
   end
 
-  def sort_leaderboard_by_percent(user)
-    user.predictions.sort_by{ |prediction| prediction.count }
-  end
 
   def find_future_matches(matches)
     #Returns an array of future matches
