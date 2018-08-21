@@ -15,7 +15,7 @@ class VenuesController < ApplicationController
 
   def show
     @venue = Venue.find(params[:id])
-    @sports = Sport.all 
+    @sports = Sport.all
   end
 
   def update
@@ -38,8 +38,8 @@ class VenuesController < ApplicationController
 
   private
     def venue_params
-      params.require(:venue).permit(:name, :image_url, :address, :time_zone)
-      # params.permit(:name, :image_url, :address, :time_zone)
+      # params.require(:venue).permit(:name, :image_url, :address, :time_zone)
+      params.permit(:name, :image_url, :address, :time_zone)
     end
 
     def update_venue_params
