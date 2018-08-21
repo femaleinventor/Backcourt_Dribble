@@ -16,16 +16,28 @@ function attachEventListeners() {
       method: 'POST',
       data: { keyword: keyword},
     }).done(function(res){
-      console.log(res);
-      res.forEach(
-			setTimeout(function(tweet) {$(".tweets-wall").prepend(buildHtmlFor(tweet))},3000)
-			)
+			console.log(res);
+
+			for(i = 0 ; i < res.length; i++) {
+				console.log(res[i])
+				$(".tweets-wall").prepend(buildHtmlFor(res[i]))
+				$(".new-tweet").fadeOut({duration: "slow"})
+				$(".new-tweet").removeClass(".new-tweet")
+			}
+
+      // res.forEach(
+			// function(tweet) {
+			// 	console.log(tweet)
+			// 	$(".tweets-wall").prepend(buildHtmlFor(tweet))
+			// 	$(".new-tweet").fadeOut({duration: "slow"})
+			// 	$(".new-tweet").removeClass(".new-tweet")
+			// })
     })
   });
 }
 
 function buildHtmlFor(tweet) {
-	return `<div class="keyword-tweet">
+	return `<div class="keyword-tweet new-tweet">
 		<div class="tweet-wrapper">
 			<div class="timestamp">${tweet.created_at}</div>
 			<div class="tweet-text">${tweet.full_text}</div>
