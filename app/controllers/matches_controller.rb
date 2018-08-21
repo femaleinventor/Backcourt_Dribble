@@ -18,6 +18,7 @@ class MatchesController < ApplicationController
 
   def show
     @match = Match.find(params[:id])
+    @sports = Sport.all 
   end
 
   def update

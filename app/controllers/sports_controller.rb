@@ -34,6 +34,7 @@ class SportsController < ApplicationController
 
   def show
     @sport = Sport.find(params[:id])
+    @sports = Sport.all 
   end
 
   def update
