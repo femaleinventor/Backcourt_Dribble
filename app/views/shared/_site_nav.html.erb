@@ -6,25 +6,13 @@
 
   <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Sports
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item menu-link" href="/sports/1/leaderboard">Soccer</a>
-          <!-- <a class="dropdown-item menu-link" href="/">Basketball</a>
-          <a class="dropdown-item menu-link" href="/">Rugby</a>
-          <a class="dropdown-item menu-link" href="/">Tennis</a>
-          <a class="dropdown-item menu-link" href="/">Hockey</a>
-          <a class="dropdown-item menu-link" href="/">Volleyball</a> -->
-        </div>
+      <li class="nav-item">
+        <%= link_to "Sports", sports_path, class: "nav-link menu-link"%>
       </li>
 
       <li class="nav-item">
         <% if current_user %>
-          <%= link_to "Personal Stats", user_path(current_user), class: "nav-link menu-link" %>
-        <% else %>
-          <%= link_to "Personal Stats", user_session_path, class: "nav-link menu-link" %>
+          <%= link_to current_user.username, user_path(current_user), class: "nav-link menu-link" %>
         <% end %>
 
       </li>
@@ -41,9 +29,6 @@
         </div>
       </li>
       <% if current_user %>
-        <li class="nav-item">
-          <%= link_to "#{current_user.username}", root_path, class: "nav-link menu-link"%>
-        </li>
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link menu-link"%>
         </li>
