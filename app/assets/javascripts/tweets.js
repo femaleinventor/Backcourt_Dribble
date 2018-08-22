@@ -18,20 +18,12 @@ function attachEventListeners() {
     }).done(function(res){
 			console.log(res);
 
-			for(i = 0 ; i < res.length; i++) {
+			for(i = 0 ; i < res.length; i += 1) {
 				console.log(res[i])
-				$(".tweets-wall").prepend(buildHtmlFor(res[i]))
-				$(".new-tweet").fadeOut({duration: "slow"})
-				$(".new-tweet").removeClass(".new-tweet")
+				$(".tweets-wall").prepend(buildHtmlFor(res[i]));
+				$(".tweet-wrapper").hide();
+				$(".tweet-wrapper").show(3000);
 			}
-
-      // res.forEach(
-			// function(tweet) {
-			// 	console.log(tweet)
-			// 	$(".tweets-wall").prepend(buildHtmlFor(tweet))
-			// 	$(".new-tweet").fadeOut({duration: "slow"})
-			// 	$(".new-tweet").removeClass(".new-tweet")
-			// })
     })
   });
 }
