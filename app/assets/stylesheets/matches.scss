@@ -8,6 +8,16 @@ $theme-grey: #707070;
 $theme-green: #00D37F;
 $theme-dark-grey: #343a40;
 
+.back-to-sports{
+  margin: 15px;
+  i{
+    color: rgba(white, .7);
+    &:hover,
+    &:focus{
+      color: rgba($theme-blue, .5);
+    }
+  }
+}
 
 .match-heading {
   color: white;
