@@ -9,13 +9,11 @@
         <!-- Makes gradient behind match up -->
         <div class="slide" style="background: #FFFFFF; background: -webkit-linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);
         background: linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);">
-
           <div class="container-fluid">
-
             <div class="row">
               <div class="col-xs-12 mx-auto">
                 <div class="match-teams">
-                  <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
+                  <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %></h1>
                   <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> <span class="match-venue-timezone">(<%= match.venue.time_zone %>)</span> </p>
                 </div>
               </div>
@@ -63,8 +61,13 @@
                       <%= submit_tag "Submit", class: "btn btn-outline-light btn-md" %>
                     </div>
 
-
                   <% end %>
+
+                  <div class="back-to-sports d-flex justify-content-center">
+                    <%= link_to sports_path do %>
+                      <i class="fa fa-arrow-circle-left fa-2x"></i>
+                    <% end %>
+                  </div>
 
                 <% else %>
                 <div class="user-prediction-summary">
@@ -82,6 +85,7 @@
         <!-- All Predictions Slide -->
         <div class="slide big-black">
           <div class="container-fluid">
+
             <% home_predictions = select_team_predictions(match, @home_team) %>
             <% away_predictions = select_team_predictions(match, @away_team) %>
             <% tie_predictions = select_tie_predictions(match, "Tie") %>
