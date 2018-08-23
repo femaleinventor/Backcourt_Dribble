@@ -34,7 +34,7 @@ class SportsController < ApplicationController
 
   def show
     @sport = Sport.find(params[:id])
-    @sports = Sport.all 
+    @sports = Sport.all
   end
 
   def update
@@ -57,10 +57,10 @@ class SportsController < ApplicationController
 
   private
     def sport_params
-      params.permit(:name, :image_url)
+      params.permit(:name, :image_url, :sound_link)
     end
 
     def update_sport_params
-      params.require(:sport).permit(:name, :image_url)
+      params.require(:sport).permit(:name, :image_url, :sound_link)
     end
 end

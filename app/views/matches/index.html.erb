@@ -9,7 +9,11 @@
         <!-- Makes gradient behind match up -->
         <div class="slide" style="background: #FFFFFF; background: -webkit-linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);
         background: linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);">
+
           <div class="container-fluid">
+            <audio data-autoplay>
+              <source src="<%=match.sport.sound_link%>" type="audio/wav">
+            </audio>
             <div class="row">
               <div class="col-xs-12 mx-auto">
                 <div class="match-teams">
