@@ -16,6 +16,10 @@
             <%= f.label "Image" %>
             <%= f.text_field :image_url, class: "form-control form-control-lg", value: @sport.image_url%>
           </div>
+          <div class="form-group">
+            <%= f.label "Sound Link"%>
+            <%= f.text_field :sound_link, class:"form-control form-control-lg", value: @sport.sound_link%>
+          </div>
           <%= f.submit "Update #{@sport.name}", class: "btn btn-primary btn-lg show-button"%>
         <% end %>
 
