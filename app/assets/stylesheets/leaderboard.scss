@@ -1,11 +1,47 @@
-$theme-blue: #16A7D5;
 $theme-orange: #F0900E;
+$theme-blue: #16A7D5;
+$theme-dark-grey: #343a40;
+$theme-grey: #707070;
 $theme-green: #00D37F;
 
 .leaderboard-body{
   background: $theme-blue; /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, $theme-blue, $theme-green); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, $theme-blue, $theme-green); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  .leaderboard-title-container{
+    height: 4em;
+    background: rgba($theme-grey, 0.5);
+    .leaderboard-title{
+      font-size: .875rem;
+      text-transform: uppercase;
+      letter-spacing: .425rem;
+      color: white;
+    }
+  }
+  .top-three-users{
+    padding: 2em;
+    .image-container{
+      margin: 1em;
+      .profile-image{
+        display: inline-block;
+        border-radius: 50%;
+        height: 75px;
+        width: 75px;
+        -webkit-box-shadow: 1px 1px 3px 1px #333;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+        -moz-box-shadow:    1px 1px 3px 1px #333;  /* Firefox 3.5 - 3.6 */
+        box-shadow:         1px 1px 3px 1px #333;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+      }
+      .featured{
+        height: 100px;
+        width: 100px;
+      }
+      .rank{
+        display: block;
+        margin-top: .25em;
+        color: white;
+      }
+    }
+  }
 }
 
 
@@ -14,11 +50,11 @@ $theme-green: #00D37F;
   margin-bottom: 40px;
 }
 
-.leaderboard-title {
-  font-size: 20px;
-  color: white;
-  margin-top: 40px;
-}
+// .leaderboard-title {
+//   font-size: 20px;
+//   color: white;
+//   margin-top: 40px;
+// }
 
 .leaderboard-table {
   margin-top: 20px;
