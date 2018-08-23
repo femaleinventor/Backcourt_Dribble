@@ -1,5 +1,13 @@
 $theme-blue: #16A7D5;
 $theme-orange: #F0900E;
+$theme-green: #00D37F;
+
+.leaderboard-body{
+  background: $theme-blue; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, $theme-blue, $theme-green); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, $theme-blue, $theme-green); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 
 .leaderboard-page-title{
   margin-top: 50px;
