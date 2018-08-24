@@ -1,34 +1,71 @@
 <body class="leaderboard-body">
-<div class="container-fluid">
+  <div class="container-fluid">
 
-    <div class="row justify-content-center leaderboard-title-container">
-      <div class="col-xs-12 align-items-center">
-        <h1 class="leaderboard-title text-center"><%=@sport.name%> Leaderboard</h1>
+      <div class="row justify-content-center leaderboard-title-container">
+        <div class="col-xs-12 d-flex align-items-center">
+          <h1 class="leaderboard-title text-center"><%=@sport.name%> Leaderboard</h1>
+        </div>
       </div>
-    </div>
 
-    <div class="row justify-content-center">
-      <div class="col-xs-12">
-        <div class="top-three-users d-flex justify-content-between">
-          <div class="image-container">
-            <%=image_tag "profile-image.jpg", class:"profile-image", alt:"placeholder profile image"%>
-            <p class="rank">2nd</p>
-          </div>
-          <div class="image-container">
-            <%=image_tag "profile-image.jpg", class:"profile-image featured", alt:"placeholder profile image"%>
-            <p class="rank">1st</p>
-          </div>
-          <div class="image-container">
-            <%=image_tag "profile-image.jpg", class:"profile-image", alt:"placeholder profile image"%>
-            <p class="rank">3rd</p>
+      <div class="row justify-content-center">
+        <div class="col-xs-12">
+          <div class="top-three-users d-flex justify-content-between">
+            <div class="image-container">
+              <%=image_tag "profile-image.jpg", class:"profile-image", alt:"placeholder profile image"%>
+              <p class="position">2nd</p>
+            </div>
+            <div class="image-container">
+              <%=image_tag "profile-image.jpg", class:"profile-image featured", alt:"placeholder profile image"%>
+              <p class="position">1st</p>
+            </div>
+            <div class="image-container">
+              <%=image_tag "profile-image.jpg", class:"profile-image", alt:"placeholder profile image"%>
+              <p class="position">3rd</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
+      <div class="row justify-content-center">
 
+        <div class="col-xs-12">
 
+          <% get_unique_users(@predictions).each do |user| %>
 
+            <div class="row leaderboard-card">
 
-</div>
+              <div class="col-xs-1 align-items-center">
+                  <div class="rank">
+                    <p>1</p>
+                  </div>
+              </div>
+
+              <!-- <div class="leaderboard-info-wrapper"> -->
+
+                <div class="col-xs-4 align-self-center poop">
+                    <div class="leaderboard-card-info">
+                      <%=image_tag "profile-image.jpg", class:"profile-image", alt:"placeholder profile image"%>
+                    </div>
+                </div>
+
+                <div class="col-xs-4 align-self-center poop">
+                    <div class="leaderboard-card-info">
+                      <p class="text-center"><%= user.username %></p>
+                    </div>
+                </div>
+
+                <div class="col-xs-4 align-self-center poop">
+                    <div class="leaderboard-card-info predictions">
+                      <p class="text-center"><%= user.calculate_percent_correct_predictions %>%</p>
+                    </div>
+                </div>
+
+              <!--</div>End user info wrapper-->
+
+              </div> <!--End leaderboard cards-->
+          <% end %>
+        </div> <!--End outer col for leaderboard cards-->
+      </div> <!--End outer row for leaderboard cards-->
+
+    </div> <!--End container-->
 </body>
