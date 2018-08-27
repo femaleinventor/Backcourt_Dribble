@@ -32,39 +32,32 @@
 
           <% get_unique_users(@predictions).each do |user| %>
 
-            <div class="row leaderboard-card">
+            <div class="row leaderboard-card justify-content-between">
 
-              <div class="col-xs-1 align-items-center">
-                  <div class="rank">
-                    <p>1</p>
+                  <div class="rank d-flex align-self-center justify-content-center">
+                    <p class="text-center">1</p>
                   </div>
-              </div>
 
-              <!-- <div class="leaderboard-info-wrapper"> -->
-
-                <div class="col-xs-4 align-self-center poop">
-                    <div class="leaderboard-card-info">
-                      <%=image_tag "profile-image.jpg", class:"profile-image", alt:"placeholder profile image"%>
-                    </div>
+                <div class="leaderboard-card-info d-flex align-self-center">
+                  <%=image_tag "profile-image.jpg", class:"profile-image", alt:"placeholder profile image"%>
                 </div>
 
-                <div class="col-xs-4 align-self-center poop">
-                    <div class="leaderboard-card-info">
-                      <p class="text-center"><%= user.username %></p>
-                    </div>
+
+
+                <div class="leaderboard-card-info d-flex justify-content-center align-self-center">
+                  <p class="text-center username"><%= user.username %></p>
                 </div>
 
-                <div class="col-xs-4 align-self-center poop">
-                    <div class="leaderboard-card-info predictions">
-                      <p class="text-center"><%= user.calculate_percent_correct_predictions %>%</p>
-                    </div>
-                </div>
 
-              <!--</div>End user info wrapper-->
+
+                <div class="leaderboard-card-info d-flex justify-content-center align-self-center">
+                  <p class="text-center percent"><%= user.calculate_percent_correct_predictions %>%</p>
+                </div>
 
               </div> <!--End leaderboard cards-->
           <% end %>
         </div> <!--End outer col for leaderboard cards-->
+
       </div> <!--End outer row for leaderboard cards-->
 
     </div> <!--End container-->

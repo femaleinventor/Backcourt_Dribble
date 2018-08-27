@@ -6,8 +6,8 @@ $theme-green: #00D37F;
 
 .leaderboard-body{
   background: $theme-blue; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, $theme-blue, $theme-green); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, $theme-blue, $theme-green); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to bottom, rgba($theme-blue, .8), rgba($theme-green, .8)); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, rgba($theme-blue, .8), rgba($theme-green, .8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   .leaderboard-title-container{
     height: 4em;
     background: rgba($theme-grey, 0.5);
@@ -44,19 +44,33 @@ $theme-green: #00D37F;
   }
   .leaderboard-card{
     width: 90vw;
-    height: 4em;
+    height: 5em;
     background: rgba(white, 0.3);
     margin-bottom: 1em;
     font-size: .875rem;
     .rank{
-      height: 4em;
-      width: 1.2em;
+      height: 5em;
+      width: 1.5em;
       background: rgba(white, 0.5);
+      p{
+        margin-top: 2em;
+      }
     }
     .profile-image{
       border-radius: 50%;
       height: 40px;
       width: 40px;
+    }
+    .leaderboard-card-info{
+      width: 30%;
+      font-size: 0.875rem;
+      .percent{
+        color: yellow;
+        margin-top: 1em;
+      }
+      .username{
+        margin-top: 1em;
+      }
     }
   }
 }
