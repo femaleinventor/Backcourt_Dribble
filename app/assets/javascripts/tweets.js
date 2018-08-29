@@ -58,18 +58,21 @@ function clickKeyword() {
 }
 
 function addTweetsToDOM(tweetsJSON) {
-  for (var i = 0; i < tweetsJSON.length; i++) {
+  // for (var i = 0; i < tweetsJSON.length; i++) {
     // Create HTML for Tweet.
-    if (tweetsJSON[1].retweet) {
-
-    }
-    var tweetHTML = buildHtmlFor(tweetsJSON[i])
-    var thisTweetID = tweetsJSON[i].id
+  console.log(tweetsJSON)
+  if(tweetsJSON.length > 0){
+    var thisTweetJSON = tweetsJSON.shift()
+    var tweetHTML = buildHtmlFor(thisTweetJSON)
+    var thisTweetID = thisTweetJSON.id
     // console.log(thisTweetID)
     // Add HTML to DOM invisibly
     $(".tweets-wall").prepend(tweetHTML)
     // Pause for One Second
-    $(`#${thisTweetID}`).fadeIn(5000)
+    $(`#${thisTweetID}`).fadeIn(5000, function(){
+      // Call fade in for next element
+      addTweetsToDOM(tweetsJSON)
+    })
   }
 }
 
