@@ -1,48 +1,55 @@
-// $(document).ready(function() {
-// 	attachEventListeners();
-// });
+$(document).ready(function() {
+	attachEventListeners();
+});
 
+function attachEventListeners() {
+  clickKeyword()
+}
 
-// function attachEventListeners() {
-//   searchWoSo();
-//   searchUSWNT();
-//   searchNWSL();
-// }
+function clickKeyword() {
+  $('.keyword').on('click', function(e){
+    e.preventDefault()
+    var currentKeyword = $(this).attr('id')
+    console.log(currentKeyword)
 
-// function searchWoSo() {
-//     // on click make a call to twitter and return a hash
-//     // parse the hash
-//     // return parsed hash to dom
-// 	});
-// }
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data:{keyword: currentKeyword},
+    }).done(function(res) {
+      addTweetsToDOM(res)
+      console.log(res);
+    })
+  })
+}
 
-// function searchWoSo() {
-//     // on click make a call to twitter and return a hash
-//     // parse the hash
-//     // return parsed hash to dom
-// 	});
-// }
+function addTweetsToDOM(tweetsJSON) {
+  // for (var i = 0; i < tweetsJSON.length; i++) {
+    // Create HTML for Tweet.
+  console.log(tweetsJSON)
+  if(tweetsJSON.length > 0){
+    var thisTweetJSON = tweetsJSON.shift()
+    var tweetHTML = buildHtmlFor(thisTweetJSON)
+    var thisTweetID = thisTweetJSON.id
+    // console.log(thisTweetID)
+    // Add HTML to DOM invisibly
+    $(".tweets-wall").prepend(tweetHTML)
+    // Pause for One Second
+    $(`#${thisTweetID}`).fadeIn(5000, function(){
+      // Call fade in for next element
+      addTweetsToDOM(tweetsJSON)
+    })
+  }
+}
 
-// function searchWoSo() {
-//     // on click make a call to twitter and return a hash
-//     // parse the hash
-//     // return parsed hash to dom
-// 	});
-// }
-
-
-// make method to parse the hash
-// Parse the hash to
-// screen_name
-// location
-// text
-
-
-
-
-// Parsing best-practices
-// Twitter JSON is encoded using UTF-8 characters.
-// Parsers should tolerate variance in the ordering of fields with ease. It should be assumed that Tweet JSON is served as an unordered hash of data.
-// Parsers should tolerate the addition of 'new' fields. The Twitter platform has continually evolved since 2006, so there is a long history of new metadata being added to Tweets.
-// JSON parsers must be tolerant of ‘missing’ fields, since not all fields appear in all contexts.
-// It is generally safe to consider a nulled field, an empty set, and the absence of a field as the same thing
+function buildHtmlFor(tweet) {
+	return `<div class="keyword-tweet new-tweet" id="${tweet.id}" style="display: none;">
+		<div class="tweet-wrapper">
+			<div class="timestamp">
+        <a href="https://twitter.com/dreamersurgeon1/status/${tweet.id_str}">${tweet.created_at}</a>
+      </div>
+			<div class="tweet-text">${tweet.full_text}</div>
+			<div class="by-line"> <a href="https://www.twitter.com/${tweet.user.screen_name}">${tweet.user.screen_name}</a> in ${tweet.user.location} </div>
+		</div>
+	</div>`
+}

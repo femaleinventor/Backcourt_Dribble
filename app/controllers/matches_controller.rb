@@ -18,7 +18,7 @@ class MatchesController < ApplicationController
 
   def show
     @match = Match.find(params[:id])
-    @sports = Sport.all 
+    @sports = Sport.all
   end
 
   def update
@@ -45,7 +45,7 @@ class MatchesController < ApplicationController
     end
 
     def update_match_params
-      params.require(:match).permit(:channel, :start, :venue_id, :sport_id, :league_id, :home_team_id, :away_team_id)
+      params.require(:match).permit(:result, :channel, :start, :venue_id, :sport_id, :league_id, :home_team_id, :away_team_id)
     end
 
 end

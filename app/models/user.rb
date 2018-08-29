@@ -174,6 +174,25 @@ NAMES = [ "Tierna Davidson","Ashley Hatch","Lynn Williams","Sofia  Huerta","Mall
   end
 
 
+  def calculate_points
+    user_predictions = self.predictions
+    correct_predictions = user_predictions.select{|prediction| prediction.guess == prediction.match.result}
+    correct_predictions.count * 3
+  end
+
+#Get all of  user's Predictions
+#Compare user's prediction guess with match(id) result
+#If the user is correct, store prediction in an array
+#count the number of correct Predictions
+#multiply each three to convert to points
+
+def calculate_rank
+end
+
+#get result of calculate points
+#sort points array
+#find index
+
 
 
 
