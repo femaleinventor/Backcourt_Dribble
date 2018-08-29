@@ -7,6 +7,13 @@ class TweetsController < ApplicationController
   def create
     @search_string = params[:keyword]
     @tweets = TwitterAdapter::search(@search_string)
+    if request.xhr?
+      p "OMG ITS A JSON REQUEST WHOOOOOOOOOOOOOO!"
+      p @tweets
+      render json: @tweets.to_json
+    else
+      render :_tweet, layout: false
+    end
   end
 
   def show

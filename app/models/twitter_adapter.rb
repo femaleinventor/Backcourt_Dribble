@@ -9,7 +9,7 @@ module TwitterAdapter
     # URN = tweets.json (What the thing is that we're actually looking for)
     # URI = Both of the above since they both describe the resource we're trying to retrieve
 
-    url = URI("https://api.twitter.com/1.1/search/tweets.json?q=%2523#{search_string}&result_type=recent&tweet_mode=extended")
+    url = URI("https://api.twitter.com/1.1/search/tweets.json?q=%2523#{search_string}-filter:retweets&result_type=recent&tweet_mode=extended")
 
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
