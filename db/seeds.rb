@@ -175,16 +175,16 @@ matches_list = [
   [ "North Carolina Courage", "Lifetime", 2, 10, 8, 1, 3, DateTime.new(2018,3,24,12,15)],
   #id 2
   # pride vs Royals
-  [ "tie", "go90 App", 2, 13, 9, 1, 4, DateTime.new(2018,3,24,12)],
+  [ "Tie", "go90 App", 2, 13, 9, 1, 4, DateTime.new(2018,3,24,12)],
   #id 3
   # reign vs spirit
   [ "Seattle Reign", "go90 App", 2, 14, 11, 1, 6, DateTime.new(2018,3,24,12)],
   #id 4
   # dash vs redstars
-  [ "tie", "go90 App", 2, 6, 7, 1, 2, DateTime.new(2018,3,24,12)],
+  [ "Tie", "go90 App", 2, 6, 7, 1, 2, DateTime.new(2018,3,24,12)],
   #id 5
   # dash vs royals
-  [ "tie", "go90 App", 2, 13, 7, 1, 2, DateTime.new(2018,3,30,15)],
+  [ "Tie", "go90 App", 2, 13, 7, 1, 2, DateTime.new(2018,3,30,15)],
   #id 6
   # courage vs dash
   [ nil, "NSWL App", 2, 7, 8, 1, 3, DateTime.new(2018,9,8,16)],
@@ -208,7 +208,7 @@ matches_list = [
   [ "Houston Dash", "go90 App", 2, 7, 9, 1, 4, DateTime.new(2018,6,27,15,30)],
   #id 13
   # Royals vs Seattle 6/27
-  [ "tie", "go90 App", 2, 11, 13, 1, 4, DateTime.new(2018,6,27,15,30)],
+  [ "Tie", "go90 App", 2, 11, 13, 1, 4, DateTime.new(2018,6,27,15,30)],
   # Coming up after hackathon games
   #id 14
   # sky blue vs Courage
@@ -316,7 +316,7 @@ users_list = [
   #id2
   ["Heather Yeager", "oceanlvr", "@oceanlvr328", "865 Franklin St", "Melrose", "MA", "02176", "Eastern Time (US & Canada)",  "USA", "angie@mail.com", "password", "bitmoji/heather.jpeg", false],
   # #id4
-  ["Tania Ardel", "sunnysideup", "@ardelltania", "2700 Great Highway", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA", "mike.duffy@usa.com", "password", "bitmoji/tania.jpeg", false],
+  ["Tania Ardel", "sunnysidedown", "@ardelltania", "2700 Great Highway", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA", "mike.duffy@usa.com", "password", "bitmoji/tania.jpeg", false],
   # #id5
   ["Rachel W", "Rachel_Will!", "@rachelwill", "111 A Street", "San Francisco", "CA", "96161", "Pacific Time (US & Canada)", "USA","notdan@usa.com", "password", "bitmoji/rachel.jpeg", false],
   # #id6
