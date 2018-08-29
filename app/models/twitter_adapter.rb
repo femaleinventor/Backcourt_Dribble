@@ -9,7 +9,7 @@ module TwitterAdapter
     # URN = tweets.json (What the thing is that we're actually looking for)
     # URI = Both of the above since they both describe the resource we're trying to retrieve
 
-    url = URI("https://api.twitter.com/1.1/search/tweets.json?q=%2523#{search_string}&result_type=recent&tweet_mode=extended")
+    url = URI("https://api.twitter.com/1.1/search/tweets.json?q=%2523#{search_string}-filter:retweets&result_type=recent&tweet_mode=extended")
 
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
@@ -60,36 +60,3 @@ private
   end
 
 end
-
-
-
-
-
-
-
-
-
-# twitter gem stuff
-
-# client = Twitter::REST::Client.new do |config|
-# config.consumer_key    = "YOUR_CONSUMER_KEY"
-# config.consumer_secret = "YOUR_CONSUMER_SECRET"
-# end
-
-# config = {
-#   consumer_key:    "YOUR_CONSUMER_KEY",
-#   consumer_secret: "YOUR_CONSUMER_SECRET",
-# }
-#
-# client = Twitter::REST::Client.new(config)
-
-
-
-# client.user("backcourtdribbl")
-
-# puts client.bearer_token
-
-  # client.search("to:USWNT", result_type: "recent").take(5).each
-  #   do |tweet|
-  #     puts tweet.text
-  # end
