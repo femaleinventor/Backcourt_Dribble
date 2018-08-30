@@ -29,14 +29,17 @@
       <div class="row justify-content-center">
 
         <div class="col-xs-12">
-
-
-          <% get_unique_users(@predictions).each do |user| %>
+          <%unique_users = get_unique_users(@predictions)%>
+          <%unique_users.each do |user|%>
+            <% user.calculate_points %>
+          <%end%>
+          <%sorted_unique_users = sort_users_by_points(get_unique_users(@predictions))%>
+          <% sorted_unique_users.each_with_index do |user, index| %>
 
             <div class="row leaderboard-card justify-content-between">
 
                 <div class="rank d-flex align-self-center justify-content-center">
-                  <p class="text-center">1</p>
+                    <p class="text-center"><%=index + 1%></p>
                 </div>
 
                 <div class="leaderboard-card-info d-flex align-self-center">
@@ -48,7 +51,6 @@
                 </div>
 
                 <div class="leaderboard-card-info d-flex justify-content-center align-self-center">
-                  <% user.calculate_points %>
                   <p class="text-center percent"><%= user.points %>pts</p>
                 </div>
 
