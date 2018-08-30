@@ -11,15 +11,15 @@
         <div class="col-xs-12">
           <div class="top-three-users d-flex justify-content-between">
             <div class="image-container">
-              <%=image_tag "profile-image.jpg", class:"profile-image", alt:"placeholder profile image"%>
+              <img src="https://s3-us-west-1.amazonaws.com/backcourtdribble/images/icons/profile_avatar_placeholder.png" class="profile-image" alt="profile image">
               <p class="position">2nd</p>
             </div>
             <div class="image-container">
-              <%=image_tag "profile-image.jpg", class:"profile-image featured", alt:"placeholder profile image"%>
+              <img src="https://s3-us-west-1.amazonaws.com/backcourtdribble/images/icons/profile_avatar_placeholder.png" class="profile-image featured" alt="profile image">
               <p class="position">1st</p>
             </div>
             <div class="image-container">
-              <%=image_tag "profile-image.jpg", class:"profile-image", alt:"placeholder profile image"%>
+              <img src="https://s3-us-west-1.amazonaws.com/backcourtdribble/images/icons/profile_avatar_placeholder.png" class="profile-image" alt="profile image">
               <p class="position">3rd</p>
             </div>
           </div>
@@ -29,13 +29,21 @@
       <div class="row justify-content-center">
 
         <div class="col-xs-12">
+          <!-- <%= get_unique_users(@predictions) %> -->
+
+          <% rank_arr = calculate_rank(get_unique_users(@predictions))%>
+
 
           <% get_unique_users(@predictions).each do |user| %>
+
+          <% sorted = sort_ranks(rank_arr)%>
 
             <div class="row leaderboard-card justify-content-between">
 
                   <div class="rank d-flex align-self-center justify-content-center">
-                    <p class="text-center">1</p>
+                    <p class="text-center">
+                      1
+                    </p>
                   </div>
 
                 <div class="leaderboard-card-info d-flex align-self-center">
@@ -47,8 +55,12 @@
                   <p class="text-center username"><%= user.username %></p>
                 </div>
 
-                <div class="leaderboard-card-info d-flex justify-content-center align-self-center">
+                <!-- <div class="leaderboard-card-info d-flex justify-content-center align-self-center">
                   <p class="text-center percent"><%= user.calculate_percent_correct_predictions %>%</p>
+                </div> -->
+
+                <div class="leaderboard-card-info d-flex justify-content-center align-self-center">
+                  <p class="text-center percent"><%= user.calculate_points %>pts</p>
                 </div>
 
               </div> <!--End leaderboard cards-->

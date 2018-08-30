@@ -212,43 +212,43 @@ matches_list = [
   # Coming up after hackathon games
   #id 14
   # sky blue vs Courage
-  [ nil, "go90 App", 2, 8, 12, 1, 7, DateTime.new(2018,7,14,19)],
+  [ "North Carolina Courage", "go90 App", 2, 8, 12, 1, 7, DateTime.new(2018,7,14,19)],
   #id 15
   # royals vs pride
-  [ nil, "ESPN News", 2, 9, 13, 1, 8, DateTime.new(2018,7,14,17)],
+  [ "Orlando Pride", "ESPN News", 2, 9, 13, 1, 8, DateTime.new(2018,7,14,17)],
   #id 16
   # redstars vs Reign
-  [ nil, "go90 App", 2, 11, 6, 1, 1, DateTime.new(2018,7,14,19)],
+  [ "Chicago Redstars", "go90 App", 2, 11, 6, 1, 1, DateTime.new(2018,7,14,19)],
   #id 17
   # thorns vs dash
-  [ nil, "go90 App", 2, 7, 10, 1, 5, DateTime.new(2018,7,15,19)],
+  [ "Portland Thorns", "go90 App", 2, 7, 10, 1, 5, DateTime.new(2018,7,15,19)],
   #id 18
   # royals vs Courage
-  [ nil, "go90 App", 2, 8, 13, 1, 8, DateTime.new(2018,7,20,20)],
+  [ "Tie", "go90 App", 2, 8, 13, 1, 8, DateTime.new(2018,7,20,20)],
   #id 19
   # pride vs Reign
-  [ nil, "Lifetime", 2, 11, 9, 1, 6, DateTime.new(2018,7,21,15,30)],
+  [ "Tie", "Lifetime", 2, 11, 9, 1, 6, DateTime.new(2018,7,21,15,30)],
   #id 20
   # spirit vs dash
-  [ nil, "go90 App", 2, 7, 14, 1, 2, DateTime.new(2018,7,21,19)],
+  [ "Houston Dash", "go90 App", 2, 7, 14, 1, 2, DateTime.new(2018,7,21,19)],
   #id 21
   # sky blue vs thorns
-  [ nil, "go90 App", 2, 10, 12, 1, 5, DateTime.new(2018,7,21,19)],
+  [ "Portland Thorns", "go90 App", 2, 10, 12, 1, 5, DateTime.new(2018,7,21,19)],
   #id 22
   # redstars vs sky blue
-  [ nil, "go90 App", 2, 12, 6, 1, 7, DateTime.new(2018,7,28,19)],
+  # [ nil, "go90 App", 2, 12, 6, 1, 7, DateTime.new(2018,7,28,19)],
   #id 23
   # courage vs Thorns 8/5
-  [ nil, "go90 App", 2, 10, 8, 1, 3, DateTime.new(2018,8,05,20)],
+  [ "North Carolina Courage", "go90 App", 2, 10, 8, 1, 3, DateTime.new(2018,8,05,20)],
   #id 24
   # pride vs SKY
-  [ nil, "go90 App", 2, 12, 9, 1, 4, DateTime.new(2018,8,05,19,30)],
+  [ "Tie", "go90 App", 2, 12, 9, 1, 4, DateTime.new(2018,8,05,19,30)],
   #id 25
   # dash vs Royals
-  [ nil, "go90 App", 2, 13, 7, 1, 2, DateTime.new(2018,8,05,19)],
+  [ "Utah Royals", "go90 App", 2, 13, 7, 1, 2, DateTime.new(2018,8,05,19)],
   #id 26
   # reign vs spirit
-  [ nil, "go90 App", 2, 11, 14, 1, 6, DateTime.new(2018,8,05,19)],
+  [ "Seattle Reign", "go90 App", 2, 11, 14, 1, 6, DateTime.new(2018,8,05,19)],
   #id 27
   # USA vs Japan
   [ nil, "FS1", 1, 41, 16, 1, 16, DateTime.new(2018,7,23,18)],
