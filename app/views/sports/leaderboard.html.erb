@@ -48,7 +48,8 @@
                 </div>
 
                 <div class="leaderboard-card-info d-flex justify-content-center align-self-center">
-                  <p class="text-center percent"><%= user.calculate_points %>pts</p>
+                  <% user.calculate_points %>
+                  <p class="text-center percent"><%= user.points %>pts</p>
                 </div>
 
               </div> <!--End leaderboard cards-->

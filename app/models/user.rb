@@ -177,7 +177,7 @@ NAMES = [ "Tierna Davidson","Ashley Hatch","Lynn Williams","Sofia  Huerta","Mall
   def calculate_points
     user_predictions = self.predictions
     correct_predictions = user_predictions.select{|prediction| prediction.guess == prediction.match.result}
-    correct_predictions.count * 3
+    self.points = correct_predictions.count * 3
   end
 
 #Get all of  user's Predictions
