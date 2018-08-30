@@ -186,12 +186,21 @@ NAMES = [ "Tierna Davidson","Ashley Hatch","Lynn Williams","Sofia  Huerta","Mall
 #count the number of correct Predictions
 #multiply each three to convert to points
 
-def calculate_rank
-end
+# def calculate_rank(users)
+#   rank_array = []
+#   users.each do |user|
+#     user_rank_info = {"hi" => calculate_points}
+#     rank_array << user_rank_info
+#   end
+#   rank_array
+# end
 
-#get result of calculate points
-#sort points array
-#find index
+#Set rank array
+#Go over each user and calculate points
+#Add a hash of each user with user_id and num of points
+#Sort hash based on number of user points
+#
+
 
 
 
