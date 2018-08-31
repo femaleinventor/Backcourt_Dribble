@@ -44,6 +44,8 @@ gem 'coffee-rails', '~> 4.2'
 
 gem 'httparty', '~> 0.13.7'
 
+gem "ranker"
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
