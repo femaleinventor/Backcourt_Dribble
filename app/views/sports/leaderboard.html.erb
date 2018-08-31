@@ -30,14 +30,31 @@
 
         <div class="col-xs-12">
 
+          <%unique_users = get_unique_users(@predictions)%>
+          <%unique_users.each do |user|%>
+            <% user.calculate_points %>
+          <%end%>
 
-          <% get_unique_users(@predictions).each do |user| %>
+          <%sorted_unique_users = sort_users_by_points(get_unique_users(@predictions))%>
+
+          <% sorted_unique_users.each_with_index do |user, index| %>
 
             <div class="row leaderboard-card justify-content-between">
 
                 <div class="rank d-flex align-self-center justify-content-center">
-                  <p class="text-center">1</p>
+                    <!-- Edge case, tied users -->
+                    <!-- If users points at current_index == that of the previous index
+                    print index-1
+                    Else increment the index -->
+
+                    <%if index == index-1%>
+                      <p class="text-center"><%=index-1%></p>
+                    <%else%>
+                      <p class="text-center"><%=index + 1%></p>
+                    <%end%>
+
                 </div>
+
 
                 <div class="leaderboard-card-info d-flex align-self-center">
                   <img src="https://s3-us-west-1.amazonaws.com/backcourtdribble/images/icons/profile_avatar_placeholder.png" class="profile-image" alt="profile image">
@@ -48,11 +65,12 @@
                 </div>
 
                 <div class="leaderboard-card-info d-flex justify-content-center align-self-center">
-                  <p class="text-center percent"><%= user.calculate_points %>pts</p>
+                  <p class="text-center percent"><%= user.points %>pts</p>
                 </div>
 
               </div> <!--End leaderboard cards-->
           <% end %>
+
         </div> <!--End outer col for leaderboard cards-->
 
       </div> <!--End outer row for leaderboard cards-->

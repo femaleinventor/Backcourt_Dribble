@@ -16,8 +16,8 @@ class SportsController < ApplicationController
     @sport = Sport.find(params[:id])
     @predictions = @sport.predictions
     @leagues = @sport.leagues
-    @nwsl = @leagues.find(2)
   end
+
 
   def new
     @sport = Sport.new
