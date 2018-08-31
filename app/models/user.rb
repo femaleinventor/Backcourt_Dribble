@@ -7,7 +7,6 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :username, use: :slugged
 
-
   has_many :predictions
 
   validates :username, exclusion: { in: %w(Tierna-Davidson Tierna_Davidson TiernaDavidson Tierna.Davidson Ashley-Hatch Ashley_Hatch AshleyHatch Ashley.Hatch Lynn-Williams Lynn_Williams LynnWilliams Lynn.Williams Sofia-Huerta Sofia_Huerta SofiaHuerta Sofia.Huerta Mallory-Pugh Mallory_Pugh MalloryPugh Mallory.Pugh Mal-Pugh Mal_Pugh MalPugh Mal.Pugh Julie-Johnston-Ertz Julie_Johnston_Ertz JulieJohnstonErtz Julie.Johnston.Ertz Julie-Johnston Julie_Johnston JulieJohnston Julie.Johnston Julie-Ertz Julie_Ertz JulieErtz Julie.Ertz Savannah-McCaskill Savannah_McCaskill SavannahMcCaskill Savannah.McCaskill Crystal-Dunn Crystal_Dunn CrystalDunn Crystal.Dunn Ashlyn-Harris Ashlyn_Harris AshlynHarris Ashlyn.Harris Ali-Krieger Ali_Krieger AliKrieger Ali.Krieger Abby-Wambach Abby_Wambach AbbyWambach Abby.Wambach Aly-Wagner Aly_Wagner AlyWagner Aly.Wagner Morgan-Brian Morgan_Brian MorganBrian Morgan.Brian Casey-Short Casey_Short CaseyShort Casey.Short),
@@ -179,31 +178,5 @@ NAMES = [ "Tierna Davidson","Ashley Hatch","Lynn Williams","Sofia  Huerta","Mall
     correct_predictions = user_predictions.select{|prediction| prediction.guess == prediction.match.result}
     self.points = correct_predictions.count * 3
   end
-
-#Get all of  user's Predictions
-#Compare user's prediction guess with match(id) result
-#If the user is correct, store prediction in an array
-#count the number of correct Predictions
-#multiply each three to convert to points
-
-# def calculate_rank(users)
-#   rank_array = []
-#   users.each do |user|
-#     user_rank_info = {"hi" => calculate_points}
-#     rank_array << user_rank_info
-#   end
-#   rank_array
-# end
-
-#Set rank array
-#Go over each user and calculate points
-#Add a hash of each user with user_id and num of points
-#Sort hash based on number of user points
-#
-
-
-
-
-
 
 end

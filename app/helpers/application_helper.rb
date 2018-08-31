@@ -1,4 +1,5 @@
 module ApplicationHelper
+  # require "ranker"
   # def calculate_rank(users)
   #   rank_array = []
   #   users.each do |user|
@@ -15,5 +16,9 @@ module ApplicationHelper
   def sort_users_by_points(users)
     users.sort_by{|u| u.points}.reverse
   end
+
+  # def get_rank(users)
+  #   Ranker.rank(user)
+  # end
 
 end
