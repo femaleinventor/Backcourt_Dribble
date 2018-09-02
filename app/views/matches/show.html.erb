@@ -12,7 +12,7 @@
         <%= form_for @match do |f| %>
           <div class="form-group">
             <%= f.label "Result" %>
-            <%= f.text_field :result, class: "form-control form-control-lg", value: @match.result%>
+            <%= f.select :result, [@home_team.name, @away_team.name, "Tie"], include_blank: true, value: "Result"%>
           </div>
 
           <div class="form-group">
