@@ -168,7 +168,7 @@ $theme-dark-grey: #343a40;
   .leaderboard-card-info{
     width: 30%;
     font-size: 0.875rem;
-    .percent{
+    .abbreviation{
       color: yellow;
       margin-top: 1em;
     }
@@ -185,6 +185,11 @@ $theme-dark-grey: #343a40;
 @media (max-width:768px){
   .match-heading {
     font-size: 35px;
+  }
+  .no-predictions-message{
+    h2{
+      font-size: 1rem;
+    }
   }
 }
 
