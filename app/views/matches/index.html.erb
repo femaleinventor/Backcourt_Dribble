@@ -67,12 +67,6 @@
 
                   <% end %>
 
-                  <div class="back-to-sports d-flex justify-content-center">
-                    <%= link_to sports_path do %>
-                      <i class="fa fa-arrow-circle-left fa-2x"></i>
-                    <% end %>
-                  </div>
-
                 <% else %>
                 <div class="user-prediction-summary">
                   <h2 class="text-center user-prediction-title">Your Prediction:</h2>
@@ -81,6 +75,11 @@
                   <p class="user-predictions"> Your Reasoning: <span class="prediction-summary-text"><%= user_prediction.reason %> <span>
                 </div>
                 <% end %>
+                <div class="back-to-sports d-flex justify-content-center">
+                  <%= link_to sports_path do %>
+                    <i class="fa fa-arrow-circle-left fa-2x"></i>
+                  <% end %>
+                </div>
                 </div><!--End column-->
               </div> <!--End Row-->
             </div> <!--End container-->
