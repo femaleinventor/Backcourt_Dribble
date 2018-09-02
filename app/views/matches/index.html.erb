@@ -86,7 +86,8 @@
           </div> <!--End make prediction slide-->
 
         <!-- All Predictions Slide -->
-        <div class="slide big-black">
+        <div class="slide" style="background: #FFFFFF; background: -webkit-linear-gradient(to bottom, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);
+        background: linear-gradient(to bottom, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);">
           <div class="container-fluid">
 
             <% home_predictions = select_team_predictions(match, @home_team) %>
