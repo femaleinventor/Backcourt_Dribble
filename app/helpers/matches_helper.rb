@@ -27,10 +27,13 @@ module MatchesHelper
     end
   end
 
-  # def get_local_zone(match)
-  #   match_date = match.start
-  #   match_date.in_time_zone
-  # end
+  def check_for_spaces(form_input)
+    form_input.match(/\s/) ? true : false
+  end
+
+  def insert_spaces(string)
+    !check_for_spaces(string) ? string.scan(/.{50}|.+/).join(" ") : string
+  end
 
   def sort_matches_by_date(matches)
     matches.sort_by{ |match| match.start }

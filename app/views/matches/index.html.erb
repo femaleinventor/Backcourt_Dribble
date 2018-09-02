@@ -72,7 +72,7 @@
                   <h2 class="text-center user-prediction-title">Your Prediction:</h2>
                   <% user_prediction = current_user.predictions.find{|prediction| prediction.match_id == match.id} %>
                   <p class="user-predictions"> Your Guess: <span class="prediction-summary-text"><%= user_prediction.guess %> <span>
-                  <p class="user-predictions"> Your Reasoning: <span class="prediction-summary-text"><%= user_prediction.reason %> <span>
+                  <p class="user-predictions"> Your Reasoning: <span class="prediction-summary-text"><%= insert_spaces(user_prediction.reason) %> <span>
                 </div>
                 <% end %>
                 <div class="back-to-sports d-flex justify-content-center">
@@ -121,7 +121,7 @@
 
                       <div class="row justify-content-start">
                         <div class="reason-container">
-                          <p class="reason"> <%= prediction.reason %></p>
+                          <p class="reason"> <%= insert_spaces(prediction.reason) %></p>
                         </div>
                       </div>
 
