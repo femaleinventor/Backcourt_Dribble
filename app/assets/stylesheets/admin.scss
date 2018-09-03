@@ -45,7 +45,8 @@ $theme-green: #00D37F;
     }
     .show-links{
       display: block;
-      margin: 2px;
+      border-bottom: 1px solid $theme-blue;
+      margin: 5px;
     }
   }
 }

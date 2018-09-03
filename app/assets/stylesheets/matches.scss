@@ -139,59 +139,57 @@ $theme-dark-grey: #343a40;
   }
 }
 
-.all-predictions{
-  .match-leaderboard{
-    // width: 90vw;
-    // @media (max-width: 480px){
-    //   width: 100vw;
-    // }
-    .match-leaderboard-table{
-      width: 100vw;
-      .table-header{
-        color: $theme-orange;
-      }
-      @media (max-width: 480px){
-        font-size: 12px;
-      }
+.total-predictions{
+  color: $theme-grey;
+}
+
+.no-predictions-message{
+  margin-top: 15px;
+  border: 1px solid white;
+  border-radius: 2%;
+  padding: 20px;
+  width: 50vw;
+  h2{
+    color: white;
+  }
+}
+
+.leaderboard-card{
+  width: 95vw;
+  // height: 5em;
+  background: rgba(white, 0.3);
+  margin-bottom: 1em;
+  font-size: .875rem;
+  .profile-image{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+  }
+  .leaderboard-card-info{
+    width: 30%;
+    font-size: 0.875rem;
+    .abbreviation{
+      color: yellow;
+      margin-top: 1em;
     }
-
-
-
-    // @media (max-width:480px){
-    // .match-leaderboard {
-    //     width: 100vw;
-    //     td {
-    //       font-size: 12px;
-    //       }
-    //     }
-    //   }
+    .username{
+      margin-top: 1em;
+      color: white;
     }
   }
-
-
-// .match-leaderboard-table {
-//     width: 100%;
-//     td {
-//         max-width: 0;
-//         overflow: hidden;
-//         text-overflow: ellipsis;
-//         white-space: nowrap;
-//     }
-//     td.columnA {
-//         width: 20%;
-//     }
-//     td.columnB {
-//         width: 30%;
-//     }
-//     td.columnC {
-//         width: 50%;
-//     }
-// }
-
+  .reason-container{
+    display: none;
+  }
+}
 
 @media (max-width:768px){
   .match-heading {
     font-size: 35px;
+  }
+  .no-predictions-message{
+    h2{
+      font-size: 1rem;
+    }
   }
 }
 
@@ -210,6 +208,28 @@ $theme-dark-grey: #343a40;
   }
 }
 
-// #clock {
-//   display: inline;
-// }
+@media (min-width:768px){
+  .leaderboard-card {
+    .leaderboard-card-info{
+      font-size: 1rem;
+      .profile-image,
+      .username,
+      .abbreviation{
+        margin-top: 2.5em;;
+      }
+    }
+    .abbreviation{
+      color: yellow;
+    }
+    .reason-container {
+      text-align: left;
+      display: block;
+      width: 75vw;
+      overflow: scroll;
+      .reason {
+        color: white;
+        font-size: 0.875rem;
+      }
+    }
+  }
+}

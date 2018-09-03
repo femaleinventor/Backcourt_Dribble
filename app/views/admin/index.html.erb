@@ -213,10 +213,11 @@
     <div class="col-xs-12 col-md-4">
       <h3 class="text-center edit-options"> All Matches: </h3>
       <div class="scroller">
-          <% @matches.each do |match| %>
+          <%sorted_matches = sort_matches_by_date(@matches)%>
+          <% sorted_matches.each do |match| %>
             <% @home_team = Team.find(match.home_team_id) %>
             <% @away_team = Team.find(match.away_team_id) %>
-            <%=link_to "#{match.start}: #{@home_team.name} vs. #{@away_team.name}", match_path(match), class:"show-links"%>
+            <%=link_to "#{format_match_date_english(match)}: #{@home_team.name} vs. #{@away_team.name}", match_path(match), class:"show-links"%>
             <% end %>
       </div>
     </div>
