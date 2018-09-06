@@ -35,21 +35,27 @@ function addTweetsToDOM(tweetsJSON) {
     // Add HTML to DOM invisibly
     $(".tweets-wall").prepend(tweetHTML)
     // Pause for One Second
-    $(`#${thisTweetID}`).fadeIn(5000, function(){
+    // $(`#${thisTweetID}`).fadeIn(5000, function(){
+		$("#" + thisTweetID).fadeIn(3700, function(){
+
       // Call fade in for next element
       addTweetsToDOM(tweetsJSON)
     })
   }
 }
 
+// function buildHtmlFor(tweet) {
+// 	return `<div class="keyword-tweet new-tweet" id="${tweet.id}" style="display: none;">
+// 		<div class="tweet-wrapper">
+// 			<div class="timestamp">
+//         <a href="https://twitter.com/dreamersurgeon1/status/${tweet.id_str}">${tweet.created_at}</a>
+//       </div>
+// 			<div class="tweet-text">${tweet.full_text}</div>
+// 			<div class="by-line"> <a href="https://www.twitter.com/${tweet.user.screen_name}">${tweet.user.screen_name}</a> in ${tweet.user.location} </div>
+// 		</div>
+// 	</div>`
+// }
+
 function buildHtmlFor(tweet) {
-	return `<div class="keyword-tweet new-tweet" id="${tweet.id}" style="display: none;">
-		<div class="tweet-wrapper">
-			<div class="timestamp">
-        <a href="https://twitter.com/dreamersurgeon1/status/${tweet.id_str}">${tweet.created_at}</a>
-      </div>
-			<div class="tweet-text">${tweet.full_text}</div>
-			<div class="by-line"> <a href="https://www.twitter.com/${tweet.user.screen_name}">${tweet.user.screen_name}</a> in ${tweet.user.location} </div>
-		</div>
-	</div>`
+	return "<div class ='keyword-tweet new-tweet' id='" + tweet.id + "' style='display: none;'><div class='tweet-wrapper'><div class='timestamp'><a href='https://twitter.com/dreamersurgeon1/status/" + tweet.id_str + "'>" + tweet.created_at + " </a> </div><div class='tweet-text'>"+tweet.full_text+"</div><div class='by-line'><a heref='https://www.twitter.com/" + tweet.user.screen_name + "'>" + tweet.user.screen_name + "</a> in " + tweet.user.location + "</div></div></div>"
 }
