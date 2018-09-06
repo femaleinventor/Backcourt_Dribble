@@ -36,7 +36,7 @@ function addTweetsToDOM(tweetsJSON) {
     $(".tweets-wall").prepend(tweetHTML)
     // Pause for One Second
     // $(`#${thisTweetID}`).fadeIn(5000, function(){
-		$("#" + thisTweetID).fadeIn(3700, function(){
+		$("#" + thisTweetID).fadeIn(4200, function(){
 
       // Call fade in for next element
       addTweetsToDOM(tweetsJSON)
