@@ -54,7 +54,7 @@
 
                       <div class="reason-textbox d-flex justify-content-center">
                         <div class="reason-input form-group">
-                          <%= text_area_tag :reason, nil, class:"form-control", maxlength:"200", placeholder: "Add Your Reason Why... " %>
+                          <%= text_area_tag :reason, nil, class:"form-control", maxlength:"200", placeholder: "Use checkbox to choose the outcome and add a reason here. Both must be there to submit prediction." %>
                         </div>
                       </div>
 
@@ -109,7 +109,8 @@
 
                   <div class="reason-textbox d-flex justify-content-center">
                     <div class="reason-input form-group">
-                      <%= text_area_tag :reason, nil, class:"form-control", maxlength:"200", placeholder: "Add Your Reason Why... " %>
+                      <%= label_tag :reason, "Use checkbox to choose the outcome and add a reason here. Both must be there to submit prediction.", class: "reason-label text-center"%>
+                      <%= text_area_tag :reason, nil, class:"form-control", maxlength:"200" %>
                     </div>
                   </div>
 
@@ -124,6 +125,12 @@
                   </div>
 
                 <% end %>
+
+                <div class="back-to-sports d-flex justify-content-center">
+                  <%= link_to sports_path do %>
+                    <i class="fa fa-arrow-circle-left fa-2x"></i>
+                  <% end %>
+                </div>
 
                 <%end%>
 
