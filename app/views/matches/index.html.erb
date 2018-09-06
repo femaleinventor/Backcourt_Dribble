@@ -25,61 +25,109 @@
 
             <div class="row justify-content-center">
               <div class="col-xs-12 mx-auto">
-                <!-- Logic checking if a prediction has already been made for a certain match by the current user -->
-                <% if current_user.predictions.select{|prediction| prediction.match_id == match.id}.empty?  %>
-                  <h3 class="prediction-prompt text-center"> Which Team will Win? </h3>
-                  <%= form_tag(controller:'predictions', action:'create') do %>
+                <%if current_user%>
+                  <!-- Logic checking if a prediction has already been made for a certain match by the current user -->
+                  <% if current_user.predictions.select{|prediction| prediction.match_id == match.id}.empty?  %>
+                    <h3 class="prediction-prompt text-center"> Which Team will Win? </h3>
+                    <%= form_tag(controller:'predictions', action:'create') do %>
 
-                    <div class="d-flex justify-content-around">
-                      <!-- home -->
-                      <div class="form-group form-check form-check-inline">
-                        <%= label_tag :guess, "#{@home_team.abbreviation}", class: "form-check-label", style:"color:#{@home_team.dark_color}; font-weight:bold;"%>
-                        <%= check_box_tag :guess, @home_team.name, false, class: "prediction-checkbox form-check-input" %>
+                      <div class="d-flex justify-content-around">
+                        <!-- home -->
+                        <div class="form-group form-check form-check-inline">
+                          <%= label_tag :guess, "#{@home_team.abbreviation}", class: "form-check-label", style:"color:#{@home_team.dark_color}; font-weight:bold;"%>
+                          <%= check_box_tag :guess, @home_team.name, false, class: "prediction-checkbox form-check-input" %>
+                        </div>
+
+                        <!-- tie -->
+                        <div class="form-group form-check form-check-inline">
+                            <%= label_tag :guess, "Tie", class: "form-check-label"%>
+                            <%= check_box_tag :guess, "Tie", false, class: "prediction-checkbox form-check-input" %>
+                        </div>
+
+                        <!-- away -->
+                        <div class="form-group form-check form-check-inline">
+                          <%= label_tag :guess, "#{@away_team.abbreviation}", class: "form-check-label", style:"color:#{@away_team.dark_color}; font-weight:bold;"%>
+                          <%= check_box_tag :guess, @away_team.name, false, class: "prediction-checkbox form-check-input" %>
+                        </div>
+
                       </div>
 
-                      <!-- tie -->
-                      <div class="form-group form-check form-check-inline">
-                          <%= label_tag :guess, "Tie", class: "form-check-label"%>
-                          <%= check_box_tag :guess, "Tie", false, class: "prediction-checkbox form-check-input" %>
+                      <div class="reason-textbox d-flex justify-content-center">
+                        <div class="reason-input form-group">
+                          <%= text_area_tag :reason, nil, class:"form-control", maxlength:"200", placeholder: "Add Your Reason Why... " %>
+                        </div>
                       </div>
 
-                      <!-- away -->
-                      <div class="form-group form-check form-check-inline">
-                        <%= label_tag :guess, "#{@away_team.abbreviation}", class: "form-check-label", style:"color:#{@away_team.dark_color}; font-weight:bold;"%>
-                        <%= check_box_tag :guess, @away_team.name, false, class: "prediction-checkbox form-check-input" %>
+                      <%if current_user%>
+                        <%= hidden_field_tag "user_id", current_user.id %>
+                      <%end%>
+
+                      <%= hidden_field_tag "match_id", match.id %>
+
+                      <div class="form-actions prediction-submit">
+                        <%= submit_tag "Submit", class: "btn btn-outline-light btn-md" %>
                       </div>
 
+                    <% end %>
+
+                  <% else %>
+                  <div class="user-prediction-summary">
+                    <h2 class="text-center user-prediction-title">Your Prediction:</h2>
+                    <% user_prediction = current_user.predictions.find{|prediction| prediction.match_id == match.id} %>
+                    <p class="user-predictions"> Your Guess: <span class="prediction-summary-text"><%= user_prediction.guess %> <span>
+                    <p class="user-predictions"> Your Reasoning: <span class="prediction-summary-text"><%= insert_spaces(user_prediction.reason) %> <span>
+                  </div>
+                  <% end %>
+                    <div class="back-to-sports d-flex justify-content-center">
+                      <%= link_to sports_path do %>
+                        <i class="fa fa-arrow-circle-left fa-2x"></i>
+                      <% end %>
+                    </div>
+                <%else%>
+                <%= form_tag(controller:'predictions', action:'create') do %>
+
+                  <div class="d-flex justify-content-around">
+                    <!-- home -->
+                    <div class="form-group form-check form-check-inline">
+                      <%= label_tag :guess, "#{@home_team.abbreviation}", class: "form-check-label", style:"color:#{@home_team.dark_color}; font-weight:bold;"%>
+                      <%= check_box_tag :guess, @home_team.name, false, class: "prediction-checkbox form-check-input" %>
                     </div>
 
-                    <div class="reason-textbox d-flex justify-content-center">
-                      <div class="reason-input form-group">
-                        <%= text_area_tag :reason, nil, class:"form-control", maxlength:"200", placeholder: "Add Your Reason Why... " %>
-                      </div>
+                    <!-- tie -->
+                    <div class="form-group form-check form-check-inline">
+                        <%= label_tag :guess, "Tie", class: "form-check-label"%>
+                        <%= check_box_tag :guess, "Tie", false, class: "prediction-checkbox form-check-input" %>
                     </div>
 
+                    <!-- away -->
+                    <div class="form-group form-check form-check-inline">
+                      <%= label_tag :guess, "#{@away_team.abbreviation}", class: "form-check-label", style:"color:#{@away_team.dark_color}; font-weight:bold;"%>
+                      <%= check_box_tag :guess, @away_team.name, false, class: "prediction-checkbox form-check-input" %>
+                    </div>
+
+                  </div>
+
+                  <div class="reason-textbox d-flex justify-content-center">
+                    <div class="reason-input form-group">
+                      <%= text_area_tag :reason, nil, class:"form-control", maxlength:"200", placeholder: "Add Your Reason Why... " %>
+                    </div>
+                  </div>
+
+                  <%if current_user%>
                     <%= hidden_field_tag "user_id", current_user.id %>
+                  <%end%>
 
-                    <%= hidden_field_tag "match_id", match.id %>
+                  <%= hidden_field_tag "match_id", match.id %>
 
-                    <div class="form-actions prediction-submit">
-                      <%= submit_tag "Submit", class: "btn btn-outline-light btn-md" %>
-                    </div>
+                  <div class="form-actions prediction-submit">
+                    <%= submit_tag "Submit", class: "btn btn-outline-light btn-md" %>
+                  </div>
 
-                  <% end %>
-
-                <% else %>
-                <div class="user-prediction-summary">
-                  <h2 class="text-center user-prediction-title">Your Prediction:</h2>
-                  <% user_prediction = current_user.predictions.find{|prediction| prediction.match_id == match.id} %>
-                  <p class="user-predictions"> Your Guess: <span class="prediction-summary-text"><%= user_prediction.guess %> <span>
-                  <p class="user-predictions"> Your Reasoning: <span class="prediction-summary-text"><%= insert_spaces(user_prediction.reason) %> <span>
-                </div>
                 <% end %>
-                <div class="back-to-sports d-flex justify-content-center">
-                  <%= link_to sports_path do %>
-                    <i class="fa fa-arrow-circle-left fa-2x"></i>
-                  <% end %>
-                </div>
+
+                <%end%>
+
+
                 </div><!--End column-->
               </div> <!--End Row-->
             </div> <!--End container-->
