@@ -41,9 +41,34 @@ $theme-dark-grey: #343a40;
 }
 
 .venue-info-title {
-  color: $theme-blue;
+  color: white;
   font-weight: lighter;
-  margin-top: 15px;
+  font-size: 2rem;
+}
+
+.venue_info_card {
+  margin-top: 2em;
+  border: 1px solid white;
+  border-radius: 2%;
+  width: 40vw;
+  height: 70vh;
+  .venue-detail-title{
+    margin-top: 0.5em;
+    color: $theme-blue;
+    font-size: 1.2rem;
+  }
+  .venue-detail{
+    color: white;
+    p{
+      text-align: center;
+      font-size: 1rem;
+    }
+    .desc{
+      color: $theme-orange;
+      text-decoration: underline;
+    }
+  }
+
 }
 
 .venue-location-info {
@@ -52,7 +77,8 @@ $theme-dark-grey: #343a40;
 }
 
 .venue-match-links {
-  margin-top: 20px;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
 }
 
 .match-date {
@@ -182,6 +208,17 @@ $theme-dark-grey: #343a40;
   }
 }
 
+// .list-container {
+//   height: 75vh;
+// }
+
+
+
+.reason-label{
+  font-size: 0.875rem;
+  color:white;
+}
+
 @media (max-width:768px){
   .match-heading {
     font-size: 35px;
@@ -190,6 +227,39 @@ $theme-dark-grey: #343a40;
     h2{
       font-size: 1rem;
     }
+  }
+  .venue-info-title{
+    font-size: 1.2rem;
+  }
+
+  .countdown-text{
+    .countdown{
+      font-size: 1rem;
+    }
+  }
+
+  .venue_info_card {
+    margin-top: 1em;
+    width: 80vw;
+    height: 65vh;
+    .venue-detail-title{
+      margin-top: 0.5em;
+      color: $theme-blue;
+      font-size: 1rem;
+    }
+    .venue-detail{
+      p{
+        font-size: 0.875rem;
+      }
+    }
+    .venue-match-links{
+      margin-top: 0.5em;
+    }
+    .game-reminder-link,
+    .ticket-link{
+      font-size: 0.875rem;
+    }
+
   }
 }
 

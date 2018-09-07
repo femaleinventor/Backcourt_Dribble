@@ -74,4 +74,21 @@ a {
   color: $theme-green !important;
 }
 
+.login-header{
+  color: $theme-green;
+  font-size: 1.1rem;
+}
+
+.login-logo{
+  img{
+    display: block;
+    width: 150px;
+    margin-bottom: 2em;
+  }
+}
+
+.login-form{
+  margin: 1em;
+}
+
 @import "datatables";

@@ -4,4 +4,5 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
     @sports =  Sport.all
   end
+
 end
