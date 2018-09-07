@@ -39,7 +39,7 @@
 
           <% sorted_unique_users.each_with_index do |user, index| %>
 
-            <div class="row leaderboard-card justify-content-between">
+            <div class="row true-leaderboard-card justify-content-between">
 
                 <div class="rank d-flex align-self-center justify-content-center">
                     <!-- Edge case, tied users -->
@@ -47,7 +47,7 @@
                     print index-1
                     Else increment the index -->
 
-                    <%if index == index-1%>
+                    <%if index == index - 1%>
                       <p class="text-center"><%=index-1%></p>
                     <%else%>
                       <p class="text-center"><%=index + 1%></p>
@@ -56,15 +56,15 @@
                 </div>
 
 
-                <div class="leaderboard-card-info d-flex align-self-center">
+                <div class="true-leaderboard-card-info d-flex align-self-center">
                   <img src="https://s3-us-west-1.amazonaws.com/backcourtdribble/images/icons/profile_avatar_placeholder.png" class="profile-image" alt="profile image">
                 </div>
 
-                <div class="leaderboard-card-info d-flex justify-content-center align-self-center">
+                <div class="true-leaderboard-card-info d-flex justify-content-center align-self-center">
                   <p class="text-center username"><%= user.username %></p>
                 </div>
 
-                <div class="leaderboard-card-info d-flex justify-content-center align-self-center">
+                <div class="true-leaderboard-card-info d-flex justify-content-center align-self-center">
                   <p class="text-center percent"><%= user.points %>pts</p>
                 </div>
 
