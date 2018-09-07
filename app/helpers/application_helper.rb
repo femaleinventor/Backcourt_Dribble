@@ -13,9 +13,16 @@ module ApplicationHelper
   #   ranks_array.sort_by{|k| k["key"]}.reverse
   # end
 
+  def get_unique_users(predictions)
+    users = predictions.collect {|prediction| prediction.user}
+    users.uniq
+  end
+
   def sort_users_by_points(users)
     users.sort_by{|u| u.points}.reverse
   end
+
+
 
   # def get_rank(users)
   #   Ranker.rank(user)
