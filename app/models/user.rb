@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
 
+  before_create :set_bitmoji
+
+
   extend FriendlyId
   friendly_id :username, use: :slugged
 
@@ -177,6 +180,26 @@ NAMES = [ "Tierna Davidson","Ashley Hatch","Lynn Williams","Sofia  Huerta","Mall
     user_predictions = self.predictions
     correct_predictions = user_predictions.select{|prediction| prediction.guess == prediction.match.result}
     self.points = correct_predictions.count * 3
+  end
+
+
+
+  def set_bitmoji
+    bitmojis = [
+      "https://s3-us-west-1.amazonaws.com/backcourtdribble/images/bitmojis/bitmoji1.png",
+      "https://s3-us-west-1.amazonaws.com/backcourtdribble/images/bitmojis/bitmoji2.png",
+      "https://s3-us-west-1.amazonaws.com/backcourtdribble/images/bitmojis/bitmoji3.png",
+      "https://s3-us-west-1.amazonaws.com/backcourtdribble/images/bitmojis/bitmoji4.png",
+      "https://s3-us-west-1.amazonaws.com/backcourtdribble/images/bitmojis/bitmoji5.png",
+      "https://s3-us-west-1.amazonaws.com/backcourtdribble/images/bitmojis/bitmoji6.png",
+      "https://s3-us-west-1.amazonaws.com/backcourtdribble/images/bitmojis/bitmoji7.png"
+    ]
+    chosen_bitmoji = bitmojis.sample
+    self.avatar = chosen_bitmoji
+  end
+
+  def select_random_bitmoji
+
   end
 
 end
