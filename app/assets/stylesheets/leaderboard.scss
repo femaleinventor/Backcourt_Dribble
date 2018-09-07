@@ -42,7 +42,7 @@ $theme-green: #00D37F;
       }
     }
   }
-  .leaderboard-card{
+  .true-leaderboard-card{
     width: 90vw;
     height: 5em;
     background: rgba(white, 0.3);
@@ -56,14 +56,15 @@ $theme-green: #00D37F;
         margin-top: 2em;
       }
     }
-    .profile-image{
-      border-radius: 50%;
-      height: 40px;
-      width: 40px;
-    }
-    .leaderboard-card-info{
+
+    .true-leaderboard-card-info{
       width: 30%;
       font-size: 0.875rem;
+      .profile-image{
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+      }
       .percent{
         color: yellow;
         margin-top: 1em;
