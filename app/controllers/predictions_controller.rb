@@ -1,5 +1,8 @@
 class PredictionsController < ApplicationController
 
+  protect_from_forgery with: :exception
+  before_action :authenticate_user!
+
   def new
     @prediction = Prediction.new
   end
@@ -19,4 +22,5 @@ class PredictionsController < ApplicationController
     def prediction_params
       params.permit(:guess, :reason, :match_id, :user_id)
     end
+
 end

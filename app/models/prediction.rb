@@ -5,4 +5,6 @@ class Prediction < ApplicationRecord
 
   validates :guess, presence: true
   validates :reason, presence: true
+  validates :user, presence: true
+
 end
