@@ -54,7 +54,8 @@
 
                       <div class="reason-textbox d-flex justify-content-center">
                         <div class="reason-input form-group">
-                          <%= text_area_tag :reason, nil, class:"form-control", maxlength:"200", placeholder: "Use checkbox to choose the outcome and add a reason here. Both must be there to submit prediction." %>
+                          <%= label_tag :reason, "Use checkbox to choose the outcome and add a reason here. Both must be there to submit prediction.", class: "reason-label text-center"%>
+                          <%= text_area_tag :reason, nil, class:"form-control", maxlength:"200"%>
                         </div>
                       </div>
 
