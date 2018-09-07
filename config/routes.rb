@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   # match '/users/:username',     to: 'users#show',       via: 'get'
   # get ':username' => 'users#show'
   devise_for :users, :path_prefix => 'd'
-  resources :users, only: [:show]
+  resources :users
 
   #admin
   resources :admin
