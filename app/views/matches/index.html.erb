@@ -200,7 +200,7 @@
 
             <div class="row justify-content-center">
               <div class="col-xs-12">
-                <h1 class="venue-info-title text-center"> <%=@home_team.name%> </br> vs. </br> <%=@away_team.name%></h1>
+                <h1 class="venue-info-title text-center"> <span style="color:<%=@home_team.bright_color%>;"><%=@home_team.name%></span> vs. <span style="color:<%=@away_team.bright_color%>;"><%=@away_team.name%></span></h1>
                 <div class="countdown-text">
                   <div id="clock" class="countdown mx-auto text-center" data-countdown="<%=match.start.strftime('%m/%d/%Y %I:%M:%S')%>"></div>
                 </div>
@@ -208,30 +208,22 @@
             </div>
 
 
-            <div class="row justify-content-between">
-              <div class="col-xs-12 col-md-6">
-                <div class="venue_info_card">
-                  <h3 class="text-center">Venue Details</h3>
+            <div class="row justify-content-center align-items-center">
+              <div class="col-xs-12">
+                <div class="venue_info_card d-flex flex-column align-items-center">
+                  <h3 class="text-center venue-detail-title">Venue Details</h3>
 
-                  <div class="venue-location-info">
-                    <p class="venue-specs"><%=match.venue.name%> <br/><%=match.venue.address%></p>
-                  </div>
+                  <div class="venue-detail">
+                    <p class="desc">Where</p>
+                    <p><%=match.venue.name%> <br/><%=match.venue.address%></p>
 
-                  <div class="match-date">
-                      <p><%=format_match_date_english(match)%></p>
-                  </div>
+                    <p class="desc">When</p>
+                    <p><%=format_match_date_english(match)%></p>
 
-                  <div class="match-channel">
+                    <p class="desc">Streaming</p>
                     <p><%=match.channel%> </p>
                   </div>
-                </div>
 
-              </div><!--End col -->
-
-
-              <div class="col-xs-12 col-md-6">
-                <div class="venue_info_card">
-                  <h3 class="text-center">Stay Connected</h3>
                   <div class="venue-match-links">
                     <a class="game-reminder-link text-center" href="#">Remind Me when Game Starts!</a>
                     <%if match.league.name == "National Women's Soccer League (USA)"%>
@@ -239,10 +231,10 @@
                     <%end%>
                   </div>
                 </div>
-              </div>
 
 
-              </div> <!--End row -->
+              </div><!--End col -->
+            </div> <!--End row -->
 
               <!-- <div class="row justify-content-center">
                 <div class="col-xs-12">
