@@ -5,9 +5,9 @@ $theme-grey: #707070;
 $theme-green: #00D37F;
 
 .leaderboard-body{
-  background: $theme-blue; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, rgba($theme-blue, .8), rgba($theme-green, .8)); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, rgba($theme-blue, .8), rgba($theme-green, .8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: rgba($theme-blue, .8); /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to bottom, rgba($theme-blue, .8), rgba($theme-green, .8)); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to bottom, rgba($theme-blue, .8), rgba($theme-green, .8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   .leaderboard-title-container{
     height: 4em;
     background: rgba($theme-grey, 0.5);
