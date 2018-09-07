@@ -18,4 +18,6 @@ module SportsHelper
     inactive_leagues = array2 - array1
   end
 
+
+
 end

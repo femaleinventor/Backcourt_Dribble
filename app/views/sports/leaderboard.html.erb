@@ -7,19 +7,29 @@
         </div>
       </div>
 
+      <%unique_users = get_unique_users(@predictions)%>
+      <%unique_users.each do |user|%>
+        <% user.calculate_points %>
+      <%end%>
+
+      <%sorted_unique_users = sort_users_by_points(get_unique_users(@predictions))%>
+
+      <%top_three = sorted_unique_users[0,3]%>
+
+
       <div class="row justify-content-center">
         <div class="col-xs-12">
           <div class="top-three-users d-flex justify-content-between">
             <div class="image-container">
-              <img src="https://s3-us-west-1.amazonaws.com/backcourtdribble/images/icons/profile_avatar_placeholder.png" class="profile-image" alt="profile image">
+              <img src="<%=top_three[1].avatar%>" class="profile-image" alt="profile image">
               <p class="position">2nd</p>
             </div>
             <div class="image-container">
-              <img src="https://s3-us-west-1.amazonaws.com/backcourtdribble/images/icons/profile_avatar_placeholder.png" class="profile-image featured" alt="profile image">
+              <img src="<%=top_three[0].avatar%>" class="profile-image featured" alt="profile image">
               <p class="position">1st</p>
             </div>
             <div class="image-container">
-              <img src="https://s3-us-west-1.amazonaws.com/backcourtdribble/images/icons/profile_avatar_placeholder.png" class="profile-image" alt="profile image">
+              <img src="<%=top_three[2].avatar%>" class="profile-image" alt="profile image">
               <p class="position">3rd</p>
             </div>
           </div>
@@ -29,13 +39,6 @@
       <div class="row justify-content-center">
 
         <div class="col-xs-12">
-
-          <%unique_users = get_unique_users(@predictions)%>
-          <%unique_users.each do |user|%>
-            <% user.calculate_points %>
-          <%end%>
-
-          <%sorted_unique_users = sort_users_by_points(get_unique_users(@predictions))%>
 
           <% sorted_unique_users.each_with_index do |user, index| %>
 
@@ -56,8 +59,7 @@
                 </div>
 
 
-
-                <div class="leaderboard-card-info d-flex align-self-center">
+                <div class="true-leaderboard-card-info d-flex align-self-center">
                   <img src="<%=user.avatar%>" class="profile-image" alt="profile image">
                 </div>
 
