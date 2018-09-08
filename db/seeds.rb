@@ -299,7 +299,13 @@ matches_list = [
   [ nil, "NWSL App", 2, 13, 14, 1, 9, DateTime.new(2018,8,22,16,30)],
   #43
   # reign vs dash
-  [ nil, "NWSL App", 2, 7, 11, 1, 6, DateTime.new(2018,8,21,19,30)]
+  [ nil, "NWSL App", 2, 7, 11, 1, 6, DateTime.new(2018,8,21,19,30)],
+  #tests 9/8/18 reign vs dash -- check if DateTime.new values are treated differently than those entered in admin portal
+  [ nil, "NWSL App", 2, 7, 11, 1, 6, DateTime.new(2018,9,7,21,21)],
+  [ nil, "NWSL App", 2, 7, 11, 1, 6, DateTime.new(2018,9,8,12,00)],
+  [ nil, "NWSL App", 2, 7, 11, 1, 6, DateTime.new(2018,9,8,17,30)],
+  [ nil, "NWSL App", 2, 7, 11, 1, 6, DateTime.new(2018,9,8,19,30)]
+
 ]
 
 matches_list.each do |match|

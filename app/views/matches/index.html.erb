@@ -5,7 +5,9 @@
       <% @home_team = Team.find(match.home_team_id) %>
       <% @away_team = Team.find(match.away_team_id) %>
 
+
       <div class="section fp-bg fp-noscroll">
+
         <!-- Makes gradient behind match up -->
         <div class="slide" style="background: #FFFFFF; background: -webkit-linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);
         background: linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);">
