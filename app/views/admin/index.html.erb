@@ -218,50 +218,48 @@
     <div class="col-xs-12 col-md-6">
       <div class="create-action">
         <h3 class="text-center edit-options"> Create A New Team: </h3>
-        <%= form_tag(controller: 'teams', action: 'create') do %>
+        <%= form_for :team, :url => {:controller => "teams", :action => "create"} do |f| %>
           <div class="form-group">
-            <%= label_tag :name, "Team Name"%>
-            <%= text_field_tag :name, nil, class:"form-control"%>
+            <%= f.label "Name" %>
+            <%= f.text_field :name, class: "form-control form-control-lg"%>
           </div>
 
           <div class="form-group">
-            <%= label_tag :Abbreviation %>
-            <%= text_field_tag :abbreviation, nil, class:"form-control"%>
+            <%= f.label "Abbreviation" %>
+            <%= f.text_field :abbreviation, class: "form-control form-control-lg"%>
           </div>
 
           <div class="form-group">
-            <%= label_tag :Nickname %>
-            <%= text_field_tag :nickname, nil, class:"form-control"%>
+            <%= f.label "Nickname" %>
+            <%= f.text_field :nickname, class: "form-control form-control-lg"%>
           </div>
 
           <div class="form-group">
-            <%= label_tag :Bright_color %>
-            <%= text_field_tag :bright_color, nil, class:"form-control"%>
+            <%= f.label "Bright Color" %>
+            <%= f.text_field :bright_color, class: "form-control form-control-lg"%>
           </div>
 
           <div class="form-group">
-            <%= label_tag :Light_color %>
-            <%= text_field_tag :light_color, nil, class:"form-control"%>
+            <%= f.label "Light Color" %>
+            <%= f.text_field :light_color, class: "form-control form-control-lg"%>
           </div>
 
           <div class="form-group">
-            <%= label_tag :Dark_color %>
-            <%= text_field_tag :dark_color, nil, class:"form-control"%>
+            <%= f.label "Dark Color" %>
+            <%= f.text_field :dark_color, class: "form-control form-control-lg"%>
           </div>
 
           <div class="form-group">
-            <%= label_tag :Twitter_list %>
-            <%= text_field_tag :twitter_list, nil, class:"form-control"%>
+            <%= f.label "Twitter List" %>
+            <%= f.text_field :twitter_list, class: "form-control form-control-lg"%>
           </div>
 
           <div class="form-group">
-            <%= label_tag :sport %>
-            <%= select_tag :sport_id, options_from_collection_for_select(@sports, "id", "name"), include_blank: true, class: "form-control"  %>
+            <%= f.label "Sport" %><br/>
+            <%= f.select :sport_id, Sport.all.collect { |s| [ s.name, s.id ] }, include_blank: true%>
           </div>
 
-          <div class="form-actions">
-            <%= submit_tag "Submit", class: "btn btn-primary btn-md" %>
-          </div>
+          <%= f.submit "Submit", class: "btn btn-primary btn-lg show-button"%>
         <% end %>
       </div>
     </div>

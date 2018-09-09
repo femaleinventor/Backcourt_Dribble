@@ -14,7 +14,7 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
-    @sports = Sport.all 
+    @sports = Sport.all
   end
 
   def update
@@ -37,7 +37,7 @@ class TeamsController < ApplicationController
 
   private
     def team_params
-      params.permit(:name, :abbreviation, :sport_id, :bright_color, :light_color, :dark_color, :twitter_list)
+      params.require(:team).permit(:name, :abbreviation, :nickname, :bright_color, :light_color, :dark_color, :twitter_list, :sport_id)
     end
 
     def update_team_params
