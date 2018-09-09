@@ -1,5 +1,5 @@
 <div id="fullpage">
-    
+    <!-- Future matches was here via find_future_matches helper -->
     <% sorted_matches = sort_matches_by_date(@matches) %>
     <% sorted_matches.each do |match| %>
       <% @home_team = Team.find(match.home_team_id) %>

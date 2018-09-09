@@ -27,6 +27,8 @@ gem 'loofah', '>= 2.2.2'
 
 gem 'devise'
 
+gem 'by_star', git: "git://github.com/radar/by_star"
+
 gem 'friendly_id', '~> 5.2.0'
 gem "font-awesome-rails"
 

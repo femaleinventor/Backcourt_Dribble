@@ -1,7 +1,7 @@
 module MatchesHelper
   # def find_future_matches(matches)
   #   #Returns an array of future matches
-  #   matches.select{|match| match.start.to_time.to_i > DateTime.now.to_time.to_i}
+  #   matches.select{|match| match.start.to_s.to_time > DateTime.now.to_s.to_time}
   # end
 
   def sort_matches_by_date(matches)
