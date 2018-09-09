@@ -113,32 +113,25 @@
       <div class="create-action">
         <h3 class="text-center edit-options"> Create A New Venue: </h3>
 
-        <%= form_tag(controller: 'venues', action: 'create') do %>
+        <%= form_for :venue, :url => {:controller => "venues", :action => "create"} do |f| %>
           <div class="form-group">
-            <%= label_tag :name, "Venue Name"%>
-            <%= text_field_tag :name, nil, class:"form-control"%>
+            <%= f.label "Name" %>
+            <%= f.text_field :name, class: "form-control form-control-lg"%>
           </div>
-
           <div class="form-group">
-            <%= label_tag :picture_url, "Image" %>
-            <%= text_field_tag :picture_url, nil, class:"form-control"%>
+            <%= f.label "Image" %>
+            <%= f.text_field :picture_url, class: "form-control form-control-lg"%>
           </div>
-
           <div class="form-group">
-            <%= label_tag :address %>
-            <%= text_field_tag :address, nil, class:"form-control", placeholder: "Street Address, City, State Zipcode"%>
+            <%= f.label "Address" %>
+            <%= f.text_field :address, class: "form-control form-control-lg"%>
           </div>
-
-          <!-- Not saving in db, is being taken in as a hash on server side. may need to use Time instead of DateTime -->
 
           <div class="form-group">
-            <%= label_tag :time_zone %> <br/>
-            <%= time_zone_select(:venue, :time_zone, ActiveSupport::TimeZone.all.sort, model: ActiveSupport::TimeZone)%>
+            <%= f.label "Time Zone" %>
+            <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, include_blank: true, class: "form-control form-control-lg"%>
           </div>
-
-          <div class="form-actions">
-            <%= submit_tag "Submit", class: "btn btn-primary btn-md" %>
-          </div>
+          <%= f.submit "Submit", class: "btn btn-primary btn-lg show-button"%>
         <% end %>
 
       </div>
