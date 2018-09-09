@@ -26,7 +26,7 @@
 
               <% leagues_with_matches.each do |league| %>
                   <!-- Get leagues with matches in the future  -->
-                  <% league_specific_future_matches = find_future_matches(league.matches) %>
+                  <% league_specific_future_matches = find_future_sport_matches(league.matches) %>
                   <!-- For each league with matches in the future, display the name of the league -->
                   <% if league_specific_future_matches.any? %>
                    <div class="available-leagues-list">

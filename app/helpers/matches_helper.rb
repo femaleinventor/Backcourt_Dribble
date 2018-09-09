@@ -1,10 +1,8 @@
 module MatchesHelper
-  def find_future_matches(matches)
-    #Returns an array of future matches
-    #Time values changed into integers for direct comparison of values
-      now_int =
-      matches.select{|match| match.start.to_time.to_i < DateTime.now.to_time.to_i}
-  end
+  # def find_future_matches(matches)
+  #   #Returns an array of future matches
+  #   matches.select{|match| match.start.to_time.to_i > DateTime.now.to_time.to_i}
+  # end
 
   def sort_matches_by_date(matches)
     matches.sort_by{|match| match.start }

@@ -1,6 +1,7 @@
 class MatchesController < ApplicationController
   def index
     @matches = Match.where(league_id: params[:league_id])
+    @matches.where('start : ? >', DateTime.now)
   end
 
   def new

@@ -1,6 +1,6 @@
 <div id="fullpage">
-    <% future_matches = find_future_matches(@matches)%>
-    <% sorted_matches = sort_matches_by_date(future_matches) %>
+    
+    <% sorted_matches = sort_matches_by_date(@matches) %>
     <% sorted_matches.each do |match| %>
       <% @home_team = Team.find(match.home_team_id) %>
       <% @away_team = Team.find(match.away_team_id) %>
