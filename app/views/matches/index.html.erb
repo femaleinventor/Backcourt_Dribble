@@ -1,11 +1,10 @@
 <div id="fullpage">
-    <!-- Future matches was here via find_future_matches helper -->
-    <%future_matches = find_future_matches(@matches)%>
-    <% sorted_matches = sort_matches_by_date(future_matches) %>
+
+  <% sorted_matches = sort_matches_by_date(find_future_matches(@league_matches)) %>
+
     <% sorted_matches.each do |match| %>
       <% @home_team = Team.find(match.home_team_id) %>
       <% @away_team = Team.find(match.away_team_id) %>
-
 
       <div class="section fp-bg fp-noscroll">
 

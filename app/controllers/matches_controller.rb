@@ -1,8 +1,6 @@
 class MatchesController < ApplicationController
   def index
-    @matches = Match.where(league_id: params[:league_id])
-    # now = DateTime.current
-    # @matches = Match.where(league_id: params[:league_id]) && Match.after(DateTime.current.utc)
+    @league_matches = Match.where(league_id: params[:league_id])
   end
 
   def new

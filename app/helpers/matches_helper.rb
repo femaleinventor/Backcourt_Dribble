@@ -5,12 +5,12 @@ module MatchesHelper
   end
 
   def sort_matches_by_date(matches)
+    #Sorts Matches By Start Date/Time
     matches.sort_by{|match| match.start }
   end
 
   def format_match_date(match)
-    match_date = match.start
-    match_date.strftime("%m/%d/%Y at %I:%M%p")
+    match.start.strftime("%m/%d/%Y at %I:%M%p")
   end
 
   def format_match_date_english(match)
