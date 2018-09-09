@@ -35,24 +35,24 @@
     <div class="col-xs-12 col-md-6">
       <div class="create-action">
         <h3 class="text-center edit-options"> Create A New Sport: </h3>
-        <%= form_tag(controller: 'sports', action: 'create') do %>
+        <%= form_for :sport, :url => {:controller => "sports", :action => "create"} do |f| %>
           <div class="form-group">
-            <%= label_tag :name, "Sport Name"%>
-            <%= text_field_tag :name, nil, class:"form-control"%>
+            <%= f.label :name, "Sport Name"%>
+            <%= f.text_field :name, class:"form-control"%>
           </div>
 
           <div class="form-group">
-            <%= label_tag :image_url, "Image"%>
-            <%= text_field_tag :image_url, nil, class:"form-control", placeholder: "Optional"%>
+            <%= f.label :image_url, "Image"%>
+            <%= f.text_field :image_url, class:"form-control", placeholder: "Optional"%>
           </div>
 
           <div class="form-group">
-            <%= label_tag :sound_link, "Sound Link"%>
-            <%= text_field_tag :sound_link, nil, class:"form-control", placeholder: "Optional"%>
+            <%= f.label :sound_link, "Sound Link"%>
+            <%= f.text_field :sound_link, class:"form-control", placeholder: "Optional"%>
           </div>
 
           <div class="form-actions">
-            <%= submit_tag "Submit", class: "btn btn-primary btn-md" %>
+            <%= f.submit "Submit", class: "btn btn-primary btn-md" %>
           </div>
         <% end %>
       </div>
