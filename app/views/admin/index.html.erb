@@ -110,7 +110,6 @@
   </div> <!-- End League CRUD -->
 
   <!-- Venue CRUD -->
-
   <div id="venues" class="row justify-content-around resource-section">
     <h2 class="section-heading"></h2>
 
@@ -164,47 +163,47 @@
     <div class="col-xs-12 col-md-6">
       <div class="create-action">
         <h3 class="text-center edit-options"> Create A New Match: </h3>
-        <%= form_tag(controller: 'matches', action: 'create') do %>
+        <%= form_for :match, :url => {:controller => "matches", :action => "create"} do |f| %>
 
           <div class="form-group">
-            <%= label_tag :sport %>
-            <%= select_tag :sport_id, options_from_collection_for_select(@sports, "id", "name"), include_blank: true, class: "form-control"  %>
+            <%= f.label :sport %>
+            <%= f.select :sport_id, Sport.all.collect {|s| [ s.name, s.id ] }, { include_blank: true }, :class => "form-control"  %>
           </div>
 
           <div class="form-group">
-            <%= label_tag :league %>
-            <%= select_tag :league_id, options_from_collection_for_select(@leagues, "id", "name"), include_blank: true, class: "form-control"  %>
+            <%= f.label :league %>
+            <%= f.select :league_id, League.all.collect {|l| [ l.name, l.id ] }, { include_blank: true }, class: "form-control"  %>
           </div>
 
           <div class="form-group">
-            <%= label_tag :Home_Team %>
-            <%= select_tag :home_team_id, options_from_collection_for_select(@teams, "id", "name"), include_blank: true, class: "form-control"  %>
+            <%= f.label :Home_Team %>
+            <%= f.select :home_team_id, Team.all.collect {|t| [ t.name, t.id ] }, { include_blank: true }, class: "form-control"   %>
           </div>
 
           <div class="form-group">
-            <%= label_tag :Away_Team %>
-            <%= select_tag :away_team_id, options_from_collection_for_select(@teams, "id", "name"), include_blank: true, class: "form-control"  %>
-          </div>
-
-
-          <div class="form-group">
-            <%= label_tag :start, "Start Date and Time: YYYY-MM-DD hh:mm:ss" %> <br/>
-            <%= text_field_tag :start, nil, class:"form-control"%>
+            <%= f.label  :Away_Team %>
+            <%= f.select :away_team_id, Team.all.collect {|t| [ t.name, t.id ] }, { include_blank: true }, class: "form-control"   %>
           </div>
 
 
           <div class="form-group">
-            <%= label_tag :Channel %>
-            <%= text_field_tag :channel, nil, class:"form-control"%>
+            <%= f.label :start, "Start Date and Time: YYYY-MM-DD hh:mm:ss" %> <br/>
+            <%= f.datetime_select :start, class:"form-control"%>
+          </div>
+
+
+          <div class="form-group">
+            <%= f.label :Channel %>
+            <%= f.text_field  :channel, class:"form-control"%>
           </div>
 
           <div class="form-group">
-            <%= label_tag :Venue %>
-            <%= select_tag :venue_id, options_from_collection_for_select(@venues, "id", "name"), include_blank: true, class: "form-control"  %>
+            <%= f.label :Venue %>
+            <%= f.select :venue_id, Venue.all.collect {|v| [ v.name, v.id ] }, { include_blank: true }, class: "form-control"  %>
           </div>
 
           <div class="form-actions">
-            <%= submit_tag "Submit", class: "btn btn-primary btn-md" %>
+            <%= f.submit "Submit", class: "btn btn-primary btn-md" %>
           </div>
         <% end %>
       </div>
@@ -213,11 +212,11 @@
     <div class="col-xs-12 col-md-4">
       <h3 class="text-center edit-options"> All Matches: </h3>
       <div class="scroller">
-          <%sorted_matches = sort_matches_by_date(@matches)%>
-          <% sorted_matches.each do |match| %>
+          <% @matches.each do |match| %>
             <% @home_team = Team.find(match.home_team_id) %>
             <% @away_team = Team.find(match.away_team_id) %>
-            <%=link_to "#{format_match_date_english(match)}: #{@home_team.name} vs. #{@away_team.name}", match_path(match), class:"show-links"%>
+            <!-- format_match_date_english(match) -->
+            <%=link_to "#{match.id}: #{@home_team.name} vs. #{@away_team.name}", match_path(match), class:"show-links"%>
             <% end %>
       </div>
     </div>
