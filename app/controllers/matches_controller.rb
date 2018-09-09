@@ -1,7 +1,8 @@
 class MatchesController < ApplicationController
   def index
-    # @matches = Match.where(league_id: params[:league_id])
-    @matches = Match.where(league_id: params[:league_id]) && Match.after(DateTime.current - 1)
+    @matches = Match.where(league_id: params[:league_id])
+    # now = DateTime.current
+    # @matches = Match.where(league_id: params[:league_id]) && Match.after(DateTime.current.utc)
   end
 
   def new
@@ -42,7 +43,7 @@ class MatchesController < ApplicationController
 
   private
     def match_params
-      params.permit(:channel, :start, :venue_id, :sport_id, :league_id, :home_team_id, :away_team_id)
+      params.require(:match).permit(:result, :channel, :start, :venue_id, :sport_id, :league_id, :home_team_id, :away_team_id)
     end
 
     def update_match_params

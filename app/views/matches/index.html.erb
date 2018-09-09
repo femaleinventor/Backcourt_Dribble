@@ -1,6 +1,7 @@
 <div id="fullpage">
     <!-- Future matches was here via find_future_matches helper -->
-    <% sorted_matches = sort_matches_by_date(@matches) %>
+    <%future_matches = find_future_matches(@matches)%>
+    <% sorted_matches = sort_matches_by_date(future_matches) %>
     <% sorted_matches.each do |match| %>
       <% @home_team = Team.find(match.home_team_id) %>
       <% @away_team = Team.find(match.away_team_id) %>
@@ -11,7 +12,6 @@
         <!-- Makes gradient behind match up -->
         <div class="slide" style="background: #FFFFFF; background: -webkit-linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);
         background: linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);">
-
           <div class="container-fluid">
             <audio data-autoplay>
               <source src="<%=match.sport.sound_link%>" type="audio/wav">
