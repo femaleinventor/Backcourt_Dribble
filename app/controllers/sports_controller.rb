@@ -52,7 +52,6 @@ class SportsController < ApplicationController
   private
     def sport_params
       params.require(:sport).permit(:name, :image_url, :sound_link)
-      # params.permit(:name, :image_url, :sound_link)
     end
 
     def update_sport_params
