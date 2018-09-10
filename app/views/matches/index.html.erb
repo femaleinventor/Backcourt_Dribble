@@ -201,9 +201,11 @@
 
             <div class="row justify-content-center">
               <div class="col-xs-12">
-                <h1 class="venue-info-title text-center"> <span style="color:<%=@home_team.bright_color%>;"><%=@home_team.name%></span> vs. <span style="color:<%=@away_team.bright_color%>;"><%=@away_team.name%></span></h1>
-                <div class="countdown-text">
-                  <div id="clock" class="countdown mx-auto text-center" data-countdown="<%=match.start.strftime('%m/%d/%Y %H:%M:%S')%>"></div>
+                <div class="venue-info-header">
+                  <h1 class="venue-info-title text-center"> <span style="color:<%=@home_team.bright_color%>;"><%=@home_team.name%></span> vs. <span style="color:<%=@away_team.bright_color%>;"><%=@away_team.name%></span></h1>
+                  <div class="countdown-text">
+                    <div id="clock" class="countdown mx-auto text-center" data-countdown="<%=match.start.strftime('%m/%d/%Y %H:%M:%S')%>"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -216,13 +218,16 @@
 
                   <div class="venue-detail">
                     <p class="desc">Where</p>
-                    <p><%=match.venue.name%> <br/><%=match.venue.address%></p>
+                    <p><%=match.venue.name%> <%=match.venue.address%></p>
 
                     <p class="desc">When</p>
                     <p><%=format_match_date_english(match)%></p>
 
-                    <p class="desc">Streaming</p>
-                    <p><%=match.channel%> </p>
+                    <%if match.channel != ""%>
+                      <p class="desc">Casting</p>
+                      <p><%=match.channel%> </p>
+                    <%end%>
+
                   </div>
 
                   <div class="venue-match-links">
@@ -230,6 +235,7 @@
                     <%if match.league.name == "National Women's Soccer League (USA)"%>
                       <a class="ticket-link text-center"href="http://www.nwslsoccer.com/tickets">Purchase Tickets</a>
                     <%end%>
+                    <p class="text-center coming-soon">(Coming Soon!)</p>
                   </div>
                 </div>
 

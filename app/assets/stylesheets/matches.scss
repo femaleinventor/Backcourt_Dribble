@@ -32,30 +32,34 @@ $theme-dark-grey: #343a40;
   text-shadow: 3px 3px 5px rgba(55, 55, 55, 0.2);
 }
 
-.venue-info-container {
-  // line-height: 3;
-  p {
-    color: $theme-blue;
-    text-align: left;
-  }
-}
+// Venue Stuff
 
-.venue-info-title {
-  color: white;
-  font-weight: lighter;
-  font-size: 2rem;
+.venue-info-header {
+  background: rgba(white, .2);
+  padding: 2em;
+  width: 90vw;
+  .venue-info-title {
+    color: white;
+    font-weight: lighter;
+    font-size: 1.5rem;
+  }
+  .countdown-text{
+    .countdown {
+      color: white;
+      font-size: 1.5rem;
+    }
+  }
 }
 
 .venue_info_card {
   margin-top: 2em;
   border: 1px solid white;
   border-radius: 2%;
-  width: 40vw;
-  height: 70vh;
+  width: 80vw;
   .venue-detail-title{
     margin-top: 0.5em;
     color: $theme-blue;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .venue-detail{
     color: white;
@@ -64,6 +68,8 @@ $theme-dark-grey: #343a40;
       font-size: 1rem;
     }
     .desc{
+      margin: .2em;
+      font-size: 1rem;
       color: $theme-orange;
       text-decoration: underline;
     }
@@ -71,54 +77,29 @@ $theme-dark-grey: #343a40;
 
 }
 
-.venue-location-info {
-  margin: 20px;
-  font-size: 20px;
-}
-
 .venue-match-links {
-  margin-top: 1em;
-  margin-bottom: 1.5em;
-}
-
-.match-date {
-  color: $theme-orange;
-}
-
-.match-channel {
-  color: $theme-blue;
-}
-
-
-.countdown-text {
-  .coutdown-title {
-    color: $theme-orange;
-    margin-top: 10px;
-  }
-  .countdown {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  .coming-soon{
     color: white;
-    font-size: 30px;
+    font-size: 0.625rem;
   }
 }
-
 
 .ticket-link {
   color: $theme-orange;
-  font-size: 20px;
+  font-size: 1rem;
   text-decoration: none;
   display: block;
 }
 
 .game-reminder-link {
   color: $theme-blue;
-  font-size: 20px;
+  font-size: 1rem;
   text-decoration: none;
   display: block;
 }
 
-.logo-link {
-  height: 150px;
-}
 
 .prediction-labels {
   color: white;
@@ -228,20 +209,26 @@ $theme-dark-grey: #343a40;
       font-size: 1rem;
     }
   }
-  .venue-info-title{
-    font-size: 1.2rem;
-  }
 
-  .countdown-text{
-    .countdown{
+  .venue-info-header {
+    padding: 1em;
+    margin-top: 2em;
+    .venue-info-title {
+      color: white;
+      font-weight: lighter;
       font-size: 1rem;
+    }
+    .countdown-text{
+      .countdown {
+        color: white;
+        font-size: 0.875rem;
+      }
     }
   }
 
   .venue_info_card {
     margin-top: 1em;
     width: 80vw;
-    height: 65vh;
     .venue-detail-title{
       margin-top: 0.5em;
       color: $theme-blue;
@@ -262,6 +249,7 @@ $theme-dark-grey: #343a40;
 
   }
 }
+
 
 @media (max-width:480px){
   .match-heading {
