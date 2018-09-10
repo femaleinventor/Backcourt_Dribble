@@ -1,12 +1,16 @@
 module MatchesHelper
   def find_future_matches(matches)
     #Returns an array of future matches
-      matches.select{|match| match.start >= DateTime.now}
+    matches.select{|match| match.start >= DateTime.now.change(:offset => "+0000")}
+  end
+
+  def sort_matches_by_date(matches)
+    #Sorts Matches By Start Date/Time
+    matches.sort_by{|match| match.start }
   end
 
   def format_match_date(match)
-    match_date = match.start
-    match_date.strftime("%m/%d/%Y at %I:%M%p")
+    match.start.strftime("%m/%d/%Y at %I:%M%p")
   end
 
   def format_match_date_english(match)
@@ -35,7 +39,5 @@ module MatchesHelper
     !check_for_spaces(string) ? string.scan(/.{50}|.+/).join(" ") : string
   end
 
-  def sort_matches_by_date(matches)
-    matches.sort_by{ |match| match.start }
-  end
+
 end

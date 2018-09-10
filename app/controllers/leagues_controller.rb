@@ -14,7 +14,7 @@ class LeaguesController < ApplicationController
 
   def show
     @league = League.find(params[:id])
-    @sports = Sport.all 
+    @sports = Sport.all
   end
 
   def update
@@ -37,7 +37,7 @@ class LeaguesController < ApplicationController
 
   private
     def league_params
-      params.permit(:name, :abbreviation, :sport_id)
+      params.require(:league).permit(:name, :abbreviation, :sport_id)
     end
 
     def update_league_params

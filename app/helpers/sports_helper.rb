@@ -7,7 +7,7 @@ module SportsHelper
   end
 
 
-  def find_future_matches(matches)
+  def find_future_sport_matches(matches)
     #Returns an array of future matches
     future_matches = matches.select do |match|
       match.start != nil && match.start > DateTime.now

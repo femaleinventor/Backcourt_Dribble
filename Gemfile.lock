@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/radar/by_star
+  revision: 422c06ec1ea8ce633aca014a4403fbac92630057
+  specs:
+    by_star (3.0.0)
+      activesupport (> 3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -255,6 +262,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootstrap (~> 4.0.0)
+  by_star!
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
