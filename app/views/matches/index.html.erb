@@ -35,19 +35,19 @@
                       <div class="d-flex justify-content-around">
                         <!-- home -->
                         <div class="form-group form-check form-check-inline">
-                          <%= label_tag :guess, "#{@home_team.abbreviation}", class: "form-check-label", style:"color:#{@home_team.dark_color}; font-weight:bold;"%>
+                          <%= label_tag :guess, "#{@home_team.abbreviation}", class: "form-check-label", style:"color:#000 font-weight:bold;"%>
                           <%= check_box_tag :guess, @home_team.name, false, class: "prediction-checkbox form-check-input" %>
                         </div>
 
                         <!-- tie -->
                         <div class="form-group form-check form-check-inline">
-                            <%= label_tag :guess, "Tie", class: "form-check-label"%>
+                            <%= label_tag :guess, "Tie", class: "form-check-label", style:"color:#000 font-weight:bold;"%>
                             <%= check_box_tag :guess, "Tie", false, class: "prediction-checkbox form-check-input" %>
                         </div>
 
                         <!-- away -->
                         <div class="form-group form-check form-check-inline">
-                          <%= label_tag :guess, "#{@away_team.abbreviation}", class: "form-check-label", style:"color:#{@away_team.dark_color}; font-weight:bold;"%>
+                          <%= label_tag :guess, "#{@away_team.abbreviation}", class: "form-check-label", style:"color:#000 font-weight:bold;"%>
                           <%= check_box_tag :guess, @away_team.name, false, class: "prediction-checkbox form-check-input" %>
                         </div>
 
@@ -55,8 +55,7 @@
 
                       <div class="reason-textbox d-flex justify-content-center">
                         <div class="reason-input form-group">
-                          <%= label_tag :reason, "Use checkbox to choose the outcome and add a reason here. Both must be there to submit prediction.", class: "reason-label text-center"%>
-                          <%= text_area_tag :reason, nil, class:"form-control", maxlength:"200"%>
+                          <%= text_area_tag :reason, nil, class:"form-control", maxlength:"200", placeholder:"Add your reason..."%>
                         </div>
                       </div>
 
@@ -91,19 +90,19 @@
                   <div class="d-flex justify-content-around">
                     <!-- home -->
                     <div class="form-group form-check form-check-inline">
-                      <%= label_tag :guess, "#{@home_team.abbreviation}", class: "form-check-label", style:"color:#{@home_team.dark_color}; font-weight:bold;"%>
+                      <%= label_tag :guess, "#{@home_team.abbreviation}", class: "form-check-label", style:"color:#000 font-weight:bold;"%>
                       <%= check_box_tag :guess, @home_team.name, false, class: "prediction-checkbox form-check-input" %>
                     </div>
 
                     <!-- tie -->
                     <div class="form-group form-check form-check-inline">
-                        <%= label_tag :guess, "Tie", class: "form-check-label"%>
+                        <%= label_tag :guess, "Tie", class: "form-check-label", style:"color:#000 font-weight:bold;"%>
                         <%= check_box_tag :guess, "Tie", false, class: "prediction-checkbox form-check-input" %>
                     </div>
 
                     <!-- away -->
                     <div class="form-group form-check form-check-inline">
-                      <%= label_tag :guess, "#{@away_team.abbreviation}", class: "form-check-label", style:"color:#{@away_team.dark_color}; font-weight:bold;"%>
+                      <%= label_tag :guess, "#{@away_team.abbreviation}", class: "form-check-label", style:"color:#000 font-weight:bold;"%>
                       <%= check_box_tag :guess, @away_team.name, false, class: "prediction-checkbox form-check-input" %>
                     </div>
 
@@ -111,8 +110,8 @@
 
                   <div class="reason-textbox d-flex justify-content-center">
                     <div class="reason-input form-group">
-                      <%= label_tag :reason, "Use checkbox to choose the outcome and add a reason here. Both must be there to submit prediction.", class: "reason-label text-center"%>
-                      <%= text_area_tag :reason, nil, class:"form-control", maxlength:"200" %>
+                      <%= label_tag :reason %>
+                      <%= text_area_tag :reason, nil, class:"form-control", maxlength:"200", placeholder:"Add your reason..." %>
                     </div>
                   </div>
 
@@ -202,9 +201,11 @@
 
             <div class="row justify-content-center">
               <div class="col-xs-12">
-                <h1 class="venue-info-title text-center"> <span style="color:<%=@home_team.bright_color%>;"><%=@home_team.name%></span> vs. <span style="color:<%=@away_team.bright_color%>;"><%=@away_team.name%></span></h1>
-                <div class="countdown-text">
-                  <div id="clock" class="countdown mx-auto text-center" data-countdown="<%=match.start.strftime('%m/%d/%Y %H:%M:%S')%>"></div>
+                <div class="venue-info-header">
+                  <h1 class="venue-info-title text-center"> <span style="color:<%=@home_team.bright_color%>;"><%=@home_team.name%></span> vs. <span style="color:<%=@away_team.bright_color%>;"><%=@away_team.name%></span></h1>
+                  <div class="countdown-text">
+                    <div id="clock" class="countdown mx-auto text-center" data-countdown="<%=match.start.strftime('%m/%d/%Y %H:%M:%S')%>"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -217,13 +218,16 @@
 
                   <div class="venue-detail">
                     <p class="desc">Where</p>
-                    <p><%=match.venue.name%> <br/><%=match.venue.address%></p>
+                    <p><%=match.venue.name%> <%=match.venue.address%></p>
 
                     <p class="desc">When</p>
                     <p><%=format_match_date_english(match)%></p>
 
-                    <p class="desc">Streaming</p>
-                    <p><%=match.channel%> </p>
+                    <%if match.channel != ""%>
+                      <p class="desc">Casting</p>
+                      <p><%=match.channel%> </p>
+                    <%end%>
+
                   </div>
 
                   <div class="venue-match-links">
@@ -231,6 +235,7 @@
                     <%if match.league.name == "National Women's Soccer League (USA)"%>
                       <a class="ticket-link text-center"href="http://www.nwslsoccer.com/tickets">Purchase Tickets</a>
                     <%end%>
+                    <p class="text-center coming-soon">(Coming Soon!)</p>
                   </div>
                 </div>
 
