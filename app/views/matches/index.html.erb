@@ -35,19 +35,19 @@
                       <div class="d-flex justify-content-around">
                         <!-- home -->
                         <div class="form-group form-check form-check-inline">
-                          <%= label_tag :guess, "#{@home_team.abbreviation}", class: "form-check-label", style:"color:#{@home_team.dark_color}; font-weight:bold;"%>
+                          <%= label_tag :guess, "#{@home_team.abbreviation}", class: "form-check-label", style:"color:#000 font-weight:bold;"%>
                           <%= check_box_tag :guess, @home_team.name, false, class: "prediction-checkbox form-check-input" %>
                         </div>
 
                         <!-- tie -->
                         <div class="form-group form-check form-check-inline">
-                            <%= label_tag :guess, "Tie", class: "form-check-label"%>
+                            <%= label_tag :guess, "Tie", class: "form-check-label", style:"color:#000 font-weight:bold;"%>
                             <%= check_box_tag :guess, "Tie", false, class: "prediction-checkbox form-check-input" %>
                         </div>
 
                         <!-- away -->
                         <div class="form-group form-check form-check-inline">
-                          <%= label_tag :guess, "#{@away_team.abbreviation}", class: "form-check-label", style:"color:#{@away_team.dark_color}; font-weight:bold;"%>
+                          <%= label_tag :guess, "#{@away_team.abbreviation}", class: "form-check-label", style:"color:#000 font-weight:bold;"%>
                           <%= check_box_tag :guess, @away_team.name, false, class: "prediction-checkbox form-check-input" %>
                         </div>
 
