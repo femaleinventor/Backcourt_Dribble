@@ -56,6 +56,11 @@
         <%= form_for @team, :method => :delete do |f|  %>
           <%= submit_tag "Delete #{@team.name}", class: "btn btn-primary btn-lg show-button delete" %>
         <% end %>
+
+        <%= link_to 'Previous', @teams.next(@team), class: "btn btn-lg btn-primary" %>
+        <%= link_to 'Next', @teams.previous(@team), class: "btn btn-lg btn-primary" %>
+        <%= link_to 'Back To Admin', admin_index_path, class: "btn btn-lg btn-primary" %>
+        
       </div>
 
       </div>

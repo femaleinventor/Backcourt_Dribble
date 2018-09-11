@@ -15,6 +15,7 @@ class TeamsController < ApplicationController
   def show
     @team = Team.find(params[:id])
     @sports = Sport.all
+    @teams = Team.order(:name)
   end
 
   def update
