@@ -61,7 +61,8 @@
     <div class="col-xs-12 col-md-4">
       <h3 class="text-center edit-options"> All Sports: </h3>
       <div class="scroller">
-          <% @sports.each do |sport| %>
+
+          <% alphabetize(@sports).each do |sport| %>
             <%=link_to sport.name, sport_path(sport), class:"show-links"%>
             <% end %>
       </div>
@@ -87,7 +88,7 @@
 
           <div class="form-group">
             <%= f.label "Sport" %><br/>
-            <%= f.select :sport_id, Sport.all.collect { |s| [ s.name, s.id ] }, include_blank: true%>
+            <%= f.select :sport_id, Sport.order(:name).collect { |s| [ s.name, s.id ] }, include_blank: true%>
           </div>
 
           <%= f.submit "Submit", class: "btn btn-primary btn-lg show-button"%>
@@ -98,7 +99,7 @@
     <div class="col-xs-12 col-md-4">
       <h3 class="text-center edit-options"> All Leagues: </h3>
       <div class="scroller">
-          <% @leagues.each do |league| %>
+          <% alphabetize(@leagues).each do |league| %>
             <%=link_to league.name, league_path(league), class:"show-links"%>
             <% end %>
       </div>
@@ -140,7 +141,7 @@
     <div class="col-xs-12 col-md-4">
       <h3 class="text-center edit-options"> All Venues: </h3>
       <div class="scroller">
-          <% @venues.each do |venue| %>
+          <% alphabetize(@venues).each do |venue| %>
             <%=link_to venue.name, venue_path(venue), class:"show-links"%>
             <% end %>
       </div>
@@ -156,22 +157,22 @@
 
           <div class="form-group">
             <%= f.label :sport %>
-            <%= f.select :sport_id, Sport.all.collect {|s| [ s.name, s.id ] }, { include_blank: true }, :class => "form-control"  %>
+            <%= f.select :sport_id, Sport.order(:name).collect {|s| [ s.name, s.id ] }, { include_blank: true }, :class => "form-control"  %>
           </div>
 
           <div class="form-group">
             <%= f.label :league %>
-            <%= f.select :league_id, League.all.collect {|l| [ l.name, l.id ] }, { include_blank: true }, class: "form-control"  %>
+            <%= f.select :league_id, League.order(:name).collect {|l| [ l.name, l.id ] }, { include_blank: true }, class: "form-control"  %>
           </div>
 
           <div class="form-group">
             <%= f.label :Home_Team %>
-            <%= f.select :home_team_id, Team.all.collect {|t| [ t.name, t.id ] }, { include_blank: true }, class: "form-control"   %>
+            <%= f.select :home_team_id, Team.order(:name).collect {|t| [ t.name, t.id ] }, { include_blank: true }, class: "form-control"   %>
           </div>
 
           <div class="form-group">
             <%= f.label  :Away_Team %>
-            <%= f.select :away_team_id, Team.all.collect {|t| [ t.name, t.id ] }, { include_blank: true }, class: "form-control"   %>
+            <%= f.select :away_team_id, Team.order(:name).collect {|t| [ t.name, t.id ] }, { include_blank: true }, class: "form-control"   %>
           </div>
 
 
@@ -188,7 +189,7 @@
 
           <div class="form-group">
             <%= f.label :Venue %>
-            <%= f.select :venue_id, Venue.all.collect {|v| [ v.name, v.id ] }, { include_blank: true }, class: "form-control"  %>
+            <%= f.select :venue_id, Venue.order(:name).collect {|v| [ v.name, v.id ] }, { include_blank: true }, class: "form-control"  %>
           </div>
 
           <div class="form-actions">
@@ -201,11 +202,10 @@
     <div class="col-xs-12 col-md-4">
       <h3 class="text-center edit-options"> All Matches: </h3>
       <div class="scroller">
-          <% @matches.each do |match| %>
+          <% sort_by_date(@matches).each do |match| %>
             <% @home_team = Team.find(match.home_team_id) %>
             <% @away_team = Team.find(match.away_team_id) %>
-            <!-- format_match_date_english(match) -->
-            <%=link_to "#{match.id}: #{@home_team.name} vs. #{@away_team.name}", match_path(match), class:"show-links"%>
+            <%=link_to "#{format_match_date_english(match)}: #{@home_team.name} vs. #{@away_team.name}", match_path(match), class:"show-links"%>
             <% end %>
       </div>
     </div>
@@ -256,7 +256,7 @@
 
           <div class="form-group">
             <%= f.label "Sport" %><br/>
-            <%= f.select :sport_id, Sport.all.collect { |s| [ s.name, s.id ] }, include_blank: true%>
+            <%= f.select :sport_id, Sport.order(:name).collect { |s| [ s.name, s.id ] }, include_blank: true%>
           </div>
 
           <%= f.submit "Submit", class: "btn btn-primary btn-lg show-button"%>
@@ -267,7 +267,7 @@
     <div class="col-xs-12 col-md-4">
       <h3 class="text-center edit-options"> All Teams: </h3>
       <div class="scroller">
-          <% @teams.each do |team| %>
+          <% alphabetize(@teams).each do |team| %>
             <%=link_to team.name, team_path(team), class:"show-links"%>
             <% end %>
       </div>
