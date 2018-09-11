@@ -57,6 +57,11 @@
         <%= form_for @match, :method => :delete do |f|  %>
           <%= submit_tag "Delete Match", class: "btn btn-primary btn-lg show-button delete" %>
         <% end %>
+
+        <%= link_to 'Previous', @matches.next(@match), class: "btn btn-lg btn-primary" %>
+        <%= link_to 'Next', @matches.previous(@match), class: "btn btn-lg btn-primary" %>
+        <%= link_to 'Back To Admin', admin_index_path, class: "btn btn-lg btn-primary" %>
+        
       </div>
 
       </div>

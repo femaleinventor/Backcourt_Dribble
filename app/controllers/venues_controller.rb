@@ -16,6 +16,7 @@ class VenuesController < ApplicationController
   def show
     @venue = Venue.find(params[:id])
     @sports = Sport.all
+    @venues = Venue.order(:name)
   end
 
   def update

@@ -15,6 +15,7 @@ class LeaguesController < ApplicationController
   def show
     @league = League.find(params[:id])
     @sports = Sport.all
+    @leagues = League.order(:name)
   end
 
   def update

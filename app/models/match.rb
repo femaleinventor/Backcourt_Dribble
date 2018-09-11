@@ -4,4 +4,11 @@ class Match < ApplicationRecord
   belongs_to :venue, optional: true
   has_many :predictions
 
+  def self.next(match)
+    where('start < ?', match.start).last
+  end
+
+  def self.previous(match)
+    where('start > ?', match.start).first
+  end
 end
