@@ -1,8 +1,9 @@
-<% content_for :title, "Backcourt Dribble Admin: Update A Match" %>
-
-<%=render "shared/site_nav"%>
 <% @home_team = Team.find(@match.home_team_id) %>
 <% @away_team = Team.find(@match.away_team_id) %>
+<% content_for :title, "Backcourt Dribble Admin: Update #{@home_team} vs. #{@away_team}" %>
+
+<%=render "shared/site_nav"%>
+
 <%match_identifier = "#{@match.start}: #{@home_team.name} vs. #{@away_team.name}"%>
 <div class="container">
   <h1 class="show-title">Update or Delete <span class"team-name"><%=match_identifier%></span></h1>
