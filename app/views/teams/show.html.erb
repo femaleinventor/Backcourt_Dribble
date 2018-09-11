@@ -1,3 +1,5 @@
+<% content_for :title, "Backcourt Dribble Admin: Update #{@team.name}" %>
+
 <%=render "shared/site_nav"%>
 
 <div class="container">
@@ -60,7 +62,7 @@
         <%= link_to 'Previous', @teams.next(@team), class: "btn btn-lg btn-primary" %>
         <%= link_to 'Next', @teams.previous(@team), class: "btn btn-lg btn-primary" %>
         <%= link_to 'Back To Admin', admin_index_path, class: "btn btn-lg btn-primary" %>
-        
+
       </div>
 
       </div>

@@ -1,3 +1,5 @@
+<% content_for :title, "Backcourt Dribble Admin: Update A Match" %>
+
 <%=render "shared/site_nav"%>
 <% @home_team = Team.find(@match.home_team_id) %>
 <% @away_team = Team.find(@match.away_team_id) %>
@@ -61,7 +63,7 @@
         <%= link_to 'Previous', @matches.next(@match), class: "btn btn-lg btn-primary" %>
         <%= link_to 'Next', @matches.previous(@match), class: "btn btn-lg btn-primary" %>
         <%= link_to 'Back To Admin', admin_index_path, class: "btn btn-lg btn-primary" %>
-        
+
       </div>
 
       </div>
