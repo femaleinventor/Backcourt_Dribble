@@ -8,6 +8,7 @@
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+  <%= ga_script %>
 
   <style>
     @import url('https://fonts.googleapis.com/css?family=Comfortaa');
@@ -20,7 +21,8 @@
 </head>
 
 <body>
-  
+
   <%= yield %>
+  <%= ga_track %>
 </body>
 </html>
