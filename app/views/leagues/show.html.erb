@@ -31,6 +31,11 @@
         <%= form_for @league, :method => :delete do |f|  %>
           <%= submit_tag "Delete #{@league.name}", class: "btn btn-primary btn-lg show-button delete" %>
         <% end %>
+
+        <%= link_to 'Previous', @leagues.next(@league), class: "btn btn-lg btn-primary" %>
+        <%= link_to 'Next', @leagues.previous(@league), class: "btn btn-lg btn-primary" %>
+        <%= link_to 'Back To Admin', admin_index_path, class: "btn btn-lg btn-primary" %>
+        
       </div>
 
       </div>
