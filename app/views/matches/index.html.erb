@@ -1,3 +1,5 @@
+<% content_for :title, "Backcourt Dribble: Predictions for #{@league.name}" %>
+
 <div id="fullpage">
 
   <% sorted_matches = sort_matches_by_date(find_future_matches(@league_matches)) %>
