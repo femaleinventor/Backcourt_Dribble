@@ -1,1 +1,123 @@
-<%= render "shared/empty_league" %>
+<!-- Begin Content -->
+  <div class="container-fluid">
+        <%= render 'shared/nav' %>
+
+    <!-- Start Row 2 -->
+    <div class="row">
+      <!-- League menu panel -->
+      <div class="col-xs-12 col-md-3 league_menu menu">
+        <!-- <p> Check out the WoSo's Wall! </p> -->
+        <ul>
+          <li><a class="league-link" href="/">Back to Home</a></li>
+          <li><a id="fifa" class="league-link" href="#">FIFA (National Teams)</a></li>
+          <li><a class="league-link active" href="/pages/soccer/nwsl.html.erb">National Women's Soccer League (USA)</a></li>
+          <li><a class="league-link" href="/pages/soccer/nwl.html.erb">National Women’s League (New Zealand)</a></li>
+          <!-- <li><a class="league-link" href="#">Allianz Frauen-Bundesliga (Germany)</a></li>
+          <li><a class="league-link" href="#">FA Women's Super League (England)</a></li>
+          <li><a class="league-link" href="#">FA Women's Championship (England)</a></li>
+          <li><a class="league-link" href="#">Westfield W-League (Australia)</a></li>
+          <li><a class="league-link" href="#">Liga MX Femenil (Mexico)</a></li>
+          <li><a class="league-link" href="#">Primera División Femenina (Spain)</a></li>
+          <li><a class="league-link" href="#">Serie A Women (Italy) </a></li>
+          <li><a class="league-link" href="#">Damallsvenskan (Sweden)</a></li> -->
+        </ul>
+
+        <!--FIFA Leagues-->
+        <%= render 'shared/fifa_menu' %>
+
+        <!-- Ads within league menu panel-->
+        <div class="ad-container">
+          <div class="ad"></div>
+          <div class="ad"></div>
+          <div class="ad"></div>
+          <div class="ad"></div>
+        </div>
+      </div> <!-- league menu panel -->
+
+
+
+      <div class="nwsl-list-container col-md-8">
+          <div class="row">
+
+          <!-- nwl twitter list panel 1 -->
+          <div class="col nwsl_twitter_list">
+            <!-- Northern -->
+            <div class="template-panel-container d-flex justify-content-center template_small_list">
+              <a class="twitter-timeline" data-height="1000" data-theme="dark" data-link-color="#98282A" href="https://twitter.com/backcourtdribbl/lists/northern-football-fed?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+          </div> <!-- End nwsl twitter list panel 1 -->
+
+          <!-- nwl twitter list panel 2 -->
+          <div class="col nwsl_twitter_list">
+            <!-- Canterbury -->
+            <div class="template-panel-container d-flex justify-content-center template_small_list">
+              <a class="twitter-timeline" data-height="1000" data-theme="dark" href="https://twitter.com/backcourtdribbl/lists/canterbury-united?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+          </div> <!-- End nwsl twitter list panel 2 -->
+
+          <!-- nwsl twitter list panel 3 -->
+          <div class="col nwsl_twitter_list">
+            <!-- Auckland -->
+            <div class="template-panel-container d-flex justify-content-center template_small_list">
+              <a class="twitter-timeline" data-height="1000" data-theme="dark" data-link-color="#3989CD" href="https://twitter.com/backcourtdribbl/lists/auckland-football-fed?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+          </div> <!-- End nwsl twitter list panel 3 -->
+
+        </div> <!--End Row 2a-->
+
+        <div class="row">
+          <!-- nwsl twitter list panel 4 -->
+          <div class="col nwsl_twitter_list">
+            <!-- Waibop-->
+            <div class="template-panel-container d-flex justify-content-center template_small_list">
+              <a class="twitter-timeline" data-height="1000" data-theme="dark" href="https://twitter.com/backcourtdribbl/lists/waibop?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div> <!-- End nwsl twitter list panel 4 -->
+          </div>
+            <!-- nwsl twitter list panel 5 -->
+            <div class="col nwsl_twitter_list">
+              <!-- Central -->
+            <div class="template-panel-container d-flex justify-content-center template_small_list">
+              <a class="twitter-timeline" data-height="1000" data-theme="dark" data-link-color="#497431" href="https://twitter.com/backcourtdribbl/lists/central-football-fed?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>              </div>
+            </div> <!-- End nwsl twitter list panel 5 -->
+
+            <!-- nwsl twitter list panel 6 -->
+            <div class="col nwsl_twitter_list">
+              <!-- Southern-->
+            <div class="template-panel-container d-flex justify-content-center template_small_list">
+              <a class="twitter-timeline" data-height="1000" data-theme="dark" data-link-color="#E4B047" href="https://twitter.com/backcourtdribbl/lists/southern-united-fc?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>            </div>
+            </div> <!-- End nwsl twitter list panel 6 -->
+
+        </div> <!--End Row 2b-->
+
+          <div class="row">
+            <!-- nwsl twitter list panel 7 -->
+            <div class="col nwsl_twitter_list">
+              <!-- Capital -->
+              <div class="template-panel-container d-flex justify-content-center template_small_list">
+                <a class="twitter-timeline" data-height="1000" data-theme="dark" data-link-color="#F5B740" href="https://twitter.com/backcourtdribbl/lists/capital-football?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </div>
+            </div> <!-- End nwsl twitter list panel 7 -->
+
+            <!-- nwsl twitter list panel 8 -->
+            <div class="col nwsl_twitter_list">
+              <!-- Capital -->
+              <div class="template-panel-container d-flex justify-content-center template_small_list">
+                <!-- <a class="twitter-timeline" data-height="1000" data-theme="dark" data-link-color="#F5B740" href="https://twitter.com/backcourtdribbl/lists/capital-football?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+              </div> <!-- End nwsl twitter list panel 8 -->
+            </div>
+
+              <!-- nwsl twitter list panel 9 -->
+              <div class="col nwsl_twitter_list">
+                <!-- Washington Spirit -->
+                <div class="template-panel-container d-flex justify-content-center template_small_list">
+                  <!-- <a class="twitter-timeline" data-link-color="#B32435" data-border-color="#F6F6F6" lang="EN" data-theme="dark" height="1000" data-screen-name="backcourtdribbl" data-show-replies="true" data-aria-polite="assertive" href="https://twitter.com/backcourtdribbl/lists/washington-spirit?ref_src=twsrc%5Etfw">A Twitter List by backcourtdribbl</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+                </div>
+              </div> <!-- End nwsl twitter list panel 9 -->
+
+            </div> <!--End Row 2c-->
+
+        </div> <!-- End Row 2 -->
+      </div> <!-- End container-fluid  -->
+      <!-- End Content -->
+    </body>
+    </html>
