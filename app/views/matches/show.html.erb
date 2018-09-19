@@ -49,9 +49,10 @@
           </div>
 
           <div class="form-group">
-            <%= f.label "Start Date and Time: YYYY-MM-DD hh:mm:ss" %>
-            <%= f.text_field :start, class:"form-control", value: @match.start%>
+            <%= f.label :start, "Start Date and Time" %> <br/>
+            <%= f.datetime_select :start, class:"form-control", value: @match.start%>
           </div>
+          
           <%= f.submit "Update Match", class: "btn btn-primary btn-lg show-button"%>
         <% end %>
 
