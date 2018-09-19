@@ -9,9 +9,7 @@ module SportsHelper
 
   def find_future_sport_matches(matches)
     #Returns an array of future matches
-    future_matches = matches.select do |match|
-      match.start != nil && match.start > DateTime.now
-    end
+    matches.select{|match| match.start != nil && match.start >= DateTime.now.change(:offset => "+0000")}
   end
 
   def create_inactive_leagues_array(array1, array2)
