@@ -17,24 +17,26 @@
 
       <%sorted_unique_users = sort_users_by_points(get_unique_users(@predictions))%>
 
-      <%top_three = sorted_unique_users[0,3]%>
+      <%top_users = sorted_unique_users[0,3]%>
 
 
       <div class="row justify-content-center">
         <div class="col-xs-12">
           <div class="top-three-users d-flex justify-content-between">
+          <%if top_users.length >= 3%>
             <div class="image-container">
-              <img src="<%=top_three[1].avatar%>" class="profile-image" alt="profile image">
-              <p class="position">2nd</p>
+                <img src="<%=top_users[1].avatar%>" class="profile-image" alt="profile image">
+                <p class="position">2nd</p>
             </div>
             <div class="image-container">
-              <img src="<%=top_three[0].avatar%>" class="profile-image featured" alt="profile image">
+               <img src="<%=top_users[0].avatar%>" class="profile-image featured" alt="profile image">
               <p class="position">1st</p>
             </div>
             <div class="image-container">
-              <img src="<%=top_three[2].avatar%>" class="profile-image" alt="profile image">
+              <img src="<%=top_users[2].avatar%>" class="profile-image" alt="profile image">
               <p class="position">3rd</p>
             </div>
+          <%end%>
           </div>
         </div>
       </div>
