@@ -1,6 +1,6 @@
 class League < ApplicationRecord
   belongs_to :sport, optional: true
-  has_many :matches
+  has_many :matches, dependent: :destroy 
   has_and_belongs_to_many :teams
   has_many :predictions, through: :matches
 
