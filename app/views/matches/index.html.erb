@@ -21,7 +21,7 @@
               <div class="col-xs-12 mx-auto">
                 <div class="match-teams">
                   <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %></h1>
-                  <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> <span class="match-venue-timezone">(<%= match.venue.time_zone %>)</span> </p>
+                  <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> (<%= match.venue.time_zone %>) </p>
                 </div>
               </div>
             </div>
