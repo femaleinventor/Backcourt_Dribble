@@ -4,19 +4,20 @@
 <%= render 'shared/site_nav'%>
 <body class="big-white">
   <div class="sports-container container-fluid">
-
     <div class="row justify-content-center align-items-center dashboard-section sports_container">
       <div class="col-xs-12 align-items-center">
-          <%@sports.each do |sport|%>
-                <div class="sports">
-                  <%= link_to "#{sport.name}", "##{sport.name}", class: "btn btn-lg btn-primary sports-button"%>
-                </div>
+        <%if @sports.length > 1 %>
+            <%@sports.each do |sport|%>
+                  <div class="sports">
+                    <%= link_to "#{sport.name}", "##{sport.name}", class: "btn btn-lg btn-primary sports-button"%>
+                  </div>
+            <%end%>
           <%end%>
       </div>
     </div>
 
-    <!-- <% sports_with_matches = @sports.select {|sport| sport.matches.length > 0 } %> -->
     <% @sports.each do |sport| %>
+
     <!-- Sport CRUD -->
     <div id="<%=sport.name%>" class="row justify-content-around sport-section">
       <div class="col-xs-12 col-md-4">
@@ -41,9 +42,6 @@
             <%else%>
              <div class="no-engagement">Nothing here yet, check back soon!</div>
             <%end%>
-
-
-
         </div>
       </div>
 
