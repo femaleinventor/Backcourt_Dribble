@@ -1,8 +1,10 @@
 class SportsController < ApplicationController
 
   def index
-    @sports = Sport.all
+    # @sports = Sport.all
+    @sports = Sport.joins(:matches).where('matches.start >= ?', DateTime.now.change(:offset => "+0000")).uniq
     @leagues = League.all
+
   end
 
   def leaderboard
@@ -57,4 +59,10 @@ class SportsController < ApplicationController
     def update_sport_params
       params.require(:sport).permit(:name, :image_url, :sound_link)
     end
+
+    def future_matches(matches)
+      #Returns an array of future matches
+      matches.select{|match| match.start != nil && match.start >= DateTime.now.change(:offset => "+0000")}
+    end
+
 end
