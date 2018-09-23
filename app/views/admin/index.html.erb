@@ -131,10 +131,6 @@
             <%= f.text_field :address, class: "form-control form-control-lg"%>
           </div>
 
-          <div class="form-group">
-            <%= f.label "Time Zone" %>
-            <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, include_blank: true, class: "form-control form-control-lg"%>
-          </div>
           <%= f.submit "Submit", class: "btn btn-primary btn-lg show-button"%>
         <% end %>
 
@@ -184,6 +180,10 @@
             <%= f.datetime_select :start, class:"form-control"%>
           </div>
 
+          <div class="form-group">
+            <%= f.label "Time Zone" %>
+            <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, include_blank: true, class: "form-control form-control-lg"%>
+          </div>
 
           <div class="form-group">
             <%= f.label :Channel %>

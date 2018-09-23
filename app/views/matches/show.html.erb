@@ -52,7 +52,12 @@
             <%= f.label :start, "Start Date and Time" %> <br/>
             <%= f.datetime_select :start, class:"form-control", value: @match.start%>
           </div>
-          
+
+          <div class="form-group">
+            <%= f.label "Time Zone" %>
+            <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, include_blank: true, class: "form-control form-control-lg"%>
+          </div>
+
           <%= f.submit "Update Match", class: "btn btn-primary btn-lg show-button"%>
         <% end %>
 
