@@ -181,8 +181,8 @@
           </div>
 
           <div class="form-group">
-            <%= f.label "Time Zone" %>
-            <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, include_blank: true, class: "form-control form-control-lg"%>
+            <%= f.label "Time Zone" %></br>
+            <%= f.select :time_zone, TZInfo::Timezone.all.collect { |tz| [tz.name] }, include_blank: true, class: "form-control form-control-lg"%>
           </div>
 
           <div class="form-group">
