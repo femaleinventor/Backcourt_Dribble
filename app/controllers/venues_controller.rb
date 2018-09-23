@@ -39,11 +39,11 @@ class VenuesController < ApplicationController
 
   private
     def venue_params
-      # params.require(:venue).permit(:name, :image_url, :address, :time_zone)
-      params.require(:venue).permit(:name, :picture_url, :address, :time_zone)
+      # params.require(:venue).permit(:name, :image_url, :address)
+      params.require(:venue).permit(:name, :picture_url, :address)
     end
 
     def update_venue_params
-      params.require(:venue).permit(:name, :picture_url, :address, :time_zone)
+      params.require(:venue).permit(:name, :picture_url, :address)
     end
 end

@@ -43,11 +43,11 @@ class MatchesController < ApplicationController
 
   private
     def match_params
-      params.require(:match).permit(:result, :channel, :start, :venue_id, :sport_id, :league_id, :home_team_id, :away_team_id)
+      params.require(:match).permit(:result, :channel, :start, :time_zone, :venue_id, :sport_id, :league_id, :home_team_id, :away_team_id)
     end
 
     def update_match_params
-      params.require(:match).permit(:result, :channel, :start, :venue_id, :sport_id, :league_id, :home_team_id, :away_team_id)
+      params.require(:match).permit(:result, :channel, :start, :time_zone, :venue_id, :sport_id, :league_id, :home_team_id, :away_team_id)
     end
 
 end
