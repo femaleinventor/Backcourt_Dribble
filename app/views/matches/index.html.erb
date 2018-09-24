@@ -23,19 +23,13 @@
                   <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %></h1>
 
                   <p style="color:black">Match Start UTC: <%= match.start.utc %></p>
-                  <p style="color:black">Match Start w/ Offset: <%= add_offset_to_match_start(match)%></p>
-
-
                   <p style="color:black">Formatted Match Start Time: <%= format_match_date(match) %></p>
-                  <p style="color:black">Local Time of Match: <%= convert_to_local_time(match) %></p>
-                  <p style="color:black">Formatted Local Time: <%= format_local_time(match) %></p>
 
-                  <p style="color:black">Venue offset: <%= get_offset_of_venue(match) %></p>
-
+                  <p style="color:black">Match Start Local (TZInfo): <%= adjust_match_start(match) %></p>
+                  <p style="color:black">Formatted Match Start Time: <%= adjust_match_start(match).strftime("%m/%d/%Y at %I:%M%p") %></p>
 
 
-                  <!-- <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> (<%= match.venue.time_zone %>) </p> -->
-                    <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> <span class="match-venue-timezone">(<%= match.venue.time_zone %>)</span> </p>
+                    <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> <span>(<%= match.time_zone %>)</span> </p>
                 </div>
               </div>
             </div>
