@@ -24,9 +24,13 @@
 
                   <p style="color:black">Match Start UTC: <%= match.start.utc %></p>
                   <p style="color:black">Formatted Match Start Time: <%= format_match_date(match) %></p>
+                  <p style="color:black">Match Offset: <%= get_match_offset(match) %></p>
+
 
                   <p style="color:black">Match Start Local (TZInfo): <%= adjust_match_start(match) %></p>
-                  <p style="color:black">Formatted Match Start Time: <%= adjust_match_start(match).strftime("%m/%d/%Y at %I:%M%p") %></p>
+                  <p style="color:black">Formatted Match Start Local (TZInfo): <%= adjust_match_start(match).strftime("%m/%d/%Y at %I:%M%p") %></p>
+                  <p style="color:black">Local Offset: <%= (convert_to_local_time(match).utc_offset / 3600) %></p>
+
 
 
                     <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> <span>(<%= match.time_zone %>)</span> </p>

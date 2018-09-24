@@ -42,6 +42,11 @@ module MatchesHelper
     local = tz.utc_to_local(Time.utc(year,month,day,hour,min,0))
   end
 
+  def get_match_offset(match)
+    # Gets the total offset of a match start time (utc total offset = std + utc offsets)
+    offset_in_hours = (TZInfo::Timezone.get(match.time_zone).current_period.offset.utc_total_offset) / 3600
+  end
+
   def format_match_date_english(match)
      date = match.start.to_date.strftime("%B #{match.start.to_date.day.ordinalize}, %Y")
      time = match.start.strftime("%I:%M%p")
