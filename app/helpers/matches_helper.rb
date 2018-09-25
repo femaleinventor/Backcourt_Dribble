@@ -39,13 +39,36 @@ module MatchesHelper
     min = match.start.min
 
     tz = TZInfo::Timezone.get(match.time_zone)
-    local = tz.utc_to_local(Time.utc(year,month,day,hour,min,0))
+    local = tz.utc_to_local(Time.local(year,month,day,hour,min,0))
+
   end
 
   def get_match_offset(match)
     # Gets the total offset of a match start time (utc total offset = std + utc offsets)
     offset_in_hours = (TZInfo::Timezone.get(match.time_zone).current_period.offset.utc_total_offset) / 3600
   end
+
+  def calculate_offset_difference(match_offset, local_offset)
+    match_offset - local_offset
+  end
+
+  def adjust_local_time(match, match_offset, local_offset)
+    year = match.start.year
+    month = match.start.month
+    day = match.start.day
+    hour = match.start.hour
+    min = match.start.min
+
+    difference = calculate_offset_difference(match_offset, local_offset)
+    match_start = match.start
+
+    if difference < 0
+      match.start - difference * 3600
+    else
+      match.start + difference * 3600
+    end
+  end
+
 
   def format_match_date_english(match)
      date = match.start.to_date.strftime("%B #{match.start.to_date.day.ordinalize}, %Y")
@@ -85,6 +108,7 @@ module MatchesHelper
       #Find the timezone of the match and get the local time of it?
       #Find the users timezone and display what the match would be in their time
 
+      #Date and Time
 
 
 

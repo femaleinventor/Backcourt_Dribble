@@ -20,4 +20,9 @@ module ApplicationHelper
     javascript_tag("if(window.ga != undefined){ga('send', 'pageview');}")
   end
 
+  def get_match_offset(match)
+    # Gets the total offset of a match start time (utc total offset = std + utc offsets)
+    offset_in_hours = (TZInfo::Timezone.get(match.time_zone).current_period.offset.utc_total_offset) / 3600
+  end
+
 end
