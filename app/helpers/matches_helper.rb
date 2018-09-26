@@ -50,6 +50,7 @@ module MatchesHelper
 
   def calculate_offset_difference(match_offset, local_offset)
     match_offset - local_offset
+
   end
 
   def adjust_local_time(match, match_offset, local_offset)
@@ -59,13 +60,18 @@ module MatchesHelper
     hour = match.start.hour
     min = match.start.min
 
+    console.log(offset_in_hours)
+    console.log(calculate_offset_difference)
+
     difference = calculate_offset_difference(match_offset, local_offset)
+    console.log(difference)
     match_start = match.start
+    console.log(match_start)
 
     if difference < 0
-      match.start - difference * 3600
+      match_start - difference * 3600
     else
-      match.start + difference * 3600
+      match_start + difference * 3600
     end
   end
 

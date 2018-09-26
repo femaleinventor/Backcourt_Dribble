@@ -6,7 +6,6 @@ $theme-green: #00D37F;
 
 .sports-container {
   .dashboard-section {
-    border-bottom: 1px solid $theme-blue;
     .sports {
       display: inline-block;
       margin: 15px;
@@ -22,7 +21,6 @@ $theme-green: #00D37F;
   }
   .sport-section {
     margin-top: 50px;
-    border-bottom: 1px solid $theme-blue;
     padding-bottom: 50px;
     .sport-section-header {
       &:hover {

@@ -9,6 +9,7 @@ Rails.application.configure do
 
 
   # Settings specified here will take precedence over those in config/application.rb.
+  config.time_zone = 'UTC'
 
   # Code is not reloaded between requests.
   config.cache_classes = true
