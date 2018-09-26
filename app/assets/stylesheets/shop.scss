@@ -1,6 +1,8 @@
 // Place all the styles related to the Shop controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$theme-eggshell: #F4F4D7;
+$theme-grey: #707070;
 
 
 .items-index{
@@ -12,13 +14,13 @@
   .shop-item {
     width: 19vw;
     height: 19vw;
-    background-color: grey;
+    background-color: #C5C5A5;
     margin: 20px;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: black;
     font-size: 2vw;
   }
 }

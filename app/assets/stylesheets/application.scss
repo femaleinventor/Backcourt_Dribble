@@ -20,12 +20,15 @@
 $theme-orange: #F0900E;
 $theme-blue: #16A7D5;
 $theme-green: #00D37F;
+$theme-eggshell: #F4F4D7;
 
 
 body {
-  background: #707070;
+  // background: #707070;
+  background-color: $theme-eggshell;
 
-  font-family: 'Comfortaa', cursive;
+  // font-family: 'Comfortaa', cursive;
+  font-family: 'Comfortaa';
 }
 
 .big-{
@@ -90,5 +93,3 @@ a {
 .login-form{
   margin: 1em;
 }
-
-@import "datatables";
