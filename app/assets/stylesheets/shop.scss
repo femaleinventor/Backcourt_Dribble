@@ -1,7 +1,7 @@
 // Place all the styles related to the Shop controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$theme-eggshell: #F4F4D7;
+$theme-light: white;
 $theme-grey: #707070;
 
 
@@ -14,7 +14,7 @@ $theme-grey: #707070;
   .shop-item {
     width: 19vw;
     height: 19vw;
-    background-color: #C5C5A5;
+    background-color: #A4A4A4;
     margin: 20px;
 
     display: flex;
