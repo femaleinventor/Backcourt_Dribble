@@ -3,10 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $theme-light: white;
 $theme-grey: #707070;
+$theme-orange: #F0900E;
+$theme-blue: #16A7D5;
+$theme-grey: #707070;
+$theme-green: #00D37F;
 
+.shop-description{
+  margin: 70px;
+  display: flex;
+  flex-flow: wrap;
+  color: $theme-orange;
+  // justify-content: center;
+  // align-content: space-around;
+}
 
 .items-index{
-  margin-top: 100px;
+  margin-top: 50px;
   display: flex;
   flex-flow: wrap;
   justify-content: center;
@@ -16,7 +28,6 @@ $theme-grey: #707070;
     height: 19vw;
     background-color: #A4A4A4;
     margin: 20px;
-
     display: flex;
     justify-content: center;
     align-items: center;
