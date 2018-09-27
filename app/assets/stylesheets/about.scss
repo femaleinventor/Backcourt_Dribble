@@ -1,0 +1,34 @@
+.about {
+  section {
+    margin-top: 3em;
+  }
+  .team-section{
+    .team-member{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      &-image{
+        height: 200px;
+        width: 200px;
+        margin: 2em;
+      }
+      &-info{
+        margin: 2em;
+        .title{
+          text-align: left;
+          font-size: 1rem;
+        }
+        .role{
+          text-align: left;
+          font-size: 0.875rem;
+          color: gray;
+        }
+        .text{
+          text-align: left;
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+}
