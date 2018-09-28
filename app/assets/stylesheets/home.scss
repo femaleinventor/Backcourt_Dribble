@@ -6,13 +6,18 @@ $theme-orange: #F0900E;
 $theme-blue: #16A7D5;
 $theme-grey: #707070;
 $theme-green: #00D37F;
+$theme-light: white;
+// also considered colors
+// $theme-eggshell: #F2F2D2;
+// $theme-light: #ECE1DC;
+// $theme-light: #F7F9F6;
 
 .home-menu-area {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center; 
-  background-color: white;
+  justify-content: center;
+  background-color: $theme-light;
 }
 
 // When smaller than 750px
@@ -76,7 +81,7 @@ $theme-green: #00D37F;
       display: flex;
       flex-direction: column;
       width: 49.5%;
-      background-color: white;
+      background-color: $theme-light;
       .action-title{
         display: flex;
         flex-direction: column-reverse;
