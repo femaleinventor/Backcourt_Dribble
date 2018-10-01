@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
 
   add_flash_types :danger, :info, :warning, :success
 
+  before_action :get_all_sports
+
   # before_action :set_user_time_zone
 
   protected
@@ -27,6 +29,10 @@ class ApplicationController < ActionController::Base
     def store_user_location!
       # :user is the scope we are authenticating
       store_location_for(:user, request.fullpath)
+    end
+
+    def get_all_sports
+      @sports = Sport.all
     end
   # end
 end
