@@ -278,6 +278,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   therubyracer
   twitter (~> 6.2)
+  tzinfo (~> 1.2, >= 1.2.5)
   tzinfo-data
   uglifier (~> 2.7, >= 2.7.2)
   web-console (>= 3.3.0)

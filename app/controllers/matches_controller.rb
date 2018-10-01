@@ -10,6 +10,8 @@ class MatchesController < ApplicationController
 
   def create
     @match = Match.new(match_params)
+    offset = get_match_offset(@match)
+    @match.start.change(offset: "-10:00")
     if @match.save
       redirect_to admin_index_path, alert: "Match created successfully!"
     else
@@ -43,11 +45,16 @@ class MatchesController < ApplicationController
 
   private
     def match_params
-      params.require(:match).permit(:result, :channel, :start, :venue_id, :sport_id, :league_id, :home_team_id, :away_team_id)
+      params.require(:match).permit(:result, :channel, :start, :time_zone, :venue_id, :sport_id, :league_id, :home_team_id, :away_team_id)
     end
 
     def update_match_params
-      params.require(:match).permit(:result, :channel, :start, :venue_id, :sport_id, :league_id, :home_team_id, :away_team_id)
+      params.require(:match).permit(:result, :channel, :start, :time_zone, :venue_id, :sport_id, :league_id, :home_team_id, :away_team_id)
+    end
+
+    def get_match_offset(match)
+      # Gets the total offset of a match start time (utc total offset = std + utc offsets)
+      offset_in_hours = (TZInfo::Timezone.get(match.time_zone).current_period.offset.utc_total_offset) / 3600
     end
 
 end

@@ -119,48 +119,48 @@ end
 
 venues_list = [
   #id 1
-  [ "Toyota Park", "venues/Toyota_Park.jpg", "7000 Harlem Ave, Bridgeview, IL 60455", "America/Chicago"],
+  [ "Toyota Park", "venues/Toyota_Park.jpg", "7000 Harlem Ave, Bridgeview, IL 60455"],
   #id 2
-  [ "BBVA Compass Stadium", "venues/BBVA_Compass.jpg", "2200 Texas St, Houston, TX 77003", "America/Chicago"],
+  [ "BBVA Compass Stadium", "venues/BBVA_Compass.jpg", "2200 Texas St, Houston, TX 77003"],
   #id 3
-  [ "WakeMed Soccer Park", "venues/Wake_Med.jpg", "201 Soccer Park Dr, Cary, NC 27511", "America/New_York"],
+  [ "WakeMed Soccer Park", "venues/Wake_Med.jpg", "201 Soccer Park Dr, Cary, NC 27511"],
   #id 4
-  [ "Orlando City Stadium", "venues/Orlando.jpg", "655 W Church St, Orlando, FL 32805", "America/New_York"],
+  [ "Orlando City Stadium", "venues/Orlando.jpg", "655 W Church St, Orlando, FL 32805"],
   #id 5
-  [ "Providence Park", "venues/Providence_Park.png", "1844 SW Morrison St, Portland, OR 97205","America/Los_Angeles"],
+  [ "Providence Park", "venues/Providence_Park.png", "1844 SW Morrison St, Portland, OR 97205"],
   #id 6
-  [ "Memorial Stadium", "venues/Memorial_Stadium.jpg", "401 5th Ave N, Seattle, WA 98109", "America/Los_Angeles"],
+  [ "Memorial Stadium", "venues/Memorial_Stadium.jpg", "401 5th Ave N, Seattle, WA 98109"],
   #id 7
-  [ "Yurcak Field", "venues/Yurcak_Field.jpg", "83 Fitch Rd, Piscataway Township, NJ 08854", "America/New_York"],
+  [ "Yurcak Field", "venues/Yurcak_Field.jpg", "83 Fitch Rd, Piscataway Township, NJ 08854"],
   #id 8
-  [ "Rio Tinto Stadium", "venues/Rio_Tinto_Stadium.jpeg", "9256 State St, Sandy, UT 84070", "America/Denver"],
+  [ "Rio Tinto Stadium", "venues/Rio_Tinto_Stadium.jpeg", "9256 State St, Sandy, UT 84070"],
   #id 9
-  [ "Maryland SoccerPlex", "venues/Maryland_Soccerplex.jpeg", "18031 Central Park Cir, Boyds, MD 20841", "America/New_York"],
+  [ "Maryland SoccerPlex", "venues/Maryland_Soccerplex.jpeg", "18031 Central Park Cir, Boyds, MD 20841"],
   #id 10
-  [ "Audi Field", "venues/Audi_Field.jpg", "32-60 R St SW, Washington, DC 20024", "America/New_York"],
+  [ "Audi Field", "venues/Audi_Field.jpg", "32-60 R St SW, Washington, DC 20024"],
   #id 11
-  [ "Avaya Stadium", "venues/Avaya_Stadium.png", "1123 Coleman Ave, San Jose, CA 95110","America/Los_Angeles"],
+  [ "Avaya Stadium", "venues/Avaya_Stadium.png", "1123 Coleman Ave, San Jose, CA 95110"],
   #id 12
-  [ "EverBank Field", "venues/Everbank_Field.jpg", "1 Everbank Field Dr, Jacksonville, FL 32202", "America/New_York"],
+  [ "EverBank Field", "venues/Everbank_Field.jpg", "1 Everbank Field Dr, Jacksonville, FL 32202"],
   #id 13
-  [ "Talen Energy Stadium", "venues/Talen_Energy_Stadium.jpg", "1 Stadium Dr, Chester, PA 19013", "America/New_York"],
+  [ "Talen Energy Stadium", "venues/Talen_Energy_Stadium.jpg", "1 Stadium Dr, Chester, PA 19013"],
   #id 14
-  [ "FirstEnergy Stadium", "venues/FirstEnergy_Stadium.jpg", "100 Alfred Lerner Way, Cleveland, OH 44114", "America/Chicago"],
+  [ "FirstEnergy Stadium", "venues/FirstEnergy_Stadium.jpg", "100 Alfred Lerner Way, Cleveland, OH 44114"],
   #id 15
-  [ "Stade Guy-Piriou", "venues/Stade_Guy-Pirious.jpg", "13 Rue de Keriolet, 29900 Concarneau", "Europe/Paris"],
+  [ "Stade Guy-Piriou", "venues/Stade_Guy-Pirious.jpg", "13 Rue de Keriolet, 29900 Concarneau"],
   #id 16
-  [ "Children’s Mercy Park", "venues/Childrens_Mercy_Park.png", "1 Sporting Way, Kansas City, KS 66111 Kansas City", "America/Chicago"],
+  [ "Children’s Mercy Park", "venues/Childrens_Mercy_Park.png", "1 Sporting Way, Kansas City, KS 66111 Kansas City"],
   #id 17
-  [ "Pratt & Whitney Stadium at Rentschler Field", "venues/Pratt_and_Whitney_Stadium.jpg", "615 Silver Ln, East Hartford, CT 06118", "America/New_York"],
+  [ "Pratt & Whitney Stadium at Rentschler Field", "venues/Pratt_and_Whitney_Stadium.jpg", "615 Silver Ln, East Hartford, CT 06118"],
   #id 18
-  [ "StubHub Center", "venues/StubHub_Center.jpg", "18400 S Avalon Blvd, Carson, CA 90746", "America/Los_Angeles"],
+  [ "StubHub Center", "venues/StubHub_Center.jpg", "18400 S Avalon Blvd, Carson, CA 90746"],
   #id 19
-  [ "Hard Rock Stadium", "venues/hard_rock_stadium.jpg", "347 Don Shula Dr, Miami Gardens, FL 33056", "America/New_York"]
+  [ "Hard Rock Stadium", "venues/hard_rock_stadium.jpg", "347 Don Shula Dr, Miami Gardens, FL 33056"]
 ]
 
 
 venues_list.each do |venue|
-  Venue.create!(name: venue[0], picture_url: venue[1], address: venue[2], time_zone: venue[3])
+  Venue.create!(name: venue[0], picture_url: venue[1], address: venue[2])
 end
 
 

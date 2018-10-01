@@ -23,11 +23,6 @@
             <%= f.label "Address" %>
             <%= f.text_field :address, class: "form-control form-control-lg", value: @venue.address%>
           </div>
-
-          <div class="form-group">
-            <%= f.label "Time Zone" %>
-            <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, include_blank: true, class: "form-control form-control-lg", value: @venue.time_zone%>
-          </div>
           <%= f.submit "Update #{@venue.name}", class: "btn btn-primary btn-lg show-button"%>
         <% end %>
 

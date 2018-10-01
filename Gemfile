@@ -27,6 +27,7 @@ gem 'loofah', '>= 2.2.2'
 
 gem 'devise'
 
+gem 'tzinfo', '~> 1.2', '>= 1.2.5'
 
 gem 'friendly_id', '~> 5.2.0'
 gem "font-awesome-rails"

@@ -1,0 +1,132 @@
+$theme-orange: #F0900E;
+$theme-blue: #16A7D5;
+$theme-grey: #707070;
+$theme-green: #00D37F;
+$theme-light: white;
+
+.about {
+  section {
+    margin-top: 3em;
+    .section-title {
+      margin-bottom: 1em;
+    }
+  }
+  .mission-section {
+      h1 {
+        margin-bottom: 1em;
+      }
+    .mission-text{
+      width: 75vw;
+      p {
+        text-align: left;
+      }
+    }
+  }
+
+  .team-section{
+    .team-member{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      &-image{
+        height: 200px;
+        width: 200px;
+      }
+      &-info{
+        min-width: 200px;
+        margin: 2em;
+        .title{
+          text-align: left;
+          font-size: 1rem;
+        }
+        .role{
+          text-align: left;
+          font-size: 0.875rem;
+          color: $theme-orange;
+        }
+        .text{
+          text-align: left;
+          font-size: 0.875rem;
+        }
+      }
+      @media (max-width: 476px){
+        justify-content: center;
+        flex-wrap: wrap;
+        &-info{
+          .title,
+          .role,
+          .text {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  .support-section {
+    width: 75vw;
+    .support-card {
+      margin-top: 2em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .card-body {
+        text-align: center;
+      }
+    }
+    // Pre-card code
+    // .support-container{
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    //   align-items: center;
+    //   border: 1px solid white;
+    // }
+    // .support-item {
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    //   align-items: center;
+    //   margin-top: .25em;
+    //   .support-logo {
+    //     height: 150px;
+    //     width: 150px;
+    //   }
+    //   .support-description {
+    //     min-width: 200px;
+    //     max-width: 400px;
+    //     margin-top: 0.5em;
+    //   }
+    //   &-empty {
+    //     margin-top: 1em;
+    //     border-radius: 50%;
+    //     height: 150px;
+    //     width: 150px;
+    //     background-color: #DCDCDC;
+    //     display: flex;
+    //     flex-direction: row;
+    //     align-items: center;
+    //     justify-content: center;
+    //     &-text {
+    //       color: black;
+    //       font-size: 0.875rem;
+    //       text-decoration: underline;
+    //     }
+    //   }
+    // }
+  }
+  .inquiry-section {
+    height: 50vh;
+    max-width: 100%;
+    background-image: url("https://s3-us-west-1.amazonaws.com/backcourtdribble/images/background-photos/sunset_toyotapark.jpg");
+    background-size: cover;
+    .inquiry-image-container {
+    }
+  }
+
+  .contact-section {
+    padding: 2em;
+    // width: 100vw;
+  }
+}
