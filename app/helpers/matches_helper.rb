@@ -60,13 +60,11 @@ module MatchesHelper
     hour = match.start.hour
     min = match.start.min
 
-    console.log(offset_in_hours)
-    console.log(calculate_offset_difference)
 
     difference = calculate_offset_difference(match_offset, local_offset)
-    console.log(difference)
+
     match_start = match.start
-    console.log(match_start)
+
 
     if difference < 0
       match_start - difference * 3600
