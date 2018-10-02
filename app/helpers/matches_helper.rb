@@ -65,7 +65,6 @@ module MatchesHelper
 
     match_start = match.start
 
-
     if difference < 0
       match_start - difference * 3600
     else
