@@ -5,25 +5,27 @@ $theme-green: #00D37F;
 $theme-light: white;
 
 .about {
+  h1 {
+    color: white;
+  }
   section {
     margin-top: 3em;
     .section-title {
       margin-bottom: 1em;
+      text-align: center;
     }
   }
   .mission-section {
-      h1 {
-        margin-bottom: 1em;
-      }
     .mission-text{
       width: 75vw;
+      max-width: 800px;
       p {
         text-align: left;
       }
     }
   }
 
-  .team-section{
+  // .team-section{
     .team-member{
       display: flex;
       flex-direction: row;
@@ -35,7 +37,7 @@ $theme-light: white;
       }
       &-info{
         min-width: 200px;
-        margin: 2em;
+        margin: 1em;
         .title{
           text-align: left;
           font-size: 1rem;
@@ -62,71 +64,28 @@ $theme-light: white;
         }
       }
     }
-  }
+  // }
 
   .support-section {
     width: 75vw;
+    // display: flex;
+    // justify-content: space-between;
     .support-card {
       margin-top: 2em;
+      margin-bottom: 6em;
       display: flex;
       flex-direction: column;
       justify-content: center;
       .card-body {
         text-align: center;
+        .card-button {
+          background: $theme-blue;
+        }
       }
-    }
-    // Pre-card code
-    // .support-container{
-    //   display: flex;
-    //   flex-direction: column;
-    //   justify-content: center;
-    //   align-items: center;
-    //   border: 1px solid white;
-    // }
-    // .support-item {
-    //   display: flex;
-    //   flex-direction: column;
-    //   justify-content: center;
-    //   align-items: center;
-    //   margin-top: .25em;
-    //   .support-logo {
-    //     height: 150px;
-    //     width: 150px;
-    //   }
-    //   .support-description {
-    //     min-width: 200px;
-    //     max-width: 400px;
-    //     margin-top: 0.5em;
-    //   }
-    //   &-empty {
-    //     margin-top: 1em;
-    //     border-radius: 50%;
-    //     height: 150px;
-    //     width: 150px;
-    //     background-color: #DCDCDC;
-    //     display: flex;
-    //     flex-direction: row;
-    //     align-items: center;
-    //     justify-content: center;
-    //     &-text {
-    //       color: black;
-    //       font-size: 0.875rem;
-    //       text-decoration: underline;
-    //     }
-    //   }
-    // }
-  }
-  .inquiry-section {
-    height: 50vh;
-    max-width: 100%;
-    background-image: url("https://s3-us-west-1.amazonaws.com/backcourtdribble/images/background-photos/sunset_toyotapark.jpg");
-    background-size: cover;
-    .inquiry-image-container {
     }
   }
 
   .contact-section {
     padding: 2em;
-    // width: 100vw;
   }
 }
