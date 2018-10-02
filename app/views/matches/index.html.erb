@@ -28,6 +28,12 @@
               </div>
             </div>
 
+            <!-- If there is no current user & a check box is checked
+              Render a popup window that contains a login form
+              Allow the user to login
+              Close popup (return to matches#index view) -->
+
+
             <div class="row justify-content-center">
               <div class="col-xs-12 mx-auto">
                 <%if current_user%>
@@ -287,3 +293,8 @@
 
     <% end %>
 </div> <!-- End fullpage -->
+
+
+
+<!-- Login Modal -->
+<%= render "login_modal"%>
