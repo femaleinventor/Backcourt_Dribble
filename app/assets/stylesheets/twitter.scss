@@ -7,14 +7,14 @@ $theme-blue: #16A7D5;
 $theme-grey: #707070;
 $theme-green: #00D37F;
 
-h1 {
-  text-align: center;
-}
-
-p {
-  // color: white;
-  text-align: center;
-}
+// h1 {
+//   text-align: center;
+// }
+//
+// p {
+//   // color: white;
+//   text-align: center;
+// }
 
 li {
   list-style: none;
@@ -216,3 +216,15 @@ a.league-link:hover {
 // .fifa-league-link {
 //   display: "none";
 // }
+
+@media (max-width: 1200px){
+  .league_menu {
+    height: 500px;
+  }
+}
+
+@media (max-width: 500px){
+  .league_menu {
+    height: 300px;
+  }
+}
