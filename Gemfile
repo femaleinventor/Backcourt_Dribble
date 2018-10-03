@@ -39,6 +39,8 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'bootstrap', '~> 4.0.0'
 gem 'autoprefixer-rails'
 
+gem 'gon'
+
 gem 'high_voltage', '~> 3.0.0'
 
 # Use CoffeeScript for .coffee assets and views
