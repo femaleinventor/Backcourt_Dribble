@@ -23,13 +23,14 @@ $theme-green: #00D37F;
     margin-top: 50px;
     padding-bottom: 50px;
     .sport-section-header {
+      color: white;
       &:hover {
         text-decoration: underline;
         text-decoration-color: $theme-green;
       }
     }
     .league-message {
-      color: $theme-blue;
+      color: #292f33;
       font-size: 1.2em;
       @media screen and (max-width: 850px){
         margin-top: 15px;
@@ -38,6 +39,11 @@ $theme-green: #00D37F;
     .league-scroller{
       height: 300px;
       overflow: scroll;
+      background: #9d9d9d;
+      border: 1px solid $theme-dark-grey;
+      .worldwide-league {
+        margin-left: 0.50em;
+      }
     }
   }
   .no-engagement{
