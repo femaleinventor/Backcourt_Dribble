@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="loginModal">You Must Login To Make Predictions</h5>
+        <h5 class="modal-title" id="loginModal">Please login to make predictions or sign up if you are new to Backcourt Dribble.</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -31,7 +31,7 @@
           </div>
         <% end %>
 
-        <%= link_to "Sign up", new_registration_path(resource_name), class: "btn btn-primary btn-md sign-up-btn" %>
+        <%= link_to "Sign up", new_registration_path(resource_name), class: "btn btn-primary btn-md sign-up-btn modal-signup-button" %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
