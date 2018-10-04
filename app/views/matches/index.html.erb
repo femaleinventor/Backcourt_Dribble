@@ -9,11 +9,12 @@
       <% @away_team = Team.find(match.away_team_id) %>
 
       <div class="section fp-bg fp-noscroll">
-
         <!-- Makes gradient behind match up -->
         <div class="slide" style="background: #FFFFFF; background: -webkit-linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);
         background: linear-gradient(to right, <%= @home_team.bright_color %>, <%= @away_team.bright_color %>);">
+
           <div class="container-fluid">
+
             <!-- <audio data-autoplay>
               <source src="<%=match.sport.sound_link%>" type="audio/wav">
             </audio> -->
@@ -27,11 +28,6 @@
                 </div>
               </div>
             </div>
-
-            <!-- If there is no current user & a check box is checked
-              Render a popup window that contains a login form
-              Allow the user to login
-              Close popup (return to matches#index view) -->
 
 
             <div class="row justify-content-center">
@@ -93,6 +89,9 @@
                       <%= link_to sports_path do %>
                         <i class="fa fa-arrow-circle-left fa-2x"></i>
                       <% end %>
+                      <%= link_to root_path do %>
+                        <i class="fa fa-home fa-2x"></i>
+                      <% end %>
                     </div>
                 <%else%>
                 <%= form_tag(controller:'predictions', action:'create') do %>
@@ -139,6 +138,9 @@
                 <div class="back-to-sports d-flex justify-content-center">
                   <%= link_to sports_path do %>
                     <i class="fa fa-arrow-circle-left fa-2x"></i>
+                  <% end %>
+                  <%= link_to root_path do %>
+                    <i class="fa fa-home fa-2x"></i>
                   <% end %>
                 </div>
 
@@ -203,6 +205,9 @@
                   <%= link_to sports_path do %>
                     <i class="fa fa-arrow-circle-left fa-2x"></i>
                   <% end %>
+                  <%= link_to root_path do %>
+                    <i class="fa fa-home fa-2x"></i>
+                  <% end %>
                 </div>
               </div> <!--End predictions col-->
             </div> <!--End predictions row-->
@@ -256,6 +261,9 @@
                 <div class="back-to-sports d-flex justify-content-center">
                   <%= link_to sports_path do %>
                     <i class="fa fa-arrow-circle-left fa-2x"></i>
+                  <% end %>
+                  <%= link_to root_path do %>
+                    <i class="fa fa-home fa-2x"></i>
                   <% end %>
                 </div>
               </div><!--End col -->

@@ -4,9 +4,23 @@
 <body class="leaderboard-body">
   <div class="container-fluid">
 
-      <div class="row justify-content-center leaderboard-title-container">
+      <div class="row justify-content-center leaderboard-title-container parent">
         <div class="col-xs-12 d-flex align-items-center">
-          <h1 class="leaderboard-title text-center"><%=@sport.name%> Leaderboard</h1>
+          <h1 class="leaderboard-title"> <%=@sport.name%> Leaderboard</h1></br>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-xs-12 align-items-center">
+                <div>
+                  <%= link_to sports_path do %>
+                    <i class="fa fa-arrow-circle-left fa-2x"></i>
+                  <% end %>
+                  <%= link_to root_path do %>
+                    <i class="fa fa-home fa-2x"></i>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
