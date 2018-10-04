@@ -94,3 +94,13 @@ a {
 .login-form{
   margin: 1em;
 }
+
+.nav-home{
+  margin: 0.25em;
+  margin-top: 0.5em;
+  color: rgba(white, .7);
+  &:hover,
+  &:focus{
+    color: rgba($theme-blue, .5);
+  }
+}
