@@ -5,28 +5,26 @@ $theme-green: #00D37F;
 $theme-light: white;
 
 .about {
-  h1 {
-    color: white;
-  }
   section {
-    margin-top: 3em;
     .section-title {
+      color: $theme-light;
       margin-bottom: 1em;
       text-align: center;
     }
   }
   .mission-section {
-    .mission-text{
-      width: 75vw;
-      max-width: 800px;
-      p {
-        text-align: left;
+    .container {
+      .mission-text{
+        width: 75vw;
+        p {
+          text-align: left;
+        }
       }
     }
   }
 
-  // .team-section{
-    .team-member{
+  .team-section {
+    .team-member {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -64,12 +62,9 @@ $theme-light: white;
         }
       }
     }
-  // }
+  }
 
   .support-section {
-    width: 75vw;
-    // display: flex;
-    // justify-content: space-between;
     .support-card {
       margin-top: 2em;
       margin-bottom: 6em;
