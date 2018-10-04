@@ -1,7 +1,7 @@
 module MatchesHelper
   def find_future_matches(matches)
     #Returns an array of future matches
-    matches.select{|match| match.start >= DateTime.now.change(:offset => "+0000")}
+    matches.select{|match| match.start >= DateTime.current.change(:offset => "+0000")}
   end
 
   def sort_matches_by_date(matches)
@@ -43,14 +43,15 @@ module MatchesHelper
 
   end
 
+  # This method works!
   def get_match_offset(match)
     # Gets the total offset of a match start time (utc total offset = std + utc offsets)
     offset_in_hours = (TZInfo::Timezone.get(match.time_zone).current_period.offset.utc_total_offset) / 3600
   end
 
+  # This method works!
   def calculate_offset_difference(match_offset, local_offset)
     match_offset - local_offset
-
   end
 
   def adjust_local_time(match, match_offset, local_offset)
