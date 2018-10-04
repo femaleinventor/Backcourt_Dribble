@@ -3,19 +3,28 @@ $theme-blue: #16A7D5;
 $theme-dark-grey: #343a40;
 $theme-grey: #707070;
 $theme-green: #00D37F;
-
 .leaderboard-body{
   background: rgba($theme-blue, .8); /* fallback for old browsers */
   // background: -webkit-linear-gradient(to bottom, rgba($theme-blue, .8), rgba($theme-green, .8)); /* Chrome 10-25, Safari 5.1-6 */
   // background: linear-gradient(to bottom, rgba($theme-blue, .8), rgba($theme-green, .8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   .leaderboard-title-container{
-    height: 4em;
+    height: 5em;
     background: rgba($theme-grey, 0.5);
     .leaderboard-title{
+      text-align: center;
       font-size: .875rem;
       text-transform: uppercase;
       letter-spacing: .425rem;
       color: white;
+    }
+  }
+  i{
+    margin: 0.25em;
+    margin-top: 0.5em;
+    color: rgba(white, .7);
+    &:hover,
+    &:focus{
+      color: rgba($theme-blue, .5);
     }
   }
   .top-three-users{
