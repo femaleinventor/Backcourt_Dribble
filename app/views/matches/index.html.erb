@@ -26,9 +26,11 @@
                     <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> <%= match.time_zone %></p>
 
                     <%=get_match_offset(match)%>
+                    <%=calculate_offset_difference(get_match_offset(match), convert_to_local_time(match).utc_offset / 3600)%>
 
-                    <%=calculate_offset_difference(get_match_offset(match),TZInfo::Timezone.get('America/New_York').current_period.offset.utc_total_offset / 3600)%>
+                    <!-- TZInfo::Timezone.get('America/New_York').current_period.offset.utc_total_offset / 3600) -->
 
+                    <p class="match-info"> <%=adjust_local_time(match, get_match_offset(match), (convert_to_local_time(match).utc_offset / 3600)).strftime("%m/%d/%Y at %I:%M%p")%> Your Time</p>
 
                 </div>
               </div>
