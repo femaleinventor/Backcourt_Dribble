@@ -1,7 +1,7 @@
 module MatchesHelper
   def find_future_matches(matches)
     #Returns an array of future matches
-    matches.select{|match| match.start >= DateTime.current.change(:offset => "+0000")}
+    matches.select{|match| match.start.utc >= DateTime.now.utc}
   end
 
   def sort_matches_by_date(matches)
