@@ -9,6 +9,7 @@ module MatchesHelper
     matches.sort_by{|match| match.start }
   end
 
+  #DOES NOT WORK
   def convert_to_local_time(match)
     match.start.to_time.localtime
   end
@@ -26,11 +27,13 @@ module MatchesHelper
   #   match.start.change(:offset => get_offset_of_venue(match))
   # end
 
+  #Unnecessary first line
   def format_local_time(match)
     local_time = convert_to_local_time(match)
     local_time.strftime("%m/%d/%Y at %I:%M%p")
   end
 
+  # ??????
   def adjust_match_start(match)
     year = match.start.year
     month = match.start.month
@@ -40,7 +43,6 @@ module MatchesHelper
 
     tz = TZInfo::Timezone.get(match.time_zone)
     local = tz.utc_to_local(Time.local(year,month,day,hour,min,0))
-
   end
 
   # This method works!
@@ -55,22 +57,23 @@ module MatchesHelper
   end
 
   def adjust_local_time(match, match_offset, local_offset)
-    year = match.start.year
-    month = match.start.month
-    day = match.start.day
-    hour = match.start.hour
-    min = match.start.min
-
-
     difference = calculate_offset_difference(match_offset, local_offset)
 
     match_start = match.start
 
-    if difference < 0
-      match_start - difference * 3600
-    else
-      match_start + difference * 3600
-    end
+    match_start - difference * 3600
+
+    # if difference < 0
+    #   match_start - difference * 3600
+    # else
+    #   match_start + difference * 3600
+    # end
+
+    # start = 1700 EST -400
+    # start local = PST -700
+    #
+    # -400 - -700 = 3
+    # start - 3
   end
 
 
