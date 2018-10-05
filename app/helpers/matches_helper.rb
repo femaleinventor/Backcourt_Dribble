@@ -18,31 +18,10 @@ module MatchesHelper
     match.start.strftime("%m/%d/%Y at %I:%M%p")
   end
 
-  # def get_offset_of_venue(match)
-  #   seconds = ActiveSupport::TimeZone[match.venue.time_zone].utc_offset
-  #   seconds / 60 / 60
-  # end
-
-  # def add_offset_to_match_start(match)
-  #   match.start.change(:offset => get_offset_of_venue(match))
-  # end
-
   #Unnecessary first line
-  def format_local_time(match)
-    local_time = convert_to_local_time(match)
-    local_time.strftime("%m/%d/%Y at %I:%M%p")
-  end
-
-  # ??????
-  def adjust_match_start(match)
-    year = match.start.year
-    month = match.start.month
-    day = match.start.day
-    hour = match.start.hour
-    min = match.start.min
-
-    tz = TZInfo::Timezone.get(match.time_zone)
-    local = tz.utc_to_local(Time.local(year,month,day,hour,min,0))
+  def format_local_time(start_string)
+    # local_time = convert_to_local_time(match)
+    start_string.strftime("%m/%d/%Y at %I:%M%p")
   end
 
   # This method works!
@@ -62,18 +41,6 @@ module MatchesHelper
     match_start = match.start
 
     match_start - difference * 3600
-
-    # if difference < 0
-    #   match_start - difference * 3600
-    # else
-    #   match_start + difference * 3600
-    # end
-
-    # start = 1700 EST -400
-    # start local = PST -700
-    #
-    # -400 - -700 = 3
-    # start - 3
   end
 
 
@@ -102,21 +69,5 @@ module MatchesHelper
   def insert_spaces(string)
     !check_for_spaces(string) ? string.scan(/.{50}|.+/).join(" ") : string
   end
-
-
-
-  # When creating a new match
-    #Update db and admin forms to:
-      # Add TimeZone dropdown to Match
-      # Remove from Venue
-      # Get offset from TimeZone dropdown, based on location AND date of match
-
-    #When displaying the date of a match
-      #Find the timezone of the match and get the local time of it?
-      #Find the users timezone and display what the match would be in their time
-
-      #Date and Time
-
-
 
 end
