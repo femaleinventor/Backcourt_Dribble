@@ -8,9 +8,13 @@ class ApplicationController < ActionController::Base
 
   before_action :get_all_sports
 
-  # before_action :set_user_time_zone
+  before_action :set_time_zone
 
   protected
+
+  def set_time_zone
+    Time.zone = current_user.time_zone if current_user
+  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :terms_of_service, :time_zone])
