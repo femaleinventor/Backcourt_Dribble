@@ -11,8 +11,8 @@ class MatchesController < ApplicationController
 
   def create
     @match = Match.new(match_params)
-    offset = get_match_offset(@match)
-    @match.start.change(offset: "-10:00")
+    # offset = get_match_offset(@match)
+    # @match.start.change(offset: "-10:00")
     if @match.save
       redirect_to admin_index_path, alert: "Match created successfully!"
     else
