@@ -175,6 +175,9 @@ $theme-dark-grey: #343a40;
   .leaderboard-card-info{
     width: 30%;
     font-size: 0.875rem;
+    img {
+      margin-left: 4.5em;
+    }
     .abbreviation{
       color: yellow;
       margin-top: 1em;
