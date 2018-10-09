@@ -16,7 +16,7 @@ class MatchesController < ApplicationController
     if @match.save
       redirect_to admin_index_path, alert: "Match created successfully!"
     else
-        redirect_to admin_index_path, alert: "Oops! The match wasn't recorded. Try again!"
+        redirect_to admin_index_path
     end
   end
 
