@@ -47,7 +47,7 @@
 
           <div class="form-group">
             <%= f.label "Sport" %><br/>
-            <%= f.select :sport_id, Sport.all.collect { |s| [ s.name, s.id ] }, include_blank: true, value: @team.sport%>
+            <%= f.select :sport_id, Sport.all.order(:name).collect { |s| [ s.name, s.id ] }, include_blank: true, value: @team.sport%>
           </div>
 
           <%= f.submit "Update #{@team.name}", class: "btn btn-primary btn-lg show-button"%>
