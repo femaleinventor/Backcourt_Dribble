@@ -5,6 +5,7 @@ class Match < ApplicationRecord
   has_many :predictions, dependent: :destroy
 
   validates :time_zone, presence: true
+  validates :venue, presence: true
 
   def self.next(match)
     where('start < ?', match.start).last

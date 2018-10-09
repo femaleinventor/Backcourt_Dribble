@@ -18,15 +18,15 @@
             <!-- <audio data-autoplay>
               <source src="<%=match.sport.sound_link%>" type="audio/wav">
             </audio> -->
+
             <div class="row">
               <div class="col-xs-12 mx-auto">
                 <div class="match-teams">
                   <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %></h1>
-
-                    <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> <%= match.time_zone %> Time</p>
-                    <p class="match-info"><%=format_local_time(adjust_local_time(match, get_match_offset(match), match.start.in_time_zone.utc_offset / 3600))%> Your Time</p>
-
-
+                      <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> <%= match.time_zone %> Time</p>
+                      <% if current_user %>
+                        <p class="match-info"><%=format_local_time(adjust_local_time(match, get_match_offset(match), match.start.in_time_zone.utc_offset / 3600))%> Your Time</p>
+                      <%end%>
                 </div>
               </div>
             </div>
@@ -35,6 +35,7 @@
             <div class="row justify-content-center">
               <div class="col-xs-12 mx-auto">
                 <%if current_user%>
+
                   <!-- Logic checking if a prediction has already been made for a certain match by the current user -->
                   <% if current_user.predictions.select{|prediction| prediction.match_id == match.id}.empty?  %>
                     <h3 class="prediction-prompt text-center"> Which Team will Win? </h3>
@@ -83,8 +84,8 @@
                   <div class="user-prediction-summary">
                     <h2 class="text-center user-prediction-title">Your Prediction:</h2>
                     <% user_prediction = current_user.predictions.find{|prediction| prediction.match_id == match.id} %>
-                    <p class="user-predictions"> Your Guess: <span class="prediction-summary-text"><%= user_prediction.guess %> <span>
-                    <p class="user-predictions"> Your Reasoning: <span class="prediction-summary-text"><%= insert_spaces(user_prediction.reason) %> <span>
+                    <p class="user-predictions text-center"> Your Guess: <span class="prediction-summary-text"><%= user_prediction.guess %> <span>
+                    <p class="user-predictions text-center"> Your Reasoning: <span class="prediction-summary-text"><%= insert_spaces(user_prediction.reason) %> <span>
                   </div>
                   <% end %>
                     <div class="back-to-sports d-flex justify-content-center">
@@ -164,8 +165,8 @@
             <div class="row">
               <div class="col-xs-12 mx-auto mt-4">
                 <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
-                <p class="match-info"> <%= match.start.to_date.strftime("%B #{match.start.to_date.day.ordinalize}") %>, <%= match.venue.name %> </p>
-                <p class="total-predictions"> Total predictions for this match: <%= calculate_total_predictions(match).to_i %> </p>
+                <p class="match-info text-center"> <%= match.start.to_date.strftime("%B #{match.start.to_date.day.ordinalize}") %>, <%= match.venue.name %> </p>
+                <p class="total-predictions text-center"> Total predictions for this match: <%= calculate_total_predictions(match).to_i %> </p>
               </div>
             </div>
 
@@ -190,7 +191,7 @@
 
                       <div class="row justify-content-start">
                         <div class="reason-container">
-                          <p class="reason"> <%= insert_spaces(prediction.reason) %></p>
+                          <p class="reason text-center">Reason: <%= insert_spaces(prediction.reason) %></p>
                         </div>
                       </div>
 
