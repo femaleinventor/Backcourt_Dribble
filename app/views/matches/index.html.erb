@@ -164,8 +164,8 @@
             <div class="row">
               <div class="col-xs-12 mx-auto mt-4">
                 <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
-                <p class="match-info"> <%= match.start.to_date.strftime("%B #{match.start.to_date.day.ordinalize}") %>, <%= match.venue.name %> </p>
-                <p class="total-predictions"> Total predictions for this match: <%= calculate_total_predictions(match).to_i %> </p>
+                <p class="match-info text-center"> <%= match.start.to_date.strftime("%B #{match.start.to_date.day.ordinalize}") %>, <%= match.venue.name %> </p>
+                <p class="total-predictions text-center"> Total predictions for this match: <%= calculate_total_predictions(match).to_i %> </p>
               </div>
             </div>
 
