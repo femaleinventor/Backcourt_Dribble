@@ -8,7 +8,7 @@ class TeamsController < ApplicationController
     if @team.save
       redirect_to admin_index_path, alert: "Team created successfully!"
     else
-        redirect_to admin_index_path, alert: "Oops! The team wasn't recorded. Try again!"
+      redirect_to admin_index_path, alert: "Oops! The team wasn't recorded. Try again!"
     end
   end
 
