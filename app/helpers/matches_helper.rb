@@ -15,7 +15,7 @@ module MatchesHelper
   end
 
   def format_match_date(match)
-    match.start.strftime("%m/%d/%Y at %I:%M%p")
+    match.start.strftime("%m/%d/%Y at %I:%M%p%Z")
   end
 
   #Unnecessary first line
