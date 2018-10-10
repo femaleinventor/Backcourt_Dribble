@@ -23,7 +23,8 @@
               <div class="col-xs-12 mx-auto">
                 <div class="match-teams">
                   <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %></h1>
-                      <p class="match-info"> <%= match.venue.name %> <%= format_match_date(match) %> <%= match.time_zone %> Time</p>
+
+                      <p class="match-info"> <%= match.venue.name %> <%= match.start %> <%= match.time_zone %> Time</p>
                       <% if current_user %>
                         <p class="match-info"><%=format_local_time(adjust_local_time(match, get_match_offset(match), match.start.in_time_zone.utc_offset / 3600))%> Your Time</p>
                       <%end%>
