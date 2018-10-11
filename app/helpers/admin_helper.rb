@@ -10,4 +10,7 @@ module AdminHelper
   def sort_by_date(matches)
     matches.sort_by{|match| match.start}
   end
+  def convert_to_match_time_zone(match)
+    Time.utc(match.start.year, match.start.month , match.start.day, match.start.hour,match.start.min).in_time_zone(match.time_zone)
+  end
 end

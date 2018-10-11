@@ -182,7 +182,7 @@
 
           <div class="form-group">
             <%= f.label "Time Zone" %></br>
-            <%= f.select :time_zone, TZInfo::Timezone.all.collect { |tz| [tz.name] }, include_blank: true, class: "form-control form-control-lg"%>
+            <%= f.select :time_zone, TZInfo::Timezone.all.collect { |tz| [tz.name] }, selected: "US/Eastern", class: "form-control form-control-lg"%>
           </div>
 
           <div class="form-group">
@@ -208,7 +208,7 @@
           <% sort_by_date(@matches).each do |match| %>
             <% @home_team = Team.find(match.home_team_id) %>
             <% @away_team = Team.find(match.away_team_id) %>
-            <%=link_to "#{format_match_date_english(match)}: #{@home_team.name} vs. #{@away_team.name}", match_path(match), class:"show-links"%>
+            <%=link_to "#{format_datetime_from_string(convert_to_match_time_zone(match))}: #{@home_team.name} vs. #{@away_team.name}", match_path(match), class:"show-links"%>
             <% end %>
       </div>
     </div>
