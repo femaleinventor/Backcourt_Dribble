@@ -166,7 +166,7 @@
             <div class="row">
               <div class="col-xs-12 mx-auto mt-4">
                 <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
-                <p class="match-info text-center"> <%= match.start.to_date.strftime("%B #{match.start.to_date.day.ordinalize}") %>, <%= match.venue.name %> </p>
+                <p class="match-info text-center"> <%=format_datetime_from_string(convert_to_user_time_zone(match))%> your time at <%= match.venue.name %> </p>
                 <p class="total-predictions text-center"> Total predictions for this match: <%= calculate_total_predictions(match).to_i %> </p>
               </div>
             </div>
@@ -227,7 +227,8 @@
                 <div class="venue-info-header">
                   <h1 class="venue-info-title text-center"> <span style="color:<%=@home_team.bright_color%>;"><%=@home_team.name%></span> vs. <span style="color:<%=@away_team.bright_color%>;"><%=@away_team.name%></span></h1>
                   <div class="countdown-text">
-                    <div id="clock" class="countdown mx-auto text-center" data-countdown="<%=match.start.strftime('%m/%d/%Y %H:%M:%S')%>"></div>
+
+                    <div id="clock" class="countdown mx-auto text-center" data-countdown="<%=convert_to_user_time_zone(match).strftime('%m/%d/%Y %H:%M:%S')%>"></div>
                   </div>
                 </div>
               </div>
@@ -244,7 +245,8 @@
                     <p><%=match.venue.name%> <%=match.venue.address%></p>
 
                     <p class="desc">When</p>
-                    <p><%=format_match_date_english(match)%></p>
+                    <p><%=format_datetime_from_string(convert_to_match_time_zone(match))%> <%= match.time_zone %> Time</p>
+                    <p><%=format_datetime_from_string(convert_to_user_time_zone(match))%> Your Time</p>
 
                     <%if match.channel != ""%>
                       <p class="desc">Casting</p>
