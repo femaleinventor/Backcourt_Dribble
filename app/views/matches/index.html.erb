@@ -96,6 +96,9 @@
                       <%= link_to root_path do %>
                         <i class="fa fa-home fa-2x"></i>
                       <% end %>
+                      <%= link_to "#" do %>
+                        <i class="far fa-clock fa-2x coming-soon-icon" data-toggle="popover" title="Match Reminders" data-content="This feature is coming soon!"></i>
+                      <% end %>
                     </div>
                 <%else%>
                 <%= form_tag(controller:'predictions', action:'create') do %>
@@ -145,6 +148,9 @@
                   <% end %>
                   <%= link_to root_path do %>
                     <i class="fa fa-home fa-2x"></i>
+                  <% end %>
+                  <%= link_to "#" do %>
+                    <i class="far fa-clock fa-2x coming-soon-icon"></i>
                   <% end %>
                 </div>
 
@@ -260,7 +266,7 @@
                     <%if match.league.name == "National Women's Soccer League (USA)"%>
                       <a class="ticket-link text-center"href="http://www.nwslsoccer.com/tickets">Purchase Tickets</a>
                     <%end%>
-                    <p class="text-center coming-soon">(Coming Soon!)</p>
+                    <p class="text-center coming-soon-text">(Coming Soon!)</p>
                   </div>
                 </div>
 
@@ -270,6 +276,9 @@
                   <% end %>
                   <%= link_to root_path do %>
                     <i class="fa fa-home fa-2x"></i>
+                  <% end %>
+                  <%= link_to "#" do %>
+                    <i class="far fa-clock fa-2x coming-soon-icon"></i>
                   <% end %>
                 </div>
               </div><!--End col -->
