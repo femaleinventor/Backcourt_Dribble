@@ -11,9 +11,13 @@ class MatchesController < ApplicationController
 
   def create
     @match = Match.new(match_params)
-    # offset = get_match_offset(@match)
-    # @match.start.change(offset: "-10:00")
+    #Get utc offset of match in hours
+    offset = get_match_offset(@match)
     if @match.save
+      # Reassign match.start to match.start minus the offset in seconds because original match.start doesn't have timezone associated with object
+      @match.start = @match.start - offset * 3600
+      # Save that shizz - the utc time of the match based on match timezone is now saved
+      @match.save!
       redirect_to admin_index_path, alert: "Match created successfully!"
     else
         redirect_to admin_index_path
@@ -28,7 +32,13 @@ class MatchesController < ApplicationController
 
   def update
     @match = Match.find(params[:id])
+    #Get utc offset of match in hours
+    offset = get_match_offset(@match)
     if @match.update(update_match_params)
+      # Reassign match.start to match.start minus the offset in seconds because original match.start doesn't have timezone associated with object
+      @match.start = @match.start - offset * 3600
+      # Save that shizz - the utc time of the match based on match timezone is now saved
+      @match.save!
         redirect_to match_path(@match), alert: "Match updated successfully!"
     else
         redirect_to match_path(@match), alert: "Oops! Your update to Match:#{@match.id} wasn't recorded. Try again!"

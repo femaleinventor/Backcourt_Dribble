@@ -9,18 +9,23 @@ module MatchesHelper
     matches.sort_by{|match| match.start }
   end
 
-  #DOES NOT WORK
-  def convert_to_local_time(match)
-    match.start.to_time.localtime
+  # Converts a utc Time object to the time zone of a match
+  def convert_to_match_time_zone(match)
+    Time.utc(match.start.year, match.start.month , match.start.day, match.start.hour,match.start.min).in_time_zone(match.time_zone)
   end
+
+  # Converts a utc Time object to the time zone of the current user
+  def convert_to_user_time_zone(match)
+    Time.utc(match.start.year, match.start.month , match.start.day, match.start.hour,match.start.min).in_time_zone(current_user.time_zone)
+  end
+
 
   def format_match_date(match)
-    match.start.strftime("%m/%d/%Y at %I:%M%p%Z")
+    match.start.strftime("%m/%d/%Y at %I:%M%p")
   end
 
-  #Unnecessary first line
-  def format_local_time(start_string)
-    # local_time = convert_to_local_time(match)
+
+  def format_datetime_from_string(start_string)
     start_string.strftime("%m/%d/%Y at %I:%M%p")
   end
 
@@ -29,20 +34,6 @@ module MatchesHelper
     # Gets the total offset of a match start time (utc total offset = std + utc offsets)
     offset_in_hours = (TZInfo::Timezone.get(match.time_zone).current_period.offset.utc_total_offset) / 3600
   end
-
-  # This method works!
-  def calculate_offset_difference(match_offset, local_offset)
-    match_offset - local_offset
-  end
-
-  def adjust_local_time(match, match_offset, local_offset)
-    difference = calculate_offset_difference(match_offset, local_offset)
-
-    match_start = match.start
-
-    match_start - difference * 3600
-  end
-
 
   def format_match_date_english(match)
      date = match.start.to_date.strftime("%B #{match.start.to_date.day.ordinalize}, %Y")
