@@ -51,6 +51,9 @@
           <div class="form-group">
             <%= f.label :start, "Start Date and Time" %> <br/>
             <%= f.datetime_select :start, class:"form-control", value: @match.start%>
+            <p class="form-text" style="color:white;font-size:0.625rem;">
+              When updating the start of a match, please remember to always re-input the time
+            </p>
           </div>
 
           <div class="form-group">

@@ -10,4 +10,11 @@ $(document).ready(function() {
       // parallaxOptions: {type: ‘reveal’, percentage: 62, property: ‘translate’},
       // sectionsColor: [‘black’, ‘#707070’, ‘black’, ‘#707070’,‘black’, ‘#707070’, ‘black’, ‘#707070’,‘black’, ‘#707070’, ‘black’, ‘#707070’,‘black’, ‘#707070’, ‘black’, ‘#707070’,‘black’, ‘#707070’, ‘black’, ‘#707070’, ‘black’, ‘#707070’,‘black’, ‘#707070’, ‘black’, ‘#707070’,‘black’, ‘#707070’,‘black’, ‘#707070’, ‘black’, ‘#707070’]
 	});
+
+	$(function () {
+  	$('[data-toggle="popover"]').popover({
+  		trigger: 'hover'
+		})
+	})
+
 });
