@@ -8,12 +8,11 @@ class ApplicationController < ActionController::Base
 
   before_action :get_all_sports
 
-  before_action :set_time_zone
-
   protected
 
-  def set_time_zone
-    Time.zone = current_user.time_zone if current_user
+  def get_match_offset(match)
+    # Gets the total offset of a match start time (utc total offset = std + utc offsets)
+    offset_in_hours = (TZInfo::Timezone.get(match.time_zone).current_period.offset.utc_total_offset) / 3600
   end
 
   def configure_permitted_parameters
