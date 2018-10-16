@@ -11,6 +11,12 @@ class User < ApplicationRecord
   friendly_id :username, use: :slugged
 
   has_many :predictions
+  has_many :favorites
+
+
+  #Potentiall useful
+  # has_many :favorite_teams, through:  :favorites, source: :favoritable, source_type: "Team"
+  # has_many :favorite_players, through:  :favorites, source: :favoritable, source_type: "Player"
 
   validates :time_zone, presence: true
 
