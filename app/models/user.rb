@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
   before_create :set_bitmoji
 
-
   extend FriendlyId
   friendly_id :username, use: :slugged
 
