@@ -1,3 +1,47 @@
 // Place all the styles related to the favorites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$theme-orange: #F0900E;
+$theme-blue: #16A7D5;
+$theme-green: #00D37F;
+$theme-light: white;
+$theme-grey: #707070;
+
+.favorites-selection {
+  .favorites-heading {
+    margin-top: 3em;
+  }
+  .favorites-subheading {
+    font-size: 1rem;
+    color: $theme-orange;
+    margin-top: 1em;
+  }
+  .all-sports {
+    margin-top: 2em;
+    margin-bottom: 3em;
+    .sport-card {
+      width: 25vw;
+      height: 25vh;
+      background: $theme-blue;
+      @media (max-width: 680px){
+        width: 90vw;
+        height: 25vh;
+      }
+      .sport-card-image {
+        width: 100%;
+        height: 100%;
+        background-image: url("soccer.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        .sport-card-title {
+          font-size: 1.2rem;
+          color: white;
+        }
+      }
+    }
+    .selected {
+      border: 2px solid $theme-blue;
+    }
+  }
+}
