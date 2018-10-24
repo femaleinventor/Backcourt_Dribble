@@ -10,9 +10,9 @@ module MatchesHelper
   end
 
   # Converts a utc Time object to the time zone of a match
-  def convert_to_match_time_zone(match)
-    Time.utc(match.start.year, match.start.month , match.start.day, match.start.hour,match.start.min).in_time_zone(match.time_zone)
-  end
+  # def convert_to_match_time_zone(match)
+  #   Time.utc(match.start.year, match.start.month , match.start.day, match.start.hour,match.start.min).in_time_zone(match.time_zone)
+  # end
 
   # Converts a utc Time object to the time zone of the current user
   def convert_to_user_time_zone(match)
