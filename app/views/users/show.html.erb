@@ -108,4 +108,17 @@
         </div>
       <%end%>
 
+      <%if @user.favorites%>
+        <%@user.favorites.each do |fav|%>
+          <%this_type = fav.favoritable_type%>
+          <%if this_type == "Team"%>
+            <%team = Team.find(fav.favoritable_id)%>
+            <%=team.name%>
+          <%elsif this_type == "Player"%>
+            <%player = Player.find(fav.favoritable_id)%>
+            <%=player.name%>
+          <%end%>
+        <%end%>
+      <%end%>
+
 </div> <!--End Container->

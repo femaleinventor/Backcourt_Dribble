@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180923230010) do
+ActiveRecord::Schema.define(version: 20181016232251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorites", force: :cascade do |t|
+    t.string "favoritable_type"
+    t.bigint "favoritable_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["favoritable_type", "favoritable_id"], name: "index_favorites_on_favoritable_type_and_favoritable_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
 
   create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
     t.string "slug", null: false
@@ -59,6 +69,15 @@ ActiveRecord::Schema.define(version: 20180923230010) do
     t.index ["league_id"], name: "index_matches_on_league_id"
     t.index ["sport_id"], name: "index_matches_on_sport_id"
     t.index ["venue_id"], name: "index_matches_on_venue_id"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.string "fifa_team"
+    t.string "league_team1"
+    t.string "league_team2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "predictions", force: :cascade do |t|
@@ -134,6 +153,7 @@ ActiveRecord::Schema.define(version: 20180923230010) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "favorites", "users"
   add_foreign_key "leagues", "sports"
   add_foreign_key "matches", "leagues"
   add_foreign_key "matches", "sports"
