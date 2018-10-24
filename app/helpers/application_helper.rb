@@ -25,9 +25,14 @@ module ApplicationHelper
     offset_in_hours = (TZInfo::Timezone.get(match.time_zone).current_period.offset.utc_total_offset) / 3600
   end
 
+  def convert_to_match_time_zone(match)
+    Time.utc(match.start.year, match.start.month , match.start.day, match.start.hour,match.start.min).in_time_zone(match.time_zone)
+  end
+
   def resource_name
    :user
- end
+  end
+
 
  def resource
    @resource ||= User.new
