@@ -171,7 +171,7 @@
 
             <div class="row">
               <div class="col-xs-12 mx-auto mt-4">
-                <h1 class="match-heading"> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
+                <h1 class="match-heading text-center"> <%= @home_team.name %> vs. <%=  @away_team.name %> </h1>
                 <p class="match-info text-center"> <%=format_datetime_from_string(convert_to_user_time_zone(match))%> your time at <%= match.venue.name %> </p>
                 <p class="total-predictions text-center"> Total predictions for this match: <%= calculate_total_predictions(match).to_i %> </p>
               </div>
