@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 20181016232251) do
   create_table "matches", force: :cascade do |t|
     t.string "result"
     t.string "channel"
-    t.time "time"
     t.bigint "league_id"
     t.bigint "home_team_id"
     t.bigint "away_team_id"
