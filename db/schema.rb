@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190128223544) do
+ActiveRecord::Schema.define(version: 20190128224527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 20190128223544) do
     t.string "tag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "hashtags_tweets", force: :cascade do |t|
+    t.bigint "hashtag_id"
+    t.bigint "tweet_id"
+    t.index ["hashtag_id"], name: "index_hashtags_tweets_on_hashtag_id"
+    t.index ["tweet_id"], name: "index_hashtags_tweets_on_tweet_id"
   end
 
   create_table "keywords", force: :cascade do |t|
@@ -197,6 +204,8 @@ ActiveRecord::Schema.define(version: 20190128223544) do
   end
 
   add_foreign_key "favorites", "users"
+  add_foreign_key "hashtags_tweets", "hashtags"
+  add_foreign_key "hashtags_tweets", "tweets"
   add_foreign_key "leagues", "sports"
   add_foreign_key "matches", "leagues"
   add_foreign_key "matches", "sports"
