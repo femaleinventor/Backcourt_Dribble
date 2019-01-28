@@ -27,6 +27,9 @@ gem 'loofah', '>= 2.2.2'
 
 gem 'devise'
 
+gem 'sidekiq'
+gem 'sinatra', github: 'sinatra/sinatra'
+
 gem 'tzinfo', '~> 1.2', '>= 1.2.5'
 
 gem 'friendly_id', '~> 5.2.0'
