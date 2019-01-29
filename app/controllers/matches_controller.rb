@@ -1,4 +1,5 @@
 class MatchesController < ApplicationController
+  before_action :authenticate_admin
   def index
     @league_matches = Match.where(league_id: params[:league_id])
     @league = League.find(params[:league_id])
