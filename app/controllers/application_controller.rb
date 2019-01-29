@@ -10,6 +10,11 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def authenitcate_admin
+    return unless current_user.admin
+    redirect_to root_path
+  end
+
   def get_match_offset(match)
     # Gets the total offset of a match start time (utc total offset = std + utc offsets)
     offset_in_hours = (TZInfo::Timezone.get(match.time_zone).current_period.offset.utc_total_offset) / 3600

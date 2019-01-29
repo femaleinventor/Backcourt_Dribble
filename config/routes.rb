@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   require 'sidekiq/web'
 
   mount Sidekiq::Web => '/sidekiq'
@@ -43,6 +44,8 @@ Rails.application.routes.draw do
 
   # get 'match/index'
   get 'pages/soccer/woso_writers' => 'high_voltage/pages#show', id: 'woso_writers'
+
+
 
 
   root to: "tweets#index"
