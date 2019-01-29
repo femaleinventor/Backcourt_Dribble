@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tweet_id: 1
+  tweet_id_str: MyString
+  created: 2019-01-28 17:34:13
+  full_text: MyString
+  favorite_count: 1
+  retweet_count: 1
+  source: MyString
+  twitter_user: one
+  quoted_tweet_id: 1
+
+two:
+  tweet_id: 1
+  tweet_id_str: MyString
+  created: 2019-01-28 17:34:13
+  full_text: MyString
+  favorite_count: 1
+  retweet_count: 1
+  source: MyString
+  twitter_user: two
+  quoted_tweet_id: 1
