@@ -134,26 +134,26 @@ ActiveRecord::Schema.define(version: 20190128231439) do
   end
 
   create_table "tweets", force: :cascade do |t|
-    t.integer "tweet_id"
+    t.bigint "tweet_id"
     t.string "tweet_id_str"
     t.datetime "created"
     t.string "full_text"
-    t.integer "favorite_count"
-    t.integer "retweet_count"
+    t.bigint "favorite_count"
+    t.bigint "retweet_count"
     t.string "source"
     t.bigint "twitter_user_id"
     t.integer "quoted_tweet_id"
-    t.integer "statuses_count"
+    t.bigint "statuses_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["twitter_user_id"], name: "index_tweets_on_twitter_user_id"
   end
 
   create_table "twitter_users", force: :cascade do |t|
-    t.integer "twitter_id"
+    t.bigint "twitter_id"
     t.datetime "created"
     t.string "description"
-    t.integer "followers_count"
+    t.bigint "followers_count"
     t.string "location"
     t.string "name"
     t.string "screen_name"
