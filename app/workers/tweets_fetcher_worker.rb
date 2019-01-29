@@ -5,8 +5,7 @@ class TweetsFetcherWorker
     keyword = fetch_keyword
     tweets = TwitterAdapter::search(keyword.word)
     parse(tweets)
-    keyword.runtime = DateTime.now
-    keyword.save!
+    set_keyword_runtime(keyword)
   end
 
   def fetch_keyword
@@ -75,6 +74,11 @@ class TweetsFetcherWorker
       time_zone: args["time_zone"],
       verified: args["verified"]
     )
+  end
+
+  def set_keyword_runtime(kw)
+    kw.runtime = DateTime.now
+    kw.save!
   end
 
 end
