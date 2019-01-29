@@ -9,7 +9,6 @@ class CreateTwitterUsers < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :screen_name
       t.string :profile_image
-      t.integer :statuses_count
       t.string :time_zone
       t.boolean :verified
 

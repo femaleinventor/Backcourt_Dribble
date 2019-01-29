@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190128224527) do
+ActiveRecord::Schema.define(version: 20190128231439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20190128224527) do
     t.string "word"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "runtime"
   end
 
   create_table "leagues", force: :cascade do |t|
@@ -142,6 +143,7 @@ ActiveRecord::Schema.define(version: 20190128224527) do
     t.string "source"
     t.bigint "twitter_user_id"
     t.integer "quoted_tweet_id"
+    t.integer "statuses_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["twitter_user_id"], name: "index_tweets_on_twitter_user_id"
@@ -156,7 +158,6 @@ ActiveRecord::Schema.define(version: 20190128224527) do
     t.string "name"
     t.string "screen_name"
     t.string "profile_image"
-    t.integer "statuses_count"
     t.string "time_zone"
     t.boolean "verified"
     t.datetime "created_at", null: false
