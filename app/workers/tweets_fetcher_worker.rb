@@ -63,9 +63,9 @@ class TweetsFetcherWorker
       searched_term: @keyword.word,
     )
 
-    # if args["entities"]["hashtags"].length > 1
-    #   record_hashtags(twt, args["entities"]["hashtags"])
-    # end
+    if args["entities"]["hashtags"].length > 1
+      record_hashtags(twt, args["entities"]["hashtags"])
+    end
 
     if args["quoted_tweet"]
       twt.update!(
