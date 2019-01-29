@@ -1,6 +1,8 @@
 class TweetsFetcherWorker
   include Sidekiq::Worker
 
+  sidekiq_options retry: false
+
   def perform
     keyword = fetch_keyword
     tweets = TwitterAdapter::search(keyword.word)
@@ -9,8 +11,11 @@ class TweetsFetcherWorker
   end
 
   def fetch_keyword
-    keyword = Keyword.where(runtime: nil).first
-    keyword = Keyword.order(runtime: :asc).first if keyword == nil
+    if Keyword.where(runtime: nil).any?
+      keyword = Keyword.where(runtime: nil).first
+    else
+      keyword = Keyword.order(runtime: :asc).first
+    end
   end
 
   def parse(tweets)
@@ -29,10 +34,8 @@ class TweetsFetcherWorker
     else
       user = TwitterUser.find_or_initialize_by(twitter_id: tweet["user"]["id"])
       if user.id == nil
-        puts "Saving new user!"
         add_user_args(user, tweet["user"])
       end
-      puts "Recording new tweet!"
       add_tweet_args(twt, user, tweet)
     end
 
