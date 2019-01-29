@@ -29,6 +29,7 @@ gem 'devise'
 
 gem 'sidekiq'
 gem 'sinatra', github: 'sinatra/sinatra'
+gem 'sidekiq-cron'
 
 gem 'tzinfo', '~> 1.2', '>= 1.2.5'
 
