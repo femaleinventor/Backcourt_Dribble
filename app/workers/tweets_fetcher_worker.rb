@@ -4,10 +4,12 @@ class TweetsFetcherWorker
   sidekiq_options retry: false
 
   def perform
-    keyword = fetch_keyword
-    tweets = TwitterAdapter::search(keyword.word)
+    @keyword = fetch_keyword
+    tweets = TwitterAdapter::search(@keyword.word)
+    puts "%" * 200
+    puts @keyword.word
     parse(tweets)
-    set_keyword_runtime(keyword)
+    set_keyword_runtime(@keyword)
   end
 
   def fetch_keyword
@@ -34,8 +36,10 @@ class TweetsFetcherWorker
     else
       user = TwitterUser.find_or_initialize_by(twitter_id: tweet["user"]["id"])
       if user.id == nil
+        puts "Recording new user."
         add_user_args(user, tweet["user"])
       end
+      puts "Recording new tweet."
       add_tweet_args(twt, user, tweet)
     end
 
@@ -51,7 +55,8 @@ class TweetsFetcherWorker
       retweet_count: args["retweet_count"],
       source: args["source"],
       statuses_count: args["user"]["statuses_count"],
-      twitter_user: user
+      twitter_user: user,
+      searched_term: @keyword.word
     )
 
     if args["quoted_tweet"]
