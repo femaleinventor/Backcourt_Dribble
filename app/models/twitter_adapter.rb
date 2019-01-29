@@ -1,9 +1,12 @@
+require 'uri'
+
 module TwitterAdapter
 
   def self.search(search_string)
 
     bearer_token = generate_bearer_token
-    search_string.gsub(/\s+/, "%20")
+    # search_string.gsub(/\s+/, "%20")
+    search_string = URI::encode(search_string)
 
     # URL = https://api.twitter.com... (Key is "how to find resource")
     # URN = tweets.json (What the thing is that we're actually looking for)
