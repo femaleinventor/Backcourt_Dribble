@@ -32,7 +32,11 @@ class TweetsFetcherWorker
     twt = Tweet.find_or_initialize_by(tweet_id: tweet["id"])
 
     if twt.id
-      puts "Tweet already on record."
+      puts "Tweet already on record..."
+      if twt.hashtags.empty?
+        puts "...but recording previously unrecorded hashtags."
+        record_hashtags(twt, tweet["entities"]["hashtags"])
+      end
     else
       user = TwitterUser.find_or_initialize_by(twitter_id: tweet["user"]["id"])
       if user.id == nil
@@ -56,8 +60,12 @@ class TweetsFetcherWorker
       source: args["source"],
       statuses_count: args["user"]["statuses_count"],
       twitter_user: user,
-      searched_term: @keyword.word
+      searched_term: @keyword.word,
     )
+
+    if args["entities"]["hashtags"].length > 1
+      record_hashtags(twt, args["entities"]["hashtags"])
+    end
 
     if args["quoted_tweet"]
       twt.update!(
@@ -87,6 +95,14 @@ class TweetsFetcherWorker
   def set_keyword_runtime(kw)
     kw.runtime = DateTime.now
     kw.save!
+  end
+
+  def record_hashtags(twt, hashtags)
+    hashtags.each do |hashtag|
+      tag = Hashtag.find_or_initialize_by(tag: hashtag["text"].downcase)
+      tag.save if tag.id == nil
+      twt.hashtags << tag
+    end
   end
 
 end
