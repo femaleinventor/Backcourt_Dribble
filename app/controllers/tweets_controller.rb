@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
 
+
   def index
     @tweets = params[:keyword].nil? ? [] : TwitterAdapter::search(params[:keyword])
   end

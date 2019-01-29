@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  # before_action :authenticate_admin
   protect_from_forgery with: :exception
   before_action :store_user_location!, if: :storable_location?
 
@@ -8,11 +9,11 @@ class ApplicationController < ActionController::Base
 
   before_action :get_all_sports
 
-  protected
 
-  def authenitcate_admin
-    return unless current_user.admin
-    redirect_to root_path
+    protected
+
+  def authenticate_admin
+    redirect_to(root_path) unless current_user && current_user.admin
   end
 
   def get_match_offset(match)
