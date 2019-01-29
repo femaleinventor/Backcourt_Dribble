@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181016232251) do
+ActiveRecord::Schema.define(version: 20190129170301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,26 @@ ActiveRecord::Schema.define(version: 20181016232251) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "hashtags", force: :cascade do |t|
+    t.string "tag"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hashtags_tweets", force: :cascade do |t|
+    t.bigint "hashtag_id"
+    t.bigint "tweet_id"
+    t.index ["hashtag_id"], name: "index_hashtags_tweets_on_hashtag_id"
+    t.index ["tweet_id"], name: "index_hashtags_tweets_on_tweet_id"
+  end
+
+  create_table "keywords", force: :cascade do |t|
+    t.string "word"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "runtime"
+  end
+
   create_table "leagues", force: :cascade do |t|
     t.string "name"
     t.string "abbreviation"
@@ -54,6 +74,7 @@ ActiveRecord::Schema.define(version: 20181016232251) do
   create_table "matches", force: :cascade do |t|
     t.string "result"
     t.string "channel"
+    t.time "time"
     t.bigint "league_id"
     t.bigint "home_team_id"
     t.bigint "away_team_id"
@@ -112,6 +133,37 @@ ActiveRecord::Schema.define(version: 20181016232251) do
     t.index ["sport_id"], name: "index_teams_on_sport_id"
   end
 
+  create_table "tweets", force: :cascade do |t|
+    t.bigint "tweet_id"
+    t.string "tweet_id_str"
+    t.datetime "created"
+    t.string "full_text"
+    t.integer "favorite_count"
+    t.integer "retweet_count"
+    t.string "source"
+    t.bigint "twitter_user_id"
+    t.integer "quoted_tweet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "statuses_count"
+    t.index ["twitter_user_id"], name: "index_tweets_on_twitter_user_id"
+  end
+
+  create_table "twitter_users", force: :cascade do |t|
+    t.bigint "twitter_id"
+    t.datetime "created"
+    t.string "description"
+    t.integer "followers_count"
+    t.string "location"
+    t.string "name"
+    t.string "screen_name"
+    t.string "profile_image"
+    t.string "time_zone"
+    t.boolean "verified"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "username"
@@ -153,6 +205,8 @@ ActiveRecord::Schema.define(version: 20181016232251) do
   end
 
   add_foreign_key "favorites", "users"
+  add_foreign_key "hashtags_tweets", "hashtags"
+  add_foreign_key "hashtags_tweets", "tweets"
   add_foreign_key "leagues", "sports"
   add_foreign_key "matches", "leagues"
   add_foreign_key "matches", "sports"
@@ -160,4 +214,5 @@ ActiveRecord::Schema.define(version: 20181016232251) do
   add_foreign_key "predictions", "matches"
   add_foreign_key "predictions", "users"
   add_foreign_key "teams", "sports"
+  add_foreign_key "tweets", "twitter_users"
 end

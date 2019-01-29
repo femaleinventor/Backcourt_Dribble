@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  twitter_id: 1
+  created: 2019-01-28 17:31:45
+  description: MyString
+  followers_count: 1
+  location: MyString
+  name: MyString
+  screen_name: MyString
+  profile_image: MyString
+  statuses_count: 1
+  time_zone: MyString
+  verified: false
+
+two:
+  twitter_id: 1
+  created: 2019-01-28 17:31:45
+  description: MyString
+  followers_count: 1
+  location: MyString
+  name: MyString
+  screen_name: MyString
+  profile_image: MyString
+  statuses_count: 1
+  time_zone: MyString
+  verified: false
