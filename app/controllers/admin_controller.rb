@@ -1,4 +1,5 @@
 class AdminController < ApplicationController
+
   def index
     @sports = Sport.all
     @venues = Venue.all

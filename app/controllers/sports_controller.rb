@@ -1,5 +1,6 @@
 class SportsController < ApplicationController
 
+
   def index
     # @sports = Sport.all
     @sports = Sport.joins(:matches).where('matches.start >= ?', DateTime.now.change(:offset => "+0000")).uniq
