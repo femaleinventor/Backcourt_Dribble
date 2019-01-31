@@ -6,22 +6,34 @@ function attachEventListeners() {
   clickKeyword()
 }
 
+var twtQueue = {
+	active: null,
+	running: false
+}
+
 function clickKeyword() {
   $('.keyword').on('click', function(e){
     e.preventDefault()
     var currentKeyword = $(this).attr('id')
     console.log(currentKeyword)
 
+
     $.ajax({
       url: '/tweets',
       method: 'POST',
       data:{keyword: currentKeyword},
     }).done(function(res) {
-      addTweetsToDOM(res)
+			twtQueue.active = currentKeyword
+			twtQueue[twtQueue.active] = res
+			if (twtQueue.running == false) {
+				twtQueue.running = true
+				addTweetsToDOM(res)
+			}
       console.log(res);
     })
   })
 }
+
 
 function addTweetsToDOM(tweetsJSON) {
   // for (var i = 0; i < tweetsJSON.length; i++) {
@@ -37,11 +49,13 @@ function addTweetsToDOM(tweetsJSON) {
     // Pause for One Second
     // $(`#${thisTweetID}`).fadeIn(5000, function(){
 		$("#" + thisTweetID).fadeIn(4200, function(){
-
+			tweetsJSON = twtQueue[twtQueue.active]
       // Call fade in for next element
       addTweetsToDOM(tweetsJSON)
     })
-  }
+  } else {
+		twtQueue.running = false
+	}
 }
 
 // function buildHtmlFor(tweet) {
