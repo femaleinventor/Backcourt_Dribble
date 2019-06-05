@@ -12,38 +12,21 @@
           <div>
             <a class="wall-logo" href="/"><%= image_tag "logos/blue_transparent_logo_whletters.png"%></a>
           </div>
-          <div class="keyword" id="WoSo">
-            <%= link_to 'WOSO', tweets_path(:keyword => "woso") %>
-          </div>
-          <div class="keyword" id="USWNT">
-            <%= link_to 'USWNT', tweets_path(:keyword => "USWNT") %>
-          </div>
-          <div class="keyword" id="NWSL">
-            <%= link_to 'NWSL', tweets_path(:keyword => "NWSL") %>
-          </div>
-          <div class="keyword" id="UWCL">
-            <%= link_to 'UWCL', tweets_path(:keyword => "UWCL") %>
-          </div>
-          <div class="keyword" id="WLeague">
-            <%= link_to 'WLeague', tweets_path(:keyword => "WLeague") %>
-          </div>
-          <div class="keyword" id="NWL">
-            <%= link_to 'NWL', tweets_path(:keyword => "NWL") %>
-          </div>
-          <div class="keyword" id="Frauenbundesliga">
-            <%= link_to 'Frauenbundesliga', tweets_path(:keyword => "Frauenbundesliga") %>
-          </div>
-          <div class="keyword" id="DieLiga">
-            <%= link_to 'DieLiga', tweets_path(:keyword => "DieLiga") %>
-          </div>
-          <div class="keyword" id="FAWSL">
-            <%= link_to 'FAWSL', tweets_path(:keyword => "FAWSL") %>
-          </div>
-          <div class="keyword" id="FAWCL">
-            <%= link_to 'FAWCL', tweets_path(:keyword => "FAWCL") %>
-          </div>
+          <!-- <div class="keyword" id="WoSo">
+            <%# link_to 'WOSO', tweets_path(:keyword => "woso") %>
+          </div> -->
+
+          <% @keywords.each do |keyword| %>
+            <div class="keyword" id=<%="#{keyword.word}"%>>
+              <%= link_to "#{keyword.word.upcase}", tweets_path(:keyword => "#{keyword.word.downcase}") %>
+            </div>
+          <% end %>
+
+
+
         </div> <!-- End keywords-container -->
-      </div> <!-- End col for keywords -->
+      </div> <!-- End col for
+        keywords -->
 
       <!-- Column for tweets -->
       <div class="col-xs-12 col-md-8 tweets-wall">
