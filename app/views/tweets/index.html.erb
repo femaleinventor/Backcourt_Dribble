@@ -18,7 +18,7 @@
 
           <% @keywords.each do |keyword| %>
             <div class="keyword" id=<%="#{keyword.word}"%>>
-              <%= link_to "#{keyword.word.upcase}", tweets_path(:keyword => "#{keyword.word.downcase}") %>
+              <%= link_to "#{keyword.word}", tweets_path(:keyword => "#{keyword.word.downcase}") %>
             </div>
           <% end %>
 
