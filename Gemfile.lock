@@ -303,10 +303,9 @@ DEPENDENCIES
   jquery-datatables
   jquery-rails (~> 4.3, >= 4.3.1)
   listen (>= 3.0.5, < 3.2)
-
   loofah (>= 2.3.1)
-  pg (~> 1.2.3)
   nokogiri (>= 1.10.8)
+  pg (~> 1.2.3)
   puma (~> 3.7)
   rails
   ranker
