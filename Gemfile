@@ -28,7 +28,6 @@ gem 'loofah', '>= 2.3.1'
 gem 'devise', ">= 4.7.1"
 gem 'nokogiri', " >= 1.10.8"
 
-gem 'actionview',  ">=5.2.4.2"
 
 gem 'sidekiq'
 gem 'sinatra', github: 'sinatra/sinatra'
