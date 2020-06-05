@@ -24,7 +24,7 @@ gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 gem 'jquery-datatables'
 
 gem 'loofah', '>= 2.2.2'
-
+gem 'nokogiri', " >= 1.10.8"
 gem 'devise'
 
 gem 'sidekiq'
