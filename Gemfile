@@ -25,7 +25,7 @@ gem 'jquery-datatables'
 
 gem 'loofah', '>= 2.2.2'
 
-gem 'devise'
+gem 'devise', ">= 4.7.1"
 
 gem 'sidekiq'
 gem 'sinatra', github: 'sinatra/sinatra'
