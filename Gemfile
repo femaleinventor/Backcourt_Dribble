@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.6'
+gem 'rails'
 # Use Postgres as the database for Active Record
 gem 'pg', '~> 1.0.0'
 # Use Puma as the app server
@@ -23,9 +23,9 @@ gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
 gem 'jquery-datatables'
 
-gem "actionview", ">= 5.2.4.2"
+gem "actionview"
 
-gem 'loofah', '>= 2.2.2'
+gem 'loofah', '>= 2.3.1'
 
 gem 'devise', ">= 4.7.1"
 
