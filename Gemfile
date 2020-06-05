@@ -23,8 +23,6 @@ gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
 gem 'jquery-datatables'
 
-gem "actionview"
-
 gem 'loofah', '>= 2.3.1'
 
 gem 'devise', ">= 4.7.1"

@@ -287,7 +287,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionview
   autoprefixer-rails
   bootstrap (~> 4.1.2)
   byebug
