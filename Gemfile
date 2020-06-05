@@ -26,6 +26,8 @@ gem 'jquery-datatables'
 gem 'loofah', '>= 2.3.1'
 
 gem 'devise', ">= 4.7.1"
+gem 'nokogiri', " >= 1.10.8"
+
 
 gem 'sidekiq'
 gem 'sinatra', github: 'sinatra/sinatra'
@@ -43,6 +45,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'bootstrap', '~> 4.1.2'
 gem 'autoprefixer-rails'
 
+gem 'websocket-extensions', ">=0.1.5"
 gem 'gon'
 
 gem 'high_voltage', '~> 3.0.0'
