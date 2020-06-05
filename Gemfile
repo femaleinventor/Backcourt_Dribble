@@ -43,6 +43,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'bootstrap', '~> 4.1.2'
 gem 'autoprefixer-rails'
 
+gem 'websocket-extensions', ">=0.1.5"
 gem 'gon'
 
 gem 'high_voltage', '~> 3.0.0'
