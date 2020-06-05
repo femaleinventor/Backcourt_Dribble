@@ -7,9 +7,9 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.5'
+gem 'rails'
 # Use Postgres as the database for Active Record
-gem 'pg', '~> 1.0.0'
+gem 'pg', '~> 1.2.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -23,9 +23,11 @@ gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
 gem 'jquery-datatables'
 
-gem 'loofah', '>= 2.2.2'
+gem 'loofah', '>= 2.3.1'
+
+gem 'devise', ">= 4.7.1"
 gem 'nokogiri', " >= 1.10.8"
-gem 'devise'
+
 
 gem 'sidekiq'
 gem 'sinatra', github: 'sinatra/sinatra'
