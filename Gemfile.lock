@@ -306,7 +306,7 @@ DEPENDENCIES
   loofah (>= 2.2.2)
   pg (~> 1.0.0)
   puma (~> 3.7)
-  rails (~> 5.1.5)
+  rails (~> 5.1.6)
   ranker
   sass-rails (~> 5.0)
   selenium-webdriver
