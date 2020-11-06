@@ -13,15 +13,15 @@ development:
   adapter: postgresql
   encoding: unicode
   database: bcd_development
-  username: bcd-pg
-  password: admin123
+  # username: bcd-pg
+  # password: admin123
   host: localhost
   pool: 5
 
   test:
     adapter: postgresql
-    username: bcd-pg
-    password: admin123
+    # username: bcd-pg
+    # password: admin123
     host: localhost
     pool: 5
 
