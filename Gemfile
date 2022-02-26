@@ -26,7 +26,7 @@ gem 'jquery-datatables'
 gem 'loofah', '>= 2.3.1'
 
 gem 'devise', ">= 4.7.1"
-gem 'nokogiri', " >= 1.10.8"
+gem 'nokogiri', ">= 1.10.8"
 
 
 gem 'sidekiq'
