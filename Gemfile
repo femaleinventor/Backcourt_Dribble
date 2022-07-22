@@ -33,7 +33,7 @@ gem 'sidekiq'
 gem 'sinatra', github: 'sinatra/sinatra'
 gem 'sidekiq-cron'
 
-gem 'tzinfo', '~> 1.2', '>= 1.2.5'
+gem 'tzinfo', '~> 1.2'
 
 gem 'friendly_id', '~> 5.2.0'
 gem "font-awesome-rails"
